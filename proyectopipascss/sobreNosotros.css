@@ -1,0 +1,129 @@
+main {
+    background-image: url('../proyectopipasimgs/pexels-helena-lopes-1938123.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: none;
+    margin-top: 77px;
+    height: 870px;
+}
+
+#cuadro1 {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+#cuadro2 {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 160px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+#cuadro3 {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+#cuadro4 {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 160px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+.cuadros2 {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 450px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 200px;
+    width: 300px;
+    text-align: center;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-left: 532px;
+    width: 300px;
+    height: 300px;
+}
+
+.sct-form {
+    display: inline-block;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    height: 2px;
+}
+
+.cuadroPrincipal1 {
+    padding-bottom: 30px;
+    margin-right: 200px;
+}
+
+.cuadroPrincipal2 {
+    margin-right: 200px;
+}
+
+.cuadroPrincipal1>div {
+    margin-left: 100px;
+    display: inline-block;
+}
+
+.cuadroPrincipal2>div {
+    margin-left: 400px;
+    display: inline-block;
+}
+
+#acercaDeNosotros {
+    margin-left: 890px;
+    text-align: center;
+}
+
+#acercaDeNosotros>input {
+    height: 40px;
+    width: 170px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px;
+}
+
+#sct-Nosotros {
+    margin-top: 300px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

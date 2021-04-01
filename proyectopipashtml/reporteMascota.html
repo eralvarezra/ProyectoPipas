@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Mascota</title>
+    <link rel="stylesheet" href="../proyectopipascss/reset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/reporteMascota.css">
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="../proyectopipashtml/sobreNosotros.html">Sobre Nosotros</a>
+            <a href="../proyectopipashtml/perfil.html">Perfil</a>
+            <a href="../proyectopipashtml/busqueda.html">Búsqueda</a>
+            <a href="../proyectopipashtml/contacto.html">Contacto</a>
+            <a href="../proyectopipashtml/configuracion.html">Configuración</a>
+            <a href="../proyectopipashtml/reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+    <main>
+        <section id="sct-form">
+            <div class="div-NombreEmpresa">
+                <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
+                <nav>
+                    <a class="menu" href="../proyectopipashtml/reportes.html">Usuario</a>
+                    <br><br>
+                    <a class="menu" href="../proyectopipashtml/reporteProveedor.html">Registro Proveedor</a>
+                    <br><br>
+                    <a class="menu" href="../proyectopipashtml/reporteMascota.html">Registro Mascota</a>
+                    <br><br>
+                    <a class="menu" href="../proyectopipashtml/reporteCalificacion.html">Registro Calificación</a>
+                    <br><br>
+                    <a class="menu" href="../proyectopipashtml/reporteMascota.html" download="reporteMascota">Descargar</a>
+                    <br><br>
+                    <input type="button" id="button" name="imprimir" style="color:#E69138; background-color: #ffffff" value="Imprimir" onclick="window.print();">
+                </nav>
+            </div>
+            <form>
+                <div class="div-Form">
+                    <h1>REPORTE DE MASCOTAS</h1>
+                    <br>
+                    <br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>TIPO</th>
+                                <th>RAZA</th>
+                                <th>CARACTERÍSTICAS ESPECIALES</th>
+                                <th>PADECIMIENTO</th>
+                                <th>VACUNAS</th>
+                                <th>FOTO</th>
+                                <th>ID USUARIO</th>
+                                <th>NOMBRE</th>
+
+                            </tr>
+                        </thead>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Lasy</td>
+                            <td>Perro</td>
+                            <td>Doberman</td>
+                            <td>Grande</td>
+                            <td>Atrofia de retina</td>
+                            <td>Clamidófila</td>
+                            <td>Dog 1</td>
+                            <td>1</td>
+                            <td>Luis</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Koki</td>
+                            <td>Perro</td>
+                            <td>Bichon frise</td>
+                            <td>Pequeño</td>
+                            <td>Alergias</td>
+                            <td>Clamidófila</td>
+                            <td>Dog 2</td>
+                            <td>1</td>
+                            <td>Carolina</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Princesa</td>
+                            <td>Gato</td>
+                            <td>Bengalí</td>
+                            <td>Pequeño</td>
+                            <td>Leucemia felina</td>
+                            <td>Leishmania</td>
+                            <td>Cat 1</td>
+                            <td>2</td>
+                            <td>Juan</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Negra</td>
+                            <td>Gato</td>
+                            <td>Azul Ruso</td>
+                            <td>Falta de visión</td>
+                            <td>Conjuntivitis</td>
+                            <td>Otro</td>
+                            <td>Cat 2</td>
+                            <td>7</td>
+                            <td>Pedro</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Pomki</td>
+                            <td>Gato</td>
+                            <td>Bombay</td>
+                            <td>Tímido</td>
+                            <td>Atrofia de retina</td>
+                            <td>otro</td>
+                            <td>Cat 3</td>
+                            <td>11</td>
+                            <td>Jennifer</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Sofi</td>
+                            <td>Gato</td>
+                            <td>Bosque de Noruega</td>
+                            <td>Agresivo</td>
+                            <td>Otro</td>
+                            <td>Rabia</td>
+                            <td>Cat 4</td>
+                            <td>30</td>
+                            <td>María Elena</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Elena</td>
+                            <td>Gato</td>
+                            <td>Khao Manee</td>
+                            <td>Le falta una extremedidad</td>
+                            <td>Otitis</td>
+                            <td>Otro</td>
+                            <td>Cat 5</td>
+                            <td>25</td>
+                            <td>José</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Juan</td>
+                            <td>Perro</td>
+                            <td>Dálmata</td>
+                            <td>Problemas al caminar</td>
+                            <td>Le falta una extremidad</td>
+                            <td>Otro</td>
+                            <td>Dog 3</td>
+                            <td>3</td>
+                            <td>Bryan</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Keisha</td>
+                            <td>Gato</td>
+                            <td>Burmilla</td>
+                            <td>Mediano</td>
+                            <td>Alergias</td>
+                            <td>Parvovirus</td>
+                            <td>Cat 6</td>
+                            <td>7</td>
+                            <td>María</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Pedro</td>
+                            <td>Gato</td>
+                            <td>Cornish Rex</td>
+                            <td>Pequeño</td>
+                            <td>Otro</td>
+                            <td>Traqueitis</td>
+                            <td>Cat 7</td>
+                            <td>6</td>
+                            <td>Dayana</td>
+                        </tr>
+                    </table>
+
+                </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+
+</html>

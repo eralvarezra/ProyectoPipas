@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    background-color: rgba(240, 248, 255, 0.712);
+}
+
+ :root {
+    scroll-behavior: smooth;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+}
+
+header {
+    height: 100vh;
+    background-image: linear-gradient(120deg, rgba(132, 250, 175, 0.836) 0%, rgba(143, 210, 244, 0.425) 100%), url(../proyectopipasimgs/palmera.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.head {
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.hamburguer {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.menu-navegacion {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100%;
+    background-color: rgb(112, 202, 192);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: transform .3s ease-in-out;
+    transform: translate(110%);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.menu-navegacion a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.spread {
+    transform: translate(0);
+}
+
+.menu-navegacion {
+    color: #fff;
+    text-decoration: none;
+}
+
+.titulo {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.copy {
+    font-size: 25px;
+    color: white;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+/*Acerca de Nosotros*/
+
+.subtitulo {
+    text-align: center;
+    color: rgba(78, 88, 84, 0.863);
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    font-size: 40px;
+}
+
+.contenedor-servicio {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-servicio img {
+    width: 15%;
+}
+
+.checklist-servicio {
+    width: 45%;
+}
+
+.service {
+    margin-bottom: 20px;
+}
+
+.n-service {
+    margin-bottom: 7px;
+    color: rgba(78, 88, 84, 0.863);
+}
+
+
+/*Valores*/
+
+.section-valores {
+    width: 100%;
+    height: 40vh;
+    background-color: rgba(226, 248, 238, 0.835);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-valores {
+    width: 33%;
+    height: 40vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5%;
+    cursor: pointer;
+}
+
+.box-valores:hover .hover-valores {
+    display: flex !important;
+}
+
+.box-valores:hover img {
+    display: none;
+}
+
+.box-valores img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.box-valores .hover-valores {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(142, 226, 216, 0.897);
+    position: absolute;
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    transition: 4s all;
+}
+
+.hover-valores h3 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    text-transform: uppercase;
+}
+
+
+/*Equipo*/
+
+.experts {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-expert {
+    width: 100%;
+    text-align: center;
+    /*display: flex;*/
+    overflow: hidden;
+    position: relative;
+    margin: 1.5%;
+    cursor: pointer;
+}
+
+h1:hover .hover-expertos {
+    display: flex !important;
+}
+
+.box-expert:hover .hover-expertos {
+    display: flex !important;
+}
+
+
+/*
+.box-expert:hover img {
+    display: none;
+}
+*/
+
+.box-expert img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.experts>h1 {
+    text-align: center;
+}
+
+.box-expert .hover-expertos {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(142, 226, 216, 0.897);
+    position: absolute;
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    transition: 4s all;
+}
+
+.hover-expertos h2 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    text-transform: uppercase;
+}
+
+
+/* Footer*/
+
+footer {
+    background-color: rgb(145, 158, 165);
+    background-blend-mode: screen, overlay;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-us {
+    width: 200px;
+    color: #fff;
+}
+
+@media screen and (max-width:800px) {
+    .menu-navegacion {
+        width: 50vw;
+    }
+    .titulo {
+        font-size: 40px;
+    }
+    .contenedor-servicio img {
+        width: 80%;
+        margin-bottom: 40px;
+    }
+    .checklist-servicio {
+        width: 80%;
+    }
+    .service {
+        margin-bottom: 30px;
+    }
+    .img-galeria {
+        width: 45%;
+    }
+    .cont-expert {
+        width: 80%;
+    }
+    .footer-content {
+        justify-content: center;
+    }
+    .contact-us {
+        text-align: center;
+        width: 80%;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .menu-navegacion {
+        width: 65vh;
+    }
+    .hamburguer {
+        top: 20px;
+        right: 20px;
+    }
+    .titulo {
+        font-size: 30px;
+    }
+    .subtitulo {
+        font-size: 30px;
+    }
+    .img-galeria {
+        width: 95%;
+    }
+    .contact-us {
+        text-align: center;
+        width: 90%;
+        margin-bottom: 40px;
+    }
+}

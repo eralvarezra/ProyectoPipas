@@ -1,0 +1,120 @@
+main {
+    background-image: url('../proyectopipasimgs/pexels-lumn-406014.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: none;
+    height: 1000px;
+}
+
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 532px;
+    height: 1000px;
+    width: 700px;
+    background-color: aliceblue;
+}
+
+.div-NombreEmpresa>div {
+    text-align: center;
+    margin-top: 300px;
+}
+
+.form-desc,
+.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-left: 80px;
+}
+
+#logoEmpresa {
+    width: 400px;
+    text-align: center;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 490px;
+    width: 700px;
+    height: 1000px;
+    color: rgb(102, 102, 102);
+    background-color: aliceblue;
+}
+
+.div-Form>div {
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+h1 {
+    padding-top: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+#nombreMascota {
+    width: 239px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#caracteristicaEspecial.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 0px;
+}
+
+#tipoPadecimiento.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-left: 68px;
+}
+
+#tipoVacuna.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-left: 110px;
+}
+
+#btnSubmit {
+    margin-top: 10px;
+    height: 30px;
+    width: 70px;
+    color: rgb(240, 240, 240);
+    background-color: rgb(204, 97, 64);
+}
+
+#btmAgregar {
+    margin-top: 10px;
+    height: 30px;
+    width: 110px;
+    color: rgb(240, 240, 240);
+    background-color: rgb(204, 97, 64);
+}
+
+#btnFoto {
+    margin-top: 5px;
+    height: 35px;
+    width: 410px;
+    display: inline-flex;
+}
+
+.error-input {
+    border: 2px solid rgb(228, 20, 20);
+}

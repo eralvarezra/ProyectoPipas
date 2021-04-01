@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificar Servicios</title>
+    <link rel="stylesheet" href="../proyectoPipasCss/cssreset.css">
+    <link rel="stylesheet" href="../proyectoPipasCss/general.css">
+    <link rel="stylesheet" href="/proyectoPipasCss/calificarServicios.css">
+    <script src="https://kit.fontawesome.com/195d2b987b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="busqueda.html">Búsqueda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectoPipasImgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+</body>
+<main>
+
+    <section id="sct-form">
+
+        <div class="div-NombreEmpresa">
+
+            <img id="logoEmpresa" src="../proyectoPipasImgs/PEPPY DOGGO (1).png">
+        </div>
+        <form>
+            <div class="div-Form">
+                <h1>Calificar Servicio</h1>
+                <div class="calificarServicios">
+                    <label for="nombreProveedor">Proveedor:</label>
+                    <input id="nombreProveedor" type="text" disabled>
+                </div>
+                <div class="calificarServicios">
+                    <label id="txtarea-Comentario" for="txt-Usuario">Comentario: </label>
+                    <Textarea id="comentario" required></Textarea>
+                </div>
+                <br></br>
+                <div class="starContainer">
+                    <input type="radio" name="rate" id="rate5" value="5">
+                    <label for="rate5" class="fas fa-paw"></label>
+                    <input type="radio" name="rate" id="rate4" value="4">
+                    <label for="rate4" class="fas fa-paw"></label>
+                    <input type="radio" name="rate" id="rate3" value="3">
+                    <label for="rate3" class="fas fa-paw"></label>
+                    <input type="radio" name="rate" id="rate2" value="2">
+                    <label for="rate2" class="fas fa-paw"></label>
+                    <input type="radio" name="rate" id="rate1" value="1">
+                    <label for="rate1" class="fas fa-paw"></label>
+                </div>
+                <div class="numeros">
+                    <label>5</label>
+                    <label>4</label>
+                    <label>3</label>
+                    <label>2</label>
+                    <label>1</label>
+                </div>
+        </form>
+        <div>
+            <button type="button" id="btn-Calificar" class="btn">Calificar</button>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectoPipasImgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+<script src="../proyectoPipasJs/calificarServicio.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</html>

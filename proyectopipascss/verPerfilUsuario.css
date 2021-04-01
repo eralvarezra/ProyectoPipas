@@ -1,0 +1,116 @@
+    html {
+        font-family: Helvetica;
+    }
+    
+    .div-NombreEmpresa {
+        border: 3px solid rgb(102, 102, 102);
+        display: inline-block;
+        margin-left: 532px;
+        height: 850px;
+        width: 429px;
+        background-color: aliceblue;
+    }
+    
+    .div-NombreEmpresa>div {
+        text-align: center;
+        margin-top: 300px;
+    }
+    
+    .form-desc,
+    .Slct-Form {
+        width: 178px;
+        height: 24px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    #logoEmpresa {
+        width: 400px;
+        text-align: center;
+        padding-top: 200px;
+    }
+    
+    .div-Form {
+        border: 3px solid rgb(102, 102, 102);
+        display: inline-block;
+        text-align: center;
+        margin-right: 490px;
+        width: 690px;
+        height: 850px;
+        color: rgb(102, 102, 102);
+        background-color: aliceblue;
+    }
+    
+    .div-Form>div {
+        padding-right: 10px;
+        padding-top: 5px;
+    }
+    
+    .div-Form>h1 {
+        padding-top: 20px;
+        text-align: center;
+        color: rgb(204, 97, 64);
+    }
+    
+    #sct-form {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 100px;
+    }
+    
+    .div-Form>div>label {
+        width: 150px;
+        display: inline-block;
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .div-Form>div>input {
+        width: 150px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    #ubicationForm {
+        display: inline-block;
+        text-align: center;
+        margin-right: 490px;
+        width: 690px;
+        height: 800px;
+    }
+    
+    .map-container {
+        display: inline;
+        float: left;
+        min-width: 110px;
+        padding-bottom: 20px;
+    }
+    
+    .map-container {
+        width: 90%;
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+    
+    #map {
+        min-width: 200px;
+        width: 60%;
+        height: 100px;
+        float: right;
+    }
+    
+    .div-Form #terminos {
+        padding-top: 5px;
+        padding-right: 200px;
+        height: 60px;
+    }
+    
+    #terminos {
+        float: left;
+        padding-top: 15px;
+        padding-left: 124px
+    }
+    
+    #error-input {
+        border: 2px solid rgb(228, 20, 20);
+    }

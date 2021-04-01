@@ -1,0 +1,113 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 250px;
+    height: 800px;
+    width: 690px;
+    background-color: aliceblue;
+}
+
+body {
+    background-image: url('../proyectopipasimgs/fondo3.jpg');
+    background-position: center;
+    object-fit: cover;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 20px;
+    color: black;
+}
+
+.btn-radio {
+    margin-bottom: 20px;
+}
+
+table {
+    border: rgb(102, 102, 102) 4px solid;
+}
+
+#logoEmpresa {
+    width: 300px;
+    margin-left: 150px;
+    padding-top: 200px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    justify-content: center;
+    margin-right: 555px;
+    width: 690px;
+    height: 800px;
+    background-color: aliceblue;
+}
+
+#sct-form {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 77px;
+}
+
+.div-Form>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-form {
+    margin-top: 40px;
+    height: 30px;
+    margin-left: 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn-form>button {
+    margin-left: 20px;
+    height: 30px;
+}
+
+#main-container {
+    margin: 50px auto;
+    width: 600px;
+}
+
+table {
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #E69138;
+    border-bottom: solid 5px rgb(102, 102, 102);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #0CC49F;
+    color: white;
+}
+
+.error-input {
+    border: 2px solid rgb(228, 20, 20);
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

@@ -1,0 +1,53 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 290px;
+    margin-top: 150px;
+    height: 550px;
+    width: 400px;
+}
+
+#logoEmpresa {
+    width: 400px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    margin-right: 280px;
+    margin-top: 150px;
+    width: 700px;
+    height: 550px;
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-top: 60px;
+    position: center;
+}
+
+.btn-container {
+    width: 100%;
+    margin-top: 30px;
+    height: 150px;
+}
+
+.btn-Main {
+    height: 100px;
+    width: 100px;
+    margin-left: 60px;
+}
+
+@media only screen and (max-width: 400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

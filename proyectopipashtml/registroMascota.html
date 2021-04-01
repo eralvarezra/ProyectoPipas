@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Mascota</title>
+    <link rel="stylesheet" href="../proyectopipascss/registroMascota.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+
+    <main>
+        <section id="sct-form" class="sct-form">
+            <div class="div-NombreEmpresa">
+                <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
+            </div>
+            <br>
+            <!--Identificador del formulario mascota-->
+            <form id="formularioMascota" name="formularioMascota">
+                <div class="div-Form" id="div-Form">
+                    <div id="selectFormulario">
+                        <br>
+                        <h1>Datos de la mascota</h1>
+                        <br>
+                        <div>
+                            <label for="nombreMascota">Nombre de la mascota:</label>
+                            <input type="text" id="nombreMascota" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="tipoMascota">Tipo:</label>
+                            <select class="Slct-Form" id="tipoMascota">
+                            <option value="gato">Gato</option>
+                            <option value="perro" selected>Perro</option>
+                        </select>
+                        </div>
+                        <div class="selectTipoRaza">
+                            <label for="tipoRaza">Raza:</label>
+                            <select class="Slct-Form" id="tipoRaza">
+                                <option value="Shepsky" selected>Shepsky</option>
+                                <option value="Poodle">Poodle estándar</option>
+                                <option value="Pastor">Pastor</option>
+                                <option value="Mastin">Mastin inglés</option>
+                                <option value="Pug">Pug</option>
+                                <option value="Rott">Rottweiler</option>
+                                <option value="Persa">Persa</option>
+                                <option value="Siberiano">Siberiano</option>
+                                <option value="Siames">Siamés</option>
+                                <option value="Main">Maine Coon</option>
+                                <option value="Bengala">Gato Bengala</option>
+                                <option value="Azul">Azul Ruso</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+
+                        <label>Foto</label>
+                        <input type="file" name="foto" id="btnFoto" placeholder="imagen" />
+
+                        <div id="selectTipoCaracteristica">
+                            <label>Características especiales: </label>
+                            <select class="Slct-Form" id="caracteristicaEspecial">
+                            <option value="grande ">Grande</option>
+                            <option value="mediano ">Mediano</option>
+                            <option value="leFaltaExtremedidad ">Le falta una extremidadad</option>
+                            <option value="faltaVision ">Falta de visión</option>
+                            <option value="agresivo ">Agresivo</option>
+                            <option value="timido ">Tímido</option>
+                            <option value="problemasCaminar ">Problemas al caminar</option>
+                          </select>
+                            <input type="button" id="btnAgregar" value="+">
+                            <input type="button" id="btnRemover" value="-">
+                            <span id="agregarAca" class=".Slct-Form"></span>
+                        </div>
+
+                        <br>
+                        <div id="selectTipoPadecimiento">
+                            <label>Padecimientos: </label>
+                            <select class="Slct-Form " id="tipoPadecimiento">
+                                <option value="atrofia">Atrofia de retina</option>
+                                <option value="leucemia">Leucemia felina</option>
+                                <option value="rinotraqueitis">Rinotraqueítis felina</option>
+                                <option value="calicivirosis">Calicivirosis</option>
+                                <option value="neumonitis">Neumonitis</option>
+                                <option value="alergias">Alergias</option>
+                                <option value="otitis">Otitis</option>
+                                <option value="conjuntivitis">Conjuntivitis</option>
+                                <option value="otro">Otro</option>
+                              </select>
+                            <input type="button" id="btpAgregar" value="+">
+                            <input type="button" id="btpRemover" value="-">
+                            <span id="agregarAca" class=".Slct-Form"></span>
+                        </div>
+
+                        <div id="selectTipoVacuna">
+                            <label>Vacuna: </label>
+                            <select class="Slct-Form " id="tipoVacuna">
+                                <option value="leptospirosis">Leptospirosis</option>
+                                <option value="traqueitis">Traqueítis infecciosa</option>
+                                <option value="leishmania">Leishmania</option>
+                                <option value="rabia">Rabia</option>
+                                <option value="parvovirus">Parvovirus felin</option>
+                                <option value="herpesvirus">Herpesvirus</option>
+                                <option value="calicivirus">Calicivirus</option>
+                                <option value="clamidofila">Clamidófila</option>
+                                <option value="otro">Otro</option>
+                              </select>
+                            <input type="button" id="btvAgregar" value="+">
+                            <input type="button" id="btvRemover" value="-">
+                            <span id="agregarAca" class=".Slct-Form"></span>
+                            <br><br>
+                        </div>
+                        <input type="button" id="btmAgregar" value="Nueva Mascota">
+                        <!-- <input type="button" id="btmRemover" value="Eliminar mascota"> -->
+                        <span id="agregarAca" class=".Slct-Form"></span>
+                        <br>
+                    </div>
+                    <div>
+                        <button type="button" id="btnSubmit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <!--El footer va dentro del body-->
+    <footer class="footer">
+        <div id="div-footer">
+            <div class="div-logo">
+                <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+            </div>
+            <div>
+                <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+            </div>
+        </div>
+    </footer>
+    <!--acordarse si van a usar una librería  externa, como el sweet alert. importar el script.-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../proyectopipasjs/registroMascota.js"></script>
+</body>
+
+</html>

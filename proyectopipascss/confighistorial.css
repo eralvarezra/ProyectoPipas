@@ -1,0 +1,79 @@
+body {
+    background-image: url('../proyectopipasimgs/fondohistorial.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: none;
+}
+
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 295px;
+    height: 800px;
+    width: 690px;
+    background-color: aliceblue;
+}
+
+#sct-form {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 77px;
+}
+
+#logoEmpresa {
+    width: 400px;
+    text-align: center;
+    padding-top: 300px;
+    padding-left: 30px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    justify-content: center;
+    margin-right: 450px;
+    width: 690px;
+    height: 800px;
+    background-color: aliceblue;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 15x;
+    padding-bottom: 45px;
+}
+
+#main-container {
+    margin-left: 50px;
+    margin-bottom: 100px;
+    width: 600px;
+}
+
+table {
+    border: rgb(102, 102, 102) 4px solid;
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #E69138;
+    border-bottom: solid 5px rgb(102, 102, 102);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #0CC49F;
+    color: white;
+}

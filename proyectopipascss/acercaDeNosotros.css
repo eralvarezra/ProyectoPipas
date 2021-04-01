@@ -1,0 +1,73 @@
+.sct-form {
+    display: inline-block;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    height: 2px;
+}
+
+main {
+    background-image: url('../proyectopipasimgs/pexels-helena-lopes-1938123.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: none;
+    margin-top: 77px;
+    height: 870px;
+}
+
+.sct-form {
+    display: inline-block;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    height: 2px;
+}
+
+.cuadroPrincipal1>div {
+    margin-left: 100px;
+    display: inline-block;
+}
+
+.cuadroPrincipal2>div {
+    margin-left: 400px;
+    display: inline-block;
+}
+
+#cuadro1 {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 800px;
+    margin-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px;
+}
+
+.cuadroPrincipal1 {
+    padding-bottom: 30px;
+    margin-right: 200px;
+}
+
+.cuadroPrincipal2 {
+    margin-right: 200px;
+}
+
+#cuadro3 {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 800px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    background-color: aliceblue;
+}

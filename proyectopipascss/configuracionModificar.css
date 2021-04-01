@@ -1,0 +1,99 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 500px;
+    height: 650px;
+    width: 300px;
+    margin-top: 40px;
+    background-color: aliceblue;
+}
+
+main {
+    background-image: url('../proyectopipasimgs/pexels-eddie-galaxy-3628100.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: none;
+    height: 1000px;
+}
+
+.form-desc,
+.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.radio-Form {
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+}
+
+#logoEmpresa {
+    width: 300px;
+    text-align: center;
+    padding-top: 280px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 490px;
+    width: 690px;
+    height: 620px;
+    padding-top: 30px;
+    background-color: aliceblue;
+    margin-top: 40px;
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 77px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 270px;
+}
+
+.div-Form>div>label {
+    width: 300px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+#btnSubmit {
+    float: left;
+    margin-top: 20px;
+    margin-left: 120px;
+    height: 30px;
+    width: 150px;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 20px;
+}
+
+#btnCancel {
+    float: left;
+    margin-top: 20px;
+    margin-left: 200px;
+    height: 30px;
+    width: 70px;
+}
+
+.error-input {
+    border: 2px solid rgb(228, 20, 20);
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

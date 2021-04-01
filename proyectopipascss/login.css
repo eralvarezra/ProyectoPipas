@@ -1,0 +1,86 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 532px;
+    margin-top: 200px;
+    height: 400px;
+    width: 429px;
+    background-color: aliceblue;
+}
+
+.div-NombreEmpresa>div {
+    text-align: center;
+    margin-top: 250px;
+}
+
+#logoEmpresa {
+    width: 400px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 490px;
+    margin-top: 200px;
+    width: 400px;
+    height: 400px;
+    background-color: aliceblue;
+}
+
+.div-Form>div {
+    padding-right: 20px;
+    margin-right: 10px;
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+    padding: 60px;
+    font-size: 20px;
+    color: black;
+}
+
+.div-Form>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 110px;
+    height: 30px;
+    width: 200px;
+    background-color: #e69138;
+    color: white;
+}
+
+#btn-Login,
+#btn-FormRegistro {
+    margin-top: 50px;
+}
+
+.error-input {
+    border: 2px solid rgb(228, 20, 20);
+}
+
+#btn-FormRegistro,
+#btn-Cancelar {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

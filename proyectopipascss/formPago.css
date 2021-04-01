@@ -1,0 +1,102 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 532px;
+    height: 500px;
+    width: 429px;
+    background-color: aliceblue;
+}
+
+.div-NombreEmpresa>div {
+    text-align: center;
+    margin-top: 250px;
+}
+
+.form-desc,
+.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#logoEmpresa {
+    width: 400px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 490px;
+    width: 690px;
+    height: 500px;
+    background-color: aliceblue;
+}
+
+.div-Form h1 {
+    font-size: xx-large;
+    font-size: bold;
+}
+
+.div-Form>div {
+    padding-right: 20px;
+    margin-right: 10px;
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 175px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#fechaVencimiento {
+    padding-right: 34px;
+}
+
+.div-Form>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+#btnSubmit {
+    float: left;
+    margin-top: 40px;
+    margin-left: 405px;
+    height: 30px;
+    width: 200px;
+    background-color: #e69138;
+    color: white;
+}
+
+.error-input {
+    border: 2px solid rgb(228, 20, 20);
+}
+
+.fecha input {
+    width: 140px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}
+
+#btnVolver {
+    float: left;
+    margin-top: 40px;
+    margin-left: 405px;
+    height: 30px;
+    width: 200px;
+    background-color: #e69138;
+    color: white;
+}

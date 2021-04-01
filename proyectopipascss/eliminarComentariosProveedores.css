@@ -1,0 +1,122 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 532px;
+    height: 700px;
+    width: 300px;
+    background-color: aliceblue;
+}
+
+main {
+    background-image: url('../proyectopipasimgs/pexels-inge-wallumrød-126407.jpg');
+    background-position: center;
+    height: 812px;
+    object-fit: cover;
+}
+
+.form-desc,
+.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+table {
+    border: rgb(102, 102, 102) 4px solid;
+}
+
+#logoEmpresa {
+    width: 300px;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    justify-content: center;
+    margin-right: 386px;
+    width: 690px;
+    height: 700px;
+    background-color: aliceblue;
+}
+
+#sct-form {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 77px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 140px;
+}
+
+.div-Form>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-form {
+    margin-top: 40px;
+    height: 30px;
+    margin-left: 420px;
+}
+
+.btn-form>button {
+    margin-left: 20px;
+    height: 30px;
+}
+
+
+/*
+	Color fondo: #632432;
+	Color header: 246355;
+	Color borde: 0F362D;
+	Color iluminado: 369681;
+*/
+
+#main-container {
+    margin: 50px auto;
+    width: 600px;
+}
+
+table {
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #E69138;
+    border-bottom: solid 5px rgb(102, 102, 102);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #0CC49F;
+    color: white;
+}
+
+.error-input {
+    border: 2px solid rgb(228, 20, 20);
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

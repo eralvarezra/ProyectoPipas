@@ -1,0 +1,108 @@
+ .div-NombreEmpresa {
+     border: 3px solid rgb(102, 102, 102);
+     display: inline-block;
+     margin-left: 320px;
+     margin-top: 200px;
+     height: 500px;
+     width: 429px;
+ }
+ 
+ .div-NombreEmpresa>div {
+     text-align: center;
+     margin-top: 250px;
+ }
+ 
+ #logoEmpresa {
+     width: 400px;
+     text-align: center;
+     padding-top: 2px;
+ }
+ 
+ .div-Form {
+     border: 3px solid rgb(102, 102, 102);
+     display: inline-block;
+     text-align: center;
+     margin-right: 450px;
+     margin-top: 200px;
+     width: 720px;
+     height: 500px;
+ }
+ 
+ .calificarServicios {
+     display: block;
+     margin-top: 20px;
+     text-align: center;
+ }
+ 
+ .div-Form>div {
+     padding-right: 20px;
+     margin-right: 10px;
+ }
+ 
+ #sct-form {
+     display: flex;
+     justify-content: space-around;
+ }
+ 
+ h1 {
+     text-align: center;
+     padding: 60px;
+ }
+ 
+ #comentario {
+     width: 300px;
+     height: 100px;
+     margin-left: 55px;
+ }
+ 
+ #txtarea-Comentario {
+     margin-left: 100px;
+     margin-top: 10px;
+     position: absolute;
+     display: flex;
+ }
+ 
+ .starContainer input {
+     display: none;
+ }
+ 
+ .starContainer label {
+     margin-left: 5px;
+     padding: 10px;
+     font-size: 40px;
+ }
+ 
+ input:not(:checked)~label:hover,
+ input:not(:checked)~label:hover~label {
+     color: #0cc49f;
+ }
+ 
+ input:checked~label {
+     color: #0cc49f;
+ }
+ 
+ .btn {
+     float: left;
+     margin-top: 30px;
+     margin-left: 250px;
+     height: 30px;
+     width: 200px;
+     background-color: #e69138;
+     color: white;
+ }
+ 
+ .numeros label {
+     margin-left: 5px;
+     padding: 25px;
+     font-weight: bold;
+ }
+ 
+ .error-input {
+     border: 2px solid rgb(228, 20, 20);
+ }
+ 
+ @media only screen and (max-width: 400px) {
+     .div-NombreEmpresa>#inicioSesion {
+         margin-right: 20px;
+     }
+ }

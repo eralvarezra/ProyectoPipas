@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/perfilProveedores.css">
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="busqueda.html">Búsqueda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+</body>
+<main>
+
+    <section id="sct-form">
+
+        <div class="div-NombreEmpresa">
+            <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
+        </div>
+
+        <div class="div-Form" id="btn-form">
+            <div>
+                <div id="icon-Notificaciones">
+                    <div id="notificaciones" class="number-Notificaciones">5</div>
+                    <table id="tb-notificaciones">
+                        <tr>
+                            <td>not</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <h1>Bienvenido</h1>
+            <div class="btn-container">
+                <div>
+                    <button type="button" id="btn-HistorialServicios" class="btn-Main"></button>
+                </div>
+                <div>
+                    <button type="button" id="btn-DatosPerfil" class="btn-Main"></button>
+                </div>
+                <div class="label-izq">Historial servicios</div>
+                <div class="label-der">Datos perfil</div>
+            </div>
+            <div class="btn-container">
+
+                <div>
+                    <button type="button" id="btn-PerfilMascotas" class="btn-Main"></button>
+                </div>
+
+                <div>
+                    <button type="button" id="btn-VerFacturas" class="btn-Main"></button>
+                </div>
+                <div class="label-izq">Reporte facturas </div>
+                <div id="labelMisMascotas" class="label-der">Mis mascotas</div>
+            </div>
+            <div>
+                <div>
+                    <button type="button" id="btn-logout"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+<script src="../proyectopipasjs/perfilP.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</html>

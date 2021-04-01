@@ -1,0 +1,113 @@
+.div-NombreEmpresa {
+    border: transparent;
+    display: inline-block;
+    margin-left: 100px;
+    height: 350px;
+    width: 300px;
+    margin-top: 200px;
+    background-color: transparent;
+}
+
+main {
+    background-image: url('../proyectoPipasImgs/reporte1.png.jpg');
+    background-size: cover;
+    transform: none;
+    height: 1200px;
+}
+
+.form-desc,
+.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.btn-radio {
+    margin-bottom: 15px;
+}
+
+#logoEmpresa {
+    width: 200px;
+    justify-content: center;
+}
+
+.menu {
+    color: #E69138;
+    font-size: 22px;
+}
+
+.menu:hover {
+    color: #0CC49F;
+}
+
+.menu:active {
+    color: rgb(231, 238, 237);
+}
+
+#sct-form {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    color: #E69138;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+}
+
+.btn-form {
+    margin-top: 40px;
+    height: 30px;
+    margin-left: 50px;
+}
+
+.btn-form>button {
+    margin-left: 10px;
+    height: 30px;
+}
+
+#main-container {
+    margin: 50px auto;
+    width: 600px;
+}
+
+table {
+    border: rgb(102, 102, 102) 4px solid;
+    background-color: white;
+    text-align: center;
+    border-collapse: collapse;
+    width: 70px;
+    margin-top: 40px;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #E69138;
+    border-bottom: solid 5px rgb(102, 102, 102);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #0CC49F;
+    color: white;
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

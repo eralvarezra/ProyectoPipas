@@ -1,0 +1,22 @@
+#sct-principal {
+    padding-top: 150px;
+    margin-left: 200px;
+}
+
+.caja {
+    border: 5px solid #e69138;
+    box-sizing: border-box;
+    padding: 1em;
+    display: inline-block;
+    width: 25%;
+    margin: 0.5%;
+    margin-top: 5px;
+    padding: 1em;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+}
+
+.img {
+    max-width: 100%;
+}

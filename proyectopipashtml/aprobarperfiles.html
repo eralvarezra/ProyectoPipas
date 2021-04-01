@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprobar o Rechazar Proveedor</title>
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/aprobarperfiles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="../proyectopipasjs/informacionProvincias.js"></script>
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="busqueda.html">Búsqueda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+</body>
+<main>
+    <section id="sct-form">
+        <div class="div-NombreEmpresa">
+            <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
+        </div>
+        <form>
+            <div class="div-Form">
+                <h2>Datos del Proveedor de Servicios</h2>
+
+                <div>
+                    <br><br> Tipo de Proveedor: Empresa<br><br> Tipo de Servicio: Hotel y paseo <br><br> Tipo de Identificación: 123434354<br><br> Persona a cargo: Cesar Milán<br><br> Contraseña: xxxxxxx<br><br> Teléfono: 2334-5667
+                    <br><br>Correo Electronico: cesarmilán@gmail.com
+                </div>
+
+                <form id="ubicationForm" onsubmit="return sendData();">
+
+                    <br> Provincia: San José<br><br> Cantón: Moravia <br><br> Distrito: San Vicente<br>
+
+                    <div class="map-container">
+                        <label>Locación en el mapa:</label>
+                        <div id="map"></div>
+
+                        <br><label>Comentarios: </label><br>
+                        <p class="comentario">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero accusamus esse totam recusandae aliquid modi. Libero.</p>
+
+
+                        <label>Descargar Archivos Adjuntos</label> <br>
+                        <label>Si Acepto términos y condiciones </label>
+                        <div class="button">
+                            <button type="button" class="btn">Rechazar</button>
+                            <button type="button" class="btn">Aprobar</button>
+                        </div>
+                </form>
+    </section>
+</main>
+
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3cOQNB4cQjQDSGWiB_nT2H2pEOuD3w60&callback=initMap" async defer></script>
+<script src="../proyectopipasjs/aprobarperfiles.js"></script>
+
+</html>

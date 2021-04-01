@@ -1,0 +1,36 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logoEsquinaForm {
+    width: 40px;
+    float: right;
+    padding-top: 10px;
+}
+
+.sct-formPrincipal {
+    background-image: url('../proyectopipasimgs/pexels-lumn-406014.jpg');
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    transform: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.div-Principal {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin: 15px;
+    margin-top: 400px;
+    padding: 1px 10px 30px 20px;
+    background-color: aliceblue;
+    width: 100%;
+    margin-bottom: 500px;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}

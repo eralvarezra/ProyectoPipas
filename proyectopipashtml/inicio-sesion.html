@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/login.css">
+    <link rel="stylesheet" href="../proyectopipascss/popup.css">
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+</body>
+<main>
+
+    <section id="sct-form">
+
+        <div class="div-NombreEmpresa">
+
+            <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
+        </div>
+        <form>
+            <div class="div-Form">
+                <h1>Inicio de Sesión</h1>
+
+                <div>
+                    <label for="txt-Usuario">Correo Electrónico: </label>
+                    <input type="email" id="txt-Usuario" name="email-Usuario" placeholder="correo@dirección.com" required>
+                </div>
+                <div>
+                    <label for="pass-Contrasena">Contraseña:</label>
+                    <input type="password" id="pass-Contrasena" name="pass-Contrasena" placeholder="************" required>
+                </div>
+                <div>
+                    <button type="button" id="btn-Login" class="btn">Iniciar Sesión</button>
+                </div>
+                <div>
+                    <button type="button" id="btn-Registrarse" class="btn">Registrarse</button>
+                </div>
+                <div>
+                    <button type="button" id="btn-PassReset" class="btn">He olvidado mi contraseña</button>
+                </div>
+        </form>
+    </section>
+    <section id="sct-popupRegistro">
+        <div class="popup">
+            <div id="popupRegistro">
+                <div>
+                    <label id="lbl-rbtnRegistro" for="rbtn-TipoRegistro"> Seleccione su perfil:</label>
+                </div>
+                <br></br>
+                <div>
+                    <input type="radio" name="rbtn-TipoRegistro" id="rbtn-Proveedor" value="P">Proveedor
+                    <input type="radio" name="rbtn-TipoRegistro" id="rbtn-Usuario" value="U">Usuario
+                </div>
+            </div>
+            <div>
+                <button type="button" id="btn-FormRegistro" class="btn">Registrarse</button>
+            </div>
+            <div>
+                <button type="button" id="btn-Cancelar" class="btn">Volver</button>
+            </div>
+        </div>
+    </section>
+    <section id="sct-popupPassReset">
+        <div class="popup">
+            <div id="popupPassReset">
+                <div>
+                    <label for="txt-Usuario">Correo electrónico:</label>
+                    <br></br>
+                    <input type="email" id="txt-correoPassReset" placeholder="correo@dirección.com">
+                </div>
+                <div>
+                    <button type="button" id="btn-PassResetEnviar" class="btn">Recuperar Contraseña</button>
+                </div>
+                <div>
+                    <button type="button" id="btn-Volver" class="btn">Volver</button>
+                </div>
+            </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+<script src="../proyectopipasjs/login.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</html>

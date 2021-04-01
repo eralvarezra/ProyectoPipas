@@ -1,0 +1,104 @@
+html {
+    font-family: Helvetica;
+}
+
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 150px;
+    width: 429px;
+    background-color: aliceblue;
+    margin-top: 100px;
+}
+
+.form-desc,
+.Slct-Form {
+    width: 178px;
+    height: 24px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#logoEmpresa {
+    width: 400px;
+    text-align: center;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 490px;
+    width: 690px;
+    height: 500px;
+    color: rgb(102, 102, 102);
+    background-color: aliceblue;
+    margin-top: 100px;
+}
+
+.div-Form>div {
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.div-Form>h1 {
+    padding-top: 20px;
+    text-align: center;
+    color: rgb(204, 97, 64);
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.div-Form>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.div-Form>div>input {
+    width: 150px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#sct-mascota>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.div-Form #terminos {
+    padding-top: 5px;
+    padding-right: 200px;
+    height: 60px;
+}
+
+#error-input {
+    border: 2px solid rgb(228, 20, 20);
+}
+
+#sct-EliminarMascota {
+    text-align: center;
+    background-color: RGBA(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#popupEliminar {
+    margin-top: 300px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

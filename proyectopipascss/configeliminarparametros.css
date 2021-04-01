@@ -1,0 +1,70 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    float: left;
+    text-align: center;
+    margin-left: 300px;
+    height: 800px;
+    width: 600px;
+    margin-top: 40px;
+    background-color: rgb(240, 248, 255);
+}
+
+body {
+    background-image: url('../proyectopipasimgs/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: none;
+}
+
+h1 {
+    padding: 60px;
+}
+
+.form-desc,
+.Slct-Form {
+    width: 178px;
+    height: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#logoEmpresa {
+    width: 300px;
+    text-align: center;
+    padding-top: 200px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 500px;
+    width: 600px;
+    height: 800px;
+    background-color: aliceblue;
+    margin-top: 40px;
+}
+
+#sct-form {
+    display: flex;
+    margin-top: 77px;
+    padding-bottom: 100px;
+}
+
+.button {
+    padding-top: 40px;
+}
+
+.div-Form>div>label {
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

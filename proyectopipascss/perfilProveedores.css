@@ -1,0 +1,166 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 150px;
+    width: 429px;
+    background-color: aliceblue;
+}
+
+h1 {
+    padding-top: 60px;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 390px;
+    width: 690px;
+    height: 575px;
+    color: rgb(102, 102, 102);
+    background-color: aliceblue;
+}
+
+#logoEmpresa {
+    width: 400px;
+    text-align: center;
+    padding-top: 120px;
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.btn-container {
+    width: 100%;
+    margin-top: 30px;
+    height: 150px;
+}
+
+.btn-Main {
+    height: 100px;
+    width: 100px;
+}
+
+.number-Notificaciones {
+    background-color: rgb(204, 73, 79);
+    color: white;
+    font-size: medium;
+    position: absolute;
+    text-align: left;
+    padding: 2px;
+    border-radius: 25px;
+}
+
+#btn-logout {
+    background-image: Url(../proyectopipasimgs/logout.png);
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    display: flex;
+    float: right;
+    margin-right: 15px;
+    position: absolute;
+    top: 450px;
+    right: 470px;
+    border: none;
+    background-color: aliceblue;
+}
+
+#icon-Notificaciones {
+    background-image: Url(../proyectopipasimgs/sleigh-bell.png);
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    display: flex;
+    float: right;
+    margin: 15px;
+    position: relative;
+    border: none;
+    background-color: aliceblue;
+}
+
+#icon-Notificaciones table {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 5px 5px;
+    background-color: #0cc49f;
+    border: 1px solid #0cc49f;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    font-size: small;
+}
+
+#icon-Notificaciones :hover {
+    background-color: #fff;
+    color: #0cc49f;
+}
+
+#icon-Notificaciones table {
+    display: none;
+}
+
+#icon-Notificaciones:hover table {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+
+#btn-HistorialServicios {
+    background-image: url(../proyectopipasimgs/history.png);
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: center;
+    Float: left;
+    margin-left: 200px;
+}
+
+#btn-VerFacturas {
+    background-image: url(../proyectopipasimgs/invoice.png);
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: center;
+    float: left;
+    display: block;
+    margin-left: 200px;
+}
+
+#btn-DatosPerfil {
+    background-image: url(../proyectopipasimgs/dog8.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    display: block;
+    margin-right: 200px;
+}
+
+#btn-PerfilMascotas {
+    background-image: url(../proyectopipasimgs/cat15.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 200px;
+}
+
+.label-izq {
+    float: left;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 190px;
+}
+
+.label-der {
+    float: right;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 400px;
+}
+
+#labelMisMascotas {
+    display: block;
+}

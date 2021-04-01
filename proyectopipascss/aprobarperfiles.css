@@ -1,0 +1,101 @@
+.div-NombreEmpresa {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    margin-left: 250px;
+    height: 800px;
+    width: 690px;
+    background-color: aliceblue;
+}
+
+.div-NombreEmpresa>div {
+    text-align: center;
+    margin-top: 250px;
+}
+
+body {
+    background-image: url('../proyectopipasimgs/fondo5.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: none;
+}
+
+#logoEmpresa {
+    width: 300px;
+    text-align: center;
+    padding-top: 340px;
+    margin-left: 90px;
+}
+
+#ubicationForm {
+    display: inline-block;
+    text-align: center;
+    margin-right: 490px;
+    width: 690px;
+    height: 500px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    color: black;
+}
+
+.div-Form {
+    border: 3px solid rgb(102, 102, 102);
+    display: inline-block;
+    text-align: center;
+    margin-right: 490px;
+    margin-bottom: 20px;
+    width: 690px;
+    height: 800px;
+    background-color: aliceblue;
+}
+
+.map-container {
+    display: inline;
+    float: left;
+    min-width: 110px;
+    padding-bottom: 20px;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+#map {
+    min-width: 200px;
+    width: 60%;
+    height: 100px;
+}
+
+.div-Form>div {
+    padding-right: 20px;
+    margin-right: 10px;
+}
+
+#sct-form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.div-Form>div>label {
+    display: inline-block;
+    margin-right: 200px;
+    margin-bottom: 15px;
+}
+
+.comentario {
+    margin-right: 200px;
+}
+
+.button {
+    margin-top: 20px;
+    margin-right: 215px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
+}

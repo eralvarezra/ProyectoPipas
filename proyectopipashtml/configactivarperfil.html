@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activar Perfiles</title>
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/configactivarperfil.css">
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="busqueda.html">Búsqueda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+    <main>
+        <section id="sct-form">
+            <div class="div-NombreEmpresa">
+                <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
+            </div>
+            <form>
+                <div class="div-Form">
+                    <h2>Activar Perfiles</h2>
+                    <div id="main-container">
+                        <div class="btn-radio">
+                            <div>
+                                <input type="radio" name="estado" id="estado">
+                                <label for="">Activo</label> <br><br>
+                                <input type="radio" name="estado" id="estado">
+                                <label for="">Inactivo</label> <br><br>
+                                <input type="radio" name="estado" id="estado">
+                                <label for="">Desbloqueados</label> <br><br>
+                                <input type="radio" name="estado" id="estado">
+                                <label for="">Todos</label> <br>
+                            </div>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> </th>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td><input type="checkbox" value="check1"></td>
+                                <td>1</td>
+                                <td>Proveedor A</td>
+                                <td>Inactivo</td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" value="check2"></td>
+                                <td>2</td>
+                                <td>Proveedor B</td>
+                                <td>Bloqueado</td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" value="check3"></td>
+                                <td>3</td>
+                                <td>Proveedor C</td>
+                                <td>Inactivo</td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" value="check3"></td>
+                                <td>4</td>
+                                <td>Proveedor C</td>
+                                <td>Activo</td>
+
+                            </tr>
+                        </table>
+                        <div class="btn-form">
+                            <button type="button" class="btn" id="btn-eliminar">Eliminar</button>
+                            <button type="button" class="btn" id="btn-cancelar">Inactivar</button><br><br>
+                            <button type="button" class="btn" id="btn-cancelar">Activar</button>
+                            <button type="button" class="btn" id="btn-cancelar">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+
+</html>
