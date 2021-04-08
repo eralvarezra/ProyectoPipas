@@ -32,7 +32,8 @@ function readCookie(pCookie) {
 const obtener_datosLogin = async() => {
     let datos_login = await obtener_login();
     console.log(datos_login);
-    console.log(datos_login.correo);
+    console.log(datos_login[0]);
+    console.log(datos_login[0].correo);
 }
 
 const obtenerDatos = () => {
