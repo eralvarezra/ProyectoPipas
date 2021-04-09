@@ -37,10 +37,12 @@ const obtenerDatos = () => {
 
     console.log('El comentario es: ', comentarioFinal);
     console.log('La calificación es: ', valor);
+    registrar_calificacion("Michis Felices", comentarioFinal, valor);
     Swal.fire({
         'icon': 'success',
         'title': '¡Gracias!',
         'text': 'Apreciamos la retroalimentación nos ayuda a mejorar'
+
     }).then(() => {
         location.href = "perfil.html";
     });
@@ -73,6 +75,7 @@ const validar = () => {
     }
     if (error == false) {
         obtenerDatos();
+
     } else {
         Swal.fire({
             'icon': 'warning',
@@ -80,6 +83,8 @@ const validar = () => {
             'text': 'Por favor revise los campos resaltados, e incluya un comentario.'
         });
     }
+
 }
+
 
 btnCalificar.addEventListener('click', validar);

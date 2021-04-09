@@ -53,3 +53,4 @@ function handleError(res, reason, message, code) {
 app.use('/api', require('./routes/login.route'));
 app.use('/api', require('./routes/registroMascota.route'));
 app.use('/api', require('./routes/registroProveedor.route'));
+app.use('/api', require('./routes/calificarServicios.route'));
