@@ -45,6 +45,14 @@
                         <input type="text" id="apellidos" required>
                     </div>
                     <div>
+                        <label>Tipo de identificación: </label>
+                        <select class="Slct-Form" id="tipoIdentificacion">
+                        <option value="dimex">Dimex</option>
+                        <option value="cedulaJuridica">Cédula Jurídica</option>
+                        <option value="cedulaNacional">Cédula Nacional</option>=
+                      </select>
+                    </div>
+                    <div>
                         <label for="identificacion">Identificación:</label>
                         <input type="text" id="identificacion" required>
                     </div>
@@ -115,6 +123,15 @@
                     <div>
                         <label for="correoElectronico">Correo electrónico:</label>
                         <input type="text" id="correoElectronico" placeholder="@" required>
+                    </div>
+
+                    <div>
+                        <label>Numero Tarjeta: </label>
+                        <input type="text" id="numTarjeta" placeholder="15 Visa, 16 MasterCard" required>
+                    </div>
+                    <div class="fecha">
+                        <label>Fecha de vencimiento: </label>
+                        <input type="text" id="fechaVencimiento" placeholder="mm/yyyy" required>
                     </div>
                     <br>
                     <label>Foto</label>
