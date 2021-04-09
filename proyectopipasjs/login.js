@@ -39,15 +39,11 @@ const validar_correo = (pEmail, pDatos_login, pPass) => {
     return tipo;
 }
 
-/*const tipoPerfil = (pEmail, pDatos_login) => {
-    let tipoPerfil;
-    if (pDatos_login.find(correo => correo.correo === pEmail) && pDatos_login.find(pass => pass.contrasena === pPass)) {
-        tipo = true;
-    } else {
-        tipo = false;
-    }
-    return tipo;
-}*/
+const tipoPerfil = (pEmail, pDatos_login) => {
+    let indexperfil = pDatos_login.findIndex(correo => correo.correo === pEmail);
+    let tipoPerfil = pDatos_login[indexperfil].tipoPerfil;
+    return tipoPerfil;
+}
 
 const obtenerDatos = async() => {
     // este paso es para consultar la base de datos y traer correo y pass
@@ -61,6 +57,8 @@ const obtenerDatos = async() => {
     if (perfilValido = true) {
         document.cookie = "correo=" + email;
         document.cookie = "contrasena=" + pass;
+        let tipo = tipoPerfil(email, datos_login);
+        document.cookie = "tipoPerfil=" + tipo;
 
         Swal.fire({
             'icon': 'success',
@@ -68,8 +66,13 @@ const obtenerDatos = async() => {
             'text': 'EL MORENOTE!! ^_^'
         }).then(() => {
             limpiar();
-            location.href = 'configuracion.html'
+
         });
+        if (tipo === "A") {
+            location.href = 'configuracion.html'
+        } else if (tipo === "U" || tipo === "P") {
+            location.href = 'perfil.html'
+        }
     }
 }
 
