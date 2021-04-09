@@ -29,68 +29,47 @@ function readCookie(pCookie) {
     }
 }
 
-const obtener_datosLogin = async() => {
-    let datos_login = await obtener_login();
-    console.log(datos_login);
-    console.log(datos_login[0]);
-    console.log(datos_login[0].correo);
+const validar_correo = (pEmail, pDatos_login, pPass) => {
+    let tipo;
+    if (pDatos_login.find(correo => correo.correo === pEmail) && pDatos_login.find(pass => pass.contrasena === pPass)) {
+        tipo = true;
+    } else {
+        tipo = false;
+    }
+    return tipo;
 }
 
-const obtenerDatos = () => {
-    obtener_datosLogin();
+/*const tipoPerfil = (pEmail, pDatos_login) => {
+    let tipoPerfil;
+    if (pDatos_login.find(correo => correo.correo === pEmail) && pDatos_login.find(pass => pass.contrasena === pPass)) {
+        tipo = true;
+    } else {
+        tipo = false;
+    }
+    return tipo;
+}*/
+
+const obtenerDatos = async() => {
+    // este paso es para consultar la base de datos y traer correo y pass
     let email = correoElectronico.value;
     let pass = contrasena.value;
+    var datos_login = await obtener_login();
+    let perfilValido = validar_correo(email, datos_login, pass);
 
-    let tipoperfil = readCookie("tipoperfil");
-    let correoValidacion = readCookie("correo");
-    let passwordValidacion = readCookie("password");
 
-    correoValidacion = correoValidacion.replace("=", "");
-    passwordValidacion = passwordValidacion.replace("=", "");
 
-    if (correoValidacion === email && passwordValidacion === pass) {
-        limpiar();
+    if (perfilValido = true) {
+        document.cookie = "correo=" + email;
+        document.cookie = "contrasena=" + pass;
 
         Swal.fire({
             'icon': 'success',
             'title': 'Bienvenido',
-            'text': 'PETLOVER a su servicio'
+            'text': 'EL MORENOTE!! ^_^'
         }).then(() => {
             limpiar();
-            location.href = 'perfil.html'
+            location.href = 'configuracion.html'
         });
-    } else {
-        if (email === "adminPetLover@gmail.com" && pass === "contraSena22!") {
-            tipoperfil = "A";
-            document.cookie = "tipoperfil=" + tipoperfil;
-            Swal.fire({
-                'icon': 'success',
-                'title': 'Bienvenido',
-                'text': 'PETLOVER a su servicio'
-            }).then(() => {
-                limpiar();
-                location.href = 'configuracion.html'
-            });
-        } else {
-            if (email === "eric.alvarez@gmail.com" && pass === "30204E@@ras2312!") {
-                tipoperfil = "U";
-                document.cookie = "tipoperfil=" + tipoperfil;
-                Swal.fire({
-                    'icon': 'success',
-                    'title': 'Bienvenido',
-                    'text': 'PETLOVER a su servicio'
-                }).then(() => {
-                    limpiar();
-                    location.href = 'perfil.html'
-                });
-            } else {
-                Swal.fire({
-                    'icon': 'warning',
-                    'title': 'Su cuenta no existe',
-                    'text': 'Por favor registrese e intente de nuevo.'
-                });
-            }
-        }
     }
 }
 
