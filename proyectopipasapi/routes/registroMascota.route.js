@@ -48,4 +48,29 @@ router.get('/listar-mascota', (req, res) => {
 
 });
 
+router.put('/modificar-Mascota', (req, res) => {
+    Mascota.updateOne({
+        nombreMascota: req.body.nombreMascota
+    }, {
+        $set: {
+            tipoRaza: req.body.tipoRaza,
+            caracteristicaEspecial: req.body.caracteristicaEspecial,
+            tipoPadecimiento: req.body.tipoPadecimiento,
+            tipoVacuna: req.body.tipoVacuna
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar los datos de su mascota",
+                err
+            });
+        } else {
+            res.json({
+                msj: "Los cambios se hicieron satisfactoriamente.",
+                info
+            })
+        }
+    });
+});
+
 module.exports = router;
