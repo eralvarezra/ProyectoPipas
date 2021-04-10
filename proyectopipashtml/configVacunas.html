@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/configTablas.css">
+    <title>Listar Vacunas</title>
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="busqueda.html">Búsqueda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+    <h2>Vacunas</h2>
+    <div id="filtro">
+        <label for="txt-filtro">Filtro:</label>
+        <input type="text" id="txt-filtro">
+    </div>
+    <a href="../proyectopipashtml/configparametros.html" id="atras">Atrás</a>
+    <table id="tbl-resultados">
+        <thead>
+            <tr>
+                <th>Vacunas</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</body>
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+
+</html>
