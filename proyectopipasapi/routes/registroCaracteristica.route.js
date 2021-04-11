@@ -4,16 +4,16 @@ const express = require('express');
 // Redirige las peticiones, inputs o punto de llegada. Va a ser igual al router de express(express denos un router)
 const router = express.Router();
 // Uselo para el modelo comentarios, NO lleva el js
-const Vacuna = require('../models/registroVacunas.model');
+const Caracteristica = require('../models/registrotipoCaracteristica.model');
 
 //Endpoint para registrar comentarios
-router.post('/registrar-vacuna', (req, res) => {
-    let nueva_vacuna = new Vacuna({
-        nombreVacuna: req.body.nombreVacuna,
+router.post('/registrar-caracteristica', (req, res) => {
+    let nueva_caracteristica = new Caracteristica({
+        nombreCaracteristica: req.body.nombreCaracteristica,
         fechaCreacion: req.body.fechaCreacion
     });
 
-    nueva_vacuna.save((err, vacuna_db) => {
+    nueva_caracteristica.save((err, caracteristicas_db) => {
         if (err) {
             res.json({
                 msj: "No se pudo registrar el dato",
@@ -22,23 +22,23 @@ router.post('/registrar-vacuna', (req, res) => {
         } else {
             res.json({
                 msj: "El dato se registró exitosamente.",
-                vacuna_db
+                caracteristicas_db
             })
         }
     });
 });
 
-router.get('/listar-vacunas', (req, res) => {
+router.get('/listar-caracteristicas', (req, res) => {
     //Funcionalidad, obtener lista
     //find: sacar datos de una coleccion
-    Vacuna.find((err, lista_vacuna) => {
+    Caracteristica.find((err, lista_caracteristica) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las vacunas",
+                msj: "No se pudieron mostrar las caracteristicas",
                 err
             });
         } else {
-            res.json({ lista_vacuna })
+            res.json({ lista_caracteristica })
         }
     })
 });
