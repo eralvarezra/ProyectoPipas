@@ -12,15 +12,15 @@ const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identifica
             tipoIdentificacion: tipoIdentificacion,
             identificacion: identificacion,
             fechaNacimiento: fechaNacimiento,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
             genero: genero,
             cantidadMascotas: cantidadMascotas,
             telefono: telefono,
             correo: correo,
             numeroTarjeta: numeroTarjeta,
             fechaVencimiento: fechaVencimiento,
-            provincia: provincia,
-            canton: canton,
-            distrito: distrito,
             foto: foto
         }
     }).then((response) => {
