@@ -22,17 +22,17 @@ const registrar_caracteristica = async(nombreCaracteristica, fechaCreacion) => {
     });
 };
 const listar_caracteristicas = async() => {
-    let lista_caracteristicas = [];
+    let lista_caracteristica = [];
     await axios({
         method: 'get',
         url: 'http://localhost:3000/api/listar-caracteristicas',
         responseType: 'json'
     }).then((response) => {
-        lista_caracteristicas = response.data.lista_caracteristicas;
+        lista_caracteristica = response.data.lista_caracteristica;
     }).catch((response) => {
         console.log(response.data.msj + " " + response.data.err);
     });
-    return lista_caracteristicas;
+    return lista_caracteristica;
 }
 
 const modificar_caracteristica = async(_id, nombreCaracteristica) => {
