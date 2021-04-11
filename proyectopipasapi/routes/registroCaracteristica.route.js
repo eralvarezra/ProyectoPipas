@@ -42,8 +42,41 @@ router.get('/listar-caracteristicas', (req, res) => {
         }
     })
 });
-
-
+router.put('/modificar-caracteristicas', (req, res) => {
+    Caracteristica.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            nombreCaracteristica: req.body.nombreCaracteristica,
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar la caracteristica",
+                err
+            });
+        } else {
+            res.json({
+                msj: "La caracteristica fue modificada exitosamente",
+                info
+            })
+        }
+    });
+});
+router.delete('/eliminar-caracteristica', (req, res) => {
+    let _id = req.body._id;
+    Caracteristica.findOneAndRemove({ _id: _id }, (err) => {
+        if (err) {
+            res.json({
+                msj: 'No se pudo eliminar la caracteristica',
+                err
+            });
+        } else {
+            res.json({
+                msj: 'La caracteristica se eliminó correctamente'
+            });
+        }
+    });
+});
 //Luego se va al server.js
-
 module.exports = router;

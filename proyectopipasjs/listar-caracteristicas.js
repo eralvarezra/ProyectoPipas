@@ -30,7 +30,7 @@ const mostrar_modal_editar = async(caracteristica) => {
                 showCancelButton: true
             });
             if (accept) {
-                modificar_caracteristica(formValues[0]);
+                modificar_caracteristica(formValues[0], formValues[1]);
             }
         }
     }

@@ -50,7 +50,7 @@ const modificar_caracteristica = async(_id, nombreCaracteristica) => {
             'title': 'La caracteristica ha sido actualizada',
             'text': response.msj
         }).then(() => {
-            mostrar_caracteristicas();
+            mostrar_caracteristica();
         });
     }).catch((response) => {
         Swal.fire({
