@@ -14,15 +14,15 @@ router.post('/registrar-usuario', (req, res) => {
         tipoIdentificacion: req.body.tipoIdentificacion,
         identificacion: req.body.identificacion,
         fechaNacimiento: req.body.fechaNacimiento,
+        provincia: req.body.provincia,
+        canton: req.body.canton,
+        distrito: req.body.distrito,
         genero: req.body.genero,
         cantidadMascotas: req.body.cantidadMascotas,
         telefono: req.body.telefono,
         correo: req.body.correo,
         numeroTarjeta: req.body.numeroTarjeta,
         fechaVencimiento: req.body.fechaVencimiento,
-        provincia: req.body.provincia,
-        canton: req.body.canton,
-        distrito: req.body.distrito,
         foto: req.body.foto,
     });
 
