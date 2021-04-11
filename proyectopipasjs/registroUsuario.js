@@ -17,6 +17,23 @@ const fotoUsuario = document.querySelector("#img-foto");
 const condicionesUsuario = document.querySelector('#condiciones');
 const botonEnviar = document.querySelector("#btnSubmit");
 
+const limpiar = () => {
+    nombreUsuario.value = '';
+    apellidoUsuario.value = '';
+    tipoIdentificacionUsuario.value = '';
+    identificacionUsuario.value = '';
+    fechaNacimientoUsuario.value = '';
+    provinciasUsuario.value = '';
+    cantonesUsuario.value = '';
+    distritosUsuario.value = '';
+    generoUsuario.value = '';
+    cantidadMascotaUsuario.value = '';
+    telefonoContactoUsuario.value = '';
+    correoElectronicoUsuario.value = '';
+    numeroTarjetaUsuario.value = '';
+    fechaVencimientoUsuario.value = '';
+};
+
 const obtenerDatos = () => {
     let nombre = nombreUsuario.value;
     let apellidos = apellidoUsuario.value;
@@ -40,43 +57,12 @@ const obtenerDatos = () => {
 };
 
 
-// enviar_informacion(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-//     telefono, correo, numTarjeta, vencimiento, foto);
-
-// registrar_usuario(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-//     telefono, correo, numTarjeta, vencimiento, foto);
-
-
-// console.log(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-//     telefono, correo, numTarjeta, vencimiento, foto);
-
-// Swal.fire({
-//     'icon': 'success',
-//     'title': 'Hemos recibido su solicitud de registro',
-//     'text': 'Le estaremos enviando un correo electrónico con la confirmación'
-// }).then(() => {
-//     limpiar();
-// });
-
-const limpiar = () => {
-    nombreUsuario.value = '';
-    apellidoUsuario.value = ''
-    tipoIdentificacionUsuario.value = ''
-    identificacionUsuario.value = ''
-    provinciasUsuario.value = ''
-    cantonesUsuario.value = ''
-    distritosUsuario.value = ''
-    generoUsuario.value = ''
-    fechaNacimientoUsuario.value = ''
-    telefonoContactoUsuario.value = ''
-    correoElectronicoUsuario.value = ''
-    numeroTarjetaUsuario.value = ''
-    fechaVencimientoUsuario.value = ''
-};
-
 const validar = () => {
     let error = false;
     let campos_requeridos = document.querySelectorAll(':required');
+    let regExp_formatoTelefono = /^[0-9]{4}\-[0-9]{4}$/;
+    let regExp_formatoEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+    let regExp_numeroTarjeta = /4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}/;
 
     campos_requeridos.forEach(campo => {
         if (campo.value == '') {
@@ -86,21 +72,21 @@ const validar = () => {
             campo.classList.remove('error-input');
         }
     });
-    let regExp_formatoTelefono = /^[0-9]{4}\-[0-9]{4}$/;
+
     if (!regExp_formatoTelefono.test(telefonoContactoUsuario.value)) {
         error = true;
         telefonoContactoUsuario.classList.add('error-input');
     } else {
         telefonoContactoUsuario.classList.remove('error-input');
     }
-    let regExp_formatoEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
     if (!regExp_formatoEmail.test(correoElectronicoUsuario.value)) {
         error = true;
         correoElectronicoUsuario.classList.add('error-input');
     } else {
         correoElectronicoUsuario.classList.remove('error-input');
     }
-    let regExp_numeroTarjeta = /4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}/;
+
     if (!regExp_numeroTarjeta.test(numeroTarjetaUsuario.value)) {
         error = true;
         numeroTarjetaUsuario.classList.add('error-input');
@@ -113,15 +99,12 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo enviar su mensaje',
+            'title': 'No se pudieron registrar sus datos',
             'text': 'Por favor revise los campos resaltados'
         });
     }
 
 };
 
-
-const btvAgregar = document.getElementById("btvAgregar");
-const btvRemover = document.getElementById("btvRemover");
 
 botonEnviar.addEventListener('click', validar);

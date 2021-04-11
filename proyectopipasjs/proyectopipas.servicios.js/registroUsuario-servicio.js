@@ -1,7 +1,6 @@
 'use strict';
 
-const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascotas,
-    telefono, correo, numeroTarjeta, fechaVencimiento, foto) => {
+const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascotas, telefono, correo, numeroTarjeta, fechaVencimiento, foto) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-usuario',
