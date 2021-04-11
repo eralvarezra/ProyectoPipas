@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo</title>
     <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
     <link rel="stylesheet" href="../proyectopipascss/general.css">
-    <link rel="stylesheet" href="../proyectopipascss/configTablas.css">
-    <title>Listar Vacunas</title>
+    <link rel="stylesheet" href="../proyectopipascss/agregarGeneral.css">
 </head>
 
 <body>
@@ -24,25 +24,26 @@
             <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
         </nav>
     </header>
-    <h2>Vacunas</h2>
-    <div id="filtro">
-        <label for="txt-filtro">Filtro:</label>
-        <input type="text" id="txt-filtro">
-    </div>
-    <a href="../proyectopipashtml/configparametros.html" id="atras">Atrás</a>
-    <a href="../proyectopipashtml/agregar_Vacuna.html" id="agregar">Agregar</a>
+    <main>
+        <section class="sct-contenedor-principal">
+            <form>
 
-    <table id="tbl-resultados">
-        <thead>
-            <tr>
-                <th>Vacunas</th>
-                <th>Fecha</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+                <div>
+                    <label for="txt-nombre">Tipo:</label>
+                    <input type="text" id="txt-general" required class="swal2-input">
+                    </select>
+                </div>
+
+                <div class="sct-boton">
+                    <button type="button" id="btn-enviar" class="btn">Agregar</button>
+                    <button type="button" id="btn-enviar" class="btn">Cancelar</button>
+                </div>
+            </form>
+            <div class="img-container "></div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
 
 </body>
 <footer class="footer">
