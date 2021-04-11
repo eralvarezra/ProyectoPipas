@@ -13,6 +13,31 @@ const botonConfirmar = document.querySelector("#btnConfirmar");
 const botonVolver = document.querySelector("#btnVolver");
 const popupConfirmar = document.querySelector("#sct-EliminarMascota");
 
+function readCookie(pCookie) {
+    const nameString = pCookie + "="
+
+    const value = document.cookie.split(";").filter(item => {
+        return item.includes(nameString)
+    })
+
+    if (value.length) {
+        return value[0].substring(nameString.length, value[0].length)
+    } else {
+        return ""
+    }
+}
+
+const inicializar_perfil = () => {
+    let correo = readCookie("correo");
+    let lista_actual = document.getElementById('nombreMascota');
+    let listaMascotas = obtener_mascotas();
+    console.log(listaMascotas);
+    console.log(lista_actual);
+    console.log(correo);
+
+
+}
+
 const obtenerDatos = () => {
     let nombreMascota = nombreMascotaU.value;
     let tipoMascota = tipoMascotaU.value;
@@ -162,3 +187,5 @@ botonNueva.addEventListener('click', nueva);
 botonEliminar.addEventListener('click', eliminar);
 botonConfirmar.addEventListener("click", confirmar)
 botonVolver.addEventListener('click', volver);
+
+window.onload = inicializar_perfil;
