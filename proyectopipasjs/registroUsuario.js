@@ -26,14 +26,16 @@ const enviar_informacion = async() => {
     let provincia = provinciasUsuario.value;
     let canton = cantonesUsuario.value;
     let distrito = distritosUsuario.value;
-    let genero = generoUsuario.value;
+    let genero = "femenino";
     let cantidadMascota = cantidadMascotaUsuario.value;
     let telefono = telefonoContactoUsuario.value;
     let correo = correoElectronicoUsuario.value;
     let numTarjeta = numeroTarjetaUsuario.value;
     let vencimiento = fechaVencimientoUsuario.value;
-    let foto = fotoUsuario.value;
+    let foto = "www.foto.com";
     await registrar_usuario(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
+        telefono, correo, numTarjeta, vencimiento, foto);
+    console.log(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
         telefono, correo, numTarjeta, vencimiento, foto);
 }
 

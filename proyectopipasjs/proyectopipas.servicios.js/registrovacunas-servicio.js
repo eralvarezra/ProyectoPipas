@@ -1,3 +1,5 @@
+'use strict';
+
 const registrar_vacunas = async(nombreVacuna, fechaCreacion) => {
     await axios({
         method: 'post',
