@@ -17,7 +17,7 @@ const fotoUsuario = document.querySelector("#img-foto");
 const condicionesUsuario = document.querySelector('#condiciones');
 const botonEnviar = document.querySelector("#btnSubmit");
 
-const enviar_informacion = async() => {
+const obtenerDatos = () => {
     let nombre = nombreUsuario.value;
     let apellidos = apellidoUsuario.value;
     let tipoIdentificacion = tipoIdentificacionUsuario.value;
@@ -33,103 +33,51 @@ const enviar_informacion = async() => {
     let numTarjeta = numeroTarjetaUsuario.value;
     let vencimiento = fechaVencimientoUsuario.value;
     let foto = "www.foto.com";
-    await registrar_usuario(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-        telefono, correo, numTarjeta, vencimiento, foto);
-    console.log(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-        telefono, correo, numTarjeta, vencimiento, foto);
-}
 
-const obtenerDatos = () => {
-    let nombre = nombreUsuario.value;
-    let apellidos = apellidoUsuario.value;
-    let tipoIdentificacion = tipoIdentificacionUsuario.value;
-    let identificacion = identificacionUsuario.value;
-    let fechaNacimiento = fechaNacimientoUsuario.value;
-    let provincia = provinciasUsuario.value;
-    let canton = cantonesUsuario.value;
-    let distrito = distritosUsuario.value;
-    let genero = generoUsuario.value;
-    let cantidadMascota = cantidadMascotaUsuario.value;
-    let telefono = telefonoContactoUsuario.value;
-    let correo = correoElectronicoUsuario.value;
-    let numTarjeta = numeroTarjetaUsuario.value;
-    let vencimiento = fechaVencimientoUsuario.value;
-    let foto = fotoUsuario.value;
+    registrar_usuario(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota, telefono, correo, numTarjeta, vencimiento, foto);
 
-    document.cookie = "tipoperfil=U";
-    document.cookie = "nombreUsuario =" + nombre;
-    document.cookie = "apellidos=" + apellidos;
-    document.cookie = "identificacion =" + tipoIdentificacion;
-    document.cookie = "identificacionUsuario =" + identificacion;
-    document.cookie = "fechaNacimiento=" + fechaNacimiento;
-    document.cookie = "provinciaUsuario=" + provincia;
-    document.cookie = "cantonUsuario=" + canton;
-    document.cookie = "distritoUsuario=" + distrito;
-    document.cookie = "genero=" + genero;
-    document.cookie = "cantidadMascota=" + cantidadMascota;
-    document.cookie = "telefonoUsuario=" + telefonoContacto;
-    document.cookie = "correo=" + correo;
-    document.cookie = "numeroTarjeta=" + numTarjeta;
-    document.cookie = "fechaVencimientoTarjeta=" + vencimiento;
-    document.cookie = "fotoUsuario" + foto;
-    document.cookie = "password=" + "contraSena22!";
-
-    // console.log('El nombre del usuario es es: ' + nombre);
-    // console.log('Los apellidos del usuario es es: ' + apellidos);
-    // console.log('El tipo de identificación es: ', tipoIdentificacion);
-    // console.log('La cédula del usuario es es: ' + identificacion);
-    // console.log('La fecha de Nacimiento del usuario es es: ' + fechaNacimiento);
-    // console.log('La Provincia es: ' + provincia);
-    // console.log('El Canton es: ' + canton);
-    // console.log('El Distrito es: ' + distrito);
-    // console.log('El genero es: ' + genero);
-    // console.log('Cantidad de mascotas: ' + cantidadMascota);
-    // console.log('Eltelefono del usuario es : ' + telefonoContacto);
-    // console.log('El correo electronico  del usuario es : ' + correoElectronico);
-    // console.log('El numero de tarjeta es: ' + numTarjeta);
-    // console.log('La fecha de vencimiento de la tarjeta es; ' + vencimiento);
-    enviar_informacion();
+    console.log(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota, telefono, correo, numTarjeta, vencimiento, foto);
+};
 
 
+// enviar_informacion(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
+//     telefono, correo, numTarjeta, vencimiento, foto);
+
+// registrar_usuario(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
+//     telefono, correo, numTarjeta, vencimiento, foto);
 
 
-    // enviar_informacion(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-    //     telefono, correo, numTarjeta, vencimiento, foto);
+// console.log(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
+//     telefono, correo, numTarjeta, vencimiento, foto);
 
-    // registrar_usuario(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-    //     telefono, correo, numTarjeta, vencimiento, foto);
+// Swal.fire({
+//     'icon': 'success',
+//     'title': 'Hemos recibido su solicitud de registro',
+//     'text': 'Le estaremos enviando un correo electrónico con la confirmación'
+// }).then(() => {
+//     limpiar();
+// });
 
-
-    // console.log(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota,
-    //     telefono, correo, numTarjeta, vencimiento, foto);
-
-    // Swal.fire({
-    //     'icon': 'success',
-    //     'title': 'Hemos recibido su solicitud de registro',
-    //     'text': 'Le estaremos enviando un correo electrónico con la confirmación'
-    // }).then(() => {
-    //     limpiar();
-    // });
-}
 const limpiar = () => {
-    nombreUsuario.value = "";
-    apellidoUsuario.value = "";
-    tipoIdentificacionUsuario.value = "";
-    identificacionUsuario.value = "";
-    provinciasUsuario.value = "";
-    cantonesUsuario.value = "";
-    distritosUsuario.value = "";
-    generoUsuario.value = "";
-    fechaNacimientoUsuario.value = "";
-    telefonoContactoUsuario.value = "";
-    correoElectronicoUsuario.value = "";
-    numeroTarjetaUsuario.value = "";
-    fechaVencimientoUsuario.value = "";
-}
+    nombreUsuario.value = '';
+    apellidoUsuario.value = ''
+    tipoIdentificacionUsuario.value = ''
+    identificacionUsuario.value = ''
+    provinciasUsuario.value = ''
+    cantonesUsuario.value = ''
+    distritosUsuario.value = ''
+    generoUsuario.value = ''
+    fechaNacimientoUsuario.value = ''
+    telefonoContactoUsuario.value = ''
+    correoElectronicoUsuario.value = ''
+    numeroTarjetaUsuario.value = ''
+    fechaVencimientoUsuario.value = ''
+};
 
 const validar = () => {
     let error = false;
     let campos_requeridos = document.querySelectorAll(':required');
+
     campos_requeridos.forEach(campo => {
         if (campo.value == '') {
             error = true;
@@ -170,13 +118,8 @@ const validar = () => {
         });
     }
 
-}
+};
 
-const btnAgregar = document.getElementById("btnAgregar");
-const btnRemover = document.getElementById("btnRemover");
-
-const btpAgregar = document.getElementById("btpAgregar");
-const btpRemover = document.getElementById("btpRemover");
 
 const btvAgregar = document.getElementById("btvAgregar");
 const btvRemover = document.getElementById("btvRemover");
