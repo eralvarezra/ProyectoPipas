@@ -47,7 +47,7 @@ const mostrar_padecimiento = async() => {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = padecimiento.nombrePadecimiento;
-
+            fila.insertCell().innerHTML = padecimiento.fechaCreacion;
             let celda_editar = fila.insertCell();
             let boton_editar = document.createElement('button');
             boton_editar.classList.add("far")
