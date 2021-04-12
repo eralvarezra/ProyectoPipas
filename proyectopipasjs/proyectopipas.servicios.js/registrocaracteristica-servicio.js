@@ -74,7 +74,7 @@ const eliminar_caracteristica = async(_id) => {
             'icon': 'success',
             'text': response.msj
         }).then(() => {
-            mostrar_caracteristicas();
+            mostrar_caracteristica();
         });
     }).catch((response) => {
         Swal.fire({

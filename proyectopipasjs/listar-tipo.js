@@ -57,7 +57,7 @@ const mostrar_tipo = async() => {
             boton_editar.addEventListener('click', async() => {
                 mostrar_modal_editar(tipo);
             })
-            celda_editar.appendChild(tipo);
+            celda_editar.appendChild(boton_editar);
 
             //ELIMINAR:
             let celda_eliminar = fila.insertCell();
