@@ -147,6 +147,14 @@ h1 {
     margin-right: 200px;
 }
 
+#btn-AgregarServicio {
+    background-image: url(../proyectopipasimgs/cat13.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 200px;
+}
+
 .label-izq {
     float: left;
     position: absolute;
@@ -162,5 +170,9 @@ h1 {
 }
 
 #labelMisMascotas {
+    display: block;
+}
+
+#labelAgregarServicio {
     display: block;
 }
