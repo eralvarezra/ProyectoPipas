@@ -60,3 +60,4 @@ app.use('/api', require('./routes/registroCaracteristica.route'));
 app.use('/api', require('./routes/registroMetodo.route'));
 app.use('/api', require('./routes/registroPadecimiento.route'));
 app.use('/api', require('./routes/registroTipo.route'));
+app.use('/api', require('./routes/agregarServicio.route'));
