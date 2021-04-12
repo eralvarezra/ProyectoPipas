@@ -6,9 +6,40 @@ const btnPerfilMascotas = document.getElementById("btn-PerfilMascotas");
 const btnVerFacturas = document.getElementById("btn-VerFacturas");
 const btnlogout = document.getElementById("btn-logout");
 const btnMascotas = document.querySelector("#btn-PerfilMascotas");
+const btnAgregarServicios = document.querySelector('#btn-AgregarServicios');
 const labelMascotas = document.querySelector("#labelMisMascotas");
+const labelAgregarServicios = document.querySelector('#labelAgregarServicios');
+
 
 // esto es para leer cookies
+const mostrar = () => {
+    let tipoPerfil = readCookie("tipoPerfil");
+    tipoPerfil = tipoPerfil.replace("=", "");
+
+    if (tipoPerfil == "U") {
+        btnMascotas.style.display = "block";
+        labelMascotas.style.display = "block";
+    }
+    if (tipoPerfil == "P") {
+        btnMascotas.style.display = "none";
+        labelMascotas.style.display = "none";
+        btnlogout.style.marginTop = "175px";
+    }
+};
+
+const cerrarSesion = () => {
+    let tipoPerfil = "";
+    document.cookie = "tipoPerfil=" + tipoPerfil;
+    deleteAllCookies();
+    Swal.fire({
+        'icon': 'success',
+        'title': 'Hasta Pronto',
+        'text': 'PETLOVER a su servicio'
+    }).then(() => {
+        location.href = 'inicio-sesion.html';
+    });
+}
+
 function readCookie(pCookie) {
     const nameString = pCookie + "="
 
@@ -23,17 +54,6 @@ function readCookie(pCookie) {
     }
 }
 
-const datosPerfil = () => {
-    let tipoPerfil = readCookie("tipoperfil");
-    tipoPerfil = tipoPerfil.replace("=", "");
-    if (tipoPerfil == "U") {
-        location.href = "verMiPerfilUsuario.html";
-    }
-    if (tipoPerfil == "P") {
-        location.href = "verMiPerfilProveedor.html";
-    }
-}
-
 function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 
@@ -44,40 +64,20 @@ function deleteAllCookies() {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
 }
-
-const cerrarSesion = () => {
-    let tipoPerfil = "";
-    document.cookie = "tipoperfil=" + tipoPerfil;
-    deleteAllCookies();
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Hasta Pronto',
-        'text': 'PETLOVER a su servicio'
-    }).then(() => {
-        location.href = 'inicio-sesion.html';
-    });
-}
-
-const mostrar = () => {
-    let tipoPerfil = readCookie("tipoperfil");
-    tipoPerfil = tipoPerfil.replace("=", "");
-
-    if (tipoPerfil == "U") {
-        btnMascotas.style.display = "block";
-        labelMascotas.style.display = "block";
-    }
-    if (tipoPerfil == "P") {
-        btnMascotas.style.display = "none";
-        labelMascotas.style.display = "none";
-        btnlogout.style.marginTop = "175px";
-    }
-};
-
 btnHistorialServicios.addEventListener('click', () => {
     location.href = "confighistorial.html";
 })
 
-btnDatosPerfil.addEventListener('click', datosPerfil);
+btnDatosPerfil.addEventListener('click', () => {
+    let tipoPerfil = readCookie("tipoPerfil");
+    tipoPerfil = tipoPerfil.replace("=", "");
+    if (tipoPerfil == "U") {
+        location.href = "verMiPerfilUsuario.html";
+    }
+    if (tipoPerfil == "P") {
+        location.href = "verMiPerfilProveedor.html";
+    }
+});
 
 btnPerfilMascotas.addEventListener('click', () => {
     location.href = "verPerfilMascota.html";
