@@ -47,6 +47,7 @@ const mostrar_tipo = async() => {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = tipo.nombreTipo;
+            fila.insertCell().innerHTML = tipo.fechaCreacion;
 
             let celda_editar = fila.insertCell();
             let boton_editar = document.createElement('button');
