@@ -62,3 +62,4 @@ app.use('/api', require('./routes/registroPadecimiento.route'));
 app.use('/api', require('./routes/registroTipo.route'));
 app.use('/api', require('./routes/agregarServicio.route'));
 app.use('/api', require('./routes/registroRaza.route'));
+app.use('/api', require('./routes/registroImpuesto.route'));
