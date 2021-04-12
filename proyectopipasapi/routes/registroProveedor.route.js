@@ -11,7 +11,7 @@ router.post('/registrar-proveedor', (req, res) => {
         tipoIdentificacion: req.body.tipoIdentificacion,
         pAcargo: req.body.pAcargo,
         empresa: req.body.empresa,
-        contrasena: req.body.contraEmpresa,
+        contrasena: req.body.contrasena,
         telefono: req.body.telefono,
         correo: req.body.correo,
         provincias: req.body.provincias,
@@ -19,6 +19,7 @@ router.post('/registrar-proveedor', (req, res) => {
         distritos: req.body.distritos,
         comentarios: req.body.comentarios,
         myFile: req.body.myFile,
+        activo: req.body.activo
     });
 
     nuevo_proveedor.save((err, proveedor_db) => {

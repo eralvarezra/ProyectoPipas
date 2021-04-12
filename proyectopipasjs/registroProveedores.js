@@ -27,6 +27,9 @@ const obtenerDatos = () => {
     let canton = cantonesUsuario.value;
     let distrito = distritosUsuario.value;
     let comentario = comentarioUsuario.value;
+    let myFile = "www.laspatitas.com";
+    let activo = false;
+
 
     console.log('El tipo proveedor es: ', tipoProveedor);
     console.log('El tipo de servicio es: ', tipoServicio);
@@ -41,29 +44,17 @@ const obtenerDatos = () => {
     console.log('El Distrito es: ' + distrito);
     console.log('El Comentario es: ' + comentario);
 
-    // esto documenta los cookies
-    document.cookie = "tipoperfil=P";
-    document.cookie = "proveedor =" + tipoProveedor;
-    document.cookie = "servicio1 =" + tipoServicio;
-    document.cookie = "identificacion =" + tipoIdentificacion;
-    document.cookie = "idNumero =" + usuarioAcargo;
-    document.cookie = "empresa =" + empresa;
-    document.cookie = "password =" + contraEmpresa;
-    document.cookie = "telefono =" + telefono;
-    document.cookie = "correo =" + correo;
-    document.cookie = "provincia =" + provincia;
-    document.cookie = "canton =" + canton;
-    document.cookie = "distrito =" + distrito;
-    document.cookie = 'comentario =' + comentario;
+    registrar_proveedor(tipoProveedor, tipoServicio, tipoIdentificacion, pAcargo, empresa, contraEmpresa, telefono, correo, provincia, canton, distrito, comentario, myFile, activo);
 
     Swal.fire({
         'icon': 'success',
         'title': 'Su mensaje ha sido enviado',
         'text': 'Nos pondremos en contacto con usted lo antes posible'
     }).then(() => {
+        location.href = "../proyectopipashtml/registroProveedores.html";
         limpiar();
     });
-    location.href = "../proyectopipashtml/registroProveedoresNotificacion.html";
+
 }
 const limpiar = () => {
     //.value permite tanto obtener el valor como asignarlo
