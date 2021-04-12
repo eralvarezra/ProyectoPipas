@@ -57,3 +57,5 @@ app.use('/api', require('./routes/calificarServicios.route'));
 app.use('/api', require('./routes/registroUsuario.routes'));
 app.use('/api', require('./routes/registroVacunas.route'));
 app.use('/api', require('./routes/registroCaracteristica.route'));
+app.use('/api', require('./routes/registroMetodo.route'));
+app.use('/api', require('./routes/registroPadecimiento.route'));
