@@ -86,7 +86,7 @@ btnPerfilMascotas.addEventListener('click', () => {
 });
 
 btnAgregarServicio.addEventListener('click', () => {
-    location.href = "configAgregarServicio.html";
+    location.href = "AgregarServicio.html";
 });
 
 btnVerFacturas.addEventListener('click', () => {
