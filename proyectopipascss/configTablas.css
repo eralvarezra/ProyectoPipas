@@ -5,6 +5,13 @@
 
 #tbl-resultados>thead>tr>th {
     padding-right: 100px;
+    text-align: center;
+}
+
+#tbl-resultados>thead>tr {
+    width: 10%;
+    text-align: center;
+    padding-top: 20px;
 }
 
 #filtro {
@@ -23,4 +30,33 @@ h2 {
     margin-top: 500px;
     margin-left: 40px;
     margin-right: 40px;
+}
+
+table {
+    border: rgb(102, 102, 102) 4px solid;
+    background-color: white;
+    text-align: center;
+    border-collapse: collapse;
+    width: 70px;
+    margin-top: 40px;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #E69138;
+    border-bottom: solid 5px rgb(102, 102, 102);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #0CC49F;
+    color: white;
 }
