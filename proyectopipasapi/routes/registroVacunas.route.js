@@ -44,6 +44,43 @@ router.get('/listar-vacunas', (req, res) => {
 });
 
 
+router.put('/modificar-vacunas', (req, res) => {
+    Vacuna.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            nombreVacuna: req.body.nombreVacuna,
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar la vacuna",
+                err
+            });
+        } else {
+            res.json({
+                msj: "La vacuna fue modificada exitosamente",
+                info
+            })
+        }
+    });
+});
+router.delete('/eliminar-vacuna', (req, res) => {
+    let _id = req.body._id;
+    Vacuna.findOneAndRemove({ _id: _id }, (err) => {
+        if (err) {
+            res.json({
+                msj: 'No se pudo eliminar la vacuna',
+                err
+            });
+        } else {
+            res.json({
+                msj: 'La vacuna se eliminó correctamente'
+            });
+        }
+    });
+});
+
 //Luego se va al server.js
 
 module.exports = router;

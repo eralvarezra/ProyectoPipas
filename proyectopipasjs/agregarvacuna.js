@@ -9,7 +9,7 @@ console.log(pFechaCreacion);
 const enviar_informacion = async() => {
     const pNombreVacuna = document.querySelector("#txt-general").value;
     console.log(pNombreVacuna);
-    await registrar_vacunas(pNombreVacuna, pFechaCreacion);
+    await registrar_vacuna(pNombreVacuna, pFechaCreacion);
     location.href = "../proyectopipashtml/configVacunas.html"
 }
 
