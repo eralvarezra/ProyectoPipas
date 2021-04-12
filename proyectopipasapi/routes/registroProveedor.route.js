@@ -11,7 +11,7 @@ router.post('/registrar-proveedor', (req, res) => {
         tipoIdentificacion: req.body.tipoIdentificacion,
         pAcargo: req.body.pAcargo,
         empresa: req.body.empresa,
-        contraEmpresa: req.body.contraEmpresa,
+        contrasena: req.body.contraEmpresa,
         telefono: req.body.telefono,
         correo: req.body.correo,
         provincias: req.body.provincias,
