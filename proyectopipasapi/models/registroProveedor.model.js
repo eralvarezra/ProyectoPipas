@@ -8,7 +8,7 @@ const schema_registroProveedor = new mongoose.Schema({
     tipoIdentificacion: { type: String, required: true, unique: false },
     pAcargo: { type: String, required: true, unique: false },
     empresa: { type: String, required: true, unique: false },
-    contraEmpresa: { type: String, required: true, unique: false },
+    contrasena: { type: String, required: true, unique: false },
     telefono: { type: String, required: true, unique: false },
     correo: { type: String, required: true, unique: false },
     provincias: { type: Number, required: true, unique: false },

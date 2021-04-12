@@ -55,18 +55,18 @@
                     <div>
                         <label>Tipo de servicio:</label>
                         <select class="Slct-Form" id="tipoServicio">
-                        <option value="perro">Perro</option>
-                        <option value="gato">Gato</option>
+                        <option value="perro" id="opcion"> Perro</option>
+                        <option value="gato" id="opcion">Gato</option>
                       </select>
                     </div>
                     <div>
                         <label>Tipo de servicio:</label>
                         <select class="Slct-Form" id="tipoServicio">
-                        <option value="hotel">Servicio hotel</option>
-                        <option value="pelo">Corte de pelo</option>
-                        <option value="caminado">Caminata de mascota</option>
-                        <option value="ducha">Baño de mascota</option>
-                        <option value="ducha">Transporte de mascotas</option>
+                        <option value="hotel" id="opcion">Servicio hotel</option>
+                        <option value="pelo" id="opcion">Corte de pelo</option>
+                        <option value="caminado" id="opcion">Caminata de mascota</option>
+                        <option value="ducha" id="opcion"> Baño de mascota</option>
+                        <option value="transporte"id="opcion">Transporte de mascotas</option>
                       </select>
                     </div>
                     <div>
@@ -113,34 +113,14 @@
                 </div>
             </div>
         </form>
-        <div class="div-infoProveedor">
-            <div class="titulo">
-                <h1 id="titulo-proveedor">Michis felices</h1>
-            </div>
-            <section class="seccion-descripcion">
-                <div class="img1"></div>
-                <div class="info">
-                    <h2>¡Bienvenido a haz llegado al mejor servicio y cuido para MICHIS! <br><br> Cuidaremos De Tu Mascota En Un Ambiente Cálido Y Con Mucho Cariño. Estancia Segura. <br><br> Contamos Con Muros Y Portones Para El Cuidado De Su Gato y Perro.
-                        Contactanos hoy mismo. Áreas verdes Y techadas. 🐶🐺 </h2>
-                </div>
-                <div class="starContainerProveedor">
-                    <h2>Calificación proveedor:</h2>
-                    <br>
-                    <input type="radio" name="rate" id="rate5" value=5>
-                    <label for="rate5" class="fas fa-paw"></label>
-                    <input type="radio" name="rate" id="rate4" value=4>
-                    <label for="rate4" class="fas fa-paw"></label>
-                    <input type="radio" name="rate" id="rate3" value=3>
-                    <label for="rate3" class="fas fa-paw"></label>
-                    <input type="radio" name="rate" id="rate2" value=2>
-                    <label for="rate2" class="fas fa-paw"></label>
-                    <input type="radio" name="rate" id="rate1" value=1>
-                    <label for="rate1" class="fas fa-paw"></label>
-                </div>
-                <a href="../proyectopipashtml/verProvedor.html">
-                    <button type="button" id="btnSubmitProveedor">Ver proveedor</button>
-                </a>
-            </section>
+        <div class="div-tablaResultados">
+            <table>
+                <tr>
+                    <th>Proveedor</th>
+                    <th>Descripcion</th>
+                    <th>Calificacion</th>
+                </tr>
+            </table>
         </div>
     </section>
 </main>

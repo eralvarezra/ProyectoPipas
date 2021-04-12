@@ -1,5 +1,4 @@
-    .div-infoProveedor {
-        border-bottom: 3px solid rgb(102, 102, 102);
+    .div-tablaResultados {
         height: 300px;
         width: 1300px;
         margin-left: 500px;
@@ -17,6 +16,7 @@
     
     .form-desc,
     .Slct-Form {
+        font-size: 15px;
         width: 200px;
         height: 24px;
         display: inline-block;
@@ -219,4 +219,21 @@
     
     .starContainerProveedor label {
         font-weight: 10px;
+    }
+    
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    
+    #option {
+        font-weight: 100px;
     }

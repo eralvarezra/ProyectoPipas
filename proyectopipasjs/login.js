@@ -13,6 +13,13 @@ const btnPassResetEnviar = document.getElementById("btn-PassResetEnviar");
 const correoPassReset = document.getElementById("txt-correoPassReset");
 const cookie = document.cookie;
 
+const obtenerDatos = () => {
+    // este paso es para consultar la base de datos y traer correo y pass
+    let email = correoElectronico.value;
+    let pass = contrasena.value;
+    validar_perfil(email, pass);
+};
+
 
 // leer cookies
 function readCookie(pCookie) {
@@ -29,80 +36,43 @@ function readCookie(pCookie) {
     }
 }
 
-const tipo_Perfil = async(pEmail) => {
-    let tipo;
+
+const validar_perfil = async(pEmail, pPass) => {
+
     let datos_login_admin = await obtener_login();
-    let datos_login_usuario = await obtener_login_proveedor();
-    let datos_login_proveedor = await obtener_login_usuario();
+    let datos_login_usuario = await obtener_login_usuario();
+    let datos_login_proveedor = await obtener_login_proveedor();
+    let correoValido = false;
+    let perfilValido = false;
+    let contrasenaValida = false;
 
     if (datos_login_admin.find(correo => correo.correo === pEmail)) {
-        tipo = "A";
+        correoValido = true;
+        document.cookie = "tipoPerfil=" + "A";
     } else if (datos_login_usuario.find(correo => correo.correo === pEmail)) {
-        tipo = "U";
+        correoValido = true;
+        document.cookie = "tipoPerfil=" + "U";
     } else if (datos_login_proveedor.find(correo => correo.correo === pEmail)) {
-        tipo = "P";
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se encuentra su perfil',
-            'text': 'El correo proporcionado no coincide con ningún perfil existente.'
-        })
-        tipo = "";
+        correoValido = true;
+        document.cookie = "tipoPerfil=" + "P";
     }
-    return tipo;
-}
 
-const validar_perfil = async(pEmail) => {
-    let datos_login_admin = await obtener_login();
-    let datos_login_usuario = await obtener_login_proveedor();
-    let datos_login_proveedor = await obtener_login_usuario();
-
-    console.log(datos_login_admin)
-    console.log(datos_login_Usuario)
-    console.log(datos_login_proveedor)
-
-    if (datos_login_admin.find(correo => correo.correo === pEmail)) {
-        return datos_login_admin;
-    } else if (datos_login_usuario.find(correo => correo.correo === pEmail)) {
-        return datos_login_usuario;
-    } else if (datos_login_proveedor.find(correo => correo.correo === pEmail)) {
-        return datos_login_proveedor;
-    } else {
-        Swal.fire({
-            'icon': 'warning',
-            'title': 'No se encuentra su perfil',
-            'text': 'El correo proporcionado no coincide con ningún perfil existente.'
-        });
-        return "";
+    if (datos_login_admin.find(correo => correo.contrasena === pPass)) {
+        contrasenaValida = true;
+    } else if (datos_login_usuario.find(correo => correo.contrasena === pPass)) {
+        contrasenaValida = true;
+    } else if (datos_login_proveedor.find(correo => correo.contrasena === pPass)) {
+        contrasenaValida = true;
     }
-}
 
+    if (correoValido == true && contrasenaValida == true) {
+        document.cookie = "correo=" + pEmail;
+        document.cookie = "contrasena=" + pPass;
+        perfilValido = true;
+    }
 
-const obtenerDatos = () => {
-    // este paso es para consultar la base de datos y traer correo y pass
-    let email = correoElectronico.value;
-    let pass = contrasena.value;
-    let datos_login = validar_perfil(email);
-    let tipoPerfil = tipo_Perfil(email);
-    let perfilValido = validar_correo(email, datos_login, pass);
-
-    if (perfilValido = true) {
-        document.cookie = "correo=" + email;
-        document.cookie = "contrasena=" + pass;
-        document.cookie = "tipoPerfil=" + tipoPerfil;
-
-        Swal.fire({
-            'icon': 'success',
-            'title': 'Bienvenido',
-            'text': 'PetLover a su servicio'
-        }).then(() => {
-            limpiar();
-        });
-        if (tipoPerfil === "A") {
-            location.href = 'configuracion.html'
-        } else if (tipoPerfil === "U" || tipoPerfil === "P") {
-            location.href = 'perfil.html'
-        }
+    if (perfilValido === true) {
+        tipo_Perfil();
     } else {
         Swal.fire({
             'icon': 'warning',
@@ -110,17 +80,40 @@ const obtenerDatos = () => {
             'text': 'Los datos ingresados no coinciden con un perfil registrado.'
         });
     }
-}
+};
 
-const validar_correo = (pEmail, pDatos_login, pPass) => {
-    let tipo;
-    if (pDatos_login.find(correo => correo.correo === pEmail) && pDatos_login.find(pass => pass.contrasena === pPass)) {
-        tipo = true;
+const tipo_Perfil = async() => {
+
+    let tipoPerfil = readCookie('tipoPerfil');
+    tipoPerfil = tipoPerfil.replace("=", "");
+
+    if (tipoPerfil === "P" || tipoPerfil === "U") {
+
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Bienvienido',
+            'text': 'PetLover a su servicio.'
+        }).then(() => {
+            location.href = "../proyectopipashtml/configuracion.html"
+        });
+    } else if (tipoPerfil === "A") {
+
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Bienvienido',
+            'text': 'PetLover a su servicio.'
+        }).then(() => {
+            location.href = "../proyectopipashtml/perfil.html";
+        });
     } else {
-        tipo = false;
-    }
-    return tipo;
-}
+        Swal.fire({
+            'icon': 'warning',
+            'title': 'No se encuentra su perfil',
+            'text': 'Los datos ingresados no coinciden con un perfil registrado.'
+        });
+    };
+};
+
 
 const limpiar = () => {
     //.value permite tanto obtener el valor como asignarlo
@@ -164,7 +157,7 @@ const validar = () => {
             'text': 'Por favor revise los campos resaltados'
         });
     }
-}
+};
 
 function sendEmail() {
     Swal.fire({
@@ -172,7 +165,7 @@ function sendEmail() {
         'title': 'Correo enviado',
         'text': 'Revise por favor su correo y siga los pasos para recuperar su contraseña.'
     });
-}
+};
 
 
 btnIniciarSesion.addEventListener('click', validar);
@@ -202,7 +195,7 @@ btnFormRegistro.addEventListener('click', () => {
 
 btnPassReset.addEventListener('click', () => {
     popupPassReset.style.display = "block";
-})
+});
 
 btnPassResetEnviar.addEventListener('click', () => {
     var correo = correoPassReset;
