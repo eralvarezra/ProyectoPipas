@@ -46,7 +46,8 @@ const mostrar_vacuna = async() => {
         if (vacuna.nombreVacuna.toUpperCase().includes(filtro)) {
 
             let fila = tabla.insertRow();
-            fila.insertCell().innerHTML = (vacuna.nombreVacuna);
+            fila.insertCell().innerHTML = vacuna.nombreVacuna;
+            fila.insertCell().innerHTML = vacuna.fechaCreacion;
 
             let celda_editar = fila.insertCell();
             let boton_editar = document.createElement('button');
