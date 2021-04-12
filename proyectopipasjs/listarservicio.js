@@ -5,6 +5,27 @@ const tabla = document.querySelector("#tbl-resultados tbody");
 //Filtro
 const input_filtro = document.querySelector("#txt-filtro");
 
+function readCookie(pCookie) {
+    const nameString = pCookie + "="
+
+    const value = document.cookie.split(";").filter(item => {
+        return item.includes(nameString)
+    })
+
+    if (value.length) {
+        return value[0].substring(nameString.length, value[0].length)
+    } else {
+        return ""
+    }
+}
+
+const cookieCorreo = () => {
+    let correoCookie = readCookie("correo");
+    correoCookie = correoCookie.replace("=", "");
+    let cookie = correoCookie;
+    return cookie;
+}
+
 const mostrar_modal_editar = async(servicio) => {
         const { value: formValues } = await Swal.fire({
             title: 'Editar Servicio',
@@ -22,7 +43,6 @@ const mostrar_modal_editar = async(servicio) => {
                 <input type="text" id="txt-costoServcioXhora" required class="swal2-input" value="${servicio.costoServicioXhora}">
                 <label for="txt-nombre">fecha:</label>
                 <input type="text" id="txt-fechaCreacion" required class="swal2-input" value="${servicio.fechaCreacion}">
-                </select>
             </div>`,
             focusConfirm: false,
             preConfirm: () => {
@@ -55,10 +75,14 @@ const mostrar_servicio = async() => {
     console.log(lista_servicio);
     tabla.innerHTML = '';
     let filtro = input_filtro.value.toUpperCase();
+    filtro = cookieCorreo('correo');
+    console.log(filtro);
+    input_filtro.style.display = 'none';
+    document.querySelector('#lbl-filtro').style.display = 'none';
 
     lista_servicio.forEach((servicio) => {
         console.log(servicio);
-        if (servicio.nombreServicio.toUpperCase().includes(filtro)) {
+        if (servicio.correo.includes(filtro)) {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = servicio.nombreServicio;
@@ -93,7 +117,9 @@ const mostrar_servicio = async() => {
                 eliminar_servicio(servicio._id)
             });
         }
+
     });
+
 };
 
 mostrar_servicio();

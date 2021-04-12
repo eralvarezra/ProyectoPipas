@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
+    <title>Servicio</title>
     <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
     <link rel="stylesheet" href="../proyectopipascss/general.css">
     <link rel="stylesheet" href="../proyectopipascss/agregarGeneral.css">
+    <link rel="stylesheet" href="../proyectopipascss/agregarServicios.css">
 </head>
 
 <body>
@@ -27,12 +28,23 @@
     <main>
         <section class="sct-contenedor-principal">
             <form>
-
-                <div>
+                <div id="form-agregar">
                     <label for="txt-correo">Correo:</label>
                     <input type="text" id="txt-correo" required class="swal2-input" disabled>
-                    <label for="txt-nombre">Servicio:</label>
-                    <input type="text" id="txt-general" required class="swal2-input">
+                    <label for="txt-nombre">Nombre de Servicio:</label>
+                    <input type="text" id="txt-nombre" required class="swal2-input">
+                    <label for="num-precio">Precio:</label>
+                    <br></br>
+                    <input type="number" id="num-precio" required class="swal2-input">
+                    <br></br>
+                    <label for="txt-detalleServicio">Detalle Servicio:</label>
+                    <input type="text" id="txt-detalleServicio" required class="swal2-input">
+                    <label for="num-costoServicioXhora">Costo por Hora:</label>
+                    <br></br>
+                    <input type="number" id="num-costoServicioXhora" required class="swal2-input">
+                    <br></br>
+                    <label for="txt-fecha">Fecha:</label>
+                    <input type="date" id="txt-fechaCreacion" required class="swal2-input" disabled>
                 </div>
 
                 <div class="sct-boton">
@@ -59,7 +71,7 @@
 </footer>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="../proyectopipasjs/proyectopipas.servicios.js/registrovacuna-servicio.js"></script>
-<script src="../proyectopipasjs/agregarvacuna.js"></script>
+<script src="../proyectopipasjs/proyectopipas.servicios.js/agregarServicio-servicio.js"></script>
+<script src="../proyectopipasjs/agregarServicio.js"></script>
 
 </html>
