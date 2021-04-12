@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo Servicio</title>
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/agregarGeneral.css">
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav>
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="busqueda.html">Búsqueda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+    <main>
+        <section class="sct-contenedor-principal">
+            <form>
+
+                <div>
+                    <label for="txt-nombre">Nombre Servicio:</label>
+                    <input type="text" id="txt-general" required class="swal2-input">
+                    </select>
+                </div>
+
+                <div class="sct-boton">
+                    <button type="button" id="btn-enviar" class="btn">Agregar</button>
+                    <button type="button" id="btn-cancelar" class="btn">Cancelar</button>
+                </div>
+            </form>
+            <div class="img-container "></div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/agregartiposervicio-servicio.js"></script>
+    <script src="../proyectopipasjs/agregartiposervicio.js"></script>
+
+</body>
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+
+</html>
