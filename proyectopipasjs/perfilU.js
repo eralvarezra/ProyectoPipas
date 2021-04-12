@@ -6,10 +6,9 @@ const btnPerfilMascotas = document.getElementById("btn-PerfilMascotas");
 const btnVerFacturas = document.getElementById("btn-VerFacturas");
 const btnlogout = document.getElementById("btn-logout");
 const btnMascotas = document.querySelector("#btn-PerfilMascotas");
-const btnAgregarServicios = document.querySelector('#btn-AgregarServicios');
+const btnAgregarServicio = document.querySelector('#btn-AgregarServicio');
 const labelMascotas = document.querySelector("#labelMisMascotas");
-const labelAgregarServicios = document.querySelector('#labelAgregarServicios');
-
+const labelAgregarServicios = document.querySelector('#labelAgregarServicio');
 
 // esto es para leer cookies
 const mostrar = () => {
@@ -19,11 +18,14 @@ const mostrar = () => {
     if (tipoPerfil == "U") {
         btnMascotas.style.display = "block";
         labelMascotas.style.display = "block";
+        btnAgregarServicio.style.display = "none";
+        labelAgregarServicios.style.display = "none";
     }
     if (tipoPerfil == "P") {
         btnMascotas.style.display = "none";
         labelMascotas.style.display = "none";
-        btnlogout.style.marginTop = "175px";
+        btnAgregarServicio.style.display = "block";
+        labelAgregarServicios.style.display = "block";
     }
 };
 
@@ -81,7 +83,10 @@ btnDatosPerfil.addEventListener('click', () => {
 
 btnPerfilMascotas.addEventListener('click', () => {
     location.href = "verPerfilMascota.html";
+});
 
+btnAgregarServicio.addEventListener('click', () => {
+    location.href = "configAgregarServicio.html";
 });
 
 btnVerFacturas.addEventListener('click', () => {
