@@ -94,7 +94,7 @@ const tipo_Perfil = async() => {
             'title': 'Bienvienido',
             'text': 'PetLover a su servicio.'
         }).then(() => {
-            location.href = "../proyectopipashtml/configuracion.html"
+            location.href = "../proyectopipashtml/perfil.html"
         });
     } else if (tipoPerfil === "A") {
 
@@ -103,7 +103,7 @@ const tipo_Perfil = async() => {
             'title': 'Bienvienido',
             'text': 'PetLover a su servicio.'
         }).then(() => {
-            location.href = "../proyectopipashtml/perfil.html";
+            location.href = "../proyectopipashtml/configuracion.html";
         });
     } else {
         Swal.fire({
