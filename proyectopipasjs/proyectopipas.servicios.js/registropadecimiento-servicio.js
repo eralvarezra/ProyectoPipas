@@ -1,16 +1,16 @@
-const registrar_caracteristica = async(nombreCaracteristica, fechaCreacion) => {
+const registrar_padecimiento = async(nombrePadecimiento, fechaCreacion) => {
     await axios({
         method: 'post',
-        url: 'http://localhost:3000/api/registrar-caracteristica',
+        url: 'http://localhost:3000/api/registrar-padecimiento',
         responseType: 'json',
         data: {
-            nombreCaracteristica: nombreCaracteristica,
+            nombrePadecimiento: nombrePadecimiento,
             fechaCreacion: fechaCreacion,
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su caracteristica fue guardada exitosamente',
+            'title': 'El padecimiento fue guardada exitosamente',
             'text': response.msj
         });
     }).catch((response) => {
@@ -21,36 +21,36 @@ const registrar_caracteristica = async(nombreCaracteristica, fechaCreacion) => {
         });
     });
 };
-const listar_caracteristicas = async() => {
-    let lista_caracteristica = [];
+const listar_padecimientos = async() => {
+    let lista_padecimiento = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-caracteristicas',
+        url: 'http://localhost:3000/api/listar-padecimientos',
         responseType: 'json'
     }).then((response) => {
-        lista_caracteristica = response.data.lista_caracteristica;
+        lista_padecimiento = response.data.lista_padecimiento;
     }).catch((response) => {
         console.log(response.data.msj + " " + response.data.err);
     });
-    return lista_caracteristica;
+    return lista_padecimiento;
 }
 
-const modificar_caracteristica = async(_id, nombreCaracteristica) => {
+const modificar_padecimiento = async(_id, nombrePadecimiento) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-caracteristicas',
+        url: 'http://localhost:3000/api/modificar-padecimientos',
         responseType: 'json',
         data: {
             _id: _id,
-            nombreCaracteristica: nombreCaracteristica
+            nombrePadecimiento: nombrePadecimiento
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La caracteristica ha sido actualizada',
+            'title': 'El padecimiento ha sido actualizada',
             'text': response.msj
         }).then(() => {
-            mostrar_caracteristica();
+            mostrar_padecimiento();
         });
     }).catch((response) => {
         Swal.fire({
@@ -60,21 +60,21 @@ const modificar_caracteristica = async(_id, nombreCaracteristica) => {
         }).then(() => {});
     });
 };
-const eliminar_caracteristica = async(_id) => {
+const eliminar_padecimiento = async(_id) => {
     await axios({
         method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-caracteristica',
+        url: 'http://localhost:3000/api/eliminar-padecimiento',
         responseType: 'json',
         data: {
             _id: _id
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'La característica ha sido eliminada',
+            'title': 'El padecimiento ha sido eliminada',
             'icon': 'success',
             'text': response.msj
         }).then(() => {
-            mostrar_caracteristica();
+            mostrar_padecimientos();
         });
     }).catch((response) => {
         Swal.fire({

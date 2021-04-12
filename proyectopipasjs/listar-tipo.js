@@ -47,6 +47,7 @@ const mostrar_tipo = async() => {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = tipo.nombreTipo;
+            fila.insertCell().innerHTML = tipo.fechaCreacion;
 
             let celda_editar = fila.insertCell();
             let boton_editar = document.createElement('button');
@@ -57,7 +58,7 @@ const mostrar_tipo = async() => {
             boton_editar.addEventListener('click', async() => {
                 mostrar_modal_editar(tipo);
             })
-            celda_editar.appendChild(tipo);
+            celda_editar.appendChild(boton_editar);
 
             //ELIMINAR:
             let celda_eliminar = fila.insertCell();

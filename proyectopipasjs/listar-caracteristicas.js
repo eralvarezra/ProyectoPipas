@@ -47,6 +47,7 @@ const mostrar_caracteristica = async() => {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = caracteristica.nombreCaracteristica;
+            fila.insertCell().innerHTML = caracteristica.fechaCreacion;
 
             let celda_editar = fila.insertCell();
             let boton_editar = document.createElement('button');

@@ -5,19 +5,19 @@ const tabla = document.querySelector("#tbl-resultados tbody");
 //Filtro
 const input_filtro = document.querySelector("#txt-filtro");
 
-const mostrar_modal_editar = async(vacuna) => {
+const mostrar_modal_editar = async(padecimiento) => {
         const { value: formValues } = await Swal.fire({
-            title: 'Editar vacuna',
+            title: 'Editar padecimiento',
             html: `
             <div>
                 <label for="txt-nombre">Nombre:</label>
-                <input type="text" id="txt-general" required class="swal2-input" value="${vacuna.nombreVacuna}">
+                <input type="text" id="txt-general" required class="swal2-input" value="${padecimiento.nombrePadecimiento}">
                 </select>
             </div>`,
             focusConfirm: false,
             preConfirm: () => {
                 return [
-                    vacuna._id,
+                    padecimiento._id,
                     document.querySelector('#txt-general').value,
                 ]
             }
@@ -25,30 +25,29 @@ const mostrar_modal_editar = async(vacuna) => {
         if (formValues) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea modificar la vacuna',
+                text: 'Está seguro que desea modificar el padecimiento',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
             if (accept) {
-                modificar_vacuna(formValues[0], formValues[1]);
+                modificar_padecimiento(formValues[0], formValues[1]);
             }
         }
     }
     //Tabla dinamica
-const mostrar_vacuna = async() => {
-    let lista_vacunas = await listar_vacunas();
-    console.log(lista_vacunas);
+const mostrar_padecimiento = async() => {
+    let lista_padecimientos = await listar_padecimientos();
+    console.log(listar_padecimientos);
     tabla.innerHTML = '';
     let filtro = input_filtro.value.toUpperCase();
 
-    lista_vacunas.forEach((vacuna) => {
-        console.log(vacuna);
-        if (vacuna.nombreVacuna.toUpperCase().includes(filtro)) {
+    lista_padecimientos.forEach((padecimiento) => {
+        console.log(padecimiento);
+        if (padecimiento.nombrePadecimiento.toUpperCase().includes(filtro)) {
 
             let fila = tabla.insertRow();
-            fila.insertCell().innerHTML = vacuna.nombreVacuna;
-            fila.insertCell().innerHTML = vacuna.fechaCreacion;
-
+            fila.insertCell().innerHTML = padecimiento.nombrePadecimiento;
+            fila.insertCell().innerHTML = padecimiento.fechaCreacion;
             let celda_editar = fila.insertCell();
             let boton_editar = document.createElement('button');
             boton_editar.classList.add("far")
@@ -56,7 +55,7 @@ const mostrar_vacuna = async() => {
             boton_editar.type = 'button';
 
             boton_editar.addEventListener('click', async() => {
-                mostrar_modal_editar(vacuna);
+                mostrar_modal_editar(padecimiento);
             })
             celda_editar.appendChild(boton_editar);
 
@@ -71,12 +70,12 @@ const mostrar_vacuna = async() => {
             celda_eliminar.appendChild(boton_eliminar);
 
             celda_eliminar.addEventListener('click', async() => {
-                eliminar_vacuna(vacuna._id)
+                eliminar_padecimiento(padecimiento._id)
             });
         }
     });
 };
 
-mostrar_vacuna();
+mostrar_padecimiento();
 
-input_filtro.addEventListener('keyup', mostrar_vacuna);
+input_filtro.addEventListener('keyup', mostrar_padecimiento);
