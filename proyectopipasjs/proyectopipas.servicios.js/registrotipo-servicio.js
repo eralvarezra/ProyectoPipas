@@ -1,16 +1,16 @@
-const registrar_caracteristica = async(nombreCaracteristica, fechaCreacion) => {
+const registrar_tipo = async(nombreTipo, fechaCreacion) => {
     await axios({
         method: 'post',
-        url: 'http://localhost:3000/api/registrar-caracteristica',
+        url: 'http://localhost:3000/api/registrar-tipo',
         responseType: 'json',
         data: {
-            nombreCaracteristica: nombreCaracteristica,
+            nombreTipo: nombreTipo,
             fechaCreacion: fechaCreacion,
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su caracteristica fue guardada exitosamente',
+            'title': 'Su tipo fue guardado exitosamente',
             'text': response.msj
         });
     }).catch((response) => {
@@ -21,36 +21,36 @@ const registrar_caracteristica = async(nombreCaracteristica, fechaCreacion) => {
         });
     });
 };
-const listar_caracteristicas = async() => {
-    let lista_caracteristica = [];
+const listar_tipo = async() => {
+    let lista_tipo = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-caracteristicas',
+        url: 'http://localhost:3000/api/listar-tipo',
         responseType: 'json'
     }).then((response) => {
-        lista_caracteristica = response.data.lista_caracteristica;
+        lista_tipo = response.data.lista_tipo;
     }).catch((response) => {
         console.log(response.data.msj + " " + response.data.err);
     });
-    return lista_caracteristica;
+    return lista_tipo;
 }
 
-const modificar_caracteristica = async(_id, nombreCaracteristica) => {
+const modificar_tipo = async(_id, nombreTipo) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-caracteristicas',
+        url: 'http://localhost:3000/api/modificar-tipo',
         responseType: 'json',
         data: {
             _id: _id,
-            nombreCaracteristica: nombreCaracteristica
+            nombreTipo: nombreTipo
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La caracteristica ha sido actualizada',
+            'title': 'La tipo ha sido actualizado',
             'text': response.msj
         }).then(() => {
-            mostrar_caracteristica();
+            mostrar_tipo();
         });
     }).catch((response) => {
         Swal.fire({
@@ -60,21 +60,21 @@ const modificar_caracteristica = async(_id, nombreCaracteristica) => {
         }).then(() => {});
     });
 };
-const eliminar_caracteristica = async(_id) => {
+const eliminar_tipo = async(_id) => {
     await axios({
         method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-caracteristica',
+        url: 'http://localhost:3000/api/eliminar-tipo',
         responseType: 'json',
         data: {
             _id: _id
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'La característica ha sido eliminada',
+            'title': 'El tipo ha sido eliminado',
             'icon': 'success',
             'text': response.msj
         }).then(() => {
-            mostrar_caracteristica();
+            mostrar_tipo();
         });
     }).catch((response) => {
         Swal.fire({
