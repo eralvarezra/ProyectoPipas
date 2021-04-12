@@ -88,6 +88,19 @@
         margin-bottom: 15px;
     }
     
+    #thead {
+        background-color: #e69138;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+    
+    #thead th {
+        text-align: center;
+        justify-content: center;
+    }
+    
     #terminos {
         float: left;
         padding-top: 15px;

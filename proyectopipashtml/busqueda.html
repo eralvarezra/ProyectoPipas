@@ -40,7 +40,7 @@
                 <h1>Buscar por:</h1>
                 <div class="calificacionBusqueda">
                     <h2>Calificación:</h2>
-                    <div class="starContainer">
+                    <div id="calificacion" class="starContainer">
                         <input type="checkbox" name="rate" id="rate5" value=5>
                         <label for="rate5" class="fas fa-paw"> 5 </label>
                         <input type="checkbox" name="rate" id="rate4" value=4>
@@ -53,8 +53,8 @@
                         <label for="rate1" class="fas fa-paw"> 1</label>
                     </div>
                     <div>
-                        <label>Tipo de servicio:</label>
-                        <select class="Slct-Form" id="tipoServicio">
+                        <label>Tipo mascota:</label>
+                        <select class="Slct-Form" id="tipoMascota">
                         <option value="perro" id="opcion"> Perro</option>
                         <option value="gato" id="opcion">Gato</option>
                       </select>
@@ -108,21 +108,28 @@
                         </form>
                     </div>
                     <div>
-                        <button type="button" id="btnSubmit">Buscar</button>
+                        <button type="button" id="btnBuscar" class="btn">Buscar</button>
                     </div>
                 </div>
             </div>
         </form>
-        <div class="div-tablaResultados">
+    </section>
+    <section>
+        <div id="tbl-resultados" class="div-tablaResultados">
             <table>
-                <tr>
-                    <th>Proveedor</th>
-                    <th>Descripcion</th>
-                    <th>Calificacion</th>
-                </tr>
+                <thead id="thead">
+                    <tr>
+                        <th>Proveedor</th>
+                        <th>Descripcion</th>
+                        <th>Calificacion</th>
+                        <th>Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
             </table>
         </div>
     </section>
+
 </main>
 
 <footer class="footer">
@@ -135,10 +142,11 @@
         </div>
     </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3cOQNB4cQjQDSGWiB_nT2H2pEOuD3w60&callback=initMap" async defer></script>
-<script src="../proyectopipasjs/registroProveedores.js"></script>
+<script src="../proyectopipasjs/proyectopipas.servicios.js/agregarServicio-servicio.js"></script>
+<script src="../proyectopipasjs/busqueda.js"></script>
 
 </html>
