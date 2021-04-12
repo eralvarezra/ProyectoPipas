@@ -36,13 +36,11 @@ const mostrar_modal_editar = async(servicio) => {
                 <label for="txt-correo">Correo:</label>
                 <input type="text" id="txt-correo" required class="swal2-input" value="${servicio.correo}">
                 <label for="num-precio">Precio:</label>
-                <input type="text" id="txt-precio" required class="swal2-input" value="${servicio.precio}">
+                <input type="text" id="num-precio" required class="swal2-input" value="${servicio.precio}">
                 <label for="txt-detalleServicio">Detalle Servicio:</label>
                 <input type="text" id="txt-detalleServicio" required class="swal2-input" value="${servicio.detalleServicio}">
-                <label for="txt-costoServicioXhora">Costo por Hora:</label>
-                <input type="text" id="txt-costoServcioXhora" required class="swal2-input" value="${servicio.costoServicioXhora}">
-                <label for="txt-nombre">fecha:</label>
-                <input type="text" id="txt-fechaCreacion" required class="swal2-input" value="${servicio.fechaCreacion}">
+                <label for="num-costoServicioXhora">Costo por Hora:</label>
+                <input type="text" id="num-costoServicioXhora" required class="swal2-input" value="${servicio.costoServicioXhora}">
             </div>`,
             focusConfirm: false,
             preConfirm: () => {
@@ -50,10 +48,9 @@ const mostrar_modal_editar = async(servicio) => {
                     servicio._id,
                     document.querySelector('#txt-nombre').value,
                     document.querySelector('#txt-correo').value,
-                    document.querySelector('#txt-precio').value,
+                    document.querySelector('#num-precio').value,
                     document.querySelector('#txt-detalleServicio').value,
-                    document.querySelector('#txt-costoServicioXhora').value,
-                    document.querySelector('#txt-fechaCreacion').value
+                    document.querySelector('#num-costoServicioXhora').value,
                 ]
             }
         });

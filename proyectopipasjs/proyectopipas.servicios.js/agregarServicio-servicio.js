@@ -52,7 +52,7 @@ const modificar_servicio = async(_id, nombreServicio, correo, precio, detalleSer
             precio: precio,
             detalleServicio: detalleServicio,
             costoServicioXhora: costoServicioXhora,
-            fechaCreacion: fechaCreacion
+            fechaCreacion: new Date()
         }
     }).then((response) => {
         Swal.fire({
