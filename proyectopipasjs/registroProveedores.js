@@ -44,7 +44,7 @@ const obtenerDatos = () => {
     console.log('El Distrito es: ' + distrito);
     console.log('El Comentario es: ' + comentario);
 
-    registrar_proveedor(tipoProveedor, tipoServicio, tipoIdentificacion, pAcargo, empresa, contraEmpresa, telefono, correo, provincia, canton, distrito, comentario, myFile, activo);
+    registrar_proveedor(tipoProveedor, tipoServicio, tipoIdentificacion, usuarioAcargo, empresa, contraEmpresa, telefono, correo, provincia, canton, distrito, comentario, myFile, activo);
 
     Swal.fire({
         'icon': 'success',
