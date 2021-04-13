@@ -1,7 +1,6 @@
 'use strict';
 
 const registrar_proveedor = async(tipoProveedor, tipoServicio, tipoIdentificacion, pAcargo, empresa, contrasena, telefono, correo, provincias, cantones, distritos, comentarios, myFile, activo) => {
-    console.log(tipoProveedor, tipoServicio, tipoIdentificacion, pAcargo, empresa, contrasena, telefono, correo, provincias, cantones, distritos, comentarios, myFile, activo)
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-proveedor',
@@ -26,7 +25,7 @@ const registrar_proveedor = async(tipoProveedor, tipoServicio, tipoIdentificacio
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su reserva ha sido enviada',
+            'title': 'Su proveedor ha sido registrado',
             'text': response.msj
         }).then(() => {
             limpiar();

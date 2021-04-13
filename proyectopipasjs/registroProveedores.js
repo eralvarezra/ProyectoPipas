@@ -51,8 +51,8 @@ const obtenerDatos = () => {
         'title': 'Su mensaje ha sido enviado',
         'text': 'Nos pondremos en contacto con usted lo antes posible'
     }).then(() => {
-        location.href = "../proyectopipashtml/registroProveedores.html";
         limpiar();
+        location.href = "../proyectopipashtml/registroProveedoresNotificacion.html";
     });
 
 }
