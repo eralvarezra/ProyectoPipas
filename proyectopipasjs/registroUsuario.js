@@ -7,7 +7,7 @@ const fechaNacimientoUsuario = document.querySelector("#fechaNacimiento");
 const provinciasUsuario = document.querySelector("#provincias");
 const cantonesUsuario = document.querySelector("#cantones");
 const distritosUsuario = document.querySelector("#distritos");
-const generoUsuario = document.querySelector("#genero");
+const generoUsuario = document.querySelector("#genero1");
 const cantidadMascotaUsuario = document.querySelector("#cantidadMascota");
 const telefonoContactoUsuario = document.querySelector("#telefonoContacto");
 const correoElectronicoUsuario = document.querySelector("#correo");
@@ -43,7 +43,7 @@ const obtenerDatos = () => {
     let provincia = provinciasUsuario.value;
     let canton = cantonesUsuario.value;
     let distrito = distritosUsuario.value;
-    let genero = "femenino";
+    let genero = generoUsuario.value;
     let cantidadMascota = cantidadMascotaUsuario.value;
     let telefono = telefonoContactoUsuario.value;
     let correo = correoElectronicoUsuario.value;
