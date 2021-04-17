@@ -6,31 +6,45 @@ const tabla = document.querySelector("#tbl-resultados tbody");
 const input_filtro = document.querySelector("#txt-filtro");
 
 const mostrar_modal_editar = async(padecimiento) => {
-        const { value: formValues } = await Swal.fire({
-            title: 'Editar padecimiento',
-            html: `
+    const { value: formValues } = await Swal.fire({
+        title: 'Editar padecimiento',
+        html: `
             <div>
                 <label for="txt-nombre">Nombre:</label>
                 <input type="text" id="txt-general" required class="swal2-input" value="${padecimiento.nombrePadecimiento}">
                 </select>
             </div>`,
-            focusConfirm: false,
-            preConfirm: () => {
-                return [
-                    padecimiento._id,
-                    document.querySelector('#txt-general').value,
-                ]
-            }
+        focusConfirm: false,
+        preConfirm: () => {
+            return [
+                padecimiento._id,
+                document.querySelector('#txt-general').value,
+            ]
+        }
+    });
+    if (formValues) {
+        const { value: accept } = await Swal.fire({
+            icon: 'warning',
+            text: 'Está seguro que desea modificar el padecimiento',
+            confirmButtonText: `Si`,
+            showCancelButton: true
         });
-        if (formValues) {
+        if (accept) {
+            modificar_padecimiento(formValues[0], formValues[1]);
+        }
+    }
+}
+const mostrar_modal_eliminar = async(padecimiento) => {
+
+        if (padecimiento) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea modificar el padecimiento',
+                text: 'Está seguro que desea eliminar el padecimiento',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
             if (accept) {
-                modificar_padecimiento(formValues[0], formValues[1]);
+                eliminar_padecimiento(padecimiento._id);
             }
         }
     }
@@ -70,7 +84,7 @@ const mostrar_padecimiento = async() => {
             celda_eliminar.appendChild(boton_eliminar);
 
             celda_eliminar.addEventListener('click', async() => {
-                eliminar_padecimiento(padecimiento._id)
+                mostrar_modal_eliminar(padecimiento)
             });
         }
     });

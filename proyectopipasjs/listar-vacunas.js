@@ -6,31 +6,45 @@ const tabla = document.querySelector("#tbl-resultados tbody");
 const input_filtro = document.querySelector("#txt-filtro");
 
 const mostrar_modal_editar = async(vacuna) => {
-        const { value: formValues } = await Swal.fire({
-            title: 'Editar vacuna',
-            html: `
+    const { value: formValues } = await Swal.fire({
+        title: 'Editar vacuna',
+        html: `
             <div>
                 <label for="txt-nombre">Nombre:</label>
                 <input type="text" id="txt-general" required class="swal2-input" value="${vacuna.nombreVacuna}">
                 </select>
             </div>`,
-            focusConfirm: false,
-            preConfirm: () => {
-                return [
-                    vacuna._id,
-                    document.querySelector('#txt-general').value,
-                ]
-            }
+        focusConfirm: false,
+        preConfirm: () => {
+            return [
+                vacuna._id,
+                document.querySelector('#txt-general').value,
+            ]
+        }
+    });
+    if (formValues) {
+        const { value: accept } = await Swal.fire({
+            icon: 'warning',
+            text: 'Está seguro que desea modificar la vacuna',
+            confirmButtonText: `Si`,
+            showCancelButton: true
         });
-        if (formValues) {
+        if (accept) {
+            modificar_vacuna(formValues[0], formValues[1]);
+        }
+    }
+}
+const mostrar_modal_eliminar = async(vacuna) => {
+
+        if (vacuna) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea modificar la vacuna',
+                text: 'Está seguro que desea eliminar la vacuna',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
             if (accept) {
-                modificar_vacuna(formValues[0], formValues[1]);
+                eliminar_vacuna(vacuna._id);
             }
         }
     }
@@ -71,7 +85,7 @@ const mostrar_vacuna = async() => {
             celda_eliminar.appendChild(boton_eliminar);
 
             celda_eliminar.addEventListener('click', async() => {
-                eliminar_vacuna(vacuna._id)
+                mostrar_modal_eliminar(vacuna)
             });
         }
     });

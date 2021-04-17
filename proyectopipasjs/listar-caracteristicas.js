@@ -6,31 +6,45 @@ const tabla = document.querySelector("#tbl-resultados tbody");
 const input_filtro = document.querySelector("#txt-filtro");
 
 const mostrar_modal_editar = async(caracteristica) => {
-        const { value: formValues } = await Swal.fire({
-            title: 'Editar Caracteristica',
-            html: `
+    const { value: formValues } = await Swal.fire({
+        title: 'Editar Caracteristica',
+        html: `
             <div>
                 <label for="txt-nombre">Nombre:</label>
                 <input type="text" id="txt-general" required class="swal2-input" value="${caracteristica.nombreCaracteristica}">
                 </select>
             </div>`,
-            focusConfirm: false,
-            preConfirm: () => {
-                return [
-                    caracteristica._id,
-                    document.querySelector('#txt-general').value,
-                ]
-            }
+        focusConfirm: false,
+        preConfirm: () => {
+            return [
+                caracteristica._id,
+                document.querySelector('#txt-general').value,
+            ]
+        }
+    });
+    if (formValues) {
+        const { value: accept } = await Swal.fire({
+            icon: 'warning',
+            text: 'Está seguro que desea modificar la caracteristica',
+            confirmButtonText: `Si`,
+            showCancelButton: true
         });
-        if (formValues) {
+        if (accept) {
+            modificar_caracteristica(formValues[0], formValues[1]);
+        }
+    }
+}
+const mostrar_modal_eliminar = async(caracteristica) => {
+
+        if (caracteristica) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea modificar la caracteristica',
+                text: 'Está seguro que desea eliminar la caracteristica',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
             if (accept) {
-                modificar_caracteristica(formValues[0], formValues[1]);
+                eliminar_caracteristica(caracteristica._id);
             }
         }
     }
@@ -71,7 +85,7 @@ const mostrar_caracteristica = async() => {
             celda_eliminar.appendChild(boton_eliminar);
 
             celda_eliminar.addEventListener('click', async() => {
-                eliminar_caracteristica(caracteristica._id)
+                mostrar_modal_eliminar(caracteristica);
             });
         }
     });
