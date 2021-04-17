@@ -63,27 +63,27 @@ const modificar_metodo = async(_id, nombreMetodo) => {
         }).then(() => {});
     });
 };
-// const eliminar_metodo = async(_id) => {
-//     await axios({
-//         method: 'delete',
-//         url: 'http://localhost:3000/api/eliminar-vacuna',
-//         responseType: 'json',
-//         data: {
-//             _id: _id
-//         }
-//     }).then((response) => {
-//         Swal.fire({
-//             'title': 'El metodo de pago ha sido eliminada',
-//             'icon': 'success',
-//             'text': response.msj
-//         }).then(() => {
-//             mostrar_vacunas();
-//         });
-//     }).catch((response) => {
-//         Swal.fire({
-//             'title': response.msj,
-//             'icon': 'error',
-//             'text': response.err
-//         })
-//     });
-// };
+const eliminar_metodo = async(_id) => {
+    await axios({
+        method: 'delete',
+        url: 'http://localhost:3000/api/eliminar-metodo',
+        responseType: 'json',
+        data: {
+            _id: _id
+        }
+    }).then((response) => {
+        Swal.fire({
+            'title': 'El metodo de pago ha sido eliminada',
+            'icon': 'success',
+            'text': response.msj
+        }).then(() => {
+            mostrar_metodo();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'title': response.msj,
+            'icon': 'error',
+            'text': response.err
+        })
+    });
+};

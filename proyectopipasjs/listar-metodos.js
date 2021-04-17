@@ -6,31 +6,45 @@ const tabla = document.querySelector("#tbl-resultados tbody");
 const input_filtro = document.querySelector("#txt-filtro");
 
 const mostrar_modal_editar = async(metodo) => {
-        const { value: formValues } = await Swal.fire({
-            title: 'Editar metodo de pago',
-            html: `
+    const { value: formValues } = await Swal.fire({
+        title: 'Editar metodo de pago',
+        html: `
             <div>
                 <label for="txt-nombre">Nombre:</label>
                 <input type="text" id="txt-general" required class="swal2-input" value="${metodo.nombreMetodo}">
                 </select>
             </div>`,
-            focusConfirm: false,
-            preConfirm: () => {
-                return [
-                    metodo._id,
-                    document.querySelector('#txt-general').value,
-                ]
-            }
+        focusConfirm: false,
+        preConfirm: () => {
+            return [
+                metodo._id,
+                document.querySelector('#txt-general').value,
+            ]
+        }
+    });
+    if (formValues) {
+        const { value: accept } = await Swal.fire({
+            icon: 'warning',
+            text: 'Está seguro que desea modificar el metodo de pago',
+            confirmButtonText: `Si`,
+            showCancelButton: true
         });
-        if (formValues) {
+        if (accept) {
+            modificar_metodo(formValues[0], formValues[1]);
+        }
+    }
+}
+const mostrar_modal_eliminar = async(metodo) => {
+
+        if (metodo) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea modificar el metodo de pago',
+                text: 'Está seguro que desea eliminar el método de pago',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
             if (accept) {
-                modificar_metodo(formValues[0], formValues[1]);
+                eliminar_metodo(metodo._id);
             }
         }
     }
@@ -47,7 +61,7 @@ const mostrar_metodo = async() => {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = (metodo.nombreMetodo);
-
+            fila.insertCell().innerHTML = (metodo.fechaCreacion);
             let celda_editar = fila.insertCell();
             let boton_editar = document.createElement('button');
             boton_editar.classList.add("far")
@@ -59,19 +73,19 @@ const mostrar_metodo = async() => {
             })
             celda_editar.appendChild(boton_editar);
 
-            //ELIMINAR:
-            // let celda_eliminar = fila.insertCell();
-            // let boton_eliminar = document.createElement('button');
-            // boton_eliminar.type = 'button';
+            //Eliminar
+            let celda_eliminar = fila.insertCell();
+            let boton_eliminar = document.createElement('button');
+            boton_eliminar.type = 'button';
 
-            // boton_eliminar.classList.add("far")
-            // boton_eliminar.classList.add("fa-trash-alt")
+            boton_eliminar.classList.add("far")
+            boton_eliminar.classList.add("fa-trash-alt")
 
-            // celda_eliminar.appendChild(boton_eliminar);
+            celda_eliminar.appendChild(boton_eliminar);
 
-            // celda_eliminar.addEventListener('click', async() => {
-            //     eliminar_vacuna(vacuna._id)
-            // });
+            celda_eliminar.addEventListener('click', async() => {
+                mostrar_modal_eliminar(metodo)
+            });
         }
     });
 };
