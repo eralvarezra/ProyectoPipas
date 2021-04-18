@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../proyectopipascss/general.css">
     <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
     <link rel="stylesheet" href="../proyectopipascss/popup.css">
+    <link rel="stylesheet" href="../proyectopipascss/configTablas.css">
 </head>
 
 <body>
@@ -23,131 +24,29 @@
             <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
         </nav>
     </header>
-
     <main>
         <section id="sct-form" class="sct-form">
-            <div class="div-NombreEmpresa">
-                <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
-            </div>
-            <br>
             <form>
                 <div class="div-Form" id="div-Form">
                     <br></br>
                     <div>
-                        <h2>Datos de la mascota</h2>
+                        <h1>Datos de la mascota</h>
                     </div>
-                    <br>
                     <div>
-                        <label for="nombreMascota"></label>
-                        <select class="selectTipoRaza" id="nombreMascota" required>
-                            <option id="nombreMascota1"></option>
-                            <option id="nombreMascota2"></option>
-                            <option  id="nombreMascota3"></option>
-                            <option id="nombreMascota4"></option>
-                        </select>
+                        <table id="tbl-mascotas">
+                            <thead>
+                                <th>Foto</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Raza</th>
+                                <th>Característica Especial</th>
+                                <th>Padecimientos</th>
+                                <th>Vacunas</th>
+                            </thead>
+                            <tbody id="tabladinamica"></tbody>
+                        </table>
                     </div>
-                    <br>
-                    <div>
-                        <label for="tipoMascota">Tipo:</label>
-                        <select class="Slct-Form" id="tipoCaracteristica">
-                            <option value="gato">Gato</option>
-                            <option value="perro" selected>Perro</option>
-                        </select>
-                    </div>
-
-                    <div class=" selectTipoRaza">
-                        <label for="tipoRaza">Raza:</label>
-                        <select class="Slct-Form " id="tipoRaza" required>
-                                <option value="razaPerro ">Shepsky</option>
-                                <option value="razaPerro " selected>Poodle estándar</option>
-                                <option value="razaPerro " selected>Pastor</option>
-                                <option value="razaPerro " selected>Mastin inglés</option>
-                                <option value="razaPerro " selected>Pug</option>
-                                <option value="razaPerro " selected>Rottweiler</option>
-                                <option value="razaGato " selected>Persa</option>
-                                <option value="razaGato " selected>Siberiano</option>
-                                <option value="razaGato " selected>Siamés</option>
-                                <option value="razaGato " selected>Maine Coon</option>
-                                <option value="razaGato " selected>Gato Bengala</option>
-                                <option value="razaGato " selected>Azul Ruso</option>
-                                <option value="razaPerro " selected>Otros</option>
-                            </select>
-                    </div>
-
-                    <div id="selectTipoCaracteristica">
-                        <label>Características especiales: </label>
-                        <select class="Slct-Form" id="caracteristicaEspecial" required>
-                            <option value="grande ">Grande</option>
-                            <option value="mediano ">Mediano</option>
-                            <option value="leFaltaExtremedidad ">Le falta una extremidadad</option>
-                            <option value="faltaVision ">Falta de visión</option>
-                            <option value="agresivo ">Agresivo</option>
-                            <option value="timido ">Tímido</option>
-                            <option value="problemasCaminar ">Problemas al caminar</option>
-                          </select>
-                        <input type="button" id="btnAgregar" value="+">
-                        <input type="button" id="btnRemover" value="-">
-                        <span id="agregarAca" class=".Slct-Form"></span>
-                    </div>
-
-                    <br>
-                    <div id="selectTipoPadecimiento">
-                        <label>Padecimientos: </label>
-                        <select class="Slct-Form " id="tipoPadecimiento" required>
-                                <option value="atrofia">Atrofia de retina</option>
-                                <option value="leucemia">Leucemia felina</option>
-                                <option value="rinotraqueitis">Rinotraqueítis felina</option>
-                                <option value="calicivirosis">Calicivirosis</option>
-                                <option value="neumonitis">Neumonitis</option>
-                                <option value="alergias">Alergias</option>
-                                <option value="otitis">Otitis</option>
-                                <option value="conjuntivitis">Conjuntivitis</option>
-                                <option value="otro">Otro</option>
-                              </select>
-                        <input type="button" id="btpAgregar" value="+">
-                        <input type="button" id="btpRemover" value="-">
-                        <span id="agregarAca" class=".Slct-Form"></span>
-                    </div>
-
-
-                    <div id="selectTipoVacuna">
-                        <label>Vacuna: </label>
-                        <select class="Slct-Form " id="tipoVacuna" required>
-                                <option value="leptospirosis">Leptospirosis</option>
-                                <option value="traqueitis">Traqueítis infecciosa</option>
-                                <option value="leishmania">Leishmania</option>
-                                <option value="rabia">Rabia</option>
-                                <option value="parvovirus">Parvovirus felin</option>
-                                <option value="herpesvirus">Herpesvirus</option>
-                                <option value="calicivirus">Calicivirus</option>
-                                <option value="clamidofila">Clamidófila</option>
-                                <option value="otro">Otro</option>
-                              </select>
-                        <input type="button" id="btvAgregar" value="+">
-                        <input type="button" id="btvRemover" value="-">
-                        <span id="agregarAca" class=".Slct-Form"></span>
-                    </div>
-
-                    <br>
-                    <!-- </form> -->
-            </form>
-            <div>
-                <button type="button" id="btnGuardar" class="btn">Guardar Cambios</button>
-                <button type="button" id="btnNueva" class="btn">Nueva Mascota</button>
-                <button type="button" id="btnEliminar" class="btn">Eliminar Mascota</button>
-            </div>
-        </section>
-        <section id="sct-EliminarMascota">
-            <div class="popup">
-                <label>Seguro que desea eliminar esta mascota</label>
-                <br></br>
-                <br></br>
-                <br></br>
-                <button type="button" id="btnConfirmar" class="btn">Confirmar</button>
-                <br></br>
-                <button type="button" id="btnVolver" class="btn">Volver</button>
-                <br></br>
-            </div>
+                </div>
         </section>
     </main>
 </body>
@@ -163,6 +62,7 @@
 </footer>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../proyectopipasjs/proyectopipas.servicios.js/registroUsuario-servicio.js"></script>
 <script src="../proyectopipasjs/proyectopipas.servicios.js/perfilMascotas-servicio.js"></script>
 <script src="../proyectopipasjs/verPerfilMascotas.js"></script>
 
