@@ -24,6 +24,8 @@ router.post('/registrar-usuario', (req, res) => {
         numeroTarjeta: req.body.numeroTarjeta,
         fechaVencimiento: req.body.fechaVencimiento,
         foto: req.body.foto,
+        estado: 'Pendiente',
+        correo: '',
     });
 
     nuevo_usuario.save((err, usuario_db) => {
