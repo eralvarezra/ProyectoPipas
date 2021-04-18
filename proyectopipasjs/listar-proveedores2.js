@@ -74,11 +74,11 @@ const mostrar_proveedor = async() => {
                 celda_cambiar_estado.appendChild(boton_rechazar);
 
                 boton_activar.addEventListener('click', async() => {
-                    mostrar_modal_aprobar_estado(proveedor)
+                    mostrar_modal_aprobar_estado(proveedor);
                 });
 
                 boton_rechazar.addEventListener('click', async() => {
-                    mostrar_modal_rechazar_estado(proveedor)
+                    mostrar_modal_rechazar_estado(proveedor);
                 });
             }
         }
