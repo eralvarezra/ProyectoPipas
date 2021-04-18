@@ -26,7 +26,7 @@ const mostrar_proveedor = async() => {
     }
     lista_proveedor.forEach((proveedor) => {
         console.log(proveedor);
-        if (proveedor.correo.toUpperCase().includes(filtro)) {
+        if (proveedor.correo.toUpperCase().includes(filtro) || proveedor.activo.toUpperCase().includes(filtro)) {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = proveedor.tipoProveedor;
