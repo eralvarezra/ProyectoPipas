@@ -6,6 +6,7 @@ const caracteristicaEspecialM = document.querySelector('#caracteristicaEspecial'
 const tipoPadecimientoM = document.querySelector('#tipoPadecimiento');
 const tipoVacunaM = document.querySelector('#tipoVacuna');
 const botonEnviar = document.querySelector("#btnSubmit");
+const btnVolver = document.getElementById("btnVolver");
 
 const obtenerDatos = () => {
     var seccion_mascota;
@@ -192,3 +193,8 @@ btvRemover.addEventListener('click', removerCamposV);
 
 btmAgregar.addEventListener('click', agregarCamposM);
 btmRemover.addEventListener('click', removerCamposM);
+
+btnVolver.addEventListener('click', () => {
+    location.href = "perfil.html"
+
+});

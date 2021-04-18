@@ -50,13 +50,21 @@
     }
     
     #tbl-mascotas>thead>tr>th {
-        padding-right: 60px;
+        padding-right: 30px;
         text-align: center;
     }
     
     #tbl-mascotas {
         margin-left: 40px;
         text-align: center;
+    }
+    
+    .btn-eliminar {
+        text-align: center;
+        height: 30px;
+        width: 30px;
+        background-color: #e69138;
+        color: black;
     }
     
     @media only screen and (max-width: 1400px) {

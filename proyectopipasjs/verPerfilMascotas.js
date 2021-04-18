@@ -7,6 +7,9 @@ const caracteristicaEspecialMascota = document.querySelector('#caracteristicaEsp
 const caracteristicaPadecimientoMascota = document.querySelector('#tipoPadecimiento');
 const caracteristicaVacunaMascota = document.querySelector('#tipoVacuna');
 const tabla = document.getElementById('tabladinamica');
+const btnAgregar = document.getElementById("btn-agregar");
+const btnModificar = document.getElementById("btn-modificar");
+const btnVolver = document.getElementById("btn-volver");
 
 function readCookie(pCookie) {
     const nameString = pCookie + "="
@@ -49,10 +52,21 @@ const mostrar_mascotas = async() => {
 
             boton_eliminar.classList.add("far")
             boton_eliminar.classList.add("fa-trash-alt")
+            boton_eliminar.classList.add("btn-eliminar")
 
             celda_eliminar.appendChild(boton_eliminar);
         }
     });
 }
+
+btnAgregar.addEventListener('click', () => {
+    location.href = "registroMascota.html"
+
+});
+
+btnVolver.addEventListener('click', () => {
+    location.href = "perfil.html"
+
+});
 
 mostrar_mascotas();
