@@ -29,7 +29,7 @@ const obtenerDatos = () => {
     let comentario = comentarioUsuario.value;
     let myFile = "www.laspatitas.com";
     let activo = false;
-
+    let estado = "Pendiente"
 
     console.log('El tipo proveedor es: ', tipoProveedor);
     console.log('El tipo de servicio es: ', tipoServicio);
@@ -44,7 +44,7 @@ const obtenerDatos = () => {
     console.log('El Distrito es: ' + distrito);
     console.log('El Comentario es: ' + comentario);
 
-    registrar_proveedor(tipoProveedor, tipoServicio, tipoIdentificacion, usuarioAcargo, empresa, contraEmpresa, telefono, correo, provincia, canton, distrito, comentario, myFile, activo);
+    registrar_proveedor(tipoProveedor, tipoServicio, tipoIdentificacion, usuarioAcargo, empresa, contraEmpresa, telefono, correo, provincia, canton, distrito, comentario, myFile, activo, estado);
 
     Swal.fire({
         'icon': 'success',

@@ -19,7 +19,8 @@ router.post('/registrar-proveedor', (req, res) => {
         distritos: req.body.distritos,
         comentarios: req.body.comentarios,
         myFile: req.body.myFile,
-        activo: req.body.activo
+        activo: req.body.activo,
+        estado: req.body.estado
     });
 
     nuevo_proveedor.save((err, proveedor_db) => {
@@ -49,6 +50,52 @@ router.get('/listar-proveedor', (req, res) => {
 
         } else {
             res.json({ lista_proveedor });
+        }
+    });
+
+});
+
+router.put('/activar-proveedor', (req, res) => {
+    RegistroProveedor.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            activo: 'Activo'
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del proveedor",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El proveedor ha sido activado",
+                info
+            })
+        }
+    });
+
+});
+
+router.put('/desactivar-proveedor', (req, res) => {
+    RegistroProveedor.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            activo: 'Inactivo'
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del proveedor",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El proveedor ha sido desactivado",
+                info
+            })
         }
     });
 
