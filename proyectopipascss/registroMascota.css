@@ -92,22 +92,6 @@ h1 {
     margin-left: 110px;
 }
 
-#btnSubmit {
-    margin-top: 10px;
-    height: 30px;
-    width: 70px;
-    color: rgb(240, 240, 240);
-    background-color: rgb(204, 97, 64);
-}
-
-#btmAgregar {
-    margin-top: 10px;
-    height: 30px;
-    width: 110px;
-    color: rgb(240, 240, 240);
-    background-color: rgb(204, 97, 64);
-}
-
 #btnFoto {
     margin-top: 5px;
     height: 35px;

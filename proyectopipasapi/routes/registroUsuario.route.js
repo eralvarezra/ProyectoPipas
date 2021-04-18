@@ -25,7 +25,7 @@ router.post('/registrar-usuario', (req, res) => {
         fechaVencimiento: req.body.fechaVencimiento,
         foto: req.body.foto,
         estado: 'Pendiente',
-        correo: '',
+        contrasena: '',
     });
 
     nuevo_usuario.save((err, usuario_db) => {
