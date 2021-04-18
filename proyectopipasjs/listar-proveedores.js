@@ -15,7 +15,7 @@ const mostrar_proveedor = async() => {
         if (proveedor) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea cambiar el estado del proveedor?',
+                text: '¿Está seguro que desea cambiar el estado del proveedor?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
