@@ -10,7 +10,20 @@ const mostrar_proveedor = async() => {
     console.log(lista_proveedor);
     tabla.innerHTML = '';
     let filtro = input_filtro.value.toUpperCase();
+    const mostrar_modal_cambiar_estado = async(proveedor) => {
 
+        if (proveedor) {
+            const { value: accept } = await Swal.fire({
+                icon: 'warning',
+                text: 'Está seguro que desea cambiar el estado del proveedor?',
+                confirmButtonText: `Si`,
+                showCancelButton: true
+            });
+            if (accept) {
+                cambiar_estado(proveedor._id, proveedor.activo);
+            }
+        }
+    }
     lista_proveedor.forEach((proveedor) => {
         console.log(proveedor);
         if (proveedor.correo.toUpperCase().includes(filtro)) {
@@ -46,7 +59,7 @@ const mostrar_proveedor = async() => {
             celda_cambiar_estado.appendChild(boton_cambiar_estado);
 
             boton_cambiar_estado.addEventListener('click', async() => {
-                cambiar_estado(proveedor._id, proveedor.activo)
+                mostrar_modal_cambiar_estado(proveedor)
             });
         }
 
