@@ -5,8 +5,19 @@ const tipoRazaM = document.querySelector('#tipoRaza');
 const caracteristicaEspecialM = document.querySelector('#caracteristicaEspecial');
 const tipoPadecimientoM = document.querySelector('#tipoPadecimiento');
 const tipoVacunaM = document.querySelector('#tipoVacuna');
-const botonEnviar = document.querySelector("#btnSubmit");
+const botonEnviar = document.querySelector("#btnAgregar");
 const btnVolver = document.getElementById("btnVolver");
+
+var listacaracteristicas = [];
+var childcantidad = document.getElementById("caracteristicaEspecial").childElementCount;
+console.log(childcantidad);
+
+for (let i = 0; i < childcantidad; i++) {
+    let temp = document.getElementById("caracteristicaEspecial");
+    let childActual = temp[i].value;
+    listacaracteristicas.push({ nombre: childActual });
+}
+console.log(listacaracteristicas)
 
 const obtenerDatos = () => {
     var seccion_mascota;
@@ -88,9 +99,6 @@ const btpRemover = document.getElementById("btpRemover");
 
 const btvAgregar = document.getElementById("btvAgregar");
 const btvRemover = document.getElementById("btvRemover");
-
-const btmAgregar = document.getElementById("btmAgregar");
-const btmRemover = document.getElementById("btmRemover");
 
 var counter = 0;
 var counterp = 0;
@@ -182,9 +190,6 @@ btpRemover.addEventListener('click', removerCamposP);
 
 btvAgregar.addEventListener('click', agregarCamposV);
 btvRemover.addEventListener('click', removerCamposV);
-
-btmAgregar.addEventListener('click', agregarCamposM);
-btmRemover.addEventListener('click', removerCamposM);
 
 btnVolver.addEventListener('click', () => {
     location.href = "perfil.html"

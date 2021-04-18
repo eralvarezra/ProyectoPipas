@@ -7,8 +7,37 @@ const valor3 = document.getElementById("rate3");
 const valor4 = document.getElementById("rate4");
 const valor5 = document.getElementById("rate5");
 const btnCalificar = document.getElementById("btn-Calificar");
+const nombreProveedor = document.getElementById('nombreProveedor');
 
+function readCookie(pCookie) {
+    const nameString = pCookie + "="
 
+    const value = document.cookie.split(";").filter(item => {
+        return item.includes(nameString)
+    })
+
+    if (value.length) {
+        return value[0].substring(nameString.length, value[0].length)
+    } else {
+        return ""
+    }
+}
+
+const mostrar_proveedor = async() => {
+    let correo = readCookie("correo");
+    correo = correo.replace("=", "");
+    console.log(correo)
+    let proveedores = await listar_proveedor();
+    console.log(proveedores)
+    proveedores.forEach((proveedor) => {
+        if (proveedor.correo === correo) {
+            document.getElementById('nombreProveedor').innerHTML = proveedor.empresa;
+            document.getElementById('nombreProveedor').value = proveedor.empresa;
+            document.getElementById('nombreProveedor').text = proveedor.empresa;
+            console.log(proveedor.empresa)
+        }
+    });
+}
 
 const obtenerDatos = () => {
     let comentarioFinal = comentario.value;
@@ -88,3 +117,5 @@ const validar = () => {
 
 
 btnCalificar.addEventListener('click', validar);
+
+window.onload = mostrar_proveedor();
