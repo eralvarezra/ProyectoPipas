@@ -70,3 +70,6 @@ btnVolver.addEventListener('click', () => {
 });
 
 mostrar_mascotas();
+btnVolver.addEventListener('click', () => {
+    location.href = "perfil.html"
+});

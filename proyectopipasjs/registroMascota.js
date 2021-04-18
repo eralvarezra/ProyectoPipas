@@ -174,14 +174,6 @@ function agregarCamposM() {
     }
 }
 
-// function removerCamposM() {
-//     if (counterm > 0) {
-//         var item = document.getElementById("selectFormulario").lastChild
-//         document.getElementById("selectFormulario").removeChild(item);
-//         counterm--;
-//     }
-// }
-
 btnAgregar.addEventListener('click', agregarCampos);
 btnRemover.addEventListener('click', removerCampos);
 
