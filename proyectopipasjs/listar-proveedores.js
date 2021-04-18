@@ -31,15 +31,10 @@ const mostrar_proveedor = async() => {
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = proveedor.tipoProveedor;
             fila.insertCell().innerHTML = proveedor.tipoServicio;
-            fila.insertCell().innerHTML = proveedor.tipoIdentificacion;
             fila.insertCell().innerHTML = proveedor.pAcargo;
             fila.insertCell().innerHTML = proveedor.empresa;
             fila.insertCell().innerHTML = proveedor.telefono;
             fila.insertCell().innerHTML = proveedor.correo;
-            fila.insertCell().innerHTML = proveedor.provincias;
-            fila.insertCell().innerHTML = proveedor.cantones;
-            fila.insertCell().innerHTML = proveedor.distritos;
-            fila.insertCell().innerHTML = proveedor.comentarios;
             fila.insertCell().innerHTML = proveedor.activo;
             fila.insertCell().innerHTML = proveedor.estado;
 
