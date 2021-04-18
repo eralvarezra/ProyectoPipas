@@ -16,8 +16,8 @@ const schema_registroProveedor = new mongoose.Schema({
     distritos: { type: Number, required: true, unique: false },
     comentarios: { type: String, required: true, unique: false },
     myFile: { type: String, required: true, unique: false },
-    activo: { type: String, required: true, unique: false }
-
+    activo: { type: String, required: true, unique: false },
+    estado: { type: String, required: true, unique: false }
 });
 
 module.exports = mongoose.model('RegistroProveedor', schema_registroProveedor, 'RegistroProveedor');
