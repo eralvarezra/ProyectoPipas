@@ -84,3 +84,34 @@ const cambiar_estado = async(_id, estado_actual) => {
         }).then(() => {});
     });
 }
+const aprobar_estado = async(_id, es_activar) => {
+    let url_dinamico;
+    if (es_activar) {
+        url_dinamico = 'http://localhost:3000/api/aceptar-proveedor';
+    } else {
+        url_dinamico = 'http://localhost:3000/api/rechazar-proveedor';
+    }
+
+    await axios({
+        method: 'put',
+        url: url_dinamico,
+        responseType: 'json',
+        data: {
+            _id: _id
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'El estado del proveedor se modificó correctamente',
+            'text': response.msj
+        }).then(() => {
+            mostrar_proveedor();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
+}

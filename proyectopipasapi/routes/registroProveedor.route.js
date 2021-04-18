@@ -100,5 +100,49 @@ router.put('/desactivar-proveedor', (req, res) => {
     });
 
 });
+router.put('/aceptar-proveedor', (req, res) => {
+    RegistroProveedor.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            estado: "Aceptada"
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado de la reservación",
+                err
+            });
+        } else {
+            res.json({
+                msj: "La reserva ha sido aceptada",
+                info
+            })
+        }
+    });
 
+});
+
+//Funcion para aceptar una reserva
+router.put('/rechazar-proveedor', (req, res) => {
+    RegistroProveedor.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            estado: "Rechazada"
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado de la reservación",
+                err
+            });
+        } else {
+            res.json({
+                msj: "La reserva ha sido rechazada",
+                info
+            })
+        }
+    });
+});
 module.exports = router;
