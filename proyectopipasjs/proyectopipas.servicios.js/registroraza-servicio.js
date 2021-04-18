@@ -28,7 +28,7 @@ const listar_razas = async() => {
     let lista_raza = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-razas',
+        url: 'http://localhost:3000/api/listar-raza',
         responseType: 'json'
     }).then((response) => {
         lista_raza = response.data.lista_raza;
