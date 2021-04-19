@@ -30,21 +30,23 @@
             <form>
                 <div id="form-agregar">
                     <label for="txt-correo">Correo:</label>
-                    <input type="text" id="txt-correo" required class="swal2-input" disabled>
+                    <input type="text" id="txt-correo" required class="swal2-input" value="" disabled required>
                     <label for="txt-nombre">Nombre de Servicio:</label>
-                    <input type="text" id="txt-nombre" required class="swal2-input">
+                    <select id="txt-nombre" required class="swal2-input" required>
+                        <option value="">Seleccione una opción</option>
+                    </select>
                     <label for="num-precio">Precio:</label>
                     <br></br>
-                    <input type="number" id="num-precio" required class="swal2-input">
+                    <input type="number" id="num-precio" required class="swal2-input" min=0 value="" required>
                     <br></br>
                     <label for="txt-detalleServicio">Detalle Servicio:</label>
-                    <input type="text" id="txt-detalleServicio" required class="swal2-input">
+                    <input type="text" id="txt-detalleServicio" required class="swal2-input" value="" required>
                     <label for="num-costoServicioXhora">Costo por Hora:</label>
                     <br></br>
-                    <input type="number" id="num-costoServicioXhora" required class="swal2-input">
+                    <input type="number" id="num-costoServicioXhora" required class="swal2-input" value="" required>
                     <br></br>
                     <label for="txt-fecha">Fecha:</label>
-                    <input type="date" id="txt-fechaCreacion" required class="swal2-input" disabled>
+                    <input type="date" id="txt-fechaCreacion" required class="swal2-input" disabled required>
                 </div>
 
                 <div class="sct-boton">
@@ -55,9 +57,6 @@
             <div class="img-container "></div>
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
-
 </body>
 <footer class="footer">
     <div id="div-footer">
@@ -72,6 +71,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../proyectopipasjs/proyectopipas.servicios.js/agregarServicio-servicio.js"></script>
+<script src="../proyectopipasjs/proyectopipas.servicios.js/agregartiposervicio-servicio.js"></script>
 <script src="../proyectopipasjs/agregarServicio.js"></script>
 
 </html>

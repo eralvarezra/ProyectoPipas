@@ -5,19 +5,60 @@ const tipoRazaM = document.querySelector('#tipoRaza');
 const caracteristicaEspecialM = document.querySelector('#caracteristicaEspecial');
 const tipoPadecimientoM = document.querySelector('#tipoPadecimiento');
 const tipoVacunaM = document.querySelector('#tipoVacuna');
-const botonEnviar = document.querySelector("#btnAgregar");
+const botonEnviar = document.querySelector("#btnEnviar");
 const btnVolver = document.getElementById("btnVolver");
 
 var listacaracteristicas = [];
 var childcantidad = document.getElementById("caracteristicaEspecial").childElementCount;
-console.log(childcantidad);
 
 for (let i = 0; i < childcantidad; i++) {
     let temp = document.getElementById("caracteristicaEspecial");
     let childActual = temp[i].value;
     listacaracteristicas.push({ nombre: childActual });
 }
-console.log(listacaracteristicas)
+
+const mostrar_selects = async() => {
+    let listado = await listar_tipo();
+
+    listado.forEach((tipo) => {
+        let temporal = document.createElement('option');
+        temporal.innerHTML = tipo.nombreTipo;
+        temporal.value = tipo.nombreTipo;
+        tipoMascotaU.appendChild(temporal);
+    });
+
+    listado = await listar_razas();
+    listado.forEach((raza) => {
+        let temporal = document.createElement('option');
+        temporal.innerHTML = raza.nombreRaza;
+        temporal.value = raza.nombreRaza;
+        tipoRazaM.appendChild(temporal);
+    });
+
+    listado = await listar_caracteristicas();
+    listado.forEach((caracteristica) => {
+        let temporal = document.createElement('option');
+        temporal.innerHTML = caracteristica.nombreCaracteristica;
+        temporal.value = caracteristica.nombreCaracteristica;
+        caracteristicaEspecialM.appendChild(temporal);
+    });
+
+    listado = await listar_padecimientos();
+    listado.forEach((padecimiento) => {
+        let temporal = document.createElement('option');
+        temporal.innerHTML = padecimiento.nombrePadecimiento;
+        temporal.value = padecimiento.nombrePadecimiento;
+        tipoPadecimientoM.appendChild(temporal);
+    });
+
+    listado = await listar_vacunas();
+    listado.forEach((vacuna) => {
+        let temporal = document.createElement('option');
+        temporal.innerHTML = vacuna.nombreVacuna;
+        temporal.value = vacuna.nombreVacuna;
+        tipoVacunaM.appendChild(temporal);
+    });
+}
 
 const obtenerDatos = () => {
     var seccion_mascota;
@@ -195,3 +236,4 @@ btnVolver.addEventListener('click', () => {
     location.href = "perfil.html"
 
 });
+mostrar_selects();

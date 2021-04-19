@@ -75,8 +75,7 @@ const mostrar_servicio = async() => {
             let boton_editar = document.createElement('button');
             boton_editar.classList.add("fas")
             boton_editar.classList.add("fa-cat")
-            boton_editar.style.backgroundColor = "orange";
-            boton_editar.type = 'button';
+            boton_editar.classList.add("btn2")
 
             boton_editar.addEventListener('click', async() => {
                 mostrar_modal_editar(servicio);

@@ -67,6 +67,7 @@ const mostrar_tipoServicio = async() => {
             let boton_editar = document.createElement('button');
             boton_editar.classList.add("far")
             boton_editar.classList.add("fa-edit")
+            boton_editar.classList.add('btn2')
             boton_editar.type = 'button';
 
             boton_editar.addEventListener('click', async() => {
@@ -81,6 +82,7 @@ const mostrar_tipoServicio = async() => {
 
             boton_eliminar.classList.add("far")
             boton_eliminar.classList.add("fa-trash-alt")
+            boton_eliminar.classList.add("btn2");
 
             celda_eliminar.appendChild(boton_eliminar);
 

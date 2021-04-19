@@ -38,24 +38,23 @@
                         <br>
                         <div>
                             <label for="tipoMascota">Tipo:</label>
-                            <select class="Slct-Form" id="tipoMascota">
-                                <option>Seleccione una opción</option>
+                            <select class="Slct-Form" id="tipoMascota" required>
+                                <option value="">Seleccione una opción</option>
                         </select>
                         </div>
                         <div class="selectTipoRaza">
                             <label for="tipoRaza">Raza:</label>
-                            <select class="Slct-Form" id="tipoRaza">
-                                <option>Seleccione una opción</option>
+                            <select class="Slct-Form" id="tipoRaza" required>
+                                <option value="">Seleccione una opción</option>
                             </select>
                         </div>
 
-                        <label>Foto</label>
-                        <input type="file" name="foto" id="btnFoto" placeholder="imagen" />
+
 
                         <div id="selectTipoCaracteristica">
                             <label>Características especiales: </label>
-                            <select class="Slct-Form" id="caracteristicaEspecial">
-                                <option>Seleccione una opción</option>
+                            <select class="Slct-Form" id="caracteristicaEspecial" required>
+                                <option value="">Seleccione una opción</option>
                           </select>
                             <input type="button" id="btnAgregar" value="+">
                             <input type="button" id="btnRemover" value="-">
@@ -63,8 +62,8 @@
                         </div>
                         <div id="selectTipoPadecimiento">
                             <label>Padecimientos: </label>
-                            <select class="Slct-Form " id="tipoPadecimiento">
-                                <option>Seleccione una opción</option>  
+                            <select class="Slct-Form " id="tipoPadecimiento" required>
+                                <option value="">Seleccione una opción</option>  
                               </select>
                             <input type="button" id="btpAgregar" value="+">
                             <input type="button" id="btpRemover" value="-">
@@ -73,20 +72,26 @@
 
                         <div id="selectTipoVacuna">
                             <label>Vacuna: </label>
-                            <select class="Slct-Form " id="tipoVacuna">
-                                <option>Seleccione una opción</option>
+                            <select class="Slct-Form " id="tipoVacuna" required>
+                                <option value="">Seleccione una opción</option>
                               </select>
                             <input type="button" id="btvAgregar" value="+">
                             <input type="button" id="btvRemover" value="-">
                             <span id="agregarAca" class=".Slct-Form"></span>
                             <br><br>
                         </div>
+
+
                         <!-- <input type="button" id="btmRemover" value="Eliminar mascota"> -->
                         <span id="agregarAca" class=".Slct-Form"></span>
-                        <br>
+
                     </div>
                     <div>
-                        <input type="button" id="btnAgregar" class="btn" value="Agregar"></button>
+                        <label>Foto</label>
+                        <input type="file" name="foto" id="btnFoto" placeholder="imagen" />
+                    </div>
+                    <div>
+                        <input type="button" id="btnEnviar" class="btn" value="Agregar"></button>
                         <input type="button" id="btnVolver" class="btn" value="Volver"></button>
                     </div>
                 </div>
@@ -106,6 +111,12 @@
     </footer>
     <!--acordarse si van a usar una librería  externa, como el sweet alert. importar el script.-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registrovacuna-servicio.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registropadecimiento-servicio.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registrocaracteristica-servicio.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registroraza-servicio.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registrotipo-servicio.js"></script>
     <script src="../proyectopipasjs/registroMascota.js"></script>
 </body>
 

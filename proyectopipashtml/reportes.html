@@ -46,15 +46,12 @@
                 <div class="div-Form">
                     <h1>REPORTE DE USUARIO</h1>
                     <br>
-                    <table>
+                    <table id="tbl-resultados">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>NOMBRE</th>
                                 <th>APELLIDOS</th>
                                 <th>TIPO IDENTIFICACIÓN</th>
-                                <th>IDENTIFICACIÓN</th>
-                                <th>UBICACIÓN</th>
                                 <th>GÉNERO</th>
                                 <th>CANTIDAD DE MASCOTAS</th>
                                 <th>TELÉFONO</th>
@@ -62,85 +59,7 @@
                                 <th>CORREO</th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>1</td>
-                            <td>Juan</td>
-                            <td>Perez Morales</td>
-                            <td>Jurídica</td>
-                            <td>30491579</td>
-                            <td>Cartago</td>
-                            <td>Masculino</td>
-                            <td>5</td>
-                            <td>78956324</td>
-                            <td>Avatar</td>
-                            <td>juanp@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>María</td>
-                            <td>Corrales Mora</td>
-                            <td>Jurídica</td>
-                            <td>156894156</td>
-                            <td>Cartago</td>
-                            <td>Femenino</td>
-                            <td>2</td>
-                            <td>85698974</td>
-                            <td>Avatar</td>
-                            <td>mariap@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Carlos</td>
-                            <td>Pérez Zamora</td>
-                            <td>Jurídica</td>
-                            <td>346510789</td>
-                            <td>Guanacaste</td>
-                            <td>Masculino</td>
-                            <td>1</td>
-                            <td>25947896</td>
-                            <td>Avatar</td>
-                            <td>carlos29@hotmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Adrián</td>
-                            <td>Mata Morales</td>
-                            <td>Jurídica</td>
-                            <td>10647891</td>
-                            <td>Alajuela</td>
-                            <td>Masculino</td>
-                            <td>3</td>
-                            <td>25947789</td>
-                            <td>Avatar</td>
-                            <td>adrianmata@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Adrián</td>
-                            <td>Mata Morales</td>
-                            <td>Jurídica</td>
-                            <td>10647891</td>
-                            <td>Alajuela</td>
-                            <td>Masculino</td>
-                            <td>3</td>
-                            <td>25947789</td>
-                            <td>Avatar</td>
-                            <td>adrianmata@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Ana</td>
-                            <td>Salas Villegas</td>
-                            <td>Jurídica</td>
-                            <td>507890456</td>
-                            <td>Heredia</td>
-                            <td>Femenino</td>
-                            <td>1</td>
-                            <td>30491851</td>
-                            <td>Avatar</td>
-                            <td>anavillegas@gmail.com</td>
-                        </tr>
-
+                        <tbody id="tabladinamica"></tbody>
                     </table>
 
                 </div>
@@ -159,5 +78,9 @@
         </div>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../proyectopipasjs/proyectopipas.servicios.js/registroUsuario-servicio.js"></script>
+<script src="../proyectopipasjs/reporte.js"></script>
 
 </html>

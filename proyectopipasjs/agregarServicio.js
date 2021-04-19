@@ -1,6 +1,6 @@
 'use strict';
-const input_nombre = document.getElementById('txt-nombre');
-var input_correo = document.getElementById('txt-correo');
+const nombreServicio = document.getElementById('txt-nombre');
+const input_correo = document.getElementById('txt-correo');
 const input_numprecio = document.getElementById('num-precio');
 const input_detalleServicio = document.getElementById('txt-detalleServicio');
 const input_costoServicioXhora = document.getElementById('num-costoServcioXhora');
@@ -22,6 +22,19 @@ function readCookie(pCookie) {
     }
 }
 
+const cargar_servicios = async() => {
+    let lista_tipoServicio = await listar_tipoServicio();
+    console.log(lista_tipoServicio)
+
+    lista_tipoServicio.forEach((servicio) => {
+        let temporal = servicio.nombreServicio;
+        let newoption = document.createElement('option');
+        newoption.innerHTML = temporal;
+        newoption.value = temporal;
+        nombreServicio.appendChild(newoption);
+    });
+}
+
 const cookieCorreo = () => {
     let correoCookie = readCookie("correo");
     correoCookie = correoCookie.replace("=", "");
@@ -29,7 +42,7 @@ const cookieCorreo = () => {
 }
 
 const enviar_informacion = async() => {
-    let pNombreServicio = input_nombre.value;
+    let pNombreServicio = nombreServicio;
     let pCorreo = input_correo.value;
     let pPrecio = input_numprecio.value;
     let pDetalleServicio = input_detalleServicio.value;
@@ -41,9 +54,24 @@ const enviar_informacion = async() => {
     location.href = "../proyectopipashtml/listarServicio.html"
 }
 
-btnAgregar.addEventListener('click', enviar_informacion);
+const validar = () => {
+    let error = false;
+    let campos_requeridos = document.querySelectorAll(':required');
+    campos_requeridos.forEach(campo => {
+        if (campo.value == '') {
+            error = true;
+            campo.classList.add('error-input');
+        } else {
+            campo.classList.remove('error-input');
+            enviar_informacion();
+        }
+    });
+}
+
+btnAgregar.addEventListener('click', validar);
 btnCancelar.addEventListener("click", () => {
     location.href = "../proyectopipashtml/listarServicio.html"
 });
 
 window.onload = cookieCorreo();
+window.onload = cargar_servicios();

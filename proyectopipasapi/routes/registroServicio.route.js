@@ -42,6 +42,7 @@ router.get('/listar-tipoServicio', (req, res) => {
         }
     })
 });
+
 router.put('/modificar-tipoServicio', (req, res) => {
     TipoServicio.updateOne({
         _id: req.body._id

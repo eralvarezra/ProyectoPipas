@@ -56,7 +56,17 @@ const mostrar_mascotas = async() => {
 
             celda_eliminar.appendChild(boton_eliminar);
             celda_eliminar.addEventListener('click', async() => {
-                eliminar_mascota(mascota._id)
+                if (mascota) {
+                    const { value: accept } = await Swal.fire({
+                        icon: 'warning',
+                        text: 'Está seguro que desea eliminar la mascota',
+                        confirmButtonText: `Si`,
+                        showCancelButton: true
+                    });
+                    if (accept) {
+                        eliminar_mascota(mascota._id);
+                    }
+                }
             });
         }
     });
