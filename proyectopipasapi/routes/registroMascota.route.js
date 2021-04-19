@@ -10,7 +10,7 @@ router.post('/registrar-mascota', (req, res) => {
         tipoMascota: req.body.tipoMascota,
         tipoRaza: req.body.tipoRaza,
         fotoMascota: req.body.fotoMascota,
-        caracteristicaEspecial: req.body.caracteristicaEspecial,
+        caracteristicaEspecial: req.body.caracteristicaEspecial.nombre,
         tipoPadecimiento: req.body.tipoPadecimiento,
         tipoVacuna: req.body.tipoVacuna,
         correo: req.body.correo
@@ -69,6 +69,22 @@ router.put('/modificar-Mascota', (req, res) => {
                 msj: "Los cambios se hicieron satisfactoriamente.",
                 info
             })
+        }
+    });
+});
+
+router.delete('/eliminar-mascota', (req, res) => {
+    let _id = req.body._id;
+    Mascota.findOneAndRemove({ _id: _id }, (err) => {
+        if (err) {
+            res.json({
+                msj: 'No se pudo eliminar la Mascota',
+                err
+            });
+        } else {
+            res.json({
+                msj: 'La Mascota se eliminó correctamente'
+            });
         }
     });
 });

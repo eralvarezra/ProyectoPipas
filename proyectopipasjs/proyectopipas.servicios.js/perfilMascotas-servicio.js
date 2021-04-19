@@ -13,3 +13,28 @@ const listar_mascotas = async() => { // esta es la funcion que se usa en el cont
     });
     return lista_mascotas;
 };
+
+const eliminar_mascota = async(_id) => {
+    await axios({
+        method: 'delete',
+        url: 'http://localhost:3000/api/eliminar-mascota',
+        responseType: 'json',
+        data: {
+            _id: _id
+        }
+    }).then((response) => {
+        Swal.fire({
+            'title': 'La mascota ha sido eliminada',
+            'icon': 'success',
+            'text': response.msj
+        }).then(() => {
+            mostrar_mascotas();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'title': response.msj,
+            'icon': 'error',
+            'text': response.err
+        })
+    });
+};

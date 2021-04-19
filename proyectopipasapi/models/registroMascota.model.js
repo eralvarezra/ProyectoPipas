@@ -7,7 +7,7 @@ const schema_mascota = new mongoose.Schema({
     tipoMascota: { type: String, required: true, unique: false },
     tipoRaza: { type: String, required: true, unique: false },
     fotoMascota: { type: String, required: true, unique: false },
-    caracteristicaEspecial: { type: String, required: true, unique: false },
+    caracteristicaEspecial: { nombre: { type: String, required: true, unique: false } },
     tipoPadecimiento: { type: String, required: true, unique: false },
     tipoVacuna: { type: String, required: true, unique: false },
     correo: { type: String, required: true, unique: false }

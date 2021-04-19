@@ -55,6 +55,9 @@ const mostrar_mascotas = async() => {
             boton_eliminar.classList.add("btn-eliminar")
 
             celda_eliminar.appendChild(boton_eliminar);
+            celda_eliminar.addEventListener('click', async() => {
+                eliminar_mascota(mascota._id)
+            });
         }
     });
 }
