@@ -30,6 +30,7 @@ const registrar_proveedor = async(tipoProveedor, tipoServicio, tipoIdentificacio
             'text': response.msj
         }).then(() => {
             limpiar();
+            location.href = "../proyectopipashtml/registroProveedoresNotificacion.html";
         });
     }).catch((response) => {
         Swal.fire({

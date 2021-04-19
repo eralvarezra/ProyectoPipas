@@ -11,9 +11,38 @@ const mostrar_proveedor = async() => {
     tabla.innerHTML = '';
     let filtro = input_filtro.value.toUpperCase();
 
+    const mostrar_modal_aprobar_estado = async(proveedor) => {
+
+        if (proveedor) {
+            const { value: accept } = await Swal.fire({
+                icon: 'warning',
+                text: '¿Está seguro que desea aceptar la solicitud del proveedor?',
+                confirmButtonText: `Si`,
+                showCancelButton: true
+            });
+            if (accept) {
+                aprobar_estado(proveedor._id, true);
+            }
+        }
+    }
+    const mostrar_modal_rechazar_estado = async(proveedor) => {
+
+        if (proveedor) {
+            const { value: accept } = await Swal.fire({
+                icon: 'warning',
+                text: '¿Está seguro que desea rechazar la solicitud del proveedor?',
+                confirmButtonText: `Si`,
+                showCancelButton: true
+            });
+            if (accept) {
+                aprobar_estado(proveedor._id, false);
+            }
+        }
+    }
+
     lista_proveedor.forEach((proveedor) => {
         console.log(proveedor);
-        if (proveedor.correo.toUpperCase().includes(filtro)) {
+        if (proveedor.estado.toUpperCase().includes(filtro) || proveedor.correo.toUpperCase().includes(filtro)) {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = proveedor.tipoProveedor;
@@ -45,11 +74,11 @@ const mostrar_proveedor = async() => {
                 celda_cambiar_estado.appendChild(boton_rechazar);
 
                 boton_activar.addEventListener('click', async() => {
-                    aprobar_estado(proveedor._id, true)
+                    mostrar_modal_aprobar_estado(proveedor);
                 });
 
                 boton_rechazar.addEventListener('click', async() => {
-                    aprobar_estado(proveedor._id, false)
+                    mostrar_modal_rechazar_estado(proveedor);
                 });
             }
         }

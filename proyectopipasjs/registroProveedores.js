@@ -28,7 +28,7 @@ const obtenerDatos = () => {
     let distrito = distritosUsuario.value;
     let comentario = comentarioUsuario.value;
     let myFile = "www.laspatitas.com";
-    let activo = "Inactivo";
+    let activo = "Activo";
     let estado = "Pendiente"
 
     console.log('El tipo proveedor es: ', tipoProveedor);
