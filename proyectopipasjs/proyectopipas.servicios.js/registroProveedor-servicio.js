@@ -40,7 +40,34 @@ const registrar_proveedor = async(tipoProveedor, tipoServicio, tipoIdentificacio
         }).then(() => {});
     });
 };
-
+const modificar_proveedor = async(_id, tipoServicio, pAcargo, empresa, telefono) => {
+    await axios({
+        method: 'put',
+        url: 'http://localhost:3000/api/modificar-proveedor',
+        responseType: 'json',
+        data: {
+            _id: _id,
+            tipoServicio: tipoServicio,
+            pAcargo: pAcargo,
+            empresa: empresa,
+            telefono: telefono
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'La información ha sido actualizada',
+            'text': response.msj
+        }).then(() => {
+            mostrar_proveedor();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
+};
 const listar_proveedor = async() => {
     let lista_proveedor = [];
     await axios({

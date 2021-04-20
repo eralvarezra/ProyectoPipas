@@ -54,7 +54,30 @@ router.get('/listar-proveedor', (req, res) => {
     });
 
 });
-
+router.put('/modificar-proveedor', (req, res) => {
+    RegistroProveedor.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            tipoServicio: req.body.tipoServicio,
+            pAcargo: req.body.pAcargo,
+            empresa: req.body.empresa,
+            telefono: req.body.telefono
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar la información",
+                err
+            });
+        } else {
+            res.json({
+                msj: "la información fue modificada exitosamente",
+                info
+            })
+        }
+    });
+});
 router.put('/activar-proveedor', (req, res) => {
     RegistroProveedor.updateOne({
         _id: req.body._id

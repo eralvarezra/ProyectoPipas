@@ -1,10 +1,14 @@
 'use strict'
 
+//let cookies = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, correo]) => ({...accumulator, [key.trim()]: decodeURIComponent(correo) }));
+//console.log(cookies.correo);
+
 //obteniendo los elementos de HTML
 const tabla = document.querySelector("#tbl-resultados tbody");
 //Filtro
 const input_filtro = document.querySelector("#txt-filtro");
 //Tabla dinamica
+
 const mostrar_proveedor = async() => {
     let lista_proveedor = await listar_proveedor();
     console.log(lista_proveedor);
