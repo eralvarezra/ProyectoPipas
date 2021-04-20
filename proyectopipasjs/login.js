@@ -17,7 +17,7 @@ const obtenerDatos = () => {
     // este paso es para consultar la base de datos y traer correo y pass
     let email = correoElectronico.value;
     let pass = contrasena.value;
-    validar_perfil(email, pass);
+    mostrar_activar(email, pass);
 };
 
 
@@ -35,7 +35,48 @@ function readCookie(pCookie) {
         return ""
     }
 }
+const mostrar_activar = async(filtro, pass) => {
+    let lista_proveedor = await listar_proveedor();
+    let lista_usuario = await obtener_login_usuario();
+    let lista_admin = await obtener_login();
+    // let lista_activos;
+    let valido = false;
+    // for (let i = 0; i < lista_proveedor.length; i++) {
+    //     lista_activos += lista_proveedor[i];
+    // }
+    // for (let i = 0; i < lista_usuario.length; i++) {
+    //     lista_activos += lista_usuario[i];
+    // }
+    // console.log(lista_activos);
 
+    lista_proveedor.forEach((proveedor) => {
+        if (proveedor.correo == filtro) {
+            if ((proveedor.activo == "Activo") && (proveedor.estado == "Aceptada")) {
+                valido = true;
+                validar_perfil(filtro, pass);
+            }
+        } else {
+            Swal.fire({
+                'icon': 'warning',
+                'title': 'Su perfil no se encuentra activo o aprobado',
+                'text': 'Comuniquese con el administrador'
+            });
+        }
+    });
+    lista_usuario.forEach((usuario) => {
+        if (usuario.correo == filtro) {
+            if ((usuario.activo == "Activo") && (usuario.estado == "Aceptada")) {
+                valido = true;
+                validar_perfil(filtro, pass);
+            }
+        }
+    })
+    lista_admin.forEach((admin) => {
+        if (admin.correo == filtro) {
+            validar_perfil(filtro, pass);
+        }
+    })
+};
 
 const validar_perfil = async(pEmail, pPass) => {
 
