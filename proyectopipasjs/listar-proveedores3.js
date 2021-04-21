@@ -1,12 +1,12 @@
 'use strict'
 
-let cookies = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, correo]) => ({...accumulator, [key.trim()]: decodeURIComponent(correo) }));
-console.log(cookies.correo);
+let cookies1 = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, correo]) => ({...accumulator, [key.trim()]: decodeURIComponent(correo) }));
+console.log(cookies1.correo);
 
 //obteniendo los elementos de HTML
 const tabla = document.querySelector("#tbl-resultados tbody");
 //Filtro
-document.getElementById('txt-filtro').value = cookies.correo
+document.getElementById('txt-filtro').value = cookies1.correo
 const input_filtro = document.querySelector("#txt-filtro");
 //Tabla dinamica
 const mostrar_modal_editar = async(proveedor) => {
