@@ -5,90 +5,306 @@ const rate2 = document.getElementById("rate2");
 const rate1 = document.getElementById("rate1");
 const tipoMascota = document.getElementById("tipoMascota");
 const tipoServicio = document.getElementById("tipoServicio");
-const provincia = document.getElementById("provincias");
-const canton = document.getElementById("cantones");
-const distrito = document.getElementById("distritos");
 const btnBuscar = document.getElementById("btnBuscar");
 const tabla = document.querySelector("#tbl-resultados tbody");
 
-buscar_proveedores = () => {
+const filtrar = () => {
+    let valor;
+    let filtroRate;
+    let filtroTipoMascota;
+    let filtroTipoServicio;
 
-
-}
-
-const mostrar_modal_editar = async(servicio) => {
-    const { value: formValues } = await Swal.fire({
-        title: 'Editar Servicio',
-        html: `
-        <div>
-            <label for="txt-nombre">Nombre:</label>
-            <input type="text" id="txt-nombre" required class="swal2-input" value="${servicio.nombreServicio}">
-            <label for="txt-correo">Correo:</label>
-            <input type="text" id="txt-correo" required class="swal2-input" value="${servicio.correo}">
-            <label for="num-precio">Precio:</label>
-            <input type="text" id="num-precio" required class="swal2-input" value="${servicio.precio}">
-            <label for="txt-detalleServicio">Detalle Servicio:</label>
-            <input type="text" id="txt-detalleServicio" required class="swal2-input" value="${servicio.detalleServicio}">
-            <label for="num-costoServicioXhora">Costo por Hora:</label>
-            <input type="text" id="num-costoServicioXhora" required class="swal2-input" value="${servicio.costoServicioXhora}">
-        </div>`,
-        focusConfirm: false,
-        preConfirm: () => {
-            return [
-                servicio._id,
-                document.querySelector('#txt-nombre').value,
-                document.querySelector('#txt-correo').value,
-                document.querySelector('#num-precio').value,
-                document.querySelector('#txt-detalleServicio').value,
-                document.querySelector('#num-costoServicioXhora').value,
-            ]
-        }
-    });
-    if (formValues) {
-        const { value: accept } = await Swal.fire({
-            icon: 'warning',
-            text: 'Está seguro que desea modificar el Servicio',
-            confirmButtonText: `Si`,
-            showCancelButton: true
-        });
-        if (accept) {
-            modificar_servicio(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4], formValues[5]);
+    for (let i = 0; i < 5; i++) {
+        switch (i) {
+            case 1:
+                if (rate1.selected) {
+                    valor = i + 1;
+                    i = 5;
+                }
+                break;
+            case 2:
+                if (rate2.selected) {
+                    valor = i + 1;
+                    i = 5;
+                }
+                break;
+            case 3:
+                if (rate3.selected) {
+                    valor = i + 1;
+                    i = 5;
+                }
+                break;
+            case 4:
+                if (rate4.selected) {
+                    valor = i + 1;
+                    i = 5;
+                }
+                break;
+            case 5:
+                if (rate5.selected) {
+                    valor = i + 1;
+                    i = 5;
+                }
+                break;
+            default:
+                valor = "";
+                break;
         }
     }
+    filtroRate = valor;
+    filtroTipoMascota = tipoMascota.value;
+    filtroTipoServicio = tipoServicio.value;
+    mostrar_servicio(filtroRate, filtroTipoMascota, filtroTipoServicio)
 }
 
 const mostrar_servicio = async() => {
     let lista_servicio = await listar_servicio();
+    let lista_proveedor = await listar_proveedor();
+    let lista_calificacion = await listar_calificacion();
     console.log(lista_servicio);
     tabla.innerHTML = '';
     let filtro = "";
+    var fila;
 
     lista_servicio.forEach((servicio) => {
         console.log(servicio);
         if (servicio.correo.includes(filtro)) {
-
-            let fila = tabla.insertRow();
-            fila.insertCell().innerHTML = servicio.correo;
+            fila = tabla.insertRow();
+            fila.insertCell().innerHTML = servicio.nombreServicio;
             fila.insertCell().innerHTML = servicio.detalleServicio;
+            filtro = servicio.correo;
+            lista_proveedor.forEach((proveedor) => {
+                console.log(proveedor);
+                if (proveedor.correo.includes(filtro)) {
+                    fila.insertCell().innerHTML = proveedor.empresa;
+                }
+            });
+            let puntaje = 0;
+            let cantidad = 0;
+            let promedio = 0;
+            lista_calificacion.forEach((calificacion) => {
+                if (filtro === calificacion.nombreProveedor) {
+                    cantidad = cantidad + 1;
+                    puntaje = puntaje + calificacion.calificacion;
+                    promedio = puntaje / cantidad;
+                    promedio = Math.round(promedio);
 
-            let celda_editar = fila.insertCell();
-            let boton_editar = document.createElement('button');
-            boton_editar.classList.add("fas")
-            boton_editar.classList.add("fa-cat")
-            boton_editar.classList.add("btn2")
+                }
+                console.log(promedio)
 
-            boton_editar.addEventListener('click', async() => {
-                mostrar_modal_editar(servicio);
-            })
-            celda_editar.appendChild(boton_editar);
+            });
+            if (promedio > 0) {
+                let celda_editar;
+                let boton_editar = document.createElement('button');
+                let boton_editar2 = document.createElement('button');
+                let boton_editar3 = document.createElement('button');
+                let boton_editar4 = document.createElement('button');
+                let boton_editar5 = document.createElement('button');
+                celda_editar = fila.insertCell();
+                switch (promedio) {
+                    case 1:
+                        boton_editar.classList.add("fas");
+                        boton_editar.classList.add("fa-paw");
+                        boton_editar.style.backgroundColor = "white";
+                        boton_editar.style.borderColor = "white";
+                        boton_editar.style.boxShadow = "none";
+                        boton_editar.style.color = "#0CC49F";
+                        boton_editar2.classList.add("fas")
+                        boton_editar2.classList.add("fa-paw")
+                        boton_editar2.style.backgroundColor = "white";
+                        boton_editar2.style.borderColor = "white";
+                        boton_editar2.style.boxShadow = "none";
+                        boton_editar2.style.color = "black";
+                        boton_editar3.classList.add("fas")
+                        boton_editar3.classList.add("fa-paw")
+                        boton_editar3.style.backgroundColor = "white";
+                        boton_editar3.style.borderColor = "white";
+                        boton_editar3.style.boxShadow = "none";
+                        boton_editar3.style.color = "black";
+                        boton_editar4.classList.add("fas")
+                        boton_editar4.classList.add("fa-paw")
+                        boton_editar4.style.backgroundColor = "white";
+                        boton_editar4.style.borderColor = "white";
+                        boton_editar4.style.boxShadow = "none";
+                        boton_editar4.style.color = "black";
+                        boton_editar5.classList.add("fas")
+                        boton_editar5.classList.add("fa-paw")
+                        boton_editar5.style.backgroundColor = "white";
+                        boton_editar5.style.borderColor = "white";
+                        boton_editar5.style.boxShadow = "none";
+                        boton_editar5.style.color = "black";
+                        celda_editar.appendChild(boton_editar);
+                        celda_editar.appendChild(boton_editar2);
+                        celda_editar.appendChild(boton_editar3);
+                        celda_editar.appendChild(boton_editar4);
+                        celda_editar.appendChild(boton_editar5);
+                        break;
+                    case 2:
+                        boton_editar.classList.add("fas");
+                        boton_editar.classList.add("fa-paw");
+                        boton_editar.style.backgroundColor = "white";
+                        boton_editar.style.borderColor = "white";
+                        boton_editar.style.boxShadow = "none";
+                        boton_editar.style.color = "#0CC49F";
+                        boton_editar2.classList.add("fas")
+                        boton_editar2.classList.add("fa-paw")
+                        boton_editar2.style.backgroundColor = "white";
+                        boton_editar2.style.borderColor = "white";
+                        boton_editar2.style.boxShadow = "none";
+                        boton_editar2.style.color = "#0CC49F";
+                        boton_editar3.classList.add("fas")
+                        boton_editar3.classList.add("fa-paw")
+                        boton_editar3.style.backgroundColor = "white";
+                        boton_editar3.style.borderColor = "white";
+                        boton_editar3.style.boxShadow = "none";
+                        boton_editar3.style.color = "black";
+                        boton_editar4.classList.add("fas")
+                        boton_editar4.classList.add("fa-paw")
+                        boton_editar4.style.backgroundColor = "white";
+                        boton_editar4.style.borderColor = "white";
+                        boton_editar4.style.boxShadow = "none";
+                        boton_editar4.style.color = "black";
+                        boton_editar5.classList.add("fas")
+                        boton_editar5.classList.add("fa-paw")
+                        boton_editar5.style.backgroundColor = "white";
+                        boton_editar5.style.borderColor = "white";
+                        boton_editar5.style.boxShadow = "none";
+                        boton_editar5.style.color = "black";
+                        celda_editar.appendChild(boton_editar);
+                        celda_editar.appendChild(boton_editar2);
+                        celda_editar.appendChild(boton_editar3);
+                        celda_editar.appendChild(boton_editar4);
+                        celda_editar.appendChild(boton_editar5);
+                        break;
+                    case 3:
 
+                        boton_editar.classList.add("fas");
+                        boton_editar.classList.add("fa-paw");
+                        boton_editar.style.backgroundColor = "white";
+                        boton_editar.style.borderColor = "white";
+                        boton_editar.style.boxShadow = "none";
+                        boton_editar.style.color = "#0CC49F";
+                        boton_editar2.classList.add("fas")
+                        boton_editar2.classList.add("fa-paw")
+                        boton_editar2.style.backgroundColor = "white";
+                        boton_editar2.style.borderColor = "white";
+                        boton_editar2.style.boxShadow = "none";
+                        boton_editar2.style.color = "#0CC49F";
+                        boton_editar3.classList.add("fas")
+                        boton_editar3.classList.add("fa-paw")
+                        boton_editar3.style.backgroundColor = "white";
+                        boton_editar3.style.borderColor = "white";
+                        boton_editar3.style.boxShadow = "none";
+                        boton_editar3.style.color = "#0CC49F";
+                        boton_editar4.classList.add("fas")
+                        boton_editar4.classList.add("fa-paw")
+                        boton_editar4.style.backgroundColor = "white";
+                        boton_editar4.style.borderColor = "white";
+                        boton_editar4.style.boxShadow = "none";
+                        boton_editar4.style.color = "black";
+                        boton_editar5.classList.add("fas")
+                        boton_editar5.classList.add("fa-paw")
+                        boton_editar5.style.backgroundColor = "white";
+                        boton_editar5.style.borderColor = "white";
+                        boton_editar5.style.boxShadow = "none";
+                        boton_editar5.style.color = "black";
+                        celda_editar.appendChild(boton_editar);
+                        celda_editar.appendChild(boton_editar2);
+                        celda_editar.appendChild(boton_editar3);
+                        celda_editar.appendChild(boton_editar4);
+                        celda_editar.appendChild(boton_editar5);
+                        break;
+                    case 4:
+                        boton_editar.classList.add("fas")
+                        boton_editar.classList.add("fa-paw")
+                        boton_editar.style.backgroundColor = "white";
+                        boton_editar.style.borderColor = "white";
+                        boton_editar.style.boxShadow = "none";
+                        boton_editar.style.color = "#0CC49F";
+                        boton_editar2.classList.add("fas")
+                        boton_editar2.classList.add("fa-paw")
+                        boton_editar2.style.backgroundColor = "white";
+                        boton_editar2.style.borderColor = "white";
+                        boton_editar2.style.boxShadow = "none";
+                        boton_editar2.style.color = "#0CC49F";
+                        boton_editar3.classList.add("fas")
+                        boton_editar3.classList.add("fa-paw")
+                        boton_editar3.style.backgroundColor = "white";
+                        boton_editar3.style.borderColor = "white";
+                        boton_editar3.style.boxShadow = "none";
+                        boton_editar3.style.color = "#0CC49F";
+                        boton_editar4.classList.add("fas")
+                        boton_editar4.classList.add("fa-paw")
+                        boton_editar4.style.backgroundColor = "white";
+                        boton_editar4.style.borderColor = "white";
+                        boton_editar4.style.boxShadow = "none";
+                        boton_editar4.style.color = "#0CC49F";
+                        boton_editar5.classList.add("fas")
+                        boton_editar5.classList.add("fa-paw")
+                        boton_editar5.style.backgroundColor = "white";
+                        boton_editar5.style.borderColor = "white";
+                        boton_editar5.style.boxShadow = "none";
+                        boton_editar5.style.color = "black";
 
+                        celda_editar.appendChild(boton_editar);
+                        celda_editar.appendChild(boton_editar2);
+                        celda_editar.appendChild(boton_editar3);
+                        celda_editar.appendChild(boton_editar4);
+                        celda_editar.appendChild(boton_editar5);
+                        break;
+                    case 5:
+                        boton_editar.classList.add("fas");
+                        boton_editar.classList.add("fa-paw");
+                        boton_editar.style.backgroundColor = "white";
+                        boton_editar.style.borderColor = "white";
+                        boton_editar.style.boxShadow = "none";
+                        boton_editar.style.color = "#0CC49F";
+
+                        boton_editar2.classList.add("fas")
+                        boton_editar2.classList.add("fa-paw")
+                        boton_editar2.style.backgroundColor = "white";
+                        boton_editar2.style.borderColor = "white";
+                        boton_editar2.style.boxShadow = "none";
+                        boton_editar2.style.color = "#0CC49F";
+
+                        boton_editar3.classList.add("fas")
+                        boton_editar3.classList.add("fa-paw")
+                        boton_editar3.style.backgroundColor = "white";
+                        boton_editar3.style.borderColor = "white";
+                        boton_editar3.style.boxShadow = "none";
+                        boton_editar3.style.color = "#0CC49F";
+
+                        boton_editar4.classList.add("fas")
+                        boton_editar4.classList.add("fa-paw")
+                        boton_editar4.style.backgroundColor = "white";
+                        boton_editar4.style.borderColor = "white";
+                        boton_editar4.style.boxShadow = "none";
+                        boton_editar4.style.color = "#0CC49F";
+
+                        boton_editar5.classList.add("fas")
+                        boton_editar5.classList.add("fa-paw")
+                        boton_editar5.style.backgroundColor = "white";
+                        boton_editar5.style.borderColor = "white";
+                        boton_editar5.style.boxShadow = "none";
+                        boton_editar5.style.color = "#0CC49F";
+
+                        celda_editar.appendChild(boton_editar);
+                        celda_editar.appendChild(boton_editar2);
+                        celda_editar.appendChild(boton_editar3);
+                        celda_editar.appendChild(boton_editar4);
+                        celda_editar.appendChild(boton_editar5);
+                        break;
+                    default:
+                        promedio;
+                        break;
+                }
+                filtro = '';
+            }
         }
-
     });
 
 };
 
-btnBuscar.addEventListener("click", buscar_proveedores);
 
-window.onload = mostrar_servicio;
+window.onload = mostrar_servicio("", "", "");
+btnBuscar.addEventListener("click", filtrar);

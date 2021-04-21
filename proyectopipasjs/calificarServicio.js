@@ -42,6 +42,8 @@ const mostrar_proveedor = async() => {
 const obtenerDatos = () => {
     let comentarioFinal = comentario.value;
     let valor;
+    let correo = readCookie("correo");
+    correo = correo.replace("=", "");
 
     if (document.getElementById("rate1").checked) {
         valor = document.getElementById("rate1").value;
@@ -66,15 +68,7 @@ const obtenerDatos = () => {
 
     console.log('El comentario es: ', comentarioFinal);
     console.log('La calificación es: ', valor);
-    registrar_calificacion("Michis Felices", comentarioFinal, valor);
-    Swal.fire({
-        'icon': 'success',
-        'title': '¡Gracias!',
-        'text': 'Apreciamos la retroalimentación nos ayuda a mejorar'
-
-    }).then(() => {
-        location.href = "perfil.html";
-    });
+    registrar_calificacion(correo, comentarioFinal, valor);
 }
 
 function habilitar() {

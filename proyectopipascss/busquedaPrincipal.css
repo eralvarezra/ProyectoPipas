@@ -230,6 +230,10 @@
         right: 90px;
     }
     
+    #calificacioncolumna {
+        width: 220px;
+    }
+    
     .starContainerProveedor label {
         font-weight: 10px;
     }
@@ -249,4 +253,10 @@
     
     #option {
         font-weight: 100px;
+    }
+    
+    .paw {
+        margin-left: 5px;
+        padding: 10px;
+        font-size: 40px;
     }

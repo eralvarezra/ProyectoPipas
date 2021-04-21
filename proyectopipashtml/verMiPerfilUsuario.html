@@ -54,45 +54,6 @@
                         <input type="date" name="fechaNacimiento" id="fechaNacimiento" required disabled>
                     </div>
 
-                    <form id="ubicationForm" onsubmit="return sendData();">
-                        <div class="data-container">
-                            <div class="form-row">
-                                <div class="form-desc">
-                                    Provincia:
-                                    <div class="form-val">
-                                        <select id="provincias" name="provincia" onchange="getCantones(this.value);" required>
-                                            </select>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-row canton">
-                                <div class="form-desc">
-                                    Cantón:
-                                    <div class="form-val">
-                                        <select id="cantones" name="canton" onchange="getDistritos(this.value);" required>
-                                            </select>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-row distrito">
-                                <div class="form-desc">
-                                    Distrito:
-                                    <div class="form-val">
-                                        <select id="distritos" name="distrito" onchange="distritoSelected();" required>
-                                            </select>
-                                    </div>
-                                </div>
-                                <div class="map-container">
-                                    <label>Elija la locación en el mapa:</label>
-                                    <div id="map"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <br>
-
                     <div class="genero" id="genero">
                         <!-- cambiar a combo box -->
                         <label for="genero">Género:</label>
@@ -136,7 +97,6 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js " type="text/javascript "></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3cOQNB4cQjQDSGWiB_nT2H2pEOuD3w60&callback=initMap " async defer></script>
 <script src="/ProyectoPipas/proyectopipasjs/proyectopipas.servicios.js/registroUsuario-servicio.js"></script>
 <script src="../proyectopipasjs/verMiPerfil.js"></script>
 
