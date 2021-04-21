@@ -6,7 +6,7 @@ const tabla = document.querySelector("#tbl-resultados tbody");
 const input_filtro = document.querySelector("#txt-filtro");
 //Tabla dinamica
 const mostrar_comentario = async() => {
-    let lista_comentario = await listar_comentario();
+    let lista_comentario = await listar_calificacion();
     tabla.innerHTML = '';
 
     lista_comentario.forEach((comentario) => {

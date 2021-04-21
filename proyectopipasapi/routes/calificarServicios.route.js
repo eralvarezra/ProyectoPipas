@@ -45,8 +45,8 @@ router.delete('/eliminar-comentario', (req, res) => {
         }
     });
 });
-router.get('/listar-comentario', (req, res) => {
-    nueva_Calificacion.find((err, lista_comentario) => {
+router.get('/listar-calificacion', (req, res) => {
+    nueva_Calificacion.find((err, lista_calificacion) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los comentarios",
@@ -54,7 +54,7 @@ router.get('/listar-comentario', (req, res) => {
             });
 
         } else {
-            res.json({ lista_comentario });
+            res.json({ lista_calificacion });
         }
     });
 
