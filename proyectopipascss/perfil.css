@@ -10,10 +10,6 @@ h1 {
     padding-top: 60px;
 }
 
-.ocultar {
-    display: none;
-}
-
 .div-Form {
     border: 3px solid rgb(102, 102, 102);
     display: inline-block;
