@@ -1,4 +1,48 @@
+html {
+    font-size: large;
+}
+
 #num-precio,
 #num-costoServicioXhora {
     margin: 0px;
+}
+
+.div-Form {
+    margin-left: 100px;
+    margin-top: 50px;
+    display: inline-block;
+    text-align: left;
+    width: 600px;
+}
+
+.div-Form>div>label {
+    width: 250px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 40px;
+}
+
+.div-Form>div>input {
+    width: 220px;
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: large;
+}
+
+.div-Form>div>select {
+    width: 220px;
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: large;
+}
+
+.div-Form>div> {
+    width: 220px;
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: large;
+}
+
+.btn {
+    font-size: large;
 }

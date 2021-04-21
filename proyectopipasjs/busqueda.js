@@ -3,10 +3,36 @@ const rate4 = document.getElementById("rate4");
 const rate3 = document.getElementById("rate3");
 const rate2 = document.getElementById("rate2");
 const rate1 = document.getElementById("rate1");
+const rdbtnall = document.getElementById("All");
 const tipoMascota = document.getElementById("tipoMascota");
 const tipoServicio = document.getElementById("tipoServicio");
 const btnBuscar = document.getElementById("btnBuscar");
 const tabla = document.querySelector("#tbl-resultados tbody");
+
+
+const cargar_servicios = async() => {
+    let lista_tipoServicio = await listar_tipoServicio();
+
+    lista_tipoServicio.forEach((servicio) => {
+        let temporal = servicio.nombreServicio;
+        let newoption = document.createElement('option');
+        newoption.innerHTML = temporal;
+        newoption.value = temporal;
+        tipoServicio.appendChild(newoption);
+    });
+}
+const cargar_tipoMascota = async() => {
+    let lista_tipo = await listar_tipo();
+    console.log(lista_tipo)
+
+    lista_tipo.forEach((tipo) => {
+        let temporal = tipo.nombreTipo;
+        let newoption = document.createElement('option');
+        newoption.innerHTML = temporal;
+        newoption.value = temporal;
+        tipoMascota.appendChild(newoption);
+    });
+}
 
 const filtrar = () => {
     let valor;
@@ -17,37 +43,37 @@ const filtrar = () => {
     for (let i = 0; i < 5; i++) {
         switch (i) {
             case 1:
-                if (rate1.selected) {
+                if (rate1.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 2:
-                if (rate2.selected) {
+                if (rate2.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 3:
-                if (rate3.selected) {
+                if (rate3.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 4:
-                if (rate4.selected) {
+                if (rate4.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 5:
-                if (rate5.selected) {
+                if (rate4.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             default:
-                valor = "";
+                valor = rdbtnall;
                 break;
         }
     }
@@ -57,20 +83,23 @@ const filtrar = () => {
     mostrar_servicio(filtroRate, filtroTipoMascota, filtroTipoServicio)
 }
 
-const mostrar_servicio = async() => {
+const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServicio) => {
     let lista_servicio = await listar_servicio();
     let lista_proveedor = await listar_proveedor();
     let lista_calificacion = await listar_calificacion();
     console.log(lista_servicio);
     tabla.innerHTML = '';
-    let filtro = "";
+    let filtroRate = pfiltroRate;
+    let filtroTipoMascota = pfiltroTipoMascota;
+    let filtroTipoServicio = pfiltroTipoServicio;
     var fila;
 
     lista_servicio.forEach((servicio) => {
         console.log(servicio);
-        if (servicio.correo.includes(filtro)) {
+        if (servicio.nombreServicio.includes(filtroTipoServicio) && servicio.tipoMascota.includes(filtroTipoMascota)) {
             fila = tabla.insertRow();
             fila.insertCell().innerHTML = servicio.nombreServicio;
+            fila.insertCell().innerHTML = servicio.tipoMascota;
             fila.insertCell().innerHTML = servicio.detalleServicio;
             filtro = servicio.correo;
             lista_proveedor.forEach((proveedor) => {
@@ -83,7 +112,7 @@ const mostrar_servicio = async() => {
             let cantidad = 0;
             let promedio = 0;
             lista_calificacion.forEach((calificacion) => {
-                if (filtro === calificacion.nombreProveedor) {
+                if (filtro === calificacion.nombreProveedor && filtroRate === calificacion.calificacion) {
                     cantidad = cantidad + 1;
                     puntaje = puntaje + calificacion.calificacion;
                     promedio = puntaje / cantidad;
@@ -307,4 +336,6 @@ const mostrar_servicio = async() => {
 
 
 window.onload = mostrar_servicio("", "", "");
+cargar_servicios();
+cargar_tipoMascota();
 btnBuscar.addEventListener("click", filtrar);
