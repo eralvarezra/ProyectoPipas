@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Proveedor</title>
+    <title>Reporte de Usuario</title>
     <link rel="stylesheet" href="../proyectopipascss/reset.css">
     <link rel="stylesheet" href="../proyectopipascss/general.css">
-    <link rel="stylesheet" href="../proyectopipascss/reporteProveedor.css">
+    <link rel="stylesheet" href="../proyectopipascss/reporteUsuario.css">
 </head>
 
 <body>
@@ -31,13 +31,13 @@
                 <nav>
                     <a class="menu" href="../proyectopipashtml/reportes.html">Usuario</a>
                     <br><br>
-                    <a class="menu" href="../proyectopipashtml/reporteProveedor.html">Registro Proveedor</a>
+                    <a class="menu" href="../proyectopipashtml/reporteProveedor.html">Registro proveedor</a>
                     <br><br>
-                    <a class="menu" href="../proyectopipashtml/reporteMascota.html">Registro Mascota</a>
+                    <a class="menu" href="../proyectopipashtml/reporteMascota.html">Registro mascota</a>
                     <br><br>
-                    <a class="menu" href="../proyectopipashtml/reporteCalificacion.html">Registro Calificación</a>
+                    <a class="menu" href="../proyectopipashtml/reporteCalificacion.html">Registro calificación</a>
                     <br><br>
-                    <a class="menu" href="../proyectopipashtml/reporteProveedor.html" download="reporteProveedor">Descargar</a>
+                    <a class="menu" href="../proyectopipashtml/reporteUsuario.html" download="reporteUsuario">Descargar</a>
                     <br><br>
                     <input type="button" id="button" name="imprimir" style="color:#E69138; background-color: #ffffff" value="Imprimir" onclick="window.print();">
                 </nav>
@@ -46,116 +46,18 @@
                 <div class="div-Form">
                     <h1>REPORTE DE USUARIO</h1>
                     <br>
-                    <!-- <div id="main-container"> -->
-                    <table>
+                    <table id="tbl-resultados">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>TIPO DE SERVICIO</th>
-                                <th>ID PROVEEDOR</th>
-                                <th>TIPO PROVEEDOR</th>
-                                <th>TIPO IDENTIFICACIÓN</th>
-                                <th>PERSONA A CARGO</th>
-                                <th>EMPRESA</th>
-                                <th>TELÉFONO</th>
-                                <th>CORREO ELECTRÓNICO</th>
-                                <th>PROVINCIA</th>
-                                <th>DISTRITO</th>
-                                <th>CANTÓN</th>
-                                <th>TOTAL SERVICIOS</th>
+                                <th>Empresa</th>
+                                <th>Correo</th>
+                                <th>Persona a cargo</th>
+                                <th>Teléfono</th>
+                                <th>Tipo servicio</th>
+                                <th>Tipo Identificación</th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>1</td>
-                            <td>Corte de pelo</td>
-                            <td>2</td>
-                            <td>Persona</td>
-                            <td>345960245</td>
-                            <td>Juan Manuel Hurtado</td>
-                            <td>No indica</td>
-                            <td>2578-9645</td>
-                            <td>juanm@hotmail.com</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                            <td>Oriental</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Corte de pelo</td>
-                            <td>2</td>
-                            <td>Persona</td>
-                            <td>345960245</td>
-                            <td>Juan Manuel Hurtado</td>
-                            <td>No indica</td>
-                            <td>2578-9645</td>
-                            <td>juanm@hotmail.com</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                            <td>Oriental</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Corte de pelo</td>
-                            <td>2</td>
-                            <td>Persona</td>
-                            <td>345960245</td>
-                            <td>Juan Manuel Hurtado</td>
-                            <td>No indica</td>
-                            <td>2578-9645</td>
-                            <td>juanm@hotmail.com</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                            <td>Oriental</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Corte de pelo</td>
-                            <td>2</td>
-                            <td>Persona</td>
-                            <td>345960245</td>
-                            <td>Juan Manuel Hurtado</td>
-                            <td>No indica</td>
-                            <td>2578-9645</td>
-                            <td>juanm@hotmail.com</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                            <td>Oriental</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Corte de pelo</td>
-                            <td>2</td>
-                            <td>Persona</td>
-                            <td>345960245</td>
-                            <td>Juan Manuel Hurtado</td>
-                            <td>No indica</td>
-                            <td>2578-9645</td>
-                            <td>juanm@hotmail.com</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                            <td>Oriental</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Corte de pelo</td>
-                            <td>2</td>
-                            <td>Persona</td>
-                            <td>345960245</td>
-                            <td>Juan Manuel Hurtado</td>
-                            <td>No indica</td>
-                            <td>2578-9645</td>
-                            <td>juanm@hotmail.com</td>
-                            <td>Alajuela</td>
-                            <td>Alajuela</td>
-                            <td>Oriental</td>
-                            <td>5</td>
-                        </tr>
-
+                        <tbody id="tabladinamica"></tbody>
                     </table>
 
                 </div>
@@ -174,5 +76,9 @@
         </div>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../proyectopipasjs/proyectopipas.servicios.js/registroProveedor-servicio.js"></script>
+<script src="../proyectopipasjs/reporteProveedor.js"></script>
 
 </html>
