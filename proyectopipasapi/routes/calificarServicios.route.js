@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 // se crea primero el model
-const calificarServicio = require('../models/calificarServicios.model')
+const nueva_Calificacion = require('../models/calificarServicios.model')
     // metodos para extraer
 
 // req = request res= response 
@@ -29,7 +29,36 @@ router.post('/calificar-servicio', (req, res) => {
         }
     });
 
-})
+});
+router.delete('/eliminar-comentario', (req, res) => {
+    let _id = req.body._id;
+    nueva_Calificacion.findOneAndRemove({ _id: _id }, (err) => {
+        if (err) {
+            res.json({
+                msj: 'No se pudo eliminar el comentario',
+                err
+            });
+        } else {
+            res.json({
+                msj: 'El comentario se eliminó correctamente'
+            });
+        }
+    });
+});
+router.get('/listar-comentario', (req, res) => {
+    nueva_Calificacion.find((err, lista_comentario) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar los comentarios",
+                err
+            });
+
+        } else {
+            res.json({ lista_comentario });
+        }
+    });
+
+});
 
 router.get('/listar-calificacion', (req, res) => {
     //Funcionalidad, obtener lista

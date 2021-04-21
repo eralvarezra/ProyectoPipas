@@ -31,17 +31,21 @@
                 <div id="form-agregar">
                     <label for="txt-correo">Correo:</label>
                     <input type="text" id="txt-correo" required class="swal2-input" value="" disabled required>
-                    <label for="txt-nombre">Nombre de Servicio:</label>
+                    <label for="txt-nombre">Nombre de servicio:</label>
                     <select id="txt-nombre" required class="swal2-input" required>
+                        <option value="">Seleccione una opción</option>
+                    </select>
+                    <label for="txt-tipo">Tipo mascota:</label>
+                    <select id="txt-tipo" required class="swal2-input" required>
                         <option value="">Seleccione una opción</option>
                     </select>
                     <label for="num-precio">Precio:</label>
                     <br></br>
                     <input type="number" id="num-precio" required class="swal2-input" min=0 value="" required>
                     <br></br>
-                    <label for="txt-detalleServicio">Detalle Servicio:</label>
+                    <label for="txt-detalleServicio">Detalle servicio:</label>
                     <input type="text" id="txt-detalleServicio" required class="swal2-input" value="" required>
-                    <label for="num-costoServicioXhora">Costo por Hora:</label>
+                    <label for="num-costoServicioXhora">Costo por hora:</label>
                     <br></br>
                     <input type="number" id="num-costoServicioXhora" required class="swal2-input" value="" required>
                     <br></br>
@@ -72,6 +76,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../proyectopipasjs/proyectopipas.servicios.js/agregarServicio-servicio.js"></script>
 <script src="../proyectopipasjs/proyectopipas.servicios.js/agregartiposervicio-servicio.js"></script>
+<script src="../proyectopipasjs/proyectopipas.servicios.js/registrotipo-servicio.js"></script>
 <script src="../proyectopipasjs/agregarServicio.js"></script>
 
 </html>

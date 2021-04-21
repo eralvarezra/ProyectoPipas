@@ -1,5 +1,6 @@
 'use strict';
 const nombreServicio = document.getElementById('txt-nombre');
+const nombreTipo = document.getElementById('txt-tipo');
 const input_correo = document.getElementById('txt-correo');
 const input_numprecio = document.getElementById('num-precio');
 const input_detalleServicio = document.getElementById('txt-detalleServicio');
@@ -32,6 +33,18 @@ const cargar_servicios = async() => {
         newoption.innerHTML = temporal;
         newoption.value = temporal;
         nombreServicio.appendChild(newoption);
+    });
+}
+const cargar_tipoMascota = async() => {
+    let lista_tipo = await listar_tipo();
+    console.log(lista_tipo)
+
+    lista_tipo.forEach((tipo) => {
+        let temporal = tipo.nombreTipo;
+        let newoption = document.createElement('option');
+        newoption.innerHTML = temporal;
+        newoption.value = temporal;
+        nombreTipo.appendChild(newoption);
     });
 }
 
@@ -75,3 +88,4 @@ btnCancelar.addEventListener("click", () => {
 
 window.onload = cookieCorreo();
 window.onload = cargar_servicios();
+window.onload = cargar_tipoMascota();
