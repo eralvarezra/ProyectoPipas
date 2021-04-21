@@ -1,4 +1,4 @@
-const registrar_servicio = async(nombreServicio, correo, precio, detalleServicio, costoServicioXhora, fechaCreacion) => {
+const registrar_servicio = async(nombreServicio, correo, tipoMascota, precio, detalleServicio, costoServicioXhora, fechaCreacion) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-servicio',
@@ -6,6 +6,7 @@ const registrar_servicio = async(nombreServicio, correo, precio, detalleServicio
         data: {
             nombreServicio: nombreServicio,
             correo: correo,
+            tipoMascota: tipoMascota,
             precio: precio,
             detalleServicio: detalleServicio,
             costoServicioXhora: costoServicioXhora,
