@@ -8,10 +8,11 @@ const input_filtro = document.querySelector("#txt-filtro");
 const mostrar_proveedor = async() => {
     let lista_proveedor = await listar_proveedor();
     tabla.innerHTML = '';
-
+    let filtro = input_filtro.value.toUpperCase();
     lista_proveedor.forEach((proveedor) => {
         console.log(proveedor);
-        if (proveedor.activo == "Activo") {
+
+        if (proveedor.tipoServicio.toUpperCase().includes(filtro)) {
 
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = proveedor.empresa;
@@ -26,3 +27,5 @@ const mostrar_proveedor = async() => {
 };
 
 mostrar_proveedor();
+
+input_filtro.addEventListener('keyup', mostrar_proveedor);
