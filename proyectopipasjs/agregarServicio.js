@@ -55,16 +55,16 @@ const cookieCorreo = () => {
 }
 
 const enviar_informacion = async() => {
-    let pNombreServicio = nombreServicio;
+    let pNombreServicio = nombreServicio.value;
     let pCorreo = input_correo.value;
+    let ptipoMascota = nombreTipo.value;
     let pPrecio = input_numprecio.value;
     let pDetalleServicio = input_detalleServicio.value;
     let pCostoServicioXhora = input_costoServicioXhora.value;
     let pFechaCreacion = input_fecha;
     pFechaCreacion = new Date();
-    console.log(pNombreServicio, pCorreo, pPrecio, pDetalleServicio, pCostoServicioXhora, pFechaCreacion);
-    await registrar_servicio(pNombreServicio, pCorreo, pPrecio, pDetalleServicio, pCostoServicioXhora, pFechaCreacion);
-    location.href = "../proyectopipashtml/listarServicio.html"
+    console.log(pNombreServicio, pCorreo, ptipoMascota, pPrecio, pDetalleServicio, pCostoServicioXhora, pFechaCreacion);
+    await registrar_servicio(pNombreServicio, pCorreo, ptipoMascota, pPrecio, pDetalleServicio, pCostoServicioXhora, pFechaCreacion);
 }
 
 const validar = () => {

@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const schema_agregarServicio = new mongoose.Schema({
     nombreServicio: { type: String, required: true, unique: true },
     correo: { type: String, required: true, unique: false },
+    tipoMascota: { type: String, required: true, unique: false },
     precio: { type: Number, required: true, unique: false },
     detalleServicio: { type: String, required: true, unique: false },
     costoServicioXhora: { type: Number, required: true, unique: false },

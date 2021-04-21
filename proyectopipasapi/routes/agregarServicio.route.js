@@ -11,6 +11,7 @@ router.post('/registrar-servicio', (req, res) => {
     let nueva_registrarServicio = new AgregarServicio({
         nombreServicio: req.body.nombreServicio,
         correo: req.body.correo,
+        tipoMascota: req.body.tipoMascota,
         precio: req.body.precio,
         detalleServicio: req.body.detalleServicio,
         costoServicioXhora: req.body.costoServicioXhora,
