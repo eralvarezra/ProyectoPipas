@@ -38,16 +38,18 @@
                 <div class="calificacionBusqueda">
                     <h2>Calificación:</h2>
                     <div id="calificacion" class="starContainer">
-                        <input type="checkbox" name="rate" id="rate5" value=5>
+                        <input type="radio" name="rate" id="rate5" value=5>
                         <label for="rate5" class="fas fa-paw"> 5 </label>
-                        <input type="checkbox" name="rate" id="rate4" value=4>
+                        <input type="radio" name="rate" id="rate4" value=4>
                         <label for="rate4" class="fas fa-paw"> 4 </label>
-                        <input type="checkbox" name="rate" id="rate3" value=3>
+                        <input type="radio" name="rate" id="rate3" value=3>
                         <label for="rate3" class="fas fa-paw"> 3 </label>
-                        <input type="checkbox" name="rate" id="rate2" value=2>
+                        <input type="radio" name="rate" id="rate2" value=2>
                         <label for="rate2" class="fas fa-paw"> 2 </label>
-                        <input type="checkbox" name="rate" id="rate1" value=1>
+                        <input type="radio" name="rate" id="rate1" value=1>
                         <label for="rate1" class="fas fa-paw"> 1</label>
+                        <input type="radio" name="rate" id="All" value="" checked>
+                        <label for="All" class="fas fa-paw"> Todos</label>
                     </div>
                     <div>
                         <label>Tipo mascota:</label>
@@ -75,6 +77,7 @@
                 <thead id="thead">
                     <tr>
                         <th>Tipo Servicio</th>
+                        <th>Tipo Mascota</th>
                         <th>Descripcion</th>
                         <th>Proveedor</th>
                         <th id="calificacioncolumna">Calificación</th>

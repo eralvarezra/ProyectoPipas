@@ -3,6 +3,7 @@ const rate4 = document.getElementById("rate4");
 const rate3 = document.getElementById("rate3");
 const rate2 = document.getElementById("rate2");
 const rate1 = document.getElementById("rate1");
+const rdbtnall = document.getElementById("All");
 const tipoMascota = document.getElementById("tipoMascota");
 const tipoServicio = document.getElementById("tipoServicio");
 const btnBuscar = document.getElementById("btnBuscar");
@@ -42,37 +43,37 @@ const filtrar = () => {
     for (let i = 0; i < 5; i++) {
         switch (i) {
             case 1:
-                if (rate1.selected) {
+                if (rate1.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 2:
-                if (rate2.selected) {
+                if (rate2.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 3:
-                if (rate3.selected) {
+                if (rate3.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 4:
-                if (rate4.selected) {
+                if (rate4.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             case 5:
-                if (rate5.selected) {
+                if (rate4.checked === true) {
                     valor = i + 1;
                     i = 5;
                 }
                 break;
             default:
-                valor = "";
+                valor = rdbtnall;
                 break;
         }
     }
@@ -95,9 +96,10 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
 
     lista_servicio.forEach((servicio) => {
         console.log(servicio);
-        if (servicio.nombreServicio.includes(filtroTipoServicio)) {
+        if (servicio.nombreServicio.includes(filtroTipoServicio) && servicio.tipoMascota.includes(filtroTipoMascota)) {
             fila = tabla.insertRow();
             fila.insertCell().innerHTML = servicio.nombreServicio;
+            fila.insertCell().innerHTML = servicio.tipoMascota;
             fila.insertCell().innerHTML = servicio.detalleServicio;
             filtro = servicio.correo;
             lista_proveedor.forEach((proveedor) => {
@@ -110,7 +112,7 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
             let cantidad = 0;
             let promedio = 0;
             lista_calificacion.forEach((calificacion) => {
-                if (filtro === calificacion.nombreProveedor) {
+                if (filtro === calificacion.nombreProveedor && filtroRate === calificacion.calificacion) {
                     cantidad = cantidad + 1;
                     puntaje = puntaje + calificacion.calificacion;
                     promedio = puntaje / cantidad;
