@@ -1,6 +1,6 @@
 'use strict';
 
-const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascotas, telefono, correo, numeroTarjeta, fechaVencimiento, foto) => {
+const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascotas, telefono, correo, numeroTarjeta, fechaVencimiento, foto, activo, estado) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-usuario',
@@ -20,7 +20,10 @@ const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identifica
             correo: correo,
             numeroTarjeta: numeroTarjeta,
             fechaVencimiento: fechaVencimiento,
-            foto: foto
+            foto: foto,
+            estado: estado,
+            activo: activo
+
         }
     }).then((response) => {
         Swal.fire({
@@ -51,4 +54,35 @@ const listar_usuario = async() => {
         console.log(response.data.msj + " " + response.data.err);
     });
     return lista_usuario;
+}
+const cambiar_estado = async(_id, estado_actual) => {
+    let url_dinamico;
+    if (estado_actual.toUpperCase() == "INACTIVO") {
+        url_dinamico = 'http://localhost:3000/api/activar-usuario';
+    } else {
+        url_dinamico = 'http://localhost:3000/api/desactivar-usuario';
+    }
+
+    await axios({
+        method: 'put',
+        url: url_dinamico,
+        responseType: 'json',
+        data: {
+            _id: _id
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'El estado del usuario se modificó correctamente',
+            'text': response.msj
+        }).then(() => {
+            mostrar_usuario();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
 }

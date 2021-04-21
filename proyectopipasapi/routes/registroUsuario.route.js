@@ -25,6 +25,7 @@ router.post('/registrar-usuario', (req, res) => {
         fechaVencimiento: req.body.fechaVencimiento,
         foto: req.body.foto,
         estado: 'Pendiente',
+        activo: 'Activo',
         contrasena: '',
     });
 
@@ -57,7 +58,51 @@ router.get('/listar-usuario', (req, res) => {
         }
     })
 });
+router.put('/activar-usuario', (req, res) => {
+    Usuario.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            activo: 'Activo'
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del usuario",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El usuario ha sido activado",
+                info
+            })
+        }
+    });
 
+});
+
+router.put('/desactivar-usuario', (req, res) => {
+    Usuario.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            activo: 'Inactivo'
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del usuario",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El usuario ha sido desactivado",
+                info
+            })
+        }
+    });
+
+});
 
 //Luego se va al server.js
 

@@ -10,7 +10,20 @@ const mostrar_usuario = async() => {
     console.log(lista_usuario);
     tabla.innerHTML = '';
     let filtro = input_filtro.value.toUpperCase();
+    const mostrar_modal_cambiar_estado = async(usuario) => {
 
+        if (usuario) {
+            const { value: accept } = await Swal.fire({
+                icon: 'warning',
+                text: '¿Está seguro que desea cambiar el estado del usuario?',
+                confirmButtonText: `Si`,
+                showCancelButton: true
+            });
+            if (accept) {
+                cambiar_estado(usuario._id, usuario.activo);
+            }
+        }
+    }
     lista_usuario.forEach((usuario) => {
         console.log(usuario);
         if (usuario.correo.toUpperCase().includes(filtro)) {
@@ -28,7 +41,7 @@ const mostrar_usuario = async() => {
             fila.insertCell().innerHTML = usuario.cantidadMascotas;
             fila.insertCell().innerHTML = usuario.telefono;
             fila.insertCell().innerHTML = usuario.correo;
-            fila.insertCell().innerHTML = usuario.activar;
+            fila.insertCell().innerHTML = usuario.activo;
             fila.insertCell().innerHTML = usuario.estado;
 
             let celda_cambiar_estado = fila.insertCell();
@@ -47,13 +60,13 @@ const mostrar_usuario = async() => {
             celda_cambiar_estado.appendChild(boton_cambiar_estado);
 
             boton_cambiar_estado.addEventListener('click', async() => {
-                cambiar_estado(usuario._id, usuario.activo)
+                mostrar_modal_cambiar_estado(usuario)
             });
         }
 
     });
 };
 
-mostrar_proveedor();
+mostrar_usuario();
 
-input_filtro.addEventListener('keyup', mostrar_proveedor);
+input_filtro.addEventListener('keyup', mostrar_usuario);

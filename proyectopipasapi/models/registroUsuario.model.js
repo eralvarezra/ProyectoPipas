@@ -20,7 +20,7 @@ const schema_usuario = new mongoose.Schema({
     fechaVencimiento: { type: Date, required: true, unique: false },
     foto: { type: String, required: true, unique: false },
     estado: { type: String, required: true, unique: false },
-    correo: { type: String, required: true, unique: false },
+    activo: { type: String, required: true, unique: false },
 });
 
 module.exports = mongoose.model('Usuario', schema_usuario, 'Usuario');
