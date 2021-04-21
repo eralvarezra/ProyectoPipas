@@ -15,6 +15,8 @@ const registrar_calificacion = async(nombreProveedor, comentario, calificacion) 
             'icon': 'success',
             'title': 'Su calificación fue enviada exitosamente',
             'text': response.msj
+        }).then(() => {
+            location.href = "../proyectopipashtml/perfil.html";
         });
     }).catch((response) => {
         Swal.fire({
@@ -22,43 +24,20 @@ const registrar_calificacion = async(nombreProveedor, comentario, calificacion) 
             'text': response.msj,
             'title': 'Ocurrió un error inesperado',
         });
+
     });
 };
-const listar_comentario = async() => {
-    let lista_comentario = [];
+
+const listar_calificacion = async() => { // esta es la funcion que se usa en el controlador, que llama la funcion
+    let lista_calificacion = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-comentario',
-        responseType: 'json'
-    }).then((response) => {
-        lista_comentario = response.data.lista_comentario;
-    }).catch((response) => {
-        console.log(response.data.msj + " " + response.data.err);
-    });
-    return lista_comentario;
-}
-
-const eliminar_comentario = async(_id) => {
-    await axios({
-        method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-comentario',
+        url: 'http://localhost:3000/api/listar-calificacion', // con este link se puede probar si la collection es visible en postman
         responseType: 'json',
-        data: {
-            _id: _id
-        }
     }).then((response) => {
-        Swal.fire({
-            'title': 'El comentario ha sido eliminado',
-            'icon': 'success',
-            'text': response.msj
-        }).then(() => {
-            mostrar_comentario();
-        });
+        lista_calificacion = response.data.lista_calificacion;
     }).catch((response) => {
-        Swal.fire({
-            'title': response.msj,
-            'icon': 'error',
-            'text': response.err
-        })
+        console.log(response.data.err);
     });
+    return lista_calificacion;
 };

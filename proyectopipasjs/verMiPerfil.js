@@ -56,9 +56,7 @@ const mostrar_perfil = async() => {
             apellidoUsuario.innerHTML = usuario.apellido;
             tipoIdentificacionUsuario.innerHTML = usuario.tipoIdentificacion;
             fechaNacimientoUsuario.innerHTML = usuario.fechafinal;
-            provinciasUsuario.innerHTML = usuario.provincia;
-            cantonesUsuario.innerHTML = usuario.canton;
-            distritosUsuario.innerHTML = usuario.distrito;
+
             telefonoContactoUsuario.innerHTML = usuario.telefono;
             correoElectronicoUsuario.innerHTML = usuario.correo;
 
@@ -69,9 +67,6 @@ const mostrar_perfil = async() => {
             apellidoUsuario.value = usuario.apellido;
             tipoIdentificacionUsuario.value = usuario.identificacion;
             fechaNacimientoUsuario.value = fechafinal;
-            provinciasUsuario.value = usuario.provincia;
-            cantonesUsuario.value = usuario.canton;
-            distritosUsuario.value = usuario.distrito;
             tempOption.value = usuario.genero;
             generoUsuario.appendChild(tempOption);
             telefonoContactoUsuario.value = usuario.telefono;
@@ -107,7 +102,6 @@ const obtenerDatos = () => {
     let canton = cantonesUsuario.value;
     let distrito = distritosUsuario.value;
     let genero = generoUsuario.value;
-    let cantidadMascota = cantidadMascotaUsuario.value;
     let telefono = telefonoContactoUsuario.value;
     let correo = correoElectronicoUsuario.value;
     let numTarjeta = numeroTarjetaUsuario.value;

@@ -60,4 +60,20 @@ router.get('/listar-comentario', (req, res) => {
 
 });
 
+router.get('/listar-calificacion', (req, res) => {
+    //Funcionalidad, obtener lista
+    //find: sacar datos de una coleccion
+    calificarServicio.find((err, lista_calificacion) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar las calificaciones",
+                err
+            });
+        } else {
+            res.json({ lista_calificacion })
+        }
+    })
+});
+
+
 module.exports = router;
