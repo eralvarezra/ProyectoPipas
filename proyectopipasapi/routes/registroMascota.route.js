@@ -10,7 +10,7 @@ router.post('/registrar-mascota', (req, res) => {
         tipoMascota: req.body.tipoMascota,
         tipoRaza: req.body.tipoRaza,
         fotoMascota: req.body.fotoMascota,
-        caracteristicaEspecial: req.body.caracteristicaEspecial.nombre,
+        caracteristicaEspecial: req.body.caracteristicaEspecial,
         tipoPadecimiento: req.body.tipoPadecimiento,
         tipoVacuna: req.body.tipoVacuna,
         correo: req.body.correo
