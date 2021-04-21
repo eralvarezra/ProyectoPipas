@@ -21,7 +21,7 @@ const mostrar_modal_eliminar = async(comentario) => {
     }
     //Tabla dinamica
 const mostrar_comentario = async() => {
-    let lista_comentario = await listar_comentario();
+    let lista_comentario = await listar_calificacion();
     console.log(lista_comentario);
 
     let filtro = input_filtro.value.toUpperCase();

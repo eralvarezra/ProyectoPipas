@@ -18,6 +18,7 @@ const mostrar_modal_editar = async(proveedor) => {
                 <select id="txt-servicio" required class="swal2-input" value="${proveedor.tipoServicio}">
                 <option value="Transporte">Transporte</option>
                 <option value="Hotel">Hotel</option>
+                <option value="Corte de Pelo">Corte de Pelo	</option>
                 <option value="Corte de Uñas">Corte de Uñas</option>
                 <option value="Grooming">Grooming</option>
                 </select>

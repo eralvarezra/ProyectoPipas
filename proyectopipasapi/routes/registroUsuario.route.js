@@ -80,7 +80,33 @@ router.put('/activar-usuario', (req, res) => {
     });
 
 });
-
+router.put('/modificar-usuario', (req, res) => {
+    Usuario.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            telefono: req.body.telefono,
+            genero: req.body.genero,
+            identificacion: req.body.identificacion,
+            numeroTarjeta: req.body.numeroTarjeta,
+            fechaVencimiento: req.body.fechaVencimiento
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar la información",
+                err
+            });
+        } else {
+            res.json({
+                msj: "la información fue modificada exitosamente",
+                info
+            })
+        }
+    });
+});
 router.put('/desactivar-usuario', (req, res) => {
     Usuario.updateOne({
         _id: req.body._id

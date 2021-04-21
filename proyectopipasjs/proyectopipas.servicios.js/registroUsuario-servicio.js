@@ -55,6 +55,37 @@ const listar_usuario = async() => {
     });
     return lista_usuario;
 }
+const modificar_usuario = async(_id, nombre, apellido, telefono, genero, identificacion, numeroTarjeta, fechaVencimiento) => {
+    await axios({
+        method: 'put',
+        url: 'http://localhost:3000/api/modificar-usuario',
+        responseType: 'json',
+        data: {
+            _id: _id,
+            nombre: nombre,
+            apellido: apellido,
+            telefono: telefono,
+            genero: genero,
+            identificacion: identificacion,
+            numeroTarjeta: numeroTarjeta,
+            fechaVencimiento: fechaVencimiento
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'La información ha sido actualizada',
+            'text': response.msj
+        }).then(() => {
+            mostrar_usuario();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
+};
 const cambiar_estado = async(_id, estado_actual) => {
     let url_dinamico;
     if (estado_actual.toUpperCase() == "INACTIVO") {
