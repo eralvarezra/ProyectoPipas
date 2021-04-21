@@ -8,6 +8,31 @@ const tipoServicio = document.getElementById("tipoServicio");
 const btnBuscar = document.getElementById("btnBuscar");
 const tabla = document.querySelector("#tbl-resultados tbody");
 
+
+const cargar_servicios = async() => {
+    let lista_tipoServicio = await listar_tipoServicio();
+
+    lista_tipoServicio.forEach((servicio) => {
+        let temporal = servicio.nombreServicio;
+        let newoption = document.createElement('option');
+        newoption.innerHTML = temporal;
+        newoption.value = temporal;
+        tipoServicio.appendChild(newoption);
+    });
+}
+const cargar_tipoMascota = async() => {
+    let lista_tipo = await listar_tipo();
+    console.log(lista_tipo)
+
+    lista_tipo.forEach((tipo) => {
+        let temporal = tipo.nombreTipo;
+        let newoption = document.createElement('option');
+        newoption.innerHTML = temporal;
+        newoption.value = temporal;
+        tipoMascota.appendChild(newoption);
+    });
+}
+
 const filtrar = () => {
     let valor;
     let filtroRate;
@@ -57,18 +82,20 @@ const filtrar = () => {
     mostrar_servicio(filtroRate, filtroTipoMascota, filtroTipoServicio)
 }
 
-const mostrar_servicio = async() => {
+const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServicio) => {
     let lista_servicio = await listar_servicio();
     let lista_proveedor = await listar_proveedor();
     let lista_calificacion = await listar_calificacion();
     console.log(lista_servicio);
     tabla.innerHTML = '';
-    let filtro = "";
+    let filtroRate = pfiltroRate;
+    let filtroTipoMascota = pfiltroTipoMascota;
+    let filtroTipoServicio = pfiltroTipoServicio;
     var fila;
 
     lista_servicio.forEach((servicio) => {
         console.log(servicio);
-        if (servicio.correo.includes(filtro)) {
+        if (servicio.nombreServicio.includes(filtroTipoServicio)) {
             fila = tabla.insertRow();
             fila.insertCell().innerHTML = servicio.nombreServicio;
             fila.insertCell().innerHTML = servicio.detalleServicio;
@@ -307,4 +334,6 @@ const mostrar_servicio = async() => {
 
 
 window.onload = mostrar_servicio("", "", "");
+cargar_servicios();
+cargar_tipoMascota();
 btnBuscar.addEventListener("click", filtrar);
