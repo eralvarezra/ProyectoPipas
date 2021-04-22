@@ -1,5 +1,4 @@
 'use strict';
-const btnlogout = document.getElementById("btn-logout");
 
 let cookies = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, correo]) => ({...accumulator, [key.trim()]: decodeURIComponent(correo) }));
 console.log(cookies[1]);
@@ -33,18 +32,3 @@ function deleteAllCookies() {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
 }
-
-const cerrarSesion = () => {
-    let tipoPerfil = "";
-    document.cookie = "tipoPerfil=" + tipoPerfil;
-    deleteAllCookies();
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Hasta Pronto',
-        'text': 'PETLOVER a su servicio'
-    }).then(() => {
-        location.href = 'inicio-sesion.html';
-    });
-}
-
-btnlogout.addEventListener('click', cerrarSesion);
