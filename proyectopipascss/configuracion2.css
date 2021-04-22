@@ -1,0 +1,13 @@
+#btn-logout {
+    background-image: Url(../proyectopipasimgs/logout.png);
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    display: flex;
+    float: right;
+    margin-right: 15px;
+    position: absolute;
+    right: 470px;
+    border: none;
+    background-color: aliceblue;
+}
