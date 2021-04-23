@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial bitácora</title>
     <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
     <link rel="stylesheet" href="../proyectopipascss/general.css">
-    <link rel="stylesheet" href="../proyectopipascss/confighistorial.css">
+    <link rel="stylesheet" href="../proyectopipascss/configTablas.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Activar o desactivar proveedores</title>
 </head>
 
 <body>
@@ -24,97 +25,29 @@
             <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
         </nav>
     </header>
-    <main>
-        <section id="sct-form">
-            <div class="div-NombreEmpresa">
-                <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
-            </div>
-            <form>
-                <div class="div-Form">
-                    <h1>Historial-Bitácora</h1>
-                    <div id="main-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Usuario</th>
-                                    <th>Acción</th>
-                                    <th>Proveedor</th>
-                                </tr>
-                            </thead>
-
-                            <tr>
-                                <td>1</td>
-                                <td>Juan</td>
-                                <td>Facturación</td>
-                                <td>Fuffy</td>
-
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Javier</td>
-                                <td>Servicio de Hotel</td>
-                                <td>Jonathan</td>
-
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Samantha</td>
-                                <td>Proceso de Pago</td>
-                                <td>Los Caninos</td>
-
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Elena</td>
-                                <td>Solicitud de Servicio</td>
-                                <td>Puppies</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Pablo</td>
-                                <td>Rechazo de Servicio</td>
-                                <td>Luis</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Sofi</td>
-                                <td>Solicitud de Servicio</td>
-                                <td>Puppies</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Elena</td>
-                                <td>Servicio recibido</td>
-                                <td>Cathy</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Juan</td>
-                                <td>Pago Realizado</td>
-                                <td>Joel</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>Ana</td>
-                                <td>Servicio aprobado</td>
-                                <td>El Encanto</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>Pedro</td>
-                                <td>Solicitud de Servicio</td>
-                                <td>Puppies</td>
-                            </tr>
-                        </table>
-
-                    </div>
-                </div>
-            </form>
-        </section>
-    </main>
+    <h2>Activar o desactivar proveedores</h2>
+    <div id="filtro">
+        <label for="txt-filtro" hidden>Filtro:</label>
+        <input type="text" id="txt-filtro" hidden>
+    </div>
+    <a href="../proyectopipashtml/perfil.html" id="atras">Atrás</a>
+    <table id="tbl-resultados">
+        <thead>
+            <tr>
+                <th>Nombre Empresa</th>
+                <th>Tipo servicio</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registroFactura-servicio.js"></script>
+    <script src="../proyectopipasjs/listar-factura.js"></script>
+    <script src="../proyectopipasjs/contolador_nav.js"></script>
 </body>
-<script src="../proyectopipasjs/contolador_nav.js"></script>
 <footer class="footer">
     <div id="div-footer">
         <div class="div-logo">

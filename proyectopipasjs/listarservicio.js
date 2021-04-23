@@ -85,7 +85,7 @@ const mostrar_servicio = async() => {
             fila.insertCell().innerHTML = servicio.correo;
             fila.insertCell().innerHTML = servicio.detalleServicio;
             fila.insertCell().innerHTML = servicio.precio;
-            fila.insertCell().innerHTML = servicio.detalleServicio;
+            fila.insertCell().innerHTML = servicio.nombreServicio;
             fila.insertCell().innerHTML = servicio.costoServicioXhora;
             fila.insertCell().innerHTML = servicio.fechaCreacion;
 
