@@ -23,7 +23,7 @@ const cargar_servicios = async() => {
 }
 const cargar_tipoMascota = async() => {
     let lista_tipo = await listar_tipo();
-    console.log(lista_tipo)
+
 
     lista_tipo.forEach((tipo) => {
         let temporal = tipo.nombreTipo;
@@ -52,7 +52,7 @@ const filtrar = () => {
         } else if (rate5.checked === true) {
             filtroRate = 5;
         } else {
-            filtroRate = "";
+            filtroRate = 5;
         }
     }
 
@@ -65,25 +65,32 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
     let lista_servicio = await listar_servicio();
     let lista_proveedor = await listar_proveedor();
     let lista_calificacion = await listar_calificacion();
-    console.log(lista_servicio);
+
     tabla.innerHTML = '';
     let filtroRate = pfiltroRate;
     let filtroTipoMascota = pfiltroTipoMascota;
     let filtroTipoServicio = pfiltroTipoServicio;
     var fila;
+    let valorCalificacion = 0;
 
     lista_servicio.forEach((servicio) => {
-        console.log(servicio);
+        fila = tabla.insertRow();
+        let columna1 = fila.insertCell();
+        let columna2 = fila.insertCell();
+        let columna3 = fila.insertCell();
+        let columna4 = fila.insertCell();
         if (servicio.nombreServicio.includes(filtroTipoServicio) && servicio.tipoMascota.includes(filtroTipoMascota)) {
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = servicio.nombreServicio;
-            fila.insertCell().innerHTML = servicio.tipoMascota;
-            fila.insertCell().innerHTML = servicio.detalleServicio;
+
+            columna1.innerHTML = servicio.nombreServicio;
+            columna2.innerHTML = servicio.tipoMascota;
+            columna3.innerHTML = servicio.detalleServicio;
             filtro = servicio.correo;
             lista_proveedor.forEach((proveedor) => {
-                console.log(proveedor);
                 if (proveedor.correo.includes(filtro)) {
-                    fila.insertCell().innerHTML = proveedor.empresa;
+                    columna4.innerHTML = proveedor.empresa;
+                    let correo = fila.insertCell();
+                    correo.innerHTML = proveedor.correo;
+                    correo.style.display = "none";
                 }
             });
             let puntaje = 0;
@@ -96,263 +103,286 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
                     promedio = puntaje / cantidad;
                     promedio = Math.round(promedio);
                 }
-                console.log(promedio)
             });
-            if (promedio > 0) {
-                let celda_editar;
-                let celda_editar2;
-                let pata1 = document.createElement('button');
-                let pata2 = document.createElement('button');
-                let pata3 = document.createElement('button');
-                let pata4 = document.createElement('button');
-                let pata5 = document.createElement('button');
-                let boton_editar = document.createElement('button');
-                celda_editar = fila.insertCell();
-                celda_editar2 = fila.insertCell();
-                switch (promedio) {
-                    case 1:
-                        pata1.classList.add("fas");
-                        pata1.classList.add("fa-paw");
-                        pata1.style.backgroundColor = "white";
-                        pata1.style.borderColor = "white";
-                        pata1.style.boxShadow = "none";
-                        pata1.style.color = "#0CC49F";
 
-                        pata2.classList.add("fas")
-                        pata2.classList.add("fa-paw")
-                        pata2.style.backgroundColor = "white";
-                        pata2.style.borderColor = "white";
-                        pata2.style.boxShadow = "none";
-                        pata2.style.color = "black";
-
-                        pata3.classList.add("fas");
-                        pata3.classList.add("fa-paw");
-                        pata3.style.backgroundColor = "white";
-                        pata3.style.borderColor = "white";
-                        pata3.style.boxShadow = "none";
-                        pata3.style.color = "black";
-
-                        pata4.classList.add("fas")
-                        pata4.classList.add("fa-paw")
-                        pata4.style.backgroundColor = "white";
-                        pata4.style.borderColor = "white";
-                        pata4.style.boxShadow = "none";
-                        pata4.style.color = "black";
-
-                        pata5.classList.add("fas")
-                        pata5.classList.add("fa-paw")
-                        pata5.style.backgroundColor = "white";
-                        pata5.style.borderColor = "white";
-                        pata5.style.boxShadow = "none";
-                        pata5.style.color = "black";
-                        celda_editar.appendChild(pata1);
-                        celda_editar.appendChild(pata2);
-                        celda_editar.appendChild(pata3);
-                        celda_editar.appendChild(pata4);
-                        celda_editar.appendChild(pata5);
-
-                        break;
-                    case 2:
-                        pata1.classList.add("fas");
-                        pata1.classList.add("fa-paw");
-                        pata1.style.backgroundColor = "white";
-                        pata1.style.borderColor = "white";
-                        pata1.style.boxShadow = "none";
-                        pata1.style.color = "#0CC49F";
-                        pata2.classList.add("fas");
-                        pata2.classList.add("fa-paw");
-                        pata2.style.backgroundColor = "white";
-                        pata2.style.borderColor = "white";
-                        pata2.style.boxShadow = "none";
-                        pata2.style.color = "#0CC49F";
-                        pata3.classList.add("fas")
-                        pata3.classList.add("fa-paw")
-                        pata3.style.backgroundColor = "white";
-                        pata3.style.borderColor = "white";
-                        pata3.style.boxShadow = "none";
-                        pata3.style.color = "black";
-                        pata4.classList.add("fas")
-                        pata4.classList.add("fa-paw")
-                        pata4.style.backgroundColor = "white";
-                        pata4.style.borderColor = "white";
-                        pata4.style.boxShadow = "none";
-                        pata4.style.color = "black";
-                        pata5.classList.add("fas")
-                        pata5.classList.add("fa-paw")
-                        pata5.style.backgroundColor = "white";
-                        pata5.style.borderColor = "white";
-                        pata5.style.boxShadow = "none";
-                        pata5.style.color = "black";
-                        celda_editar.appendChild(pata1);
-                        celda_editar.appendChild(pata2);
-                        celda_editar.appendChild(pata3);
-                        celda_editar.appendChild(pata4);
-                        celda_editar.appendChild(pata5);
+            let celda_editar;
+            let celda_editar2;
+            let pata1 = document.createElement('button');
+            let pata2 = document.createElement('button');
+            let pata3 = document.createElement('button');
+            let pata4 = document.createElement('button');
+            let pata5 = document.createElement('button');
+            let boton_editar = document.createElement('button');
+            celda_editar = fila.insertCell();
+            celda_editar2 = fila.insertCell();
 
 
-                        break;
-                    case 3:
+            switch (promedio) {
+                case 1:
+                    pata1.classList.add("fas");
+                    pata1.classList.add("fa-paw");
+                    pata1.style.backgroundColor = "white";
+                    pata1.style.borderColor = "white";
+                    pata1.style.boxShadow = "none";
+                    pata1.style.color = "#0CC49F";
 
-                        pata1.classList.add("fas");
-                        pata1.classList.add("fa-paw");
-                        pata1.style.backgroundColor = "white";
-                        pata1.style.borderColor = "white";
-                        pata1.style.boxShadow = "none";
-                        pata1.style.color = "#0CC49F";
+                    pata2.classList.add("fas")
+                    pata2.classList.add("fa-paw")
+                    pata2.style.backgroundColor = "white";
+                    pata2.style.borderColor = "white";
+                    pata2.style.boxShadow = "none";
+                    pata2.style.color = "black";
 
-                        pata2.classList.add("fas");
-                        pata2.classList.add("fa-paw");
-                        pata2.style.backgroundColor = "white";
-                        pata2.style.borderColor = "white";
-                        pata2.style.boxShadow = "none";
-                        pata2.style.color = "#0CC49F";
+                    pata3.classList.add("fas");
+                    pata3.classList.add("fa-paw");
+                    pata3.style.backgroundColor = "white";
+                    pata3.style.borderColor = "white";
+                    pata3.style.boxShadow = "none";
+                    pata3.style.color = "black";
 
-                        pata3.classList.add("fas");
-                        pata3.classList.add("fa-paw");
-                        pata3.style.backgroundColor = "white";
-                        pata3.style.borderColor = "white";
-                        pata3.style.boxShadow = "none";
-                        pata3.style.color = "#0CC49F";
+                    pata4.classList.add("fas")
+                    pata4.classList.add("fa-paw")
+                    pata4.style.backgroundColor = "white";
+                    pata4.style.borderColor = "white";
+                    pata4.style.boxShadow = "none";
+                    pata4.style.color = "black";
 
-                        pata4.classList.add("fas")
-                        pata4.classList.add("fa-paw")
-                        pata4.style.backgroundColor = "white";
-                        pata4.style.borderColor = "white";
-                        pata4.style.boxShadow = "none";
-                        pata4.style.color = "black";
+                    pata5.classList.add("fas")
+                    pata5.classList.add("fa-paw")
+                    pata5.style.backgroundColor = "white";
+                    pata5.style.borderColor = "white";
+                    pata5.style.boxShadow = "none";
+                    pata5.style.color = "black";
+                    celda_editar.innerHTML = 1;
+                    celda_editar.appendChild(pata1);
+                    celda_editar.appendChild(pata2);
+                    celda_editar.appendChild(pata3);
+                    celda_editar.appendChild(pata4);
+                    celda_editar.appendChild(pata5);
+                    valorCalificacion = fila.insertCell();
+                    valorCalificacion.innerHTML = 1;
+                    valorCalificacion.value = 1;
+                    valorCalificacion.style.display = 'none';
+                    break;
+                case 2:
+                    pata1.classList.add("fas");
+                    pata1.classList.add("fa-paw");
+                    pata1.style.backgroundColor = "white";
+                    pata1.style.borderColor = "white";
+                    pata1.style.boxShadow = "none";
+                    pata1.style.color = "#0CC49F";
+                    pata2.classList.add("fas");
+                    pata2.classList.add("fa-paw");
+                    pata2.style.backgroundColor = "white";
+                    pata2.style.borderColor = "white";
+                    pata2.style.boxShadow = "none";
+                    pata2.style.color = "#0CC49F";
+                    pata3.classList.add("fas")
+                    pata3.classList.add("fa-paw")
+                    pata3.style.backgroundColor = "white";
+                    pata3.style.borderColor = "white";
+                    pata3.style.boxShadow = "none";
+                    pata3.style.color = "black";
+                    pata4.classList.add("fas")
+                    pata4.classList.add("fa-paw")
+                    pata4.style.backgroundColor = "white";
+                    pata4.style.borderColor = "white";
+                    pata4.style.boxShadow = "none";
+                    pata4.style.color = "black";
+                    pata5.classList.add("fas")
+                    pata5.classList.add("fa-paw")
+                    pata5.style.backgroundColor = "white";
+                    pata5.style.borderColor = "white";
+                    pata5.style.boxShadow = "none";
+                    pata5.style.color = "black";
+                    celda_editar.appendChild(pata1);
+                    celda_editar.appendChild(pata2);
+                    celda_editar.appendChild(pata3);
+                    celda_editar.appendChild(pata4);
+                    celda_editar.appendChild(pata5);
+                    celda_editar.innerHTML = 2;
+                    valorCalificacion = fila.insertCell();
+                    valorCalificacion.innerHTML = 2;
+                    valorCalificacion.value = 2;
+                    valorCalificacion.style.display = 'none';
+                    break;
+                case 3:
 
-                        pata5.classList.add("fas")
-                        pata5.classList.add("fa-paw")
-                        pata5.style.backgroundColor = "white";
-                        pata5.style.borderColor = "white";
-                        pata5.style.boxShadow = "none";
-                        pata5.style.color = "black";
+                    pata1.classList.add("fas");
+                    pata1.classList.add("fa-paw");
+                    pata1.style.backgroundColor = "white";
+                    pata1.style.borderColor = "white";
+                    pata1.style.boxShadow = "none";
+                    pata1.style.color = "#0CC49F";
 
-                        celda_editar.appendChild(pata1);
-                        celda_editar.appendChild(pata2);
-                        celda_editar.appendChild(pata3);
-                        celda_editar.appendChild(pata4);
-                        celda_editar.appendChild(pata5);
+                    pata2.classList.add("fas");
+                    pata2.classList.add("fa-paw");
+                    pata2.style.backgroundColor = "white";
+                    pata2.style.borderColor = "white";
+                    pata2.style.boxShadow = "none";
+                    pata2.style.color = "#0CC49F";
 
-                        break;
-                    case 4:
-                        pata1.classList.add("fas")
-                        pata1.classList.add("fa-paw")
-                        pata1.style.backgroundColor = "white";
-                        pata1.style.borderColor = "white";
-                        pata1.style.boxShadow = "none";
-                        pata1.style.color = "#0CC49F";
+                    pata3.classList.add("fas");
+                    pata3.classList.add("fa-paw");
+                    pata3.style.backgroundColor = "white";
+                    pata3.style.borderColor = "white";
+                    pata3.style.boxShadow = "none";
+                    pata3.style.color = "#0CC49F";
 
-                        pata2.classList.add("fas")
-                        pata2.classList.add("fa-paw")
-                        pata2.style.backgroundColor = "white";
-                        pata2.style.borderColor = "white";
-                        pata2.style.boxShadow = "none";
-                        pata2.style.color = "#0CC49F";
+                    pata4.classList.add("fas")
+                    pata4.classList.add("fa-paw")
+                    pata4.style.backgroundColor = "white";
+                    pata4.style.borderColor = "white";
+                    pata4.style.boxShadow = "none";
+                    pata4.style.color = "black";
 
-                        pata3.classList.add("fas")
-                        pata3.classList.add("fa-paw")
-                        pata3.style.backgroundColor = "white";
-                        pata3.style.borderColor = "white";
-                        pata3.style.boxShadow = "none";
-                        pata3.style.color = "#0CC49F";
+                    pata5.classList.add("fas")
+                    pata5.classList.add("fa-paw")
+                    pata5.style.backgroundColor = "white";
+                    pata5.style.borderColor = "white";
+                    pata5.style.boxShadow = "none";
+                    pata5.style.color = "black";
 
-                        pata4.classList.add("fas")
-                        pata4.classList.add("fa-paw")
-                        pata4.style.backgroundColor = "white";
-                        pata4.style.borderColor = "white";
-                        pata4.style.boxShadow = "none";
-                        pata4.style.color = "#0CC49F";
+                    valorCalificacion = fila.insertCell();
+                    valorCalificacion.innerHTML = 3;
+                    valorCalificacion.value = 3;
+                    valorCalificacion.style.display = 'none';
+                    celda_editar.appendChild(pata1);
+                    celda_editar.appendChild(pata2);
+                    celda_editar.appendChild(pata3);
+                    celda_editar.appendChild(pata4);
+                    celda_editar.appendChild(pata5);
 
-                        pata5.classList.add("fas")
-                        pata5.classList.add("fa-paw")
-                        pata5.style.backgroundColor = "white";
-                        pata5.style.borderColor = "white";
-                        pata5.style.boxShadow = "none";
-                        pata5.style.color = "black";
+                    break;
+                case 4:
+                    pata1.classList.add("fas")
+                    pata1.classList.add("fa-paw")
+                    pata1.style.backgroundColor = "white";
+                    pata1.style.borderColor = "white";
+                    pata1.style.boxShadow = "none";
+                    pata1.style.color = "#0CC49F";
 
-                        celda_editar.appendChild(pata1);
-                        celda_editar.appendChild(pata2);
-                        celda_editar.appendChild(pata3);
-                        celda_editar.appendChild(pata4);
-                        celda_editar.appendChild(pata5);
+                    pata2.classList.add("fas")
+                    pata2.classList.add("fa-paw")
+                    pata2.style.backgroundColor = "white";
+                    pata2.style.borderColor = "white";
+                    pata2.style.boxShadow = "none";
+                    pata2.style.color = "#0CC49F";
 
-                        break;
-                    case 5:
-                        pata1.classList.add("fas");
-                        pata1.classList.add("fa-paw");
-                        pata1.style.backgroundColor = "white";
-                        pata1.style.borderColor = "white";
-                        pata1.style.boxShadow = "none";
-                        pata1.style.color = "#0CC49F";
+                    pata3.classList.add("fas")
+                    pata3.classList.add("fa-paw")
+                    pata3.style.backgroundColor = "white";
+                    pata3.style.borderColor = "white";
+                    pata3.style.boxShadow = "none";
+                    pata3.style.color = "#0CC49F";
 
+                    pata4.classList.add("fas")
+                    pata4.classList.add("fa-paw")
+                    pata4.style.backgroundColor = "white";
+                    pata4.style.borderColor = "white";
+                    pata4.style.boxShadow = "none";
+                    pata4.style.color = "#0CC49F";
 
-                        pata2.classList.add("fas")
-                        pata2.classList.add("fa-paw")
-                        pata2.style.backgroundColor = "white";
-                        pata2.style.borderColor = "white";
-                        pata2.style.boxShadow = "none";
-                        pata2.style.color = "#0CC49F";
-
-
-                        pata3.classList.add("fas")
-                        pata3.classList.add("fa-paw")
-                        pata3.style.backgroundColor = "white";
-                        pata3.style.borderColor = "white";
-                        pata3.style.boxShadow = "none";
-                        pata3.style.color = "#0CC49F";
-
-
-                        pata4.classList.add("fas")
-                        pata4.classList.add("fa-paw")
-                        pata4.style.backgroundColor = "white";
-                        pata4.style.borderColor = "white";
-                        pata4.style.boxShadow = "none";
-                        pata4.style.color = "#0CC49F";
+                    pata5.classList.add("fas")
+                    pata5.classList.add("fa-paw")
+                    pata5.style.backgroundColor = "white";
+                    pata5.style.borderColor = "white";
+                    pata5.style.boxShadow = "none";
+                    pata5.style.color = "black";
 
 
-                        pata5.classList.add("fas")
-                        pata5.classList.add("fa-paw")
-                        pata5.style.backgroundColor = "white";
-                        pata5.style.borderColor = "white";
-                        pata5.style.boxShadow = "none";
-                        pata5.style.color = "#0CC49F";
+                    valorCalificacion = fila.insertCell();
+                    valorCalificacion.innerHTML = 4;
+                    valorCalificacion.value = 4;
+                    valorCalificacion.style.display = 'none';
+                    celda_editar.appendChild(pata1);
+                    celda_editar.appendChild(pata2);
+                    celda_editar.appendChild(pata3);
+                    celda_editar.appendChild(pata4);
+                    celda_editar.appendChild(pata5);
+
+                    break;
+                case 5:
+                    pata1.classList.add("fas");
+                    pata1.classList.add("fa-paw");
+                    pata1.style.backgroundColor = "white";
+                    pata1.style.borderColor = "white";
+                    pata1.style.boxShadow = "none";
+                    pata1.style.color = "#0CC49F";
 
 
-                        celda_editar.appendChild(pata1);
-                        celda_editar.appendChild(pata2);
-                        celda_editar.appendChild(pata3);
-                        celda_editar.appendChild(pata4);
-                        celda_editar.appendChild(pata5);
+                    pata2.classList.add("fas")
+                    pata2.classList.add("fa-paw")
+                    pata2.style.backgroundColor = "white";
+                    pata2.style.borderColor = "white";
+                    pata2.style.boxShadow = "none";
+                    pata2.style.color = "#0CC49F";
 
 
-                        break;
-                    default:
-                        promedio;
-                        break;
-                }
-
-                boton_editar.classList.add("fas");
-                boton_editar.classList.add("fa-dog");
-                boton_editar.style.backgroundColor = "#e69138"
-                boton_editar.type = 'button';
-                celda_editar2.appendChild(boton_editar);
+                    pata3.classList.add("fas")
+                    pata3.classList.add("fa-paw")
+                    pata3.style.backgroundColor = "white";
+                    pata3.style.borderColor = "white";
+                    pata3.style.boxShadow = "none";
+                    pata3.style.color = "#0CC49F";
 
 
+                    pata4.classList.add("fas")
+                    pata4.classList.add("fa-paw")
+                    pata4.style.backgroundColor = "white";
+                    pata4.style.borderColor = "white";
+                    pata4.style.boxShadow = "none";
+                    pata4.style.color = "#0CC49F";
 
-                //for (let i in table.rows) {
-                //  let row = table.rows[i]
-                //iterate through rows
-                //rows would be accessed using the "row" variable assigned in the for loop
 
-                //}
+                    pata5.classList.add("fas")
+                    pata5.classList.add("fa-paw")
+                    pata5.style.backgroundColor = "white";
+                    pata5.style.borderColor = "white";
+                    pata5.style.boxShadow = "none";
+                    pata5.style.color = "#0CC49F";
+
+                    valorCalificacion = fila.insertCell();
+                    valorCalificacion.innerHTML = 5;
+                    valorCalificacion.value = 5;
+                    valorCalificacion.style.display = 'none';
+
+                    celda_editar.appendChild(pata1);
+                    celda_editar.appendChild(pata2);
+                    celda_editar.appendChild(pata3);
+                    celda_editar.appendChild(pata4);
+                    celda_editar.appendChild(pata5);
+
+
+                    break;
+                default:
+                    promedio;
+                    break;
             }
+            boton_editar.classList.add("fas");
+            boton_editar.classList.add("fa-dog");
+            boton_editar.style.backgroundColor = "#e69138"
+            boton_editar.type = 'button';
+            celda_editar2.appendChild(boton_editar);
+            boton_editar.addEventListener("click", documentar_valores(fila))
+            console.log(fila)
+
+        }
+
+        if (valorCalificacion.value > filtroRate) {
+            fila.style.display = 'none';
+            //tabla.rows[i].deleteRow();
         }
     });
-
-
 };
 
+const documentar_valores = (pFila) => {
+    let tipoServicio = pfila[0].innerHTML;
+    console.log()
+
+
+    document.cookie = "correo"
+}
 
 window.onload = mostrar_servicio("", "", "");
 cargar_servicios();
