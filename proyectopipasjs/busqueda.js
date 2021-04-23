@@ -1,3 +1,5 @@
+'use strict';
+
 const rate5 = document.getElementById("rate5");
 const rate4 = document.getElementById("rate4");
 const rate3 = document.getElementById("rate3");
@@ -52,7 +54,7 @@ const filtrar = () => {
         } else if (rate5.checked === true) {
             filtroRate = 5;
         } else {
-            filtroRate = 5;
+            filtroRate = 0;
         }
     }
 
@@ -84,7 +86,7 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
             columna1.innerHTML = servicio.nombreServicio;
             columna2.innerHTML = servicio.tipoMascota;
             columna3.innerHTML = servicio.detalleServicio;
-            filtro = servicio.correo;
+            let filtro = servicio.correo;
             lista_proveedor.forEach((proveedor) => {
                 if (proveedor.correo.includes(filtro)) {
                     columna4.innerHTML = proveedor.empresa;
@@ -153,16 +155,18 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
                     pata5.style.borderColor = "white";
                     pata5.style.boxShadow = "none";
                     pata5.style.color = "black";
-                    celda_editar.innerHTML = 1;
+
+                    valorCalificacion = fila.insertCell();
+                    valorCalificacion.innerHTML = 1;
+                    valorCalificacion.value = 1;
+                    valorCalificacion.style.display = 'none';
+
                     celda_editar.appendChild(pata1);
                     celda_editar.appendChild(pata2);
                     celda_editar.appendChild(pata3);
                     celda_editar.appendChild(pata4);
                     celda_editar.appendChild(pata5);
-                    valorCalificacion = fila.insertCell();
-                    valorCalificacion.innerHTML = 1;
-                    valorCalificacion.value = 1;
-                    valorCalificacion.style.display = 'none';
+
                     break;
                 case 2:
                     pata1.classList.add("fas");
@@ -195,16 +199,20 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
                     pata5.style.borderColor = "white";
                     pata5.style.boxShadow = "none";
                     pata5.style.color = "black";
-                    celda_editar.appendChild(pata1);
-                    celda_editar.appendChild(pata2);
-                    celda_editar.appendChild(pata3);
-                    celda_editar.appendChild(pata4);
-                    celda_editar.appendChild(pata5);
+
                     celda_editar.innerHTML = 2;
                     valorCalificacion = fila.insertCell();
                     valorCalificacion.innerHTML = 2;
                     valorCalificacion.value = 2;
                     valorCalificacion.style.display = 'none';
+
+                    celda_editar.appendChild(pata1);
+                    celda_editar.appendChild(pata2);
+                    celda_editar.appendChild(pata3);
+                    celda_editar.appendChild(pata4);
+                    celda_editar.appendChild(pata5);
+
+
                     break;
                 case 3:
 
@@ -247,6 +255,7 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
                     valorCalificacion.innerHTML = 3;
                     valorCalificacion.value = 3;
                     valorCalificacion.style.display = 'none';
+
                     celda_editar.appendChild(pata1);
                     celda_editar.appendChild(pata2);
                     celda_editar.appendChild(pata3);
@@ -295,6 +304,7 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
                     valorCalificacion.innerHTML = 4;
                     valorCalificacion.value = 4;
                     valorCalificacion.style.display = 'none';
+
                     celda_editar.appendChild(pata1);
                     celda_editar.appendChild(pata2);
                     celda_editar.appendChild(pata3);
@@ -364,24 +374,30 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
             boton_editar.style.backgroundColor = "#e69138"
             boton_editar.type = 'button';
             celda_editar2.appendChild(boton_editar);
-            boton_editar.addEventListener("click", documentar_valores(fila))
-            console.log(fila)
-
+            boton_editar.addEventListener("click", async() => {
+                documentar_valores(servicio, lista_proveedor);
+            });
         }
 
-        if (valorCalificacion.value > filtroRate) {
+        if (valorCalificacion.value !== filtroRate && filtroRate !== 0) {
             fila.style.display = 'none';
-            //tabla.rows[i].deleteRow();
         }
+
     });
 };
 
-const documentar_valores = (pFila) => {
-    let tipoServicio = pfila[0].innerHTML;
-    console.log()
-
-
-    document.cookie = "correo"
+const documentar_valores = async(pServicio, pProveedor) => {
+    pProveedor.forEach((proveedor) => {
+        if (proveedor.correo === pServicio.correo) {
+            document.cookie = "empresa=" + proveedor.empresa;
+        }
+    })
+    let campos = ["nombreServicio=", "correoempresa=", "descripcion=", "precio="];
+    let servicio = [pServicio.nombreServicio, pServicio.correo, pServicio.detalleServicio, pServicio.precio];
+    for (let i = 0; i < campos.length; i++) {
+        document.cookie = campos[i] + servicio[i];
+    }
+    location.href = "verProvedor.html"
 }
 
 window.onload = mostrar_servicio("", "", "");
