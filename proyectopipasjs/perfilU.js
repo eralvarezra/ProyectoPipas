@@ -67,7 +67,15 @@ function deleteAllCookies() {
     }
 }
 btnHistorialServicios.addEventListener('click', () => {
-    location.href = "confighistorial.html";
+
+    let tipoPerfil = readCookie("tipoPerfil");
+    tipoPerfil = tipoPerfil.replace("=", "");
+    if (tipoPerfil == "U") {
+        location.href = "confighistorial.html";
+    }
+    if (tipoPerfil == "P") {
+        location.href = "confighistorial2.html";
+    }
 })
 
 btnDatosPerfil.addEventListener('click', () => {

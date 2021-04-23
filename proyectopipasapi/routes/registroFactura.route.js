@@ -13,7 +13,8 @@ router.post('/registrar-factura', (req, res) => {
         tipoServicio: req.body.tipoServicio,
         descripcion: req.body.descripcion,
         precio: req.body.precio,
-        correoUsuario: req.body.correoUsuario
+        correoUsuario: req.body.correoUsuario,
+        correoProveedor: req.body.correoProveedor
     });
 
     nueva_factura.save((err, factura_db) => {

@@ -37,8 +37,8 @@ const obtenerDatos = () => {
     console.log('descripcion:', descripciondelservicio);
     console.log('precio: ', preciodelservicio);
     console.log('correo usuario: ', correodelUsuario);
-
-    registrar_factura(nombredelaEmpresa, nombreServicioProveedor, descripciondelservicio, preciodelservicio, correodelUsuario);
+    console.log('correo proveedor: ', correoProveedorServicio);
+    registrar_factura(nombredelaEmpresa, nombreServicioProveedor, descripciondelservicio, preciodelservicio, correodelUsuario, correoProveedorServicio);
 
     Swal.fire({
         'icon': 'success',
@@ -130,7 +130,7 @@ const validar = () => {
         });
     }
 }
-botonEnviar.addEventListener('click', validar);;
+botonEnviar.addEventListener('click', validar);
 mostrar_pagoUsuario();
 nombredelServicio();
 mostrar_servicio();

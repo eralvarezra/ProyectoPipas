@@ -1,4 +1,4 @@
-const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio, correoUsuario) => {
+const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio, correoUsuario, correoProveedor) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-factura',
@@ -8,7 +8,8 @@ const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio
             tipoServicio: tipoServicio,
             descripcion: descripcion,
             precio: precio,
-            correoUsuario: correoUsuario
+            correoUsuario: correoUsuario,
+            correoProveedor: correoProveedor
         }
     }).then((response) => {
         Swal.fire({
