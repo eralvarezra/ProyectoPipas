@@ -17,6 +17,9 @@ const registrar_servicio = async(nombreServicio, correo, tipoMascota, precio, de
             'icon': 'success',
             'title': 'Su servicio fue guardado exitosamente.',
             'text': response.msj
+        }).then(() => {
+            limpiar();
+            location.href = "../proyectopipashtml/listarServicio.html";
         });
     }).catch((response) => {
         Swal.fire({
