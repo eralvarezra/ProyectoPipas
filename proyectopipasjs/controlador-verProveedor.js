@@ -119,6 +119,21 @@ const validar = () => {
             campo.classList.remove('error-input');
         }
     });
+
+    let regExp_formatofechaexpiracion = /^(0[1-9]|1[0-2])\/([0-9]{4}|[0-9]{2})$/;
+    if (!regExp_formatofechaexpiracion.test(fechavencimientotarjeta.value)) {
+        error = true;
+        fechavencimientotarjeta.classList.add('error-input');
+    } else {
+        fechavencimientotarjeta.classList.remove('error-input');
+    }
+    let regExp_formatocvv = /^[0-9]{3}/;
+    if (!regExp_formatocvv.test(codigodeSeguridad.value)) {
+        error = true;
+        codigodeSeguridad.classList.add('error-input');
+    } else {
+        codigodeSeguridad.classList.remove('error-input');
+    }
     if (error == false) {
         obtenerDatos();
 
