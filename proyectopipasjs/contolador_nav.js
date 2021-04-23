@@ -1,9 +1,23 @@
 'use strict';
 
-let cookies = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, correo]) => ({...accumulator, [key.trim()]: decodeURIComponent(correo) }));
-console.log(cookies[1]);
+function readCookie(pCookie) {
+    const nameString = pCookie + "="
+
+    const value = document.cookie.split(";").filter(item => {
+        return item.includes(nameString)
+    })
+
+    if (value.length) {
+        return value[0].substring(nameString.length, value[0].length)
+    } else {
+        return ""
+    }
+}
+let tipoPerfil = readCookie('tipoPerfil');
+tipoPerfil = tipoPerfil.replace("=", "");
+console.log(tipoPerfil);
 const enlaces = document.querySelectorAll('#nav-principal a');
-let tipoUsuario = cookies[1];
+let tipoUsuario = tipoPerfil;
 console.log(tipoUsuario);
 switch (tipoUsuario) {
     case 'P':
