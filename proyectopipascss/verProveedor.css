@@ -3,17 +3,6 @@
     font-size: larger;
 }
 
-.img1 {
-    background-image: url('../proyectopipasimgs/Michi.jpg');
-    margin-left: 500px;
-    background-size: cover;
-    border-radius: 25px;
-    background-position: center;
-    width: 200px;
-    height: 200px;
-    display: inline-block;
-}
-
 #logoProveedor {
     width: 150px;
     height: 150px;
@@ -24,96 +13,70 @@
 .info {
     float: right;
     margin-top: 0px;
-    margin-right: 550px;
     display: inline;
     width: 600px;
-    text-align: center;
-    border-left: 3px solid rgb(102, 102, 102);
-    padding-left: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
 .info2 {
     padding-top: 40px;
-    margin-left: 500px;
+    margin-left: 20px;
     width: 273px;
     font-weight: bold;
     height: 100px;
     text-align: left;
     display: inline-block;
-    border-right: 3px solid rgb(102, 102, 102);
 }
 
-.info2 h1 {
-    padding-bottom: 10px;
+#precioServicio {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#nomberServicio {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#descripcionServicio {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#botones {
+    margin-left: 40px;
+    margin-top: 320px;
+    padding-right: 40px;
 }
 
 #btnSubmit {
     float: right;
-    margin-right: 550px;
     display: inline;
     height: 30px;
     width: 200px;
-    background-color: #e69138;
-    color: white;
 }
 
-.checked {
-    color: orange;
+#nombreEmpresa {
+    padding: 20px;
 }
 
-.calificacion {
-    padding-left: 50px;
-    display: inline-block;
-    margin-bottom: 0px;
-    padding-right: 100px;
-    padding-bottom: 50px;
-}
-
-.calificacion h2 {
-    font-weight: bold;
-    font-size: 25px;
-    padding-bottom: 10px;
-}
-
-#seccion-principal div>h1 {
-    padding-top: 150px;
-    font-size: 50px;
-    font-weight: bolder;
-    margin-left: 500px;
-    padding-bottom: 50px;
-}
-
-.starContainer input {
-    display: none;
-    padding-left: px;
-}
-
-.starContainer {
-    text-align: center;
-    display: block;
-    margin-left: 800px;
-    position: absolute;
-    top: 630px;
-    padding-left: 50px;
-}
-
-.starContainer h2 {
-    text-align: center;
-    position: absolute;
-    top: 30px;
-    left: 1px;
-    width: 300px;
-    padding-right: 100px;
-}
-
-#btnVolver {
+#sct-formularioPago {
+    width: 50%;
     float: left;
-    margin-bottom: 200px;
-    margin-left: 1170px;
-    height: 30px;
-    width: 200px;
-    background-color: #e69138;
-    color: white;
+}
+
+#sct-infoServicio {
+    width: 37%;
+    border-right: 5px solid #e69138;
+    float: left;
+}
+
+#sct-principal {
+    margin-top: 30px;
+    width: 850px;
+    height: 380px;
+    margin-left: 500px;
+    border: 5px solid #e69138;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    margin-top: 200px;
 }

@@ -64,3 +64,4 @@ app.use('/api', require('./routes/agregarServicio.route'));
 app.use('/api', require('./routes/registroRaza.route'));
 app.use('/api', require('./routes/registroImpuesto.route'));
 app.use('/api', require('./routes/registroServicio.route'));
+app.use('/api', require('./routes/registroFactura.route'));

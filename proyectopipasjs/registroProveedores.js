@@ -48,8 +48,8 @@ const obtenerDatos = () => {
 
     Swal.fire({
         'icon': 'success',
-        'title': 'Su mensaje ha sido enviado',
-        'text': 'Nos pondremos en contacto con usted lo antes posible'
+        'title': 'Se ha registrado con éxito',
+        'text': 'Muchas gracias por tu registro'
     }).then(() => {
         limpiar();
         location.href = "../proyectopipashtml/registroProveedoresNotificacion.html";
@@ -118,4 +118,4 @@ const validar = () => {
 }
 
 
-botonEnviar.addEventListener('click', validar, terminos);
+botonEnviar.addEventListener('click', validar);
