@@ -20,6 +20,31 @@ main {
     margin-top: 300px;
 }
 
+#div-datosUsuario2 {
+    margin-top: 30px;
+    float: right;
+}
+
+#div-datosUsuario {
+    width: 50%;
+    float: left;
+    margin-top: 30px;
+}
+
+#div-datosUsuario>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+#div-datosUsuario2>div>label {
+    width: 150px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
 .form-desc,
 .Slct-Form {
     width: 178px;
@@ -39,7 +64,7 @@ main {
     display: inline-block;
     text-align: center;
     margin-right: 490px;
-    width: 690px;
+    width: 800px;
     height: 850px;
     background-color: aliceblue;
 }
@@ -117,6 +142,7 @@ main {
 #contenedor-imagen {
     width: 50px;
     height: 50px;
+    float: right;
 }
 
 #img-foto {
@@ -126,19 +152,19 @@ main {
 }
 
 #btn-foto {
-    margin-top: 10px;
-    height: 30px;
-    width: 80px;
-    background-color: #E69138;
-    color: rgb(240, 240, 240);
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
 }
 
-#btnSubmit {
-    margin-top: 10px;
-    height: 30px;
-    width: 70px;
-    background-color: #E69138;
-    color: rgb(240, 240, 240);
+#div-localizacion {
+    float: right;
+    margin-top: 30px;
+    margin-right: 70px;
+}
+
+#botonenviar {
+    margin-left: 500px;
 }
 
 #btn-Mascota {

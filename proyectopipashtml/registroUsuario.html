@@ -29,119 +29,126 @@
             <form>
                 <div class="div-Form" id="div-Form">
                     <h1>Registro de usuario </h1>
-                    <div>
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" required>
-                    </div>
-                    <div>
-                        <label for="apellidos">Apellidos:</label>
-                        <input type="text" id="apellidos" required>
-                    </div>
-                    <div>
-                        <label>Tipo de identificación: </label>
-                        <select class="Slct-Form" id="tipoIdentificacion">
+                    <div id="div-datosUsuario">
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div>
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" id="apellidos" required>
+                        </div>
+                        <div>
+                            <label>Tipo de identificación: </label>
+                            <select class="Slct-Form" id="tipoIdentificacion">
                         <option value="dimex">Dimex</option>
                         <option value="cedulaJuridica">Cédula Jurídica</option>
                         <option value="cedulaNacional">Cédula Nacional</option>
                       </select>
-                    </div>
-                    <div>
-                        <label for="identificacion">Identificación:</label>
-                        <input type="text" id="identificacion" required>
-                    </div>
-                    <div>
-                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-                        <input type="date" name="fechaNacimiento" id="fechaNacimiento" required>
-                    </div>
-
-                    <form id="ubicationForm" onsubmit="return sendData();">
-                        <div class="data-container">
-                            <div class="form-row">
-                                <div class="form-desc">
-                                    Provincia:
-                                    <div class="form-val">
-                                        <select id="provincias" name="provincia" onchange="getCantones(this.value);" required>
-                                            </select>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-row canton">
-                                <div class="form-desc">
-                                    Cantón:
-                                    <div class="form-val">
-                                        <select id="cantones" name="canton" onchange="getDistritos(this.value);" required>
-                                            </select>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-row distrito">
-                                <div class="form-desc">
-                                    Distrito:
-                                    <div class="form-val">
-                                        <select id="distritos" name="distrito" onchange="distritoSelected();" required>
-                                            </select>
-                                    </div>
-                                </div>
-                                <div class="map-container">
-                                    <label>Elija la locación en el mapa:</label>
-                                    <div id="map"></div>
-                                </div>
-                            </div>
                         </div>
-                    </form>
-                    <br>
+                        <div>
+                            <label for="identificacion">Identificación:</label>
+                            <input type="text" id="identificacion" required>
+                        </div>
+                        <div>
+                            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" name="fechaNacimiento" id="fechaNacimiento" required>
+                        </div>
+                    </div>
 
-                    <div class="genero" id="genero">
-                        <label for="genero">Género:</label>
-                        <select class="Slct-Form" id="genero1">
+                    <div id="div-datosUsuario2">
+                        <div class="genero" id="genero">
+                            <label for="genero">Género:</label>
+                            <select class="Slct-Form" id="genero1">
                         <option value="femenino">Femenino</option>
                         <option value="masculino">Masculino</option>
                         <option value="indefenido">Indefinido</option>
                     </select>
-                    </div>
+                        </div>
 
-                    <div>
-                        <label>Cantidad de mascotas:</label>
-                        <input type="number" id="cantidadMascota" name="cantidadMascota" min="1" max="10">
+                        <div>
+                            <label>Cantidad de mascotas:</label>
+                            <input type="number" id="cantidadMascota" name="cantidadMascota" min="1" max="10">
 
-                    </div>
+                        </div>
 
-                    <div>
-                        <label for="telefonoContacto">Teléfono de contacto:</label>
-                        <input type="text" id="telefonoContacto" placeholder="0000-0000" required>
-                    </div>
+                        <div>
+                            <label for="telefonoContacto">Teléfono de contacto:</label>
+                            <input type="text" id="telefonoContacto" placeholder="0000-0000" required>
+                        </div>
 
-                    <div>
-                        <label for="correoElectronico">Correo electrónico:</label>
-                        <input type="text" id="correo" placeholder="@" required>
-                    </div>
+                        <div>
+                            <label for="correoElectronico">Correo electrónico:</label>
+                            <input type="text" id="correo" placeholder="@" required>
+                        </div>
 
-                    <div>
-                        <label>Numero Tarjeta: </label>
-                        <input type="text" id="numTarjeta" placeholder="15 Visa, 16 MasterCard" required>
-                    </div>
-                    <div class="fecha">
-                        <label>Fecha de vencimiento: </label>
-                        <input type="text" id="fechaVencimiento" placeholder="mm/yyyy" required>
-                    </div>
-                    <div>
-                        <div id="contenedor-imagen">
-                            <img src="" id="img-foto">
+                        <div>
+                            <label>Numero Tarjeta: </label>
+                            <input type="text" id="numTarjeta" placeholder="15 Visa, 16 MasterCard" required>
+                        </div>
+                        <div class="fecha">
+                            <label>Fecha de vencimiento: </label>
+                            <input type="text" id="fechaVencimiento" placeholder="mm/yyyy" required>
                         </div>
                         <div>
-                            <button type="button" id="btn-foto">Subir Foto</button>
+                            <div id="contenedor-imagen">
+                                <img src="" id="img-foto">
+                            </div>
+                            <div>
+                                <button type="button" id="btn-foto" class="btn">Subir Foto</button>
+                            </div>
+                        </div>
+                        <br> <br>
+
+                    </div>
+                    <div id="div-localizacion">
+                        <form id="ubicationForm" onsubmit="return sendData();">
+                            <div class="data-container">
+                                <div class="form-row">
+                                    <div class="form-desc">
+                                        Provincia:
+                                        <div class="form-val">
+                                            <select id="provincias" name="provincia" onchange="getCantones(this.value);" required>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-row canton">
+                                    <div class="form-desc">
+                                        Cantón:
+                                        <div class="form-val">
+                                            <select id="cantones" name="canton" onchange="getDistritos(this.value);" required>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-row distrito">
+                                    <div class="form-desc">
+                                        Distrito:
+                                        <div class="form-val">
+                                            <select id="distritos" name="distrito" onchange="distritoSelected();" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="map-container">
+                                        <label>Elija la locación en el mapa:</label>
+                                        <div id="map"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <div id="terminos">
+                            <input type="checkbox" value="terminos" id="condiciones" required>
+                            <label>Acepto términos y condiciones. </label>
+                        </div>
+                        <div id="botonenviar">
+                            <button type="button" id="btnSubmit" class="btn">Enviar</button>
                         </div>
                     </div>
-                    <br> <br>
-                    <div id="terminos">
-                        <input type="checkbox" value="terminos" id="condiciones" required>
-                        <label>Acepto términos y condiciones. </label>
-                    </div>
-                    <div>
-                        <button type="button" id="btnSubmit">Enviar</button>
-                    </div>
+
         </section>
     </main>
 </body>
