@@ -4,17 +4,17 @@ const express = require('express');
 // Redirige las peticiones, inputs o punto de llegada. Va a ser igual al router de express(express denos un router)
 const router = express.Router();
 // Uselo para el modelo comentarios, NO lleva el js
-const MascotaVacuna = require('../models/mascotavacuna.model');
+const MascotaCS = require('../models/mascotaCaracEsp.model');
 
 //Endpoint para registrar comentarios
-router.post('/registrar-mascotavacuna', (req, res) => {
-    let nueva_mascotaVacuna = new MascotaVacuna({
+router.post('/registrar-mascotacaracteristica', (req, res) => {
+    let nueva_mascotaVacuna = new MascotaCS({
         correo: req.body.correo,
         nombreMascota: req.body.nombreMascota,
-        nombreVacuna: req.body.nombreVacuna
+        caracteristicaEspecial: req.body.caracteristicaEspecial
     });
 
-    nueva_mascotaVacuna.save((err, mascotaVacuna_db) => {
+    nueva_mascotaCS.save((err, mascotaCS_db) => {
         if (err) {
             res.json({
                 msj: "No se pudo registrar el dato",
@@ -23,60 +23,60 @@ router.post('/registrar-mascotavacuna', (req, res) => {
         } else {
             res.json({
                 msj: "El dato se registró exitosamente.",
-                mascotaVacuna_db
+                mascotaCS_db
             })
         }
     });
 });
 
-router.get('/listar-MascotaVacuna', (req, res) => {
+router.get('/listar-mascotacaracteristica', (req, res) => {
     //Funcionalidad, obtener lista
     //find: sacar datos de una coleccion
-    MascotaVacuna.find((err, lista_Mascotavacuna) => {
+    MascotaCS.find((err, lista_MascotaCS) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las vacunas",
+                msj: "No se pudieron mostrar las características",
                 err
             });
         } else {
-            res.json({ lista_Mascotavacuna })
+            res.json({ lista_MascotaCS })
         }
     })
 });
 
 
-router.put('/modificar-mascotavacunas', (req, res) => {
-    MascotaVacuna.updateOne({
+router.put('/modificar-mascotacaracteristica', (req, res) => {
+    MascotaCS.updateOne({
         _id: req.body._id
     }, {
         $set: {
-            nombreVacuna: req.body.nombreVacuna,
+            caracteristicaEspecial: req.body.caracteristicaEspecial,
         }
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la vacuna",
+                msj: "No se pudo modificar la característica",
                 err
             });
         } else {
             res.json({
-                msj: "La vacuna fue modificada exitosamente",
+                msj: "La característica fue modificada exitosamente",
                 info
             })
         }
     });
 });
-router.delete('/eliminar-Mascotavacuna', (req, res) => {
+router.delete('/eliminar-mascotacaracteristica', (req, res) => {
     let _id = req.body._id;
-    MascotaVacuna.findOneAndRemove({ _id: _id }, (err) => {
+    MascotaCS.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la vacuna de la mascota',
+                msj: 'No se pudo eliminar la característica de la mascota',
                 err
             });
         } else {
             res.json({
-                msj: 'La vacuna para su Mascota se eliminó correctamente'
+                msj: 'La característica para su mascota se eliminó correctamente'
             });
         }
     });

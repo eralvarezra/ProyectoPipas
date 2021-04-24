@@ -41,9 +41,6 @@ const mostrar_mascotas = async() => {
             fila.insertCell().innerHTML = (mascota.tipoMascota);
             fila.insertCell().innerHTML = (mascota.tipoRaza);
             fila.insertCell().innerHTML = (mascota.fotoMascota);
-            fila.insertCell().innerHTML = (mascota.caracteristicaEspecial);
-            fila.insertCell().innerHTML = (mascota.tipoPadecimiento);
-            fila.insertCell().innerHTML = (mascota.tipoVacuna);
 
             //Eliminar
             let celda_eliminar = fila.insertCell();

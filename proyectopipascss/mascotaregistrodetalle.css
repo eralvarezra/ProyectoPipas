@@ -1,0 +1,12 @@
+.form {
+    width: 460px;
+}
+
+.form label,
+.form input,
+.form select {
+    width: 200px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
