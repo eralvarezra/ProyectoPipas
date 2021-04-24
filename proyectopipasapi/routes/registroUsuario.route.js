@@ -192,8 +192,6 @@ router.put('/desactivar-usuario', (req, res) => {
 
 
 
-
-
 //Luego se va al server.js
 
 module.exports = router;
