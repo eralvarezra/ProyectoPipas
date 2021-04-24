@@ -6,6 +6,7 @@ const router = express.Router();
 // Uselo para el modelo comentarios, NO lleva el js
 const Usuario = require('../models/registroUsuario.model');
 
+
 //Endpoint para registrar comentarios
 router.post('/registrar-usuario', (req, res) => {
     let nuevo_usuario = new Usuario({
