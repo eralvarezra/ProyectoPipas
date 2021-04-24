@@ -7,7 +7,7 @@ const schema_usuario = new mongoose.Schema({
     nombre: { type: String, required: true, unique: false },
     apellido: { type: String, required: true, unique: false },
     tipoIdentificacion: { type: String, required: true, unique: false },
-    identificacion: { type: String, required: true, unique: true },
+    identificacion: { type: String, required: true, unique: false },
     fechaNacimiento: { type: Date, required: true, unique: false },
     provincia: { type: Number, required: true, unique: false },
     canton: { type: Number, required: true, unique: false },
