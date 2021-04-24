@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar contraseña</title>
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/reset.css">
+    <link rel="stylesheet" href="../proyectopipascss/cambiarContrasenna.css">
+</head>
+
+<body>
+    <header id="header-principal" class="header-principal">
+        <nav>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+    <main>
+        <section id="sct-form">
+            <div class="div-NombreEmpresa">
+                <img id="logoEmpresa" src="../proyectopipasimgs/PEPPY DOGGO (1).png">
+            </div>
+            <form>
+                <div class="div-Form">
+                    <h1>Cambiar contraseña</h1>
+                    <div>
+                        <label for="txt-contrasena">Contraseña</label>
+                        <input type="password" id="txt-contrasena" required>
+                    </div>
+                    <div>
+                        <label for="txt-confirmar-contrasena">Confirmar contraseña</label>
+                        <input type="password" id="txt-confirmar-contrasena" required>
+                    </div>
+                    <br>
+                    <div class="sct-boton">
+                        <button type="button" id="btn-modificar">Modificar</button>
+                    </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registroUsuario-servicio.js"></script>
+    <script src="../proyectopipasjs/contrasennaControlador.js"></script>
+
+</body>
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+
+
+</html>

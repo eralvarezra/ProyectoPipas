@@ -26,7 +26,8 @@ router.post('/registrar-usuario', (req, res) => {
         foto: req.body.foto,
         estado: 'Pendiente',
         activo: 'Activo',
-        contrasena: '',
+        contrasena: crear_constrasena_aleatoria(),
+        categoria: '1'
     });
 
     nuevo_usuario.save((err, usuario_db) => {
@@ -39,6 +40,65 @@ router.post('/registrar-usuario', (req, res) => {
             res.json({
                 msj: "El usuario se registró exitosamente.",
                 usuario_db
+            });
+            mailer.enviar_email(`${usuario_db.nombre} ${usuario_db.apellidos}`, usuario_db.correo)
+        }
+    });
+});
+
+const crear_constrasena_aleatoria = () => {
+    var nueva_contrasena = '';
+    //Crea una variable con los posibles caracteres aceptados dentro de la contrasenna
+    var posibles_caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+        'abcdefghijklmnopqrstuvwxyz' + '0123456789@#$';
+
+    let numero_aleatorio;
+    for (let i = 1; i <= 8; i++) {
+        //Creo un numero aleatorio
+        numero_aleatorio = Math.random();
+        //lo multiplico por la cantidad de valores posibles + 1 y devuelve el numero entero sin decimales
+        var posicion_caracter = Math.floor(numero_aleatorio *
+            posibles_caracteres.length + 1);
+        //Tomo el caracter que este en esta posicion
+        nueva_contrasena += posibles_caracteres.charAt(posicion_caracter)
+    }
+    //retorno la contraseña de 8 caracteres
+    return nueva_contrasena;
+}
+
+router.get('/buscar-por-correo-usuario', (req, res) => {
+    let correo = req.query.correo;
+    Usuario.findOne({ correo: correo }, (err, usuario_db) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar los usuarios",
+                err
+            });
+        } else {
+            res.json({ usuario_db })
+        }
+    })
+});
+
+
+router.put('/modificar-contrasena', (req, res) => {
+    Usuario.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            contrasena: req.body.contrasena,
+            categoria: '2'
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar la contraseña del usuario",
+                err
+            });
+        } else {
+            res.json({
+                msj: "La contraseña fue modificada exitosamente",
+                info
             })
         }
     });
@@ -129,6 +189,10 @@ router.put('/desactivar-usuario', (req, res) => {
     });
 
 });
+
+
+
+
 
 //Luego se va al server.js
 

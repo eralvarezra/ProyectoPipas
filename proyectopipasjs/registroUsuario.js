@@ -57,6 +57,11 @@ const obtenerDatos = () => {
 };
 
 
+const validar_existe_correo = () => {
+    console.log(`El nombre es ${correoElectronicoUsuario.value}`);
+
+}
+
 const validar = () => {
     let error = false;
     let campos_requeridos = document.querySelectorAll(':required');
