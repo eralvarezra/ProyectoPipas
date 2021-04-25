@@ -13,14 +13,14 @@ const registrar_mascotavacuna = async(correo, nombreMascota, nombreVacuna) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su vacuna fue guardada exitosamente',
+            'title': 'Su vacuna fue guardada exitosamente.',
             'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -51,7 +51,7 @@ const modificar_vacuna = async(_id, nombreVacuna) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La vacuna ha sido actualizada',
+            'title': 'La vacuna ha sido actualizada.',
             'text': response.msj
         }).then(() => {
             mostrar_vacuna();
@@ -60,7 +60,7 @@ const modificar_vacuna = async(_id, nombreVacuna) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -74,7 +74,7 @@ const eliminar_vacuna = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'La vacuna ha sido eliminada',
+            'title': 'La vacuna ha sido eliminada.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {
