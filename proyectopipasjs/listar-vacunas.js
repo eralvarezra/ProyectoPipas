@@ -25,7 +25,7 @@ const mostrar_modal_editar = async(vacuna) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar la vacuna',
+            text: '¿Está seguro que desea modificar la vacuna?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });
@@ -39,7 +39,7 @@ const mostrar_modal_eliminar = async(vacuna) => {
         if (vacuna) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar la vacuna',
+                text: '¿Está seguro que desea eliminar la vacuna?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
