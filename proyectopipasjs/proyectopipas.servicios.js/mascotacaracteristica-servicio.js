@@ -13,7 +13,7 @@ const registrar_mascotacaracteristica = async(correo, nombreMascota, caracterist
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su mascota fue guardada exitosamente',
+            'title': 'El detalle de su mascota fue guardada exitosamente',
             'text': response.msj
         }).then(() => {
             location.href = "../proyectopipashtml/verPerfilMascota.html";

@@ -116,16 +116,16 @@ const registrar_detalle = () => {
     let correo = readCookie("correo");
     correo = correo.replace("=", "");
 
-    if (labelValorDetalle === "Vacuna") {
+    if (labelValorDetalle.text === "Vacuna") {
         registrar_mascotavacuna(correo, nombreMascota, vacunaValor);
     }
 
-    if (labelValorDetalle === "Caracteristica") {
+    if (labelValorDetalle.text === "Caracteristica") {
         registrar_mascotacaracteristica(correo, nombreMascota, caracteristicaValor);
         console.log(correo, nombreMascota, caracteristicaEspecial);
     }
 
-    if (labelValorDetalle === "Padecimiento") {
+    if (labelValorDetalle.text === "Padecimiento") {
         registrar_mascotapadecimiento(correo, nombreMascota, padecimientoValor);
 
     }

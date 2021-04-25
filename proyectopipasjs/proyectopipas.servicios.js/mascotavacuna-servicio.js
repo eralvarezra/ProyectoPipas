@@ -39,7 +39,7 @@ const lista_Mascotavacuna = async() => {
     return lista_Mascotavacuna;
 }
 
-const modificar_vacuna = async(_id, nombreVacuna) => {
+const modificar_Mascotavacuna = async(_id, nombreVacuna) => {
     await axios({
         method: 'put',
         url: 'http://localhost:3000/api/modificar-mascotavacunas',
