@@ -34,7 +34,7 @@ router.post('/registrar-usuario', (req, res) => {
     nuevo_usuario.save((err, usuario_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el usuario",
+                msj: "No se pudo registrar el usuario.",
                 err
             });
         } else {
@@ -72,7 +72,7 @@ router.get('/buscar-por-correo-usuario', (req, res) => {
     Usuario.findOne({ correo: correo }, (err, usuario_db) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los usuarios",
+                msj: "No se pudieron mostrar los usuarios.",
                 err
             });
         } else {
@@ -93,12 +93,12 @@ router.put('/modificar-contrasena', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la contraseña del usuario",
+                msj: "No se pudo modificar la contraseña del usuario.",
                 err
             });
         } else {
             res.json({
-                msj: "La contraseña fue modificada exitosamente",
+                msj: "La contraseña fue modificada exitosamente.",
                 info
             })
         }
@@ -111,7 +111,7 @@ router.get('/listar-usuario', (req, res) => {
     Usuario.find((err, lista_usuario) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los usuarios",
+                msj: "No se pudieron mostrar los usuarios.",
                 err
             });
         } else {
@@ -129,12 +129,12 @@ router.put('/activar-usuario', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del usuario",
+                msj: "No se pudo modificar el estado del usuario.",
                 err
             });
         } else {
             res.json({
-                msj: "El usuario ha sido activado",
+                msj: "El usuario ha sido activado.",
                 info
             })
         }
@@ -157,12 +157,12 @@ router.put('/modificar-usuario', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la información",
+                msj: "No se pudo modificar la información.",
                 err
             });
         } else {
             res.json({
-                msj: "la información fue modificada exitosamente",
+                msj: "La información fue modificada exitosamente.",
                 info
             })
         }
@@ -178,12 +178,12 @@ router.put('/desactivar-usuario', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del usuario",
+                msj: "No se pudo modificar el estado del usuario.",
                 err
             });
         } else {
             res.json({
-                msj: "El usuario ha sido desactivado",
+                msj: "El usuario ha sido desactivado.",
                 info
             })
         }
