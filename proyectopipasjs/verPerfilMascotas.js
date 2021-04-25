@@ -46,21 +46,28 @@ const mostrar_mascotas = async() => {
             fila.insertCell().innerHTML = (mascota.tipoRaza);
             fila.insertCell().innerHTML = (mascota.fotoMascota);
 
-            lista_mascotavacuna.forEach((mascotavacuna) => {
-                if (mascotavacuna.correo === filtro) {
-                    fila.insertCell().innerHTML = (mascotavacuna.nombreVacuna);
+
+            lista_mascotacaracteristica.forEach((mascotacaracteristica) => {
+                if (mascotacaracteristica.correo === filtro && mascotacaracteristica.nombreMascota === mascota.nombreMascota) {
+                    fila.insertCell().innerHTML = (mascotacaracteristica.nombreCaracteristica);
+                } else {
+                    fila.insertCell().innerHTML = "No posee";
                 }
             });
 
             lista_mascotapad.forEach((padecimiento) => {
-                if (padecimiento.correo === filtro) {
+                if (padecimiento.correo === filtro && padecimiento.nombreMascota === mascota.nombreMascota) {
                     fila.insertCell().innerHTML = (padecimiento.nombrePadecimiento);
+                } else {
+                    fila.insertCell().innerHTML = "No posee";
                 }
             });
 
-            lista_mascotacaracteristica.forEach((mascotacaracteristica) => {
-                if (mascotacaracteristica.correo === filtro) {
-                    fila.insertCell().innerHTML = (mascotacaracteristica.nombreCaracteristica);
+            lista_mascotavacuna.forEach((mascotavacuna) => {
+                if (mascotavacuna.correo === filtro && mascotavacuna.nombreMascota === mascota.nombreMascota) {
+                    fila.insertCell().innerHTML = (mascotavacuna.nombreVacuna);
+                } else {
+                    fila.insertCell().innerHTML = "No posee";
                 }
             });
 

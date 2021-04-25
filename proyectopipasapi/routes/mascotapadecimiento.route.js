@@ -67,6 +67,7 @@ router.put('/modificar-mascotapadecimiento', (req, res) => {
         }
     });
 });
+
 router.delete('/eliminar-MascotaPadecimiento', (req, res) => {
     let _id = req.body._id;
     MascotaPadecimiento.findOneAndRemove({ _id: _id }, (err) => {

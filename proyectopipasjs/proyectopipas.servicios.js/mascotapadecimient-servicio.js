@@ -28,17 +28,17 @@ const registrar_mascotapadecimiento = async(correo, nombreMascota, nombrePadecim
 };
 
 const lista_mascotapadecimiento = async() => {
-    let lista_mascotapadecimiento = [];
+    let lista_Mascotapadecimiento = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-/listar-mascotapadecimiento',
+        url: 'http://localhost:3000/api/listar-MascotaPadecimiento',
         responseType: 'json'
     }).then((response) => {
-        lista_mascotapadecimiento = response.data.lista_mascotapadecimiento;
+        lista_Mascotapadecimiento = response.data.lista_Mascotapadecimiento;
     }).catch((response) => {
         console.log(response.data.msj + " " + response.data.err);
     });
-    return lista_mascotapadecimiento;
+    return lista_Mascotapadecimiento;
 }
 
 const modificar_mascotapadecimiento = async(_id, nombreVacuna) => {

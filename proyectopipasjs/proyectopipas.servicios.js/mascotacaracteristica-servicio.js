@@ -28,17 +28,17 @@ const registrar_mascotacaracteristica = async(correo, nombreMascota, caracterist
 };
 
 const listar_mascotaCaracteristica = async() => { // esta es la funcion que se usa en el controlador, que llama la funcion
-    let lista_mascotasCS = [];
+    let lista_MascotaCS = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-mascota', // con este link se puede probar si la collection es visible en postman
+        url: 'http://localhost:3000/api/listar-mascotacaracteristica', // con este link se puede probar si la collection es visible en postman
         responseType: 'json',
     }).then((response) => {
-        lista_mascotasCS = response.data.lista_mascotasCS;
+        lista_MascotaCS = response.data.lista_MascotaCS;
     }).catch((response) => {
         console.log(response.data.err);
     });
-    return lista_mascotasCS;
+    return lista_MascotaCS;
 };
 
 const eliminar_mascotaCaracteristica = async(_id) => {
