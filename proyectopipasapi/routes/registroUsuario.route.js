@@ -7,7 +7,6 @@ const router = express.Router();
 const Usuario = require('../models/registroUsuario.model');
 const mailer = require('../routes/proyectopipastemplates/registroUsuario-correo');
 
-
 //Endpoint para registrar comentarios
 router.post('/registrar-usuario', (req, res) => {
     let nuevo_usuario = new Usuario({
