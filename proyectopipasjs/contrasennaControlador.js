@@ -22,6 +22,13 @@ const validar = () => {
         }
     });
 
+    let regExp_formatoContra = /^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{12,}$/;
+    if (!regExp_formatoContra.test(input_contrasena.value)) {
+        error = true;
+        input_contrasena.classList.add('error-input');
+    } else {
+        input_contrasena.classList.remove('error-input');
+    }
     if (input_contrasena.value != input_contrasena_confirmacion.value) {
         error = true;
         input_contrasena_confirmacion.classList.add('error-input');

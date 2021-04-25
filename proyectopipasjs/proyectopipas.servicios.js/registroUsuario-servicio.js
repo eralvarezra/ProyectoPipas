@@ -1,6 +1,6 @@
 'use strict';
 
-const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascotas, telefono, correo, numeroTarjeta, fechaVencimiento, foto, activo, estado) => {
+const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascotas, telefono, correo, numeroTarjeta, fechaVencimiento, foto, activo) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-usuario',
@@ -21,7 +21,6 @@ const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identifica
             numeroTarjeta: numeroTarjeta,
             fechaVencimiento: fechaVencimiento,
             foto: foto,
-            estado: estado,
             activo: activo
 
         }
@@ -148,7 +147,7 @@ const modificar_usuario = async(_id, nombre, apellido, telefono, genero, identif
         }).then(() => {});
     });
 };
-const cambiar_estado = async(_id, estado_actual) => {
+const cambiar_estado1 = async(_id, estado_actual) => {
     let url_dinamico;
     if (estado_actual.toUpperCase() == "INACTIVO") {
         url_dinamico = 'http://localhost:3000/api/activar-usuario';
