@@ -20,7 +20,7 @@ const mostrar_modal_cambiar_estado = async(factura) => {
                 showCancelButton: true
             });
             if (accept) {
-                cambiar_estado1(factura._id, factura.estado);
+                cambiar_estado2(factura._id, factura.estado);
             }
         }
     }

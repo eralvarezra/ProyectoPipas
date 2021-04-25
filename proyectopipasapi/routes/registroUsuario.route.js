@@ -25,7 +25,7 @@ router.post('/registrar-usuario', (req, res) => {
         numeroTarjeta: req.body.numeroTarjeta,
         fechaVencimiento: req.body.fechaVencimiento,
         foto: req.body.foto,
-        estado: 'Pendiente',
+        // estado: 'Pendiente',
         activo: 'Activo',
         contrasena: crear_constrasena_aleatoria(),
         categoria: '1'

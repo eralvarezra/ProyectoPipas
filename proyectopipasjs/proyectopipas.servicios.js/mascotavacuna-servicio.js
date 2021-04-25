@@ -15,7 +15,9 @@ const registrar_mascotavacuna = async(correo, nombreMascota, nombreVacuna) => {
             'icon': 'success',
             'title': 'Su vacuna fue guardada exitosamente.',
             'text': response.msj
-        });
+        }).then(() => {
+            location.href = "../proyectopipashtml/verPerfilMascota.html";
+        })
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
@@ -39,7 +41,7 @@ const lista_Mascotavacuna = async() => {
     return lista_Mascotavacuna;
 }
 
-const modificar_vacuna = async(_id, nombreVacuna) => {
+const modificar_Mascotavacuna = async(_id, nombreVacuna) => {
     await axios({
         method: 'put',
         url: 'http://localhost:3000/api/modificar-mascotavacunas',
@@ -64,7 +66,7 @@ const modificar_vacuna = async(_id, nombreVacuna) => {
         }).then(() => {});
     });
 };
-const eliminar_vacuna = async(_id) => {
+const eliminar_Mascotavacuna = async(_id) => {
     await axios({
         method: 'delete',
         url: 'http://localhost:3000/api/eliminar-Mascotavacuna',

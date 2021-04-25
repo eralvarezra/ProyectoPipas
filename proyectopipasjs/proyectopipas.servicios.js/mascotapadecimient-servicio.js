@@ -3,7 +3,7 @@
 const registrar_mascotapadecimiento = async(correo, nombreMascota, nombrePadecimiento) => {
     await axios({
         method: 'post',
-        url: 'http://localhost:3000/api/registrar-mascotavacuna',
+        url: 'http://localhost:3000/api/registrar-mascotapadecimiento',
         responseType: 'json',
         data: {
             correo: correo,
@@ -15,7 +15,9 @@ const registrar_mascotapadecimiento = async(correo, nombreMascota, nombrePadecim
             'icon': 'success',
             'title': 'El padecimiento de su mascota fue guardada exitosamente.',
             'text': response.msj
-        });
+        }).then(() => {
+            location.href = "../proyectopipashtml/verPerfilMascota.html";
+        })
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
@@ -26,32 +28,32 @@ const registrar_mascotapadecimiento = async(correo, nombreMascota, nombrePadecim
 };
 
 const lista_mascotapadecimiento = async() => {
-    let lista_mascotapadecimiento = [];
+    let lista_Mascotapadecimiento = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-MascotaVacuna',
+        url: 'http://localhost:3000/api/listar-MascotaPadecimiento',
         responseType: 'json'
     }).then((response) => {
-        lista_mascotapadecimiento = response.data.lista_mascotapadecimiento;
+        lista_Mascotapadecimiento = response.data.lista_Mascotapadecimiento;
     }).catch((response) => {
         console.log(response.data.msj + " " + response.data.err);
     });
-    return lista_mascotapadecimiento;
+    return lista_Mascotapadecimiento;
 }
 
 const modificar_mascotapadecimiento = async(_id, nombreVacuna) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-mascotavacunas',
+        url: 'http://localhost:3000/api/modificar-/modificar-mascotapadecimiento',
         responseType: 'json',
         data: {
             _id: _id,
-            nombreVacuna: nombreVacuna
+            nombrePadecimiento: nombrePadecimiento
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La vacuna ha sido actualizada.',
+            'title': 'El padecimiento ha sido actualizado',
             'text': response.msj
         }).then(() => {
             mostrar_vacuna();
@@ -64,10 +66,11 @@ const modificar_mascotapadecimiento = async(_id, nombreVacuna) => {
         }).then(() => {});
     });
 };
+
 const eliminar_mascotapadecimiento = async(_id) => {
     await axios({
         method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-Mascotavacuna',
+        url: 'http://localhost:3000/api/eliminar-mascotapadecimiento',
         responseType: 'json',
         data: {
             _id: _id

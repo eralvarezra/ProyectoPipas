@@ -110,32 +110,32 @@ const caracteristica = async() => {
 
 const registrar_detalle = () => {
     let nombreMascota = slct_nombreMascota.value;
-    let caracteristica = rdbtncaracteristica.checked;
-    let vacuna = rdbtnvacuna.checked;
-    let padecimiento = rdbtnpadecimiento.checked;
     let vacunaValor = slct_vacuna.value;
     let padecimientoValor = slct_padecimiento.value;
     let caracteristicaValor = slct_caracteristica.value;
     let correo = readCookie("correo");
     correo = correo.replace("=", "");
 
-    if (labelValorDetalle === "Vacuna") {
+    if (labelValorDetalle.text === "Vacuna") {
         registrar_mascotavacuna(correo, nombreMascota, vacunaValor);
     }
 
-    if (labelValorDetalle === "Caracteristica") {
+    if (labelValorDetalle.text === "Caracteristica") {
         registrar_mascotacaracteristica(correo, nombreMascota, caracteristicaValor);
+        console.log(correo, nombreMascota, caracteristicaEspecial);
     }
 
-    if (labelValorDetalle === "Padecimiento") {
+    if (labelValorDetalle.text === "Padecimiento") {
         registrar_mascotapadecimiento(correo, nombreMascota, padecimientoValor);
+
     }
+
+
 }
 
-
-btnGuardar.addEventListener('click',
+btnGuardar.addEventListener('click', () => {
     registrar_detalle()
-);
+});
 
 btnVolver.addEventListener('click', () => {
     location.href = "verPerfilMascota.html";

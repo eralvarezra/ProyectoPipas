@@ -5,6 +5,20 @@ const tipoRazaM = document.querySelector('#tipoRaza');
 const botonEnviar = document.querySelector("#btnEnviar");
 const btnVolver = document.getElementById("btnVolver");
 
+function readCookie(pCookie) {
+    const nameString = pCookie + "="
+
+    const value = document.cookie.split(";").filter(item => {
+        return item.includes(nameString)
+    })
+
+    if (value.length) {
+        return value[0].substring(nameString.length, value[0].length)
+    } else {
+        return ""
+    }
+}
+
 const mostrar_selects = async() => {
     let listado = await listar_tipo();
 
@@ -22,34 +36,21 @@ const mostrar_selects = async() => {
         temporal.value = raza.nombreRaza;
         tipoRazaM.appendChild(temporal);
     });
-
 }
 
 const obtenerDatos = () => {
-    var seccion_mascota;
     let nombreMascota;
     let tipoMascota;
     let raza;
-    for (let i = 0; i <= counterv; i++) {
-        if (i == 0) {
-            seccion_mascota = document.getElementById('selectFormulario');
-        } else {
-            seccion_mascota = document.getElementById('selectFormulario' + i);
-        }
-        nombreMascota = seccion_mascota.querySelector('#nombreMascota').value;
-        tipoMascota = seccion_mascota.querySelector('#tipoMascota').value;
-        raza = seccion_mascota.querySelector('#tipoRaza').value;
 
-        console.log(`El  nombre de la mascota es : ${nombreMascota}. El  tipo de mascota es : ${tipoMascota}. La raza de la mascota es : ${raza}. Las caracteristicas especiales de las mascotas son : ${caracteristicaEspecial}. Los padecimientos de las mascota son  : ${caracteristicaPadecimiento}. Las vacunas de las mascota son  : ${caracteristicaVacuna}.`);
-    }
+    nombreMascota = nombreMascotaU.value;
+    tipoMascota = tipoMascotaU.value;
+    raza = tipoRazaM.value;
 
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Su mensaje ha sido enviado',
-        'text': 'Nos pondremos en contacto con usted lo antes posible'
-    }).then(() => {
-        limpiar();
-    });
+    let fotoMascota = "mimascota.com";
+    let correo = readCookie("correo");
+    correo.replace("=", "");
+    registrar_mascota(nombreMascota, tipoMascota, raza, fotoMascota, correo);
 }
 
 const limpiar = () => {

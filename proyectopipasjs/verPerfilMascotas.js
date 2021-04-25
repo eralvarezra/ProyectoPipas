@@ -28,6 +28,9 @@ function readCookie(pCookie) {
 
 const mostrar_mascotas = async() => {
     let lista_mascota = await listar_mascotas();
+    let lista_mascotavacuna = await lista_Mascotavacuna();
+    let lista_mascotapad = await lista_mascotapadecimiento();
+    let lista_mascotacaracteristica = await listar_mascotaCaracteristica();
     let filtro = readCookie("correo");
     filtro = filtro.replace("=", "");
     console.log(lista_mascota, filtro);
@@ -42,6 +45,31 @@ const mostrar_mascotas = async() => {
             fila.insertCell().innerHTML = (mascota.tipoMascota);
             fila.insertCell().innerHTML = (mascota.tipoRaza);
             fila.insertCell().innerHTML = (mascota.fotoMascota);
+
+
+            lista_mascotacaracteristica.forEach((mascotacaracteristica) => {
+                if (mascotacaracteristica.correo === filtro && mascotacaracteristica.nombreMascota === mascota.nombreMascota) {
+                    fila.insertCell().innerHTML = (mascotacaracteristica.nombreCaracteristica);
+                } else {
+                    fila.insertCell().innerHTML = "No posee";
+                }
+            });
+
+            lista_mascotapad.forEach((padecimiento) => {
+                if (padecimiento.correo === filtro && padecimiento.nombreMascota === mascota.nombreMascota) {
+                    fila.insertCell().innerHTML = (padecimiento.nombrePadecimiento);
+                } else {
+                    fila.insertCell().innerHTML = "No posee";
+                }
+            });
+
+            lista_mascotavacuna.forEach((mascotavacuna) => {
+                if (mascotavacuna.correo === filtro && mascotavacuna.nombreMascota === mascota.nombreMascota) {
+                    fila.insertCell().innerHTML = (mascotavacuna.nombreVacuna);
+                } else {
+                    fila.insertCell().innerHTML = "No posee";
+                }
+            });
 
             //Eliminar
             let celda_eliminar = fila.insertCell();

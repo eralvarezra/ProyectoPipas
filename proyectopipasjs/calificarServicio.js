@@ -12,6 +12,8 @@ const valor5 = document.getElementById("rate5");
 const btnCalificar = document.getElementById("btn-Calificar");
 const nombreProveedor = document.getElementById('nombreProveedor');
 
+let nombredeempresa = '';
+
 function readCookie(pCookie) {
     const nameString = pCookie + "="
 
@@ -29,6 +31,7 @@ function readCookie(pCookie) {
 const mostrar_proveedor = async() => {
     let empresa = readCookie("empresa");
     empresa = empresa.replace("=", "");
+    nombredeempresa = empresa;
     console.log(empresa)
     let proveedores = await listar_proveedor();
     console.log(proveedores)
@@ -38,15 +41,17 @@ const mostrar_proveedor = async() => {
             document.getElementById('nombreProveedor').innerHTML = proveedor.empresa;
             document.getElementById('nombreProveedor').text = proveedor.empresa;
             console.log(proveedor.empresa)
+
         }
     });
 }
 
 const obtenerDatos = () => {
     let comentarioFinal = comentario.value;
+
     let valor;
-    let correo = readCookie("correoempresa");
-    correo = correo.replace("=", "");
+    let empresa = readCookie("empresa");
+    empresa = empresa.replace("=", "");
 
     if (document.getElementById("rate1").checked) {
         valor = document.getElementById("rate1").value;
@@ -71,7 +76,7 @@ const obtenerDatos = () => {
 
     console.log('El comentario es: ', comentarioFinal);
     console.log('La calificación es: ', valor);
-    registrar_calificacion(correo, comentarioFinal, valor);
+    registrar_calificacion(empresa, comentarioFinal, valor);
 }
 
 function habilitar() {
