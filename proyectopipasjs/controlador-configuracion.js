@@ -7,8 +7,8 @@ const cerrarSesion = () => {
     deleteAllCookies();
     Swal.fire({
         'icon': 'success',
-        'title': 'Hasta Pronto',
-        'text': 'PETLOVER a su servicio'
+        'title': 'Hasta Pronto.',
+        'text': 'PetLover a su servicio.'
     }).then(() => {
         location.href = 'inicio-sesion.html';
     });

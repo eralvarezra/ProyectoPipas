@@ -44,8 +44,8 @@ const obtenerDatos = () => {
 
     Swal.fire({
         'icon': 'success',
-        'title': 'Su servicio fue solicitado con éxito',
-        'text': 'El proveedor se comunicara contigo pronto'
+        'title': 'Su servicio fue solicitado con éxito.',
+        'text': 'El proveedor se comunicará contigo pronto.'
     });
 
 }
@@ -142,8 +142,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo solicitar su servicio',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo solicitar su servicio.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 }
