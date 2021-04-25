@@ -16,7 +16,7 @@ router.post('/registrar-padecimiento', (req, res) => {
     nuevo_padecimiento.save((err, padecimientos_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar el padecimiento.",
                 err
             });
         } else {
@@ -34,7 +34,7 @@ router.get('/listar-padecimientos', (req, res) => {
     Padecimiento.find((err, lista_padecimiento) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los padecimientos",
+                msj: "No se pudieron mostrar los padecimientos.",
                 err
             });
         } else {
@@ -52,12 +52,12 @@ router.put('/modificar-padecimientos', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la padecimiento",
+                msj: "No se pudo modificar la padecimiento.",
                 err
             });
         } else {
             res.json({
-                msj: "El padecimiento fue modificada exitosamente",
+                msj: "El padecimiento fue modificado exitosamente.",
                 info
             })
         }
@@ -68,12 +68,12 @@ router.delete('/eliminar-padecimiento', (req, res) => {
     Padecimiento.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar el padecimiento',
+                msj: 'No se pudo eliminar el padecimiento.',
                 err
             });
         } else {
             res.json({
-                msj: 'La caracteristica se eliminó correctamente'
+                msj: 'La característica se eliminó correctamente.'
             });
         }
     });
