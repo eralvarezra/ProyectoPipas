@@ -28,7 +28,7 @@ const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identifica
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su reserva ha sido enviada',
+            'title': 'Su usuario ha sido registrado.',
             'text': response.msj
         }).then(() => {
             limpiar();
@@ -37,7 +37,7 @@ const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identifica
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -83,7 +83,7 @@ const actualizar_contrasena = async(correo, contrasena) => {
         }).then((response) => {
             Swal.fire({
                 'icon': 'success',
-                'title': 'Su contraseña ha sido modificada',
+                'title': 'Su contraseña ha sido modificada.',
                 'text': response.msj
             }).then(() => {
                 window.location.replace('../proyectopipashtml/inicio-sesion.html');
@@ -92,14 +92,14 @@ const actualizar_contrasena = async(correo, contrasena) => {
             Swal.fire({
                 'icon': 'error',
                 'text': response.msj,
-                'title': 'Ocurrió un error inesperado',
+                'title': 'Ocurrió un error inesperado.',
             }).then(() => {});
         });
     } else {
         Swal.fire({
             'icon': 'error',
             'text': "No encontrado",
-            'title': 'No se encontró el usuario',
+            'title': 'No se encontró el usuario.',
         }).then(() => {});
     }
 }
@@ -135,7 +135,7 @@ const modificar_usuario = async(_id, nombre, apellido, telefono, genero, identif
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La información ha sido actualizada',
+            'title': 'La información ha sido actualizada.',
             'text': response.msj
         }).then(() => {
             mostrar_usuario();
@@ -144,7 +144,7 @@ const modificar_usuario = async(_id, nombre, apellido, telefono, genero, identif
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -166,7 +166,7 @@ const cambiar_estado = async(_id, estado_actual) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El estado del usuario se modificó correctamente',
+            'title': 'El estado del usuario se modificó correctamente.',
             'text': response.msj
         }).then(() => {
             mostrar_usuario();
@@ -175,7 +175,7 @@ const cambiar_estado = async(_id, estado_actual) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 }
