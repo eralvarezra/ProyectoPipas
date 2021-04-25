@@ -28,6 +28,9 @@ function readCookie(pCookie) {
 
 const mostrar_mascotas = async() => {
     let lista_mascota = await listar_mascotas();
+    let lista_mascotavacuna = await lista_Mascotavacuna();
+    let lista_mascotapad = await lista_mascotapadecimiento();
+    let lista_mascotacaracteristica = await listar_mascotaCaracteristica();
     let filtro = readCookie("correo");
     filtro = filtro.replace("=", "");
     console.log(lista_mascota, filtro);
@@ -42,6 +45,24 @@ const mostrar_mascotas = async() => {
             fila.insertCell().innerHTML = (mascota.tipoMascota);
             fila.insertCell().innerHTML = (mascota.tipoRaza);
             fila.insertCell().innerHTML = (mascota.fotoMascota);
+
+            lista_mascotavacuna.forEach((mascotavacuna) => {
+                if (mascotavacuna.correo === filtro) {
+                    fila.insertCell().innerHTML = (mascotavacuna.nombreVacuna);
+                }
+            });
+
+            lista_mascotapad.forEach((padecimiento) => {
+                if (padecimiento.correo === filtro) {
+                    fila.insertCell().innerHTML = (padecimiento.nombrePadecimiento);
+                }
+            });
+
+            lista_mascotacaracteristica.forEach((mascotacaracteristica) => {
+                if (mascotacaracteristica.correo === filtro) {
+                    fila.insertCell().innerHTML = (mascotacaracteristica.nombreCaracteristica);
+                }
+            });
 
             //Eliminar
             let celda_eliminar = fila.insertCell();

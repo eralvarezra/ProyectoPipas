@@ -15,7 +15,9 @@ const registrar_mascotapadecimiento = async(correo, nombreMascota, nombrePadecim
             'icon': 'success',
             'title': 'El padecimiento de su mascota fue guardada exitosamente',
             'text': response.msj
-        });
+        }).then(() => {
+            location.href = "../proyectopipashtml/verPerfilMascota.html";
+        })
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
@@ -29,7 +31,7 @@ const lista_mascotapadecimiento = async() => {
     let lista_mascotapadecimiento = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-/registrar-mascotapadecimiento',
+        url: 'http://localhost:3000/api/listar-/listar-mascotapadecimiento',
         responseType: 'json'
     }).then((response) => {
         lista_mascotapadecimiento = response.data.lista_mascotapadecimiento;
@@ -42,7 +44,7 @@ const lista_mascotapadecimiento = async() => {
 const modificar_mascotapadecimiento = async(_id, nombreVacuna) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-/registrar-mascotapadecimiento',
+        url: 'http://localhost:3000/api/modificar-/modificar-mascotapadecimiento',
         responseType: 'json',
         data: {
             _id: _id,
@@ -64,6 +66,7 @@ const modificar_mascotapadecimiento = async(_id, nombreVacuna) => {
         }).then(() => {});
     });
 };
+
 const eliminar_mascotapadecimiento = async(_id) => {
     await axios({
         method: 'delete',
