@@ -16,12 +16,12 @@ router.post('/registrar-tipoServicio', (req, res) => {
     nuevo_tipoServicio.save((err, tipoServicio) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar el tipo de servicio.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "El tipo de servicio se registró exitosamente.",
                 tipoServicio
             })
         }
@@ -34,7 +34,7 @@ router.get('/listar-tipoServicio', (req, res) => {
     TipoServicio.find((err, lista_tipoServicio) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los tipos",
+                msj: "No se pudieron mostrar los tipos de servicio.",
                 err
             });
         } else {
@@ -53,12 +53,12 @@ router.put('/modificar-tipoServicio', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el servicio",
+                msj: "No se pudo modificar el servicio.",
                 err
             });
         } else {
             res.json({
-                msj: "El servicio fue modificado exitosamente",
+                msj: "El servicio fue modificado exitosamente.",
                 info
             })
         }
@@ -69,12 +69,12 @@ router.delete('/eliminar-tipoServicio', (req, res) => {
     TipoServicio.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar el servicio',
+                msj: 'No se pudo eliminar el servicio.',
                 err
             });
         } else {
             res.json({
-                msj: 'El servicio se eliminó correctamente'
+                msj: 'El servicio se eliminó correctamente.'
             });
         }
     });
