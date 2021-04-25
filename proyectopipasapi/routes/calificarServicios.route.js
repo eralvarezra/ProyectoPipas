@@ -17,7 +17,7 @@ router.post('/calificar-servicio', (req, res) => {
     nueva_Calificacion.save((err, calificacion_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar calificación",
+                msj: "No se pudo registrar su calificación",
                 err
             });
 
