@@ -10,14 +10,14 @@ const registrar_caracteristica = async(nombreCaracteristica, fechaCreacion) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su caracteristica fue guardada exitosamente',
+            'title': 'Su característica fue guardada exitosamente.',
             'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -47,7 +47,7 @@ const modificar_caracteristica = async(_id, nombreCaracteristica) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La caracteristica ha sido actualizada',
+            'title': 'La característica ha sido actualizada.',
             'text': response.msj
         }).then(() => {
             mostrar_caracteristica();
@@ -56,7 +56,7 @@ const modificar_caracteristica = async(_id, nombreCaracteristica) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
