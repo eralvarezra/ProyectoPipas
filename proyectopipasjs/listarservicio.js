@@ -57,7 +57,7 @@ const mostrar_modal_editar = async(servicio) => {
         if (formValues) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea modificar el Servicio',
+                text: '¿Está seguro que desea modificar el servicio?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });

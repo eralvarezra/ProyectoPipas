@@ -23,8 +23,8 @@ const obtenerDatos = () => {
 
     Swal.fire({
         'icon': 'success',
-        'title': 'Su mensaje ha sido enviado',
-        'text': 'Nos pondremos en contacto con usted lo antes posible'
+        'title': 'Su mensaje ha sido enviado.',
+        'text': 'Nos pondremos en contacto con usted lo antes posible.'
 
     }).then(() => {
         limpiar();
@@ -70,8 +70,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo enviar su mensaje',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo enviar su mensaje.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 

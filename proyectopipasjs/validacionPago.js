@@ -12,14 +12,14 @@ const obtenerDatos = () => {
     let codTarjeta = codigoTarjeta.value;
 
     console.log('El nombre en la tarjeta es: ', nomTarjeta);
-    console.log('El numero de tarjeta es: ', numTarjeta);
+    console.log('El número de tarjeta es: ', numTarjeta);
     console.log('La fecha de vencimiento de la tarjeta es; ', vencimiento);
-    console.log('El codigo de verificacion de la tarjeta es: ', codTarjeta);
+    console.log('El codigo de verificación de la tarjeta es: ', codTarjeta);
 
     Swal.fire({
         'icon': 'success',
-        'title': 'Su servicio ha sido solicitado',
-        'text': 'Ahora tendra acceso a los datos del proveedor para que se ponga en conacto con él'
+        'title': 'Su servicio ha sido solicitado.',
+        'text': 'Ahora tendrá acceso a los datos del proveedor para que se ponga en contacto con él.'
     }).then(() => {
         limpiar();
     });
@@ -86,8 +86,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo enviar su mensaje',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo enviar su mensaje.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 

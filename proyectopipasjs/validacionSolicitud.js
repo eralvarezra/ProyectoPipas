@@ -14,7 +14,7 @@ const obtenerDatos = () => {
     Swal.fire({
         'icon': 'success',
         'title': 'Su servicio ha sido configurado',
-        'text': 'Ahora finalizara haciendo el pago del servicio'
+        'text': 'Ahora finalizará haciendo el pago del servicio'
     }).then(() => {
         limpiar();
     });
@@ -51,8 +51,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo enviar su solicitud',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo enviar su solicitud.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 

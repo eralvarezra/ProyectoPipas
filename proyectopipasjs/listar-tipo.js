@@ -25,7 +25,7 @@ const mostrar_modal_editar = async(tipo) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar el tipo',
+            text: '¿Está seguro que desea modificar el tipo de mascota?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });
@@ -39,7 +39,7 @@ const mostrar_modal_eliminar = async(tipo) => {
         if (tipo) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar el tipo',
+                text: '¿Está seguro que desea eliminar el tipo de mascota?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });

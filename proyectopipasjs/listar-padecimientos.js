@@ -25,7 +25,7 @@ const mostrar_modal_editar = async(padecimiento) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar el padecimiento',
+            text: '¿Está seguro que desea modificar el padecimiento?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });
@@ -39,7 +39,7 @@ const mostrar_modal_eliminar = async(padecimiento) => {
         if (padecimiento) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar el padecimiento',
+                text: '¿Está seguro que desea eliminar el padecimiento?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });

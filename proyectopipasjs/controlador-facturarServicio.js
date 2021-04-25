@@ -7,7 +7,6 @@ let nombreDelServicio = document.querySelector("#nomberServicio");
 let fechavencimientotarjeta = document.querySelector("#fechaVencimiento");
 let numerodelatarjeta = document.querySelector("#numTarjeta");
 let codigodeSeguridad = document.querySelector("#cvv");
-const botonEnviar = document.querySelector('#btnSubmit');
 
 let cookiesCorreoEmpresa = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, correoempresa]) => ({...accumulator, [key.trim()]: decodeURIComponent(correoempresa) }));
 let cookiesNombreServicio = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, nombreServicio]) => ({...accumulator, [key.trim()]: decodeURIComponent(nombreServicio) }));
@@ -44,8 +43,8 @@ const obtenerDatos = () => {
 
     Swal.fire({
         'icon': 'success',
-        'title': 'Su servicio fue solicitado con éxito.',
-        'text': 'El proveedor se comunicará contigo pronto.'
+        'title': 'Su servicio fue solicitado con éxito',
+        'text': 'El proveedor se comunicara contigo pronto'
     });
 
 }
@@ -142,12 +141,11 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo solicitar su servicio.',
-            'text': 'Por favor revise los campos resaltados.'
+            'title': 'No se pudo solicitar su servicio',
+            'text': 'Por favor revise los campos resaltados'
         });
     }
 }
-botonEnviar.addEventListener('click', validar);
 mostrar_pagoUsuario();
 nombredelServicio();
 mostrar_servicio();

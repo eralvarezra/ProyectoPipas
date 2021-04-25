@@ -4,17 +4,14 @@ const express = require('express');
 const router = express.Router();
 
 const contactoadmin = require('../models/contactoadmin.model');
+const mailer = require('../routes/proyectopipastemplates/contactoadmin-correo');
 
 router.post('/registrar-contactoadmin', (req, res) => {
     let nuevo_contactoadmin = new contactoadmin({
-        nombreMascota: req.body.nombreMascota,
-        tipoMascota: req.body.tipoMascota,
-        tipoRaza: req.body.tipoRaza,
-        fotoMascota: req.body.fotoMascota,
-        caracteristicaEspecial: req.body.caracteristicaEspecial,
-        tipoPadecimiento: req.body.tipoPadecimiento,
-        tipoVacuna: req.body.tipoVacuna,
-        correo: req.body.correo
+        nombreUsuario: req.body.nombreUsuario,
+        telefonoUsuario: req.body.telefonoUsuario,
+        correoUsuario: req.body.correoUsuario,
+        comentarioUsuario: req.body.comentarioUsuario,
     });
 
     nuevo_contactoadmin.save((err, contactoadmin_db) => {
@@ -29,24 +26,11 @@ router.post('/registrar-contactoadmin', (req, res) => {
                 msj: "Su comentario se guardo exitosamente.",
                 contactoadmin_db
             });
-        }
-    });
-
-})
-
-router.get('/listar-contactoadmin', (req, res) => {
-    contactoadmin.find((err, lista_contactoadmin) => {
-        if (err) {
-            res.json({
-                msj: "No se pueden mostrar los comentarios.",
-                err
-            });
-
-        } else {
-            res.json({ lista_contactoadmin });
+            mailer.enviar_email(usuario_db.nombre, usuario_db.correo)
         }
     });
 
 });
+
 
 module.exports = router;

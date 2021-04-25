@@ -42,8 +42,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo ingresar',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo ingresar.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 }

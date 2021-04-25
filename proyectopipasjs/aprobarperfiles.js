@@ -36,16 +36,16 @@ const obtenerDatos = () => {
     console.log('El nombre del usuario a cargo es: ' + usuarioAcargo);
     console.log('El nombre de la empresa es: ' + empresa);
     console.log('La contraseña de la empresa es: ' + contraEmpresa);
-    console.log('El telefono de la empresa es: ' + telefono);
+    console.log('El teléfono de la empresa es: ' + telefono);
     console.log('El correo es: ' + correo);
-    console.log('La Provincia es: ' + provincia);
-    console.log('El Canton es: ' + canton);
-    console.log('El Distrito es: ' + distrito);
-    console.log('El Comentario es: ' + comentario);
+    console.log('La provincia es: ' + provincia);
+    console.log('El cantón es: ' + canton);
+    console.log('El distrito es: ' + distrito);
+    console.log('El comentario es: ' + comentario);
     Swal.fire({
         'icon': 'success',
-        'title': 'Su mensaje ha sido enviado',
-        'text': 'Nos pondremos en contacto con usted lo antes posible'
+        'title': 'Su mensaje ha sido enviado.',
+        'text': 'Nos pondremos en contacto con usted lo antes posible.'
     }).then(() => {
         limpiar();
     });
@@ -105,8 +105,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo enviar su mensaje',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo enviar su mensaje.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 

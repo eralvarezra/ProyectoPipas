@@ -147,7 +147,7 @@ const mostrar_mascotas = async() => {
                 if (mascota) {
                     const { value: accept } = await Swal.fire({
                         icon: 'warning',
-                        text: 'Está seguro que desea eliminar la mascota',
+                        text: '¿Está seguro que desea eliminar la mascota?',
                         confirmButtonText: `Si`,
                         showCancelButton: true
                     });

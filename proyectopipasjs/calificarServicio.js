@@ -110,8 +110,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo enviar su mensaje',
-            'text': 'Por favor revise los campos resaltados, e incluya un comentario.'
+            'title': 'No se pudo enviar su mensaje.',
+            'text': 'Por favor revise los campos resaltados y agregue un comentario.'
         });
     }
 

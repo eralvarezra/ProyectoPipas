@@ -35,11 +35,11 @@ const mostrar_modal_editar = async(usuario) => {
                 </select>
             </div>
             <div>
-            <label for="txt-identificacion">Identificacion:</label>
+            <label for="txt-identificacion">Identificación:</label>
             <input type="text" id="txt-identificacion" required class="swal2-input" value="${usuario.identificacion}">
             </div>
             <div>
-            <label for="txt-numeroTarjeta">Numero de tarjeta:</label>
+            <label for="txt-numeroTarjeta">Número de tarjeta:</label>
             <input type="text" id="txt-numeroTarjeta" required class="swal2-input" value="${usuario.numeroTarjeta}">
 
             `,
@@ -59,7 +59,7 @@ const mostrar_modal_editar = async(usuario) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar el tipo',
+            text: '¿Está seguro que desea modificar este dato?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });

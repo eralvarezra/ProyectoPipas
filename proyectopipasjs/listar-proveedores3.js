@@ -53,7 +53,7 @@ const mostrar_modal_editar = async(proveedor) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar el tipo',
+            text: '¿Está seguro que desea modificar los datos el proveedor?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });

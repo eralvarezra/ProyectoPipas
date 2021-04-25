@@ -7,7 +7,7 @@ const input_filtro = document.querySelector("#txt-filtro");
 
 const mostrar_modal_editar = async(caracteristica) => {
     const { value: formValues } = await Swal.fire({
-        title: 'Editar Caracteristica',
+        title: 'Editar Característica',
         html: `
             <div>
                 <label for="txt-nombre">Nombre:</label>
@@ -25,7 +25,7 @@ const mostrar_modal_editar = async(caracteristica) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar la caracteristica',
+            text: '¿Está seguro que desea modificar la característica?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });
@@ -39,7 +39,7 @@ const mostrar_modal_eliminar = async(caracteristica) => {
         if (caracteristica) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar la caracteristica',
+                text: '¿Está seguro que desea modificar la característica?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
