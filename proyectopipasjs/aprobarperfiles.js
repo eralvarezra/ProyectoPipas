@@ -44,8 +44,8 @@ const obtenerDatos = () => {
     console.log('El comentario es: ' + comentario);
     Swal.fire({
         'icon': 'success',
-        'title': 'Su mensaje ha sido enviado',
-        'text': 'Nos pondremos en contacto con usted lo antes posible'
+        'title': 'Su mensaje ha sido enviado.',
+        'text': 'Nos pondremos en contacto con usted lo antes posible.'
     }).then(() => {
         limpiar();
     });
