@@ -9,4 +9,4 @@ const schema_contactoadmin = new moongose.Mongoose.schema({
 
 });
 
-module.exports = mongoose.model('contactoadmin', schema_contactoadmin, 'contactoadmin');
+module.exports = moongose.model('contactoadmin', schema_contactoadmin, 'contactoadmin');

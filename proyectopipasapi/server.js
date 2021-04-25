@@ -68,4 +68,3 @@ app.use('/api', require('./routes/registroFactura.route'));
 app.use('/api', require('./routes/mascotavacuna.route'));
 app.use('/api', require('./routes/mascotacaracteristica.route'));
 app.use('/api', require('./routes/mascotapadecimiento.route'));
-app.use('/api', require('./routes/contactoadming.route'));
