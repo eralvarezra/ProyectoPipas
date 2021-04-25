@@ -21,12 +21,12 @@ router.post('/registrar-servicio', (req, res) => {
     nueva_registrarServicio.save((err, registrarServicio) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar el servicio",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "El servicio se registró exitosamente.",
                 registrarServicio
             })
         }
@@ -63,7 +63,7 @@ router.put('/modificar-servicio', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el Servicio.",
+                msj: "No se pudo modificar el servicio.",
                 err
             });
         } else {
@@ -84,7 +84,7 @@ router.delete('/eliminar-Servicio', (req, res) => {
             });
         } else {
             res.json({
-                msj: 'El Servicio se eliminó correctamente.'
+                msj: 'El servicio se eliminó correctamente.'
             });
         }
     });
