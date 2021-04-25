@@ -73,7 +73,7 @@ const eliminar_metodo = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'El método de pago ha sido eliminada.',
+            'title': 'El método de pago ha sido eliminado.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {
