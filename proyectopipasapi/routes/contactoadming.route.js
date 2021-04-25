@@ -20,13 +20,13 @@ router.post('/registrar-contactoadmin', (req, res) => {
     nuevo_contactoadmin.save((err, contactoadmin_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar su comentario",
+                msj: "No se pudo registrar el comentario.",
                 err
             });
 
         } else {
             res.json({
-                msj: "Su comentario se guardo exitosamente",
+                msj: "Su comentario se guardo exitosamente.",
                 contactoadmin_db
             });
         }
@@ -38,7 +38,7 @@ router.get('/listar-contactoadmin', (req, res) => {
     contactoadmin.find((err, lista_contactoadmin) => {
         if (err) {
             res.json({
-                msj: "No se pueden mostrar los comentarios",
+                msj: "No se pueden mostrar los comentarios.",
                 err
             });
 

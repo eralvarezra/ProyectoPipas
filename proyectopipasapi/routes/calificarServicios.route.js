@@ -17,13 +17,13 @@ router.post('/calificar-servicio', (req, res) => {
     nueva_Calificacion.save((err, calificacion_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar su calificación",
+                msj: "No se pudo registrar su calificación.",
                 err
             });
 
         } else {
             res.json({
-                msj: "Su calificación se guardo exitosamente",
+                msj: "Su calificación se guardo exitosamente.",
                 calificacion_db
             });
         }
@@ -35,12 +35,12 @@ router.delete('/eliminar-comentario', (req, res) => {
     calificarServicio.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar el comentario',
+                msj: 'No se pudo eliminar el comentario.',
                 err
             });
         } else {
             res.json({
-                msj: 'El comentario se eliminó correctamente'
+                msj: 'El comentario se eliminó correctamente.'
             });
         }
     });
@@ -49,7 +49,7 @@ router.get('/listar-calificacion', (req, res) => {
     calificarServicio.find((err, lista_calificacion) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los comentarios",
+                msj: "No se pudieron mostrar los comentarios.",
                 err
             });
 
@@ -66,7 +66,7 @@ router.get('/listar-calificacion', (req, res) => {
     calificarServicio.find((err, lista_calificacion) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las calificaciones",
+                msj: "No se pudieron mostrar las calificaciones.",
                 err
             });
         } else {
