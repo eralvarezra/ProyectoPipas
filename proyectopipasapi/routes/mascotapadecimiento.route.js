@@ -4,7 +4,7 @@ const express = require('express');
 // Redirige las peticiones, inputs o punto de llegada. Va a ser igual al router de express(express denos un router)
 const router = express.Router();
 // Uselo para el modelo comentarios, NO lleva el js
-const MascotaPadecimiento = require('../models/mascotapadecimiento.model');
+const MascotaPadecimiento = require('../models/mascotaspadecimientos.model');
 
 //Endpoint para registrar comentarios
 router.post('/registrar-mascotapadecimiento', (req, res) => {
