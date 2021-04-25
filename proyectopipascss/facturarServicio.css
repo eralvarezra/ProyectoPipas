@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    font-size: larger;
+}
+
+#logoProveedor {
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    display: inline;
+}
+
+.info {
+    float: right;
+    margin-top: 0px;
+    display: inline;
+    width: 600px;
+}
+
+.info2 {
+    padding-top: 40px;
+    margin-left: 20px;
+    width: 273px;
+    font-weight: bold;
+    height: 100px;
+    text-align: left;
+    display: inline-block;
+}
+
+#precioServicio {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#nomberServicio {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#descripcionServicio {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#nombreUsuario {
+    padding: 20px;
+}
+
+#nombreEmpresa {
+    padding: 20px;
+}
+
+#sct-formularioPago {
+    width: 50%;
+    float: left;
+}
+
+#sct-infoServicio {
+    width: 37%;
+    border-right: 5px solid #e69138;
+    float: left;
+}
+
+#sct-principal {
+    margin-top: 30px;
+    width: 850px;
+    height: 380px;
+    margin-left: 500px;
+    border: 5px solid #e69138;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    margin-top: 200px;
+}
