@@ -17,12 +17,12 @@ router.post('/registrar-mascotacaracteristica', (req, res) => {
     nueva_mascotaCS.save((err, mascotaCS_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar la característica de la mascota",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "La característica se registró exitosamente.",
                 mascotaCS_db
             })
         }

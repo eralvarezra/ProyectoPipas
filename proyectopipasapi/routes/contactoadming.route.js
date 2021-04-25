@@ -38,7 +38,7 @@ router.get('/listar-contactoadmin', (req, res) => {
     contactoadmin.find((err, lista_contactoadmin) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los comentarios",
+                msj: "No se pueden mostrar los comentarios",
                 err
             });
 
