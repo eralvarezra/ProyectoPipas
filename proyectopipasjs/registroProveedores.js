@@ -37,19 +37,19 @@ const obtenerDatos = () => {
     console.log('El nombre del usuario a cargo es: ' + usuarioAcargo);
     console.log('El nombre de la empresa es: ' + empresa);
     console.log('La contraseña de la empresa es: ' + contraEmpresa);
-    console.log('El telefono de la empresa es: ' + telefono);
+    console.log('El teléfono de la empresa es: ' + telefono);
     console.log('El correo es: ' + correo);
-    console.log('La Provincia es: ' + provincia);
-    console.log('El Canton es: ' + canton);
-    console.log('El Distrito es: ' + distrito);
-    console.log('El Comentario es: ' + comentario);
+    console.log('La provincia es: ' + provincia);
+    console.log('El cantón es: ' + canton);
+    console.log('El distrito es: ' + distrito);
+    console.log('El comentario es: ' + comentario);
 
     registrar_proveedor(tipoProveedor, tipoServicio, tipoIdentificacion, usuarioAcargo, empresa, contraEmpresa, telefono, correo, provincia, canton, distrito, comentario, myFile, activo, estado);
 
     Swal.fire({
         'icon': 'success',
-        'title': 'Se ha registrado con éxito',
-        'text': 'Muchas gracias por tu registro'
+        'title': 'Se ha registrado con éxito.',
+        'text': 'Muchas gracias por tu registro.'
     }).then(() => {
         limpiar();
         location.href = "../proyectopipashtml/registroProveedoresNotificacion.html";
@@ -110,8 +110,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo registrar con éxito',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudo registrar con éxito.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 
