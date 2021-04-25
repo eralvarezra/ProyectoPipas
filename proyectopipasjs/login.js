@@ -65,7 +65,7 @@ const mostrar_activar = async(filtro, pass) => {
     });
     lista_usuario.forEach((usuario) => {
         if (usuario.correo == filtro) {
-            if ((usuario.activo == "Activo")) {
+            if (usuario.activo == "Activo") {
                 valido = true;
                 validar_perfil(filtro, pass);
             }
