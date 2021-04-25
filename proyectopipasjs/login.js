@@ -58,8 +58,8 @@ const mostrar_activar = async(filtro, pass) => {
         } else {
             Swal.fire({
                 'icon': 'warning',
-                'title': 'Su perfil no se encuentra activo o aprobado',
-                'text': 'Comuniquese con el administrador'
+                'title': 'Su perfil no se encuentra activo o aprobado en este momento.',
+                'text': 'Por favor comuníquese con el administrador.'
             });
         }
     });
@@ -117,7 +117,7 @@ const validar_perfil = async(pEmail, pPass) => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se encuentra su perfil',
+            'title': 'No se ha encontrado su perfil.',
             'text': 'Los datos ingresados no coinciden con un perfil registrado.'
         });
     }
@@ -132,7 +132,7 @@ const tipo_Perfil = async() => {
 
         Swal.fire({
             'icon': 'success',
-            'title': 'Bienvienido',
+            'title': '¡Bienvienido!',
             'text': 'PetLover a su servicio.'
         }).then(() => {
             location.href = "../proyectopipashtml/perfil.html"
@@ -141,7 +141,7 @@ const tipo_Perfil = async() => {
 
         Swal.fire({
             'icon': 'success',
-            'title': 'Bienvienido',
+            'title': '¡Bienvienido!',
             'text': 'PetLover a su servicio.'
         }).then(() => {
             location.href = "../proyectopipashtml/configuracion.html";
@@ -149,7 +149,7 @@ const tipo_Perfil = async() => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se encuentra su perfil',
+            'title': 'No se ha encontrado su perfil.',
             'text': 'Los datos ingresados no coinciden con un perfil registrado.'
         });
     };
@@ -194,8 +194,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'Datos Inválidos',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'Datos inválidos.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 };
@@ -203,7 +203,7 @@ const validar = () => {
 function sendEmail() {
     Swal.fire({
         'icon': 'success',
-        'title': 'Correo enviado',
+        'title': 'Correo enviado.',
         'text': 'Revise por favor su correo y siga los pasos para recuperar su contraseña.'
     });
 };
@@ -228,8 +228,8 @@ btnFormRegistro.addEventListener('click', () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudo enviar su mensaje',
-            'text': 'Por favor seleccione una opción'
+            'title': 'No se pudo enviar su mensaje.',
+            'text': 'Por favor seleccione una opción.'
         });
     }
 });
