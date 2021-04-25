@@ -1,111 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina principal</title>
-    <link rel="stylesheet" href="../proyectopipascss/reset.css">
-    <link rel="stylesheet" href="../proyectopipascss/general.css">
-    <link rel="stylesheet" href="../proyectopipascss/index.css">
+    <link rel="stylesheet" href="../proyectoPipasCss/reset.css">
+    <link rel="stylesheet" href="../proyectoPipasCss/general.css">
+    <link rel="stylesheet" href="../proyectoPipasCss/index.css">
+    <link rel="stylesheet" href="../proyectoPipasCss/index.css">
+    <script src="https://kit.fontawesome.com/195d2b987b.js" crossorigin="anonymous"></script>
+
 </head>
+<!-- <header id="header-principal">
+    <nav>
+        <a href="../proyectoPipasHtml/inicioSesion.html" id="inicioSesion">Inicio de Sesión</a>
+        <img class="inicioSesionLogo" src="../proyectoPipasImgs/PEPPY DOGGO (3).png">
+    </nav>
+</header> -->
 
 <body>
-    <header id="header-principal">
-        <nav>
-            <a href="../proyectopipashtml/sobrenosotros.html">Sobre Nosotros</a>
-            <a href="../proyectopipashtml/perfil.html">Perfil</a>
-            <a href="../proyectopipashtml/busqueda.html">Búsqueda</a>
-            <a href="../proyectopipashtml/contacto.html">Contacto</a>
-            <a href="../proyectopipashtml/configuracion.html">Configuración</a>
-            <a href="../proyectopipashtml/reportes.html">Reportes</a>
-            <a href="../proyectopipashtml/inicioSesion.html" id="inicioSesion">Inicio de Sesión</a>
-            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
-        </nav>
-    </header>
-
     <main>
-        <section id="sct-banner" class="sct-banner">
-            <div>
-                <h1>¿CONOCES SOBRE NUESTROS SERVICIOS?</h1>
+        <!-- <section class="sct-contenedor-principal">
+        </section> -->
+        <section class="slideshow-container">
+            <!-- <div class="slideshow-container"> -->
+            <div class="mySlides fade" id="mySlides-face">
+                <img src='../proyectoPipasImgs/reporte3.jpg' id="mySlides-face" alt="hospedaje" />
+                <div class="text">BIENVENIDO A PEPPY DOGGO</div>
             </div>
-            <br>
-            <div class="slide">
-                <div class="slide-inner">
-                    <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
-                    <div class="slide-item">
-                        <img src="../proyectopipasimgs/imagen1Hospedaje.jpeg">
-                    </div>
-                    <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="../proyectopipasimgs/imagen2Caminata.jpeg">
-                    </div>
-                    <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="../proyectopipasimgs/imagen3Transporte.jpg">
-                    </div>
-                    <input class="slide-open" type="radio" id="slide-4" name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="../proyectopipasimgs/imagen5Banno.PNG">
-                    </div>
-                    <input class="slide-open" type="radio" id="slide-5" name="slide" aria-hidden="true" hidden="">
-                    <div class="slide-item">
-                        <img src="../proyectopipasimgs/imagen6Corte.PNG">
-                    </div>
-                    <!-- CAMBIAR SLIDE -->
-                    <label for="slide-5" class="slide-control prev control-1">‹</label>
-                    <label for="slide-4" class="slide-control next control-1">‹</label>
-                    <label for="slide-3" class="slide-control prev control-2">‹</label>
-                    <label for="slide-2" class="slide-control next control-2">›</label>
-                    <label for="slide-1" class="slide-control prev control-3">‹</label>
-                    <label for="slide-5" class="slide-control prev control-3">‹</label>
-                    <label for="slide-4" class="slide-control next control-4">‹</label>
-                    <label for="slide-3" class="slide-control next control-4">›</label>
-                    <label for="slide-2" class="slide-control prev control-5">‹</label>
-                    <label for="slide-1" class="slide-control next control-5">›</label>
-                    <ol class="slide-indicador">
-                        <li>
-                            <label for="slide-1" class="slide-circulo">•</label>
-                        </li>
-                        <li>
-                            <label for="slide-2" class="slide-circulo">•</label>
-                        </li>
-                        <li>
-                            <label for="slide-3" class="slide-circulo">•</label>
-                        </li>
-                        <li>
-                            <label for="slide-4" class="slide-circulo">•</label>
-                        </li>
-                        <li>
-                            <label for="slide-1" class="slide-circulo">•</label>
-                        </li>
-                    </ol>
+
+            <div class="mySlides fade" id="mySlides-face">
+                <img src='../proyectoPipasImgs/reporte9.jpg' id="mySlides-face" alt="caminta" />
+                <div class="text">Encontra todo lo que necesitas, para tu mascota
                 </div>
             </div>
 
-
-            <div>
-                <h1>NUESTRAS OPCIONES</h1>
+            <div class="mySlides fade" id="mySlides-face">
+                <img src='../proyectoPipasImgs/reporte10.jpg' id="mySlides-face" alt="transporte" />
+                <div class="text">Mira nuestros servicios disponibles</div>
             </div>
 
-
-
+            <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
+            <a class="next" onclick='plusSlides(1)'>&#10095;</a>
+            <!-- </div> -->
+            <br/>
+            <div style='text-align: center;'>
+                <span class="dot" onclick='currentSlide(1)'></span>
+                <span class="dot" onclick='currentSlide(2)'></span>
+                <span class="dot" onclick='currentSlide(3)'></span>
+            </div>
         </section>
+
+        <section id="sct-comentarios" class="sct-comentarios">
+            <h1>Actualmente contamos con servicios para tu mascota, tales como:</h1>
+
+            <div class="caja">
+                <img class="imagen" src="../proyectoPipasImgs/imagen1Hospedaje.jpeg" alt=""> <br><br>
+                <p>Hospedaje</p>
+            </div>
+
+            <div class="caja">
+                <img class="imagen" src="../proyectoPipasImgs/imagen2Caminata.jpeg" alt=""><br><br>
+                <p>Caminata</p>
+            </div>
+
+            <div class="caja">
+                <img class="imagen" src="../proyectoPipasImgs/imagen5Banno.PNG" alt=""><br><br>
+                <p>Baño</p>
+            </div>
+
+            <div class="caja">
+                <img class="imagen" src="../proyectoPipasImgs/imagen6Corte.PNG" alt=""><br><br>
+                <p>Corte</p>
+            </div>
+            <div class="caja">
+                <img class="imagen" src="../proyectoPipasImgs/imagen3Transporte.jpg" alt=""><br><br>
+                <p>Transporte</p>
+            </div>
+        </section>
+        <br>
+
+
+        <section id="sct-comentariosR" class="sct-comentariosR">
+            <br>
+            <h2>Puedes registrarte y conocer más acerca de nuestros servicios</h2>
+            <h2>Su mascota se lo agradecerá</h2>
+            <br> <br>
+        </section>
+
+        <section id="sct-calificaciones" class="sct-calificaciones">
+            <h1>Nuestros clientes cuentas sus experiencias con nuestros servicios</h1>
+            <br> <br>
+            <div class="comentario">
+                <h2>CORTE DE PELO</h2>
+                <br>
+                <p>" Utilice por primera vez su app, consegui un buen servicio de corte y baño para mi perro, me encanta el trato que tuvieron con él "</p>
+                <br>
+                <div class="starContainerCalificacion">
+                    <label for="rate5" class="fas fa-paw"></label>
+                    <label for="rate4" class="fas fa-paw"></label>
+                    <label for="rate3" class="fas fa-paw"></label>
+                    <label for="rate2" class="fas fa-paw"></label>
+                    <label for="rate1" class="fas fa-paw"></label>
+                </div>
+
+            </div>
+
+            <div class="comentario">
+                <h2>CAMINATA</h2>
+                <br>
+                <p>" No dispongo de mucho tiempo para sacar a mi perro a caminar, sin embargo desde que conoci esta app, me enarmorado completamente, y así mi perro puede salir "</p>
+                <div class="starContainerCalificacion">
+                    <br>
+                    <label for="rate5" class="fas fa-paw"></label>
+                    <label for="rate4" class="fas fa-paw"></label>
+                    <label for="rate3" class="fas fa-paw"></label>
+                    <label for="rate2" class="fas fa-paw"></label>
+                    <label for="rate1" class="fas fa-paw"></label>
+                </div>
+            </div>
+
+            <div class="comentario">
+                <h2>HOSPEDAJE</h2>
+                <br>
+                <p>" Agradezco el buen servicio que me han dado, sali de vacaciones, y mi mascota quedo con las mejores manos "</p>
+                <div class="starContainerCalificacion">
+                    <br>
+                    <label for="rate5" class="fas fa-paw"></label>
+                    <label for="rate4" class="fas fa-paw"></label>
+                    <label for="rate3" class="fas fa-paw"></label>
+                    <label for="rate2" class="fas fa-paw"></label>
+                    <label for="rate1" class="fas fa-paw"></label>
+                </div>
+            </div>
+        </section>
+
     </main>
+    <footer id="contacto">
+        <div class="contenedor footer-content">
+            <div class="contact-us">
+                <h2 class="brand">Pipas</h2>
+                <p>Expertos en Software</p>
+            </div>
+    </footer>
 </body>
 
-
-<footer class="footer">
-    <div id="div-footer">
-        <div class="div-logo">
-            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
-        </div>
-        <div>
-            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
-        </div>
-    </div>
-</footer>
-
+<script src="../proyectoPipasJs/index.js "></script>
 
 </html>
