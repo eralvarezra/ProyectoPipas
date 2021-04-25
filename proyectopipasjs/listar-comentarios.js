@@ -10,7 +10,7 @@ const mostrar_modal_eliminar = async(comentario) => {
         if (comentario) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar el comentario',
+                text: '¿Está seguro que desea eliminar el comentario?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
