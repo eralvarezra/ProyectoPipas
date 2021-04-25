@@ -28,8 +28,8 @@ this.enviar_email = (pnombre_completo, pcorreo) => {
             </td>
         </tr>
         <tr>
-            <td style="text-align:center ">
-                <p style="color:  #fff; ">Ingrese <a href="http://127.0.0.1:5501/ProyectoPipas/proyectopipashtml/cambiarContrasenna.html ">aquí</a> para cambiar su contraseña</p>
+            <td style="text-align:center">
+                <p style="color:#fff;">Ingrese <a href="http://127.0.0.1:5502/ProyectoPipas/proyectopipashtml/cambiarContrasenna.html?">aquí</a> para cambiar su contraseña</p>
             </td>
         </tr>
     </table>`
