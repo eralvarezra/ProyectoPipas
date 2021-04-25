@@ -122,9 +122,8 @@ const registrar_detalle = () => {
 
     if (labelValorDetalle.text === "Caracteristica") {
         registrar_mascotacaracteristica(correo, nombreMascota, caracteristicaValor);
-        console.log(correo, nombreMascota, caracteristicaEspecial);
     }
-
+    console.log(correo)
     if (labelValorDetalle.text === "Padecimiento") {
         registrar_mascotapadecimiento(correo, nombreMascota, padecimientoValor);
 

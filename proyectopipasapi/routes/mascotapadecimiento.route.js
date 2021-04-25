@@ -11,7 +11,7 @@ router.post('/registrar-mascotapadecimiento', (req, res) => {
     let nueva_mascotapadecimiento = new MascotaPadecimiento({
         correo: req.body.correo,
         nombreMascota: req.body.nombreMascota,
-        tipoPadecimiento: req.body.tipoPadecimiento
+        nombrePadecimiento: req.body.nombrePadecimiento
     });
 
     nueva_mascotapadecimiento.save((err, mascotaPadecimiento_db) => {
