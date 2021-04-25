@@ -67,6 +67,9 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
     let lista_servicio = await listar_servicio();
     let lista_proveedor = await listar_proveedor();
     let lista_calificacion = await listar_calificacion();
+    if (pfiltroRate === "") {
+        pfiltroRate = 0;
+    }
 
     tabla.innerHTML = '';
     let filtroRate = pfiltroRate;
@@ -74,6 +77,7 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
     let filtroTipoServicio = pfiltroTipoServicio;
     var fila;
     let valorCalificacion = 0;
+    let filtroEmpresa;
 
     lista_servicio.forEach((servicio) => {
         fila = tabla.insertRow();
@@ -93,13 +97,14 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
                     let correo = fila.insertCell();
                     correo.innerHTML = proveedor.correo;
                     correo.style.display = "none";
+                    filtroEmpresa = proveedor.empresa;
                 }
             });
             let puntaje = 0;
             let cantidad = 0;
             let promedio = 0;
             lista_calificacion.forEach((calificacion) => {
-                if (filtro === calificacion.nombreProveedor) {
+                if (filtroEmpresa === calificacion.nombreProveedor) {
                     cantidad = cantidad + 1;
                     puntaje = puntaje + calificacion.calificacion;
                     promedio = puntaje / cantidad;
@@ -366,7 +371,56 @@ const mostrar_servicio = async(pfiltroRate, pfiltroTipoMascota, pfiltroTipoServi
 
                     break;
                 default:
-                    promedio;
+                    pata1.classList.add("fas");
+                    pata1.classList.add("fa-paw");
+                    pata1.style.backgroundColor = "white";
+                    pata1.style.borderColor = "white";
+                    pata1.style.boxShadow = "none";
+                    pata1.style.color = "black";
+
+
+                    pata2.classList.add("fas")
+                    pata2.classList.add("fa-paw")
+                    pata2.style.backgroundColor = "white";
+                    pata2.style.borderColor = "white";
+                    pata2.style.boxShadow = "none";
+                    pata2.style.color = "black";
+
+
+                    pata3.classList.add("fas")
+                    pata3.classList.add("fa-paw")
+                    pata3.style.backgroundColor = "white";
+                    pata3.style.borderColor = "white";
+                    pata3.style.boxShadow = "none";
+                    pata3.style.color = "black";
+
+
+                    pata4.classList.add("fas")
+                    pata4.classList.add("fa-paw")
+                    pata4.style.backgroundColor = "white";
+                    pata4.style.borderColor = "white";
+                    pata4.style.boxShadow = "none";
+                    pata4.style.color = "black";
+
+
+                    pata5.classList.add("fas")
+                    pata5.classList.add("fa-paw")
+                    pata5.style.backgroundColor = "white";
+                    pata5.style.borderColor = "white";
+                    pata5.style.boxShadow = "none";
+                    pata5.style.color = "black";
+
+                    valorCalificacion = fila.insertCell();
+                    valorCalificacion.innerHTML = 0;
+                    valorCalificacion.value = 0;
+                    valorCalificacion.style.display = 'none';
+
+                    celda_editar.appendChild(pata1);
+                    celda_editar.appendChild(pata2);
+                    celda_editar.appendChild(pata3);
+                    celda_editar.appendChild(pata4);
+                    celda_editar.appendChild(pata5);
+
                     break;
             }
             boton_editar.classList.add("fas");
