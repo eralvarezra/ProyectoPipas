@@ -156,8 +156,8 @@ const validar = () => {
     } else {
         Swal.fire({
             'icon': 'warning',
-            'title': 'No se pudieron registrar sus datos',
-            'text': 'Por favor revise los campos resaltados'
+            'title': 'No se pudieron registrar sus datos.',
+            'text': 'Por favor revise los campos resaltados.'
         });
     }
 
