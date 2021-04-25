@@ -12,14 +12,14 @@ const registrar_raza = async(nombreRaza, fechaCreacion) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su raza fue guardada exitosamente',
+            'title': 'Su raza fue guardada exitosamente.',
             'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -50,7 +50,7 @@ const modificar_raza = async(_id, nombreRaza) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La raza ha sido actualizada',
+            'title': 'La raza ha sido actualizada.',
             'text': response.msj
         }).then(() => {
             mostrar_raza();
@@ -59,7 +59,7 @@ const modificar_raza = async(_id, nombreRaza) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -73,7 +73,7 @@ const eliminar_raza = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'La raza ha sido eliminada',
+            'title': 'La raza ha sido eliminada.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

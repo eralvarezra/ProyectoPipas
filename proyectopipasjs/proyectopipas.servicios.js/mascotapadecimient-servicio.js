@@ -13,7 +13,7 @@ const registrar_mascotapadecimiento = async(correo, nombreMascota, nombrePadecim
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El padecimiento de su mascota fue guardada exitosamente',
+            'title': 'El padecimiento de su mascota fue guardada exitosamente.',
             'text': response.msj
         }).then(() => {
             location.href = "../proyectopipashtml/verPerfilMascota.html";
@@ -22,7 +22,7 @@ const registrar_mascotapadecimiento = async(correo, nombreMascota, nombrePadecim
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -62,7 +62,7 @@ const modificar_mascotapadecimiento = async(_id, nombreVacuna) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -77,7 +77,7 @@ const eliminar_mascotapadecimiento = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'El padecimiento de la mascota ha sido eliminada',
+            'title': 'El padecimiento de la mascota ha sido eliminada.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

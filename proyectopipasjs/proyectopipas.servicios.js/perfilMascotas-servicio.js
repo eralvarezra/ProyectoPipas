@@ -15,7 +15,7 @@ const registrar_mascota = async(nombreMascota, tipoMascota, tipoRaza, fotoMascot
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su mascota fue guardada exitosamente',
+            'title': 'Su mascota fue guardada exitosamente.',
             'text': response.msj
         }).then(() => {
             location.href = "../proyectopipashtml/verPerfilMascota.html";
@@ -24,7 +24,7 @@ const registrar_mascota = async(nombreMascota, tipoMascota, tipoRaza, fotoMascot
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -53,7 +53,7 @@ const eliminar_mascota = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'La mascota ha sido eliminada',
+            'title': 'La mascota ha sido eliminada.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

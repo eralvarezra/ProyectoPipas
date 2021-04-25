@@ -22,7 +22,7 @@ router.post('/registrar-factura', (req, res) => {
     nueva_factura.save((err, factura_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar la factura",
+                msj: "No se pudo registrar la factura.",
                 err
             });
         } else {
@@ -40,7 +40,7 @@ router.get('/listar-factura', (req, res) => {
     Factura.find((err, lista_factura) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las facturas",
+                msj: "No se pudieron mostrar las facturas.",
                 err
             });
         } else {
@@ -58,12 +58,12 @@ router.put('/activar-servicio', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del servicio",
+                msj: "No se pudo modificar el estado del servicio.",
                 err
             });
         } else {
             res.json({
-                msj: "El servicio ha sido completado",
+                msj: "El servicio ha sido completado.",
                 info
             })
         }
@@ -81,12 +81,12 @@ router.put('/desactivar-servicio', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del servicio",
+                msj: "No se pudo modificar el estado del servicio.",
                 err
             });
         } else {
             res.json({
-                msj: "El servicio no ha sido completado",
+                msj: "El servicio no ha sido completado.",
                 info
             })
         }
@@ -103,12 +103,12 @@ router.put('/aceptar-servicio', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del servicio",
+                msj: "No se pudo modificar el estado del servicio.",
                 err
             });
         } else {
             res.json({
-                msj: "El servicio ha sido aceptado",
+                msj: "El servicio ha sido aceptado.",
                 info
             })
         }
@@ -127,12 +127,12 @@ router.put('/rechazar-servicio', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del servicio",
+                msj: "No se pudo modificar el estado del servicio.",
                 err
             });
         } else {
             res.json({
-                msj: "El servicio ha sido rechazado",
+                msj: "El servicio ha sido rechazado.",
                 info
             })
         }

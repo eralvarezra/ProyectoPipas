@@ -16,7 +16,7 @@ const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su factura fue guardada exitosamente',
+            'title': 'Su factura fue guardada exitosamente.',
             'text': response.msj
         }).then(() => {
             location.href = "../proyectopipashtml/perfil.html";
@@ -25,7 +25,7 @@ const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -47,7 +47,7 @@ const cambiar_estado2 = async(_id, estado_actual) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El estado del servicio se modificó correctamente',
+            'title': 'El estado del servicio se modificó correctamente.',
             'text': response.msj
         }).then(() => {
             mostrar_factura();
@@ -56,7 +56,7 @@ const cambiar_estado2 = async(_id, estado_actual) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 }
@@ -78,7 +78,7 @@ const aprobar_estado = async(_id, es_activar) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El estado del proveedor se modificó correctamente',
+            'title': 'El estado del proveedor se modificó correctamente.',
             'text': response.msj
         }).then(() => {
             mostrar_factura();
@@ -87,7 +87,7 @@ const aprobar_estado = async(_id, es_activar) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 }

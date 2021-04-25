@@ -17,12 +17,12 @@ router.post('/registrar-mascotavacuna', (req, res) => {
     nueva_mascotaVacuna.save((err, mascotaVacuna_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar la vacuna.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "La vacuna se registró exitosamente.",
                 mascotaVacuna_db
             })
         }
@@ -55,12 +55,12 @@ router.put('/modificar-mascotavacunas', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la vacuna",
+                msj: "No se pudo modificar la vacuna.",
                 err
             });
         } else {
             res.json({
-                msj: "La vacuna fue modificada exitosamente",
+                msj: "La vacuna fue modificada exitosamente.",
                 info
             })
         }
@@ -71,12 +71,12 @@ router.delete('/eliminar-Mascotavacuna', (req, res) => {
     MascotaVacuna.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la vacuna de la mascota',
+                msj: 'No se pudo eliminar la vacuna.',
                 err
             });
         } else {
             res.json({
-                msj: 'La vacuna para su Mascota se eliminó correctamente'
+                msj: 'La vacuna se eliminó correctamente.'
             });
         }
     });

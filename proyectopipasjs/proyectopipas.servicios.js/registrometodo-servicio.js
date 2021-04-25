@@ -12,14 +12,14 @@ const registrar_metodo = async(nombreMetodo, fechaCreacion) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El metodo de pago fue guardado exitosamente',
+            'title': 'El método de pago fue guardado exitosamente.',
             'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -50,7 +50,7 @@ const modificar_metodo = async(_id, nombreMetodo) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El metodo de pago ha sido actualizado',
+            'title': 'El método de pago ha sido actualizado.',
             'text': response.msj
         }).then(() => {
             mostrar_metodo();
@@ -59,7 +59,7 @@ const modificar_metodo = async(_id, nombreMetodo) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -73,7 +73,7 @@ const eliminar_metodo = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'El metodo de pago ha sido eliminada',
+            'title': 'El método de pago ha sido eliminada.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

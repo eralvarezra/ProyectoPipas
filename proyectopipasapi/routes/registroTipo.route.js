@@ -16,7 +16,7 @@ router.post('/registrar-tipo', (req, res) => {
     nueva_tipo.save((err, tipo_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar el dato.",
                 err
             });
         } else {

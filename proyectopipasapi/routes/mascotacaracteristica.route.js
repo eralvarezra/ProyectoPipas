@@ -17,12 +17,12 @@ router.post('/registrar-mascotacaracteristica', (req, res) => {
     nueva_mascotaCS.save((err, mascotaCS_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar la característica de la mascota.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "La característica se registró exitosamente.",
                 mascotaCS_db
             })
         }
@@ -35,7 +35,7 @@ router.get('/listar-mascotacaracteristica', (req, res) => {
     MascotaCS.find((err, lista_MascotaCS) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las características",
+                msj: "No se pudieron mostrar las características.",
                 err
             });
         } else {
@@ -55,12 +55,12 @@ router.put('/modificar-mascotacaracteristica', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la característica",
+                msj: "No se pudo modificar la característica.",
                 err
             });
         } else {
             res.json({
-                msj: "La característica fue modificada exitosamente",
+                msj: "La característica fue modificada exitosamente.",
                 info
             })
         }
@@ -71,12 +71,12 @@ router.delete('/eliminar-mascotacaracteristica', (req, res) => {
     MascotaCS.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la característica de la mascota',
+                msj: 'No se pudo eliminar la característica de la mascota.',
                 err
             });
         } else {
             res.json({
-                msj: 'La característica para su mascota se eliminó correctamente'
+                msj: 'La característica para su mascota se eliminó correctamente.'
             });
         }
     });

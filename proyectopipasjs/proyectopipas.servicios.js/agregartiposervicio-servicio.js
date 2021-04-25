@@ -10,14 +10,14 @@ const registrar_tipoServicio = async(nombreServicio, fechaCreacion) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su servicio fue guardado exitosamente',
+            'title': 'Su servicio fue guardado exitosamente.',
             'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -47,7 +47,7 @@ const modificar_tipoServicio = async(_id, nombreServicio) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El Servicio ha sido actualizado',
+            'title': 'El servicio ha sido actualizado.',
             'text': response.msj
         }).then(() => {
             mostrar_tipoServicio();
@@ -56,7 +56,7 @@ const modificar_tipoServicio = async(_id, nombreServicio) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -70,7 +70,7 @@ const eliminar_tipoServicio = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'El servicio ha sido eliminado',
+            'title': 'El servicio ha sido eliminado.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

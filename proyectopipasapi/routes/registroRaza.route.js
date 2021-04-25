@@ -14,12 +14,12 @@ router.post('/registrar-raza', (req, res) => {
     nueva_raza.save((err, raza_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar la raza.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "La raza se registró exitosamente.",
                 raza_db
             })
         }
@@ -32,7 +32,7 @@ router.get('/listar-raza', (req, res) => {
     Raza.find((err, lista_raza) => {
         if (err) {
             res.json({
-                msj: "No se pudo agregar la raza",
+                msj: "No se pudo agregar la raza.",
                 err
             });
         } else {
@@ -51,12 +51,12 @@ router.put('/modificar-razas', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la raza",
+                msj: "No se pudo modificar la raza.",
                 err
             });
         } else {
             res.json({
-                msj: "La raza fue modificada exitosamente",
+                msj: "La raza fue modificada exitosamente.",
                 info
             })
         }
@@ -67,12 +67,12 @@ router.delete('/eliminar-raza', (req, res) => {
     Raza.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la raza',
+                msj: 'No se pudo eliminar la raza.',
                 err
             });
         } else {
             res.json({
-                msj: 'La raza se eliminó correctamente'
+                msj: 'La raza se eliminó correctamente.'
             });
         }
     });

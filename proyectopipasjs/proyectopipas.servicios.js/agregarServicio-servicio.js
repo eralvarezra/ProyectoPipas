@@ -70,7 +70,7 @@ const modificar_servicio = async(_id, nombreServicio, correo, precio, detalleSer
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
