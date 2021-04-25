@@ -1,5 +1,32 @@
 'use strict';
 
+const registrar_mascota = async() => {
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-mascota',
+        responseType: 'json',
+        data: {
+            nombreMascota: nombreMascota,
+            tipoMascota: tipoMascota,
+            tipoRaza: tipoRaza,
+            fotoMascota: fotoMascota,
+            correo: correo
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Su mascota fue guardada exitosamente',
+            'text': response.msj
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        });
+    });
+};
+
 const listar_mascotas = async() => { // esta es la funcion que se usa en el controlador, que llama la funcion
     let lista_mascotas = [];
     await axios({

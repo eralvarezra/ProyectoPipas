@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar detalles Mascota</title>
+    <link rel="stylesheet" href="../proyectopipascss/cssreset.css">
+    <link rel="stylesheet" href="../proyectopipascss/general.css">
+    <link rel="stylesheet" href="../proyectopipascss/agregarGeneral.css">
+    <link rel="stylesheet" href="../proyectopipascss/mascotaregistrodetalle.css">
+</head>
+
+<body>
+    <header id="header-principal">
+        <nav id="nav-principal">
+            <a href="sobreNosotros.html">Sobre Nosotros</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="busqueda.html">Búsqueda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="inicio-sesion.html" id="inicioSesion">Inicio de Sesión</a>
+            <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
+        </nav>
+    </header>
+    <main>
+        <section class="sct-contenedor-principal">
+            <div>
+                <div class="form">
+                    <label for="campomodificar">¿Qué desea agregar?</label>
+                    <br>
+                    <input type="radio" id="vacuna" name="campomodificar" value="vacuna">Agregar Vacuna</option>
+                    <input type="radio" id="caracteristica" name="campomodificar" value="caracteristica">Agregar Característica</option>
+                    <input type="radio" id="padecimiento" name="campomodificar" value="padecimiento"> Agregar Padecimiento</option>
+
+                    <label>Mascota por modificar</label>
+                    <select id="nombreMascota">
+                    <option value="">Seleccione una mascota</option>
+                </select>
+                </div>
+                <div class="form">
+                    <label id="lbl-valordetalle" for="valordetalle"></label>
+                    <select id="slctcaracteristica">
+                        <option id="">Seleccione una opción</option>
+                    </select>
+                    <select id="slctvacunas">
+                        <option id="">Seleccione una opción</option>
+                    </select>
+                    <select id="slctpadecimiento">
+                        <option id="">Seleccione una opción</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <input type="button" id="btn-guardar" class="btn" value="Guardar">
+                    <input type="button" id="btn-volver" class="btn" value="Volver">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/perfilMascotas-servicio.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registropadecimiento-servicio.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registrovacuna-servicio.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/registrocaracteristica-servicio.js"></script>
+    <script src="../proyectopipasjs/mascotaregistrodetalle.js"></script>
+    <script src="../proyectopipasjs/contolador_nav.js"></script>
+</body>
+<footer class="footer">
+    <div id="div-footer">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+        </div>
+        <div>
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+    </div>
+</footer>
+
+</html>

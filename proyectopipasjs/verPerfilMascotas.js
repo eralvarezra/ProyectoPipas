@@ -10,6 +10,7 @@ const tabla = document.getElementById('tabladinamica');
 const btnAgregar = document.getElementById("btn-agregar");
 const btnModificar = document.getElementById("btn-modificar");
 const btnVolver = document.getElementById("btn-volver");
+const btnAgregarDetalles = document.getElementById('btn-agregarDetalles');
 
 function readCookie(pCookie) {
     const nameString = pCookie + "="
@@ -41,9 +42,6 @@ const mostrar_mascotas = async() => {
             fila.insertCell().innerHTML = (mascota.tipoMascota);
             fila.insertCell().innerHTML = (mascota.tipoRaza);
             fila.insertCell().innerHTML = (mascota.fotoMascota);
-            fila.insertCell().innerHTML = (mascota.caracteristicaEspecial);
-            fila.insertCell().innerHTML = (mascota.tipoPadecimiento);
-            fila.insertCell().innerHTML = (mascota.tipoVacuna);
 
             //Eliminar
             let celda_eliminar = fila.insertCell();
@@ -84,5 +82,9 @@ btnVolver.addEventListener('click', () => {
 
 mostrar_mascotas();
 btnVolver.addEventListener('click', () => {
-    location.href = "perfil.html"
+    location.href = "perfil.html";
+});
+
+btnAgregarDetalles.addEventListener('click', () => {
+    location.href = "mascotaregistrodetalle.html";
 });
