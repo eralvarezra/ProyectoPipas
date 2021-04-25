@@ -1,0 +1,37 @@
+table {
+    border: rgb(102, 102, 102) 4px solid;
+    background-color: white;
+    border-collapse: collapse;
+    width: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+td {
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+}
+
+th {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+thead {
+    background-color: #E69138;
+    border-bottom: solid 5px rgb(102, 102, 102);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #0CC49F;
+    color: white;
+}
