@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 // Uselo para el modelo comentarios, NO lleva el js
 const Usuario = require('../models/registroUsuario.model');
-
+const mailer = require('../routes/proyectopipastemplates/registroUsuario-correo');
 
 //Endpoint para registrar comentarios
 router.post('/registrar-usuario', (req, res) => {

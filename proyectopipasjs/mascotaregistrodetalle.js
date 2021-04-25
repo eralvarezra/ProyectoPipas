@@ -4,9 +4,15 @@ const rdbtnpadecimiento = document.getElementById("padecimiento");
 const rdbtncaracteristica = document.getElementById("caracteristica");
 const slct_nombreMascota = document.getElementById("nombreMascota");
 const labelValorDetalle = document.getElementById("lbl-valordetalle");
-const slct_ValorDetalle = document.getElementById("valordetalle");
+const slct_vacuna = document.getElementById("slctvacunas");
+const slct_padecimiento = document.getElementById("slctpadecimiento");
+const slct_caracteristica = document.getElementById("slctcaracteristica");
 const btnGuardar = document.getElementById("btn-guardar");
 const btnVolver = document.getElementById("btn-volver");
+
+slct_padecimiento.style.display = "none";
+slct_caracteristica.style.display = "none";
+slct_vacuna.style.display = "none";
 
 function readCookie(pCookie) {
     const nameString = pCookie + "="
@@ -41,64 +47,89 @@ const padecimiento = async() => {
         labelValorDetalle.innerHTML = "";
         labelValorDetalle.innerHTML = "Padecimiento";
         labelValorDetalle.text = "Padecimiento";
-        let cantidadhijos = document.getElementById("valordetalle").childElementCount;
-        console.log(cantidadhijos)
-        for (let i = 1; i < cantidadhijos; i++) {
-            slct_ValorDetalle[i].removeChild()
+        slct_padecimiento.style.display = "inline-block";
+        slct_caracteristica.style.display = "none";
+        slct_vacuna.style.display = "none";
+
+        if (slct_padecimiento.childElementCount < 2) {
+            lista_padecimientos.forEach((padecimientos) => {
+                let optiondetalle = document.createElement('option');
+                optiondetalle.innerHTML = padecimientos.nombrePadecimiento;
+                optiondetalle.value = padecimientos.nombrePadecimiento;
+                slct_padecimiento.appendChild(optiondetalle);
+            });
         }
-        lista_padecimientos.forEach((padecimientos) => {
-            let optiondetalle = document.createElement('option');
-            optiondetalle.innerHTML = padecimientos.nombrePadecimiento;
-            optiondetalle.value = padecimientos.nombrePadecimiento;
-            slct_ValorDetalle.appendChild(optiondetalle);
-        });
     }
 }
 
 const vacuna = async() => {
     let listavacunas = await listar_vacunas();
-    let cantidadhijos = document.getElementById("valordetalle").childElementCount;
-    for (let i = 1; i < cantidadhijos; i++) {
-        slct_ValorDetalle[i].removeChild()
-    }
     if (rdbtnvacuna.checked) {
         labelValorDetalle.innerHTML = "";
         labelValorDetalle.innerHTML = "Vacuna";
         labelValorDetalle.text = "Vacuna";
 
-        console.log(cantidadhijos)
-        listavacunas.forEach((vacuna) => {
-            let optiondetalle = document.createElement('option');
-            optiondetalle.innerHTML = vacuna.nombreVacuna;
-            optiondetalle.value = vacuna.nombreVacuna;
-            slct_ValorDetalle.appendChild(optiondetalle);
-        });
+
+        slct_padecimiento.style.display = "none";
+        slct_caracteristica.style.display = "none";
+        slct_vacuna.style.display = "inline-block";
+        if (slct_vacuna.childElementCount < 2) {
+            listavacunas.forEach((vacuna) => {
+                let optiondetalle = document.createElement('option');
+                optiondetalle.innerHTML = vacuna.nombreVacuna;
+                optiondetalle.value = vacuna.nombreVacuna;
+                slct_vacuna.appendChild(optiondetalle);
+            });
+        }
     }
 }
 
 const caracteristica = async() => {
     let lista_caracteristica = await listar_caracteristicas();
-    let cantidadhijos = document.getElementById("valordetalle").childElementCount;
-    console.log(document.getElementById('valordetalle'))
-    for (let i = 1; i < cantidadhijos; i++) {
-        slct_ValorDetalle[i].removeChild()
-    }
+
     if (rdbtncaracteristica.checked) {
-        console.log(cantidadhijos)
+
         labelValorDetalle.innerHTML = "";
         labelValorDetalle.innerHTML = "Característica";
         labelValorDetalle.text = "Caracteristica";
-        lista_caracteristica.forEach((caracteristica) => {
-            let optiondetalle = document.createElement('option');
-            optiondetalle.innerHTML = caracteristica.nombreCaracteristica;
-            optiondetalle.value = caracteristica.nombreCaracteristica;
-            slct_ValorDetalle.appendChild(optiondetalle);
-        });
+
+        slct_padecimiento.style.display = "none";
+        slct_caracteristica.style.display = "inline-block";
+        slct_vacuna.style.display = "none";
+
+        if (slct_caracteristica.childElementCount < 2) {
+            lista_caracteristica.forEach((caracteristica) => {
+                let optiondetalle = document.createElement('option');
+                optiondetalle.innerHTML = caracteristica.nombreCaracteristica;
+                optiondetalle.value = caracteristica.nombreCaracteristica;
+                slct_caracteristica.appendChild(optiondetalle);
+            });
+        }
     }
 }
 
 const registrar_detalle = () => {
+    let nombreMascota = slct_nombreMascota.value;
+    let caracteristica = rdbtncaracteristica.checked;
+    let vacuna = rdbtnvacuna.checked;
+    let padecimiento = rdbtnpadecimiento.checked;
+    let vacunaValor = slct_vacuna.value;
+    let padecimientoValor = slct_padecimiento.value;
+    let caracteristicaValor = slct_caracteristica.value;
+    let correo = readCookie("correo");
+    correo = correo.replace("=", "");
 
+    if (labelValorDetalle === "Vacuna") {
+        registrar_mascotavacuna(correo, nombreMascota, vacunaValor);
+    }
+
+    if (labelValorDetalle === "Caracteristica") {
+        registrar_mascotacaracteristica(correo, nombreMascota, caracteristicaValor);
+    }
+
+    if (labelValorDetalle === "Padecimiento") {
+        registrar_mascotapadecimiento(correo, nombreMascota, padecimientoValor);
+    }
 }
 
 
@@ -119,5 +150,5 @@ rdbtnvacuna.addEventListener('click', () => {
 rdbtncaracteristica.addEventListener('click', () => {
     caracteristica();
 });
-registrar_detalle();
+
 cargar_mascotas();

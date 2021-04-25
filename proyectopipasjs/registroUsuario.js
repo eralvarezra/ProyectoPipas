@@ -17,22 +17,6 @@ const fotoUsuario = document.querySelector("#img-foto");
 const condicionesUsuario = document.querySelector('#condiciones');
 const botonEnviar = document.querySelector("#btnSubmit");
 
-const limpiar = () => {
-    nombreUsuario.value = '';
-    apellidoUsuario.value = '';
-    tipoIdentificacionUsuario.value = '';
-    identificacionUsuario.value = '';
-    fechaNacimientoUsuario.value = '';
-    provinciasUsuario.value = '';
-    cantonesUsuario.value = '';
-    distritosUsuario.value = '';
-    generoUsuario.value = '';
-    cantidadMascotaUsuario.value = '';
-    telefonoContactoUsuario.value = '';
-    correoElectronicoUsuario.value = '';
-    numeroTarjetaUsuario.value = '';
-    fechaVencimientoUsuario.value = '';
-};
 
 const obtenerDatos = () => {
     let nombre = nombreUsuario.value;
@@ -55,12 +39,6 @@ const obtenerDatos = () => {
 
     console.log(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota, telefono, correo, numTarjeta, vencimiento, foto);
 };
-
-
-const validar_existe_correo = () => {
-    console.log(`El nombre es ${correoElectronicoUsuario.value}`);
-
-}
 
 const validar = () => {
     let error = false;
@@ -110,6 +88,30 @@ const validar = () => {
     }
 
 };
+
+
+const validar_existe_correo = () => {
+    console.log(`El nombre es ${correoElectronicoUsuario.value}`);
+
+}
+
+const limpiar = () => {
+    nombreUsuario.value = '';
+    apellidoUsuario.value = '';
+    tipoIdentificacionUsuario.value = '';
+    identificacionUsuario.value = '';
+    fechaNacimientoUsuario.value = '';
+    provinciasUsuario.value = '';
+    cantonesUsuario.value = '';
+    distritosUsuario.value = '';
+    generoUsuario.value = '';
+    cantidadMascotaUsuario.value = '';
+    telefonoContactoUsuario.value = '';
+    correoElectronicoUsuario.value = '';
+    numeroTarjetaUsuario.value = '';
+    fechaVencimientoUsuario.value = '';
+};
+
 
 
 botonEnviar.addEventListener('click', validar);

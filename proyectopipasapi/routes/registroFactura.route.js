@@ -22,12 +22,12 @@ router.post('/registrar-factura', (req, res) => {
     nueva_factura.save((err, factura_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar la factura",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "La factura se registró exitosamente.",
                 factura_db
             })
         }

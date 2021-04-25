@@ -10,6 +10,7 @@ const tabla = document.getElementById('tabladinamica');
 const btnAgregar = document.getElementById("btn-agregar");
 const btnModificar = document.getElementById("btn-modificar");
 const btnVolver = document.getElementById("btn-volver");
+const btnAgregarDetalles = document.getElementById('btn-agregarDetalles');
 
 function readCookie(pCookie) {
     const nameString = pCookie + "="
@@ -81,5 +82,9 @@ btnVolver.addEventListener('click', () => {
 
 mostrar_mascotas();
 btnVolver.addEventListener('click', () => {
-    location.href = "perfil.html"
+    location.href = "perfil.html";
+});
+
+btnAgregarDetalles.addEventListener('click', () => {
+    location.href = "mascotaregistrodetalle.html";
 });
