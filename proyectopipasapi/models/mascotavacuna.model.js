@@ -2,8 +2,8 @@
 
 const mongoose = require('mongoose');
 const schema_mascotaVacuna = new mongoose.Schema({
-    correo: { type: String, required: true, unique: true },
-    nombreMascota: { type: String, required: true, unique: true },
+    correo: { type: String, required: true, unique: false },
+    nombreMascota: { type: String, required: true, unique: false },
     nombreVacuna: { type: String, required: true, unique: false },
 
 });
