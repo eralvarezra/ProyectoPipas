@@ -8,7 +8,7 @@ const MascotaCS = require('../models/mascotaCaracEsp.model');
 
 //Endpoint para registrar comentarios
 router.post('/registrar-mascotacaracteristica', (req, res) => {
-    let nueva_mascotaVacuna = new MascotaCS({
+    let nueva_mascotaCS = new MascotaCS({
         correo: req.body.correo,
         nombreMascota: req.body.nombreMascota,
         caracteristicaEspecial: req.body.caracteristicaEspecial

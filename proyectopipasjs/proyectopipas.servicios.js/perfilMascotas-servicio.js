@@ -1,6 +1,6 @@
 'use strict';
 
-const registrar_mascota = async() => {
+const registrar_mascota = async(nombreMascota, tipoMascota, tipoRaza, fotoMascota, correo) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-mascota',
@@ -17,6 +17,8 @@ const registrar_mascota = async() => {
             'icon': 'success',
             'title': 'Su mascota fue guardada exitosamente',
             'text': response.msj
+        }).then(() => {
+            location.href = "../proyectopipashtml/verPerfilMascota.html";
         });
     }).catch((response) => {
         Swal.fire({
