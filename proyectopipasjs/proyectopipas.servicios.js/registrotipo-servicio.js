@@ -10,14 +10,14 @@ const registrar_tipo = async(nombreTipo, fechaCreacion) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su tipo fue guardado exitosamente',
+            'title': 'El tipo de mascota fue guardado exitosamente.',
             'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -47,7 +47,7 @@ const modificar_tipo = async(_id, nombreTipo) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La tipo ha sido actualizado',
+            'title': 'El tipo de mascota ha sido actualizado.',
             'text': response.msj
         }).then(() => {
             mostrar_tipo();
@@ -56,7 +56,7 @@ const modificar_tipo = async(_id, nombreTipo) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -70,7 +70,7 @@ const eliminar_tipo = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'El tipo ha sido eliminado',
+            'title': 'El tipo de mascota ha sido eliminado.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

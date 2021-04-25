@@ -13,7 +13,7 @@ const registrar_calificacion = async(nombreProveedor, comentario, calificacion) 
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su calificación fue enviada exitosamente',
+            'title': 'Su calificación fue enviada exitosamente.',
             'text': response.msj
         }).then(() => {
             location.href = "../proyectopipashtml/perfil.html";
@@ -22,7 +22,7 @@ const registrar_calificacion = async(nombreProveedor, comentario, calificacion) 
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
 
     });

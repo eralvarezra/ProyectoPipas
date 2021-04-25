@@ -16,12 +16,12 @@ router.post('/registrar-metodo', (req, res) => {
     nueva_metodo.save((err, metodos_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar el método de pago.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "El método de pago se registró exitosamente.",
                 metodos_db
             })
         }
@@ -34,7 +34,7 @@ router.get('/listar-metodos', (req, res) => {
     Metodo.find((err, lista_metodo) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las caracteristicas",
+                msj: "No se pudieron los métodos de pago.",
                 err
             });
         } else {
@@ -52,12 +52,12 @@ router.put('/modificar-metodos', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el metodo de pago",
+                msj: "No se pudo modificar el método de pago.",
                 err
             });
         } else {
             res.json({
-                msj: "El metodo de pagofue modificado exitosamente",
+                msj: "El método de pago fue modificado exitosamente.",
                 info
             })
         }
@@ -68,12 +68,12 @@ router.delete('/eliminar-metodo', (req, res) => {
     Metodo.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la método',
+                msj: 'No se pudo eliminar la método.',
                 err
             });
         } else {
             res.json({
-                msj: 'El método se eliminó correctamente'
+                msj: 'El método se eliminó correctamente.'
             });
         }
     });

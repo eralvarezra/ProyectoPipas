@@ -16,13 +16,13 @@ router.post('/registrar-mascota', (req, res) => {
     nueva_mascota.save((err, mascota_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar su mascota",
+                msj: "No se pudo registrar su mascota.",
                 err
             });
 
         } else {
             res.json({
-                msj: "Su mascota se guardo exitosamente",
+                msj: "Su mascota se guardó exitosamente.",
                 mascota_db
             });
         }
@@ -34,7 +34,7 @@ router.get('/listar-mascota', (req, res) => {
     Mascota.find((err, lista_mascotas) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las mascotas",
+                msj: "No se pudieron mostrar las mascotas.",
                 err
             });
 
@@ -55,12 +55,12 @@ router.put('/modificar-Mascota', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar los datos de su mascota",
+                msj: "No se pudieron modificar los datos de su mascota.",
                 err
             });
         } else {
             res.json({
-                msj: "Los cambios se hicieron satisfactoriamente.",
+                msj: "Los datos de su mascota se modificaron satisfactoriamente.",
                 info
             })
         }
@@ -72,12 +72,12 @@ router.delete('/eliminar-mascota', (req, res) => {
     Mascota.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la Mascota',
+                msj: 'No se pudo eliminar la mascota.',
                 err
             });
         } else {
             res.json({
-                msj: 'La Mascota se eliminó correctamente'
+                msj: 'La mascota ha sido eliminada.'
             });
         }
     });

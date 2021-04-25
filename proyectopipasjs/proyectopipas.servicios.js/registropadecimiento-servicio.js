@@ -10,14 +10,14 @@ const registrar_padecimiento = async(nombrePadecimiento, fechaCreacion) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El padecimiento fue guardada exitosamente',
+            'title': 'El padecimiento fue guardado exitosamente.',
             'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -47,7 +47,7 @@ const modificar_padecimiento = async(_id, nombrePadecimiento) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El padecimiento ha sido actualizada',
+            'title': 'El padecimiento ha sido actualizado.',
             'text': response.msj
         }).then(() => {
             mostrar_padecimiento();
@@ -56,7 +56,7 @@ const modificar_padecimiento = async(_id, nombrePadecimiento) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
@@ -70,7 +70,7 @@ const eliminar_padecimiento = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'El padecimiento ha sido eliminada',
+            'title': 'El padecimiento ha sido eliminado.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

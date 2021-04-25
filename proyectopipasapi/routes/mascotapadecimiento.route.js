@@ -17,12 +17,12 @@ router.post('/registrar-mascotapadecimiento', (req, res) => {
     nueva_mascotapadecimiento.save((err, mascotaPadecimiento_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar el padecimiento de la mascota.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "El padecimiento se registró exitosamente.",
                 mascotaPadecimiento_db
             })
         }
@@ -35,7 +35,7 @@ router.get('/listar-MascotaPadecimiento', (req, res) => {
     MascotaPadecimiento.find((err, lista_Mascotapadecimiento) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las vacunas",
+                msj: "No se pudieron mostrar los padecimientos.",
                 err
             });
         } else {
@@ -56,17 +56,18 @@ router.put('/modificar-mascotapadecimiento', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el padecimiento",
+                msj: "No se pudo modificar el padecimiento.",
                 err
             });
         } else {
             res.json({
-                msj: "El padecimiento fue modificada exitosamente",
+                msj: "El padecimiento fue modificado exitosamente.",
                 info
             })
         }
     });
 });
+
 router.delete('/eliminar-MascotaPadecimiento', (req, res) => {
     let _id = req.body._id;
     MascotaPadecimiento.findOneAndRemove({ _id: _id }, (err) => {

@@ -24,7 +24,7 @@ const modificar_impuesto = async(_id, nombreImpuesto) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El impuesto ha sido actualizado',
+            'title': 'El impuesto ha sido actualizado.',
             'text': response.msj
         }).then(() => {
             mostrar_impuesto();
@@ -33,7 +33,7 @@ const modificar_impuesto = async(_id, nombreImpuesto) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };

@@ -16,12 +16,12 @@ router.post('/registrar-impuesto', (req, res) => {
     nueva_impuesto.save((err, impuesto_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar el impuesto.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "El impuesto se registró exitosamente.",
                 impuesto_db
             })
         }
@@ -34,7 +34,7 @@ router.get('/listar-impuesto', (req, res) => {
     Impuesto.find((err, lista_impuesto) => {
         if (err) {
             res.json({
-                msj: "No se pudo mostrar el impuesto",
+                msj: "No se pudo mostrar el impuesto.",
                 err
             });
         } else {
@@ -52,12 +52,12 @@ router.put('/modificar-impuesto', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el impuesto",
+                msj: "No se pudo modificar el impuesto.",
                 err
             });
         } else {
             res.json({
-                msj: "El impuesto fue modificado exitosamente",
+                msj: "El impuesto fue modificado exitosamente.",
                 info
             })
         }

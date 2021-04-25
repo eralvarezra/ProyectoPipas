@@ -13,14 +13,16 @@ const registrar_mascotavacuna = async(correo, nombreMascota, nombreVacuna) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su vacuna fue guardada exitosamente',
+            'title': 'Su vacuna fue guardada exitosamente.',
             'text': response.msj
-        });
+        }).then(() => {
+            location.href = "../proyectopipashtml/verPerfilMascota.html";
+        })
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         });
     });
 };
@@ -39,7 +41,7 @@ const lista_Mascotavacuna = async() => {
     return lista_Mascotavacuna;
 }
 
-const modificar_vacuna = async(_id, nombreVacuna) => {
+const modificar_Mascotavacuna = async(_id, nombreVacuna) => {
     await axios({
         method: 'put',
         url: 'http://localhost:3000/api/modificar-mascotavacunas',
@@ -51,7 +53,7 @@ const modificar_vacuna = async(_id, nombreVacuna) => {
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'La vacuna ha sido actualizada',
+            'title': 'La vacuna ha sido actualizada.',
             'text': response.msj
         }).then(() => {
             mostrar_vacuna();
@@ -60,11 +62,11 @@ const modificar_vacuna = async(_id, nombreVacuna) => {
         Swal.fire({
             'icon': 'error',
             'text': response.msj,
-            'title': 'Ocurrió un error inesperado',
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
     });
 };
-const eliminar_vacuna = async(_id) => {
+const eliminar_Mascotavacuna = async(_id) => {
     await axios({
         method: 'delete',
         url: 'http://localhost:3000/api/eliminar-Mascotavacuna',
@@ -74,7 +76,7 @@ const eliminar_vacuna = async(_id) => {
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'La vacuna ha sido eliminada',
+            'title': 'La vacuna ha sido eliminada.',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

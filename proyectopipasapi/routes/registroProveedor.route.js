@@ -26,13 +26,13 @@ router.post('/registrar-proveedor', (req, res) => {
     nuevo_proveedor.save((err, proveedor_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar su perfil",
+                msj: "No se pudo registrar su perfil.",
                 err
             });
 
         } else {
             res.json({
-                msj: "Sus registros se guardaron exitosamente",
+                msj: "Su información de perfil se guardó exitosamente.",
                 proveedor_db
             });
         }
@@ -44,7 +44,7 @@ router.get('/listar-proveedor', (req, res) => {
     RegistroProveedor.find((err, lista_proveedor) => {
         if (err) {
             res.json({
-                msj: "No se pudo encontrar su perfil",
+                msj: "No se pudo encontrar su perfil.",
                 err
             });
 
@@ -67,12 +67,12 @@ router.put('/modificar-proveedor', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la información",
+                msj: "No se pudo modificar la información.",
                 err
             });
         } else {
             res.json({
-                msj: "la información fue modificada exitosamente",
+                msj: "la información fue modificada exitosamente.",
                 info
             })
         }
@@ -88,12 +88,12 @@ router.put('/activar-proveedor', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del proveedor",
+                msj: "No se pudo modificar el estado del proveedor.",
                 err
             });
         } else {
             res.json({
-                msj: "El proveedor ha sido activado",
+                msj: "El proveedor ha sido activado.",
                 info
             })
         }
@@ -111,12 +111,12 @@ router.put('/desactivar-proveedor', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del proveedor",
+                msj: "No se pudo modificar el estado del proveedor.",
                 err
             });
         } else {
             res.json({
-                msj: "El proveedor ha sido desactivado",
+                msj: "El proveedor ha sido desactivado.",
                 info
             })
         }
@@ -133,12 +133,12 @@ router.put('/aceptar-proveedor', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del proveedor",
+                msj: "No se pudo modificar el estado del proveedor.",
                 err
             });
         } else {
             res.json({
-                msj: "El proveedor ha sido aceptado",
+                msj: "El proveedor ha sido aceptado.",
                 info
             })
         }
@@ -157,12 +157,12 @@ router.put('/rechazar-proveedor', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado del proveedor",
+                msj: "No se pudo modificar el estado del proveedor.",
                 err
             });
         } else {
             res.json({
-                msj: "El proveedor ha sido rechazado",
+                msj: "El proveedor ha sido rechazado.",
                 info
             })
         }
