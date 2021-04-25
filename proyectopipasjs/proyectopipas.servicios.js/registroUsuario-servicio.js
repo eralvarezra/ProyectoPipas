@@ -65,6 +65,7 @@ const actualizar_contrasena = async(correo, contrasena) => {
     console.log(`correo: ${correo}, contrasena: ${contrasena}.`);
     let usuario = await buscar_usuario_correo(correo);
     console.log('usuario', usuario);
+    console.log('correo', correo)
     if (usuario != undefined) {
         if (usuario._id != undefined && usuario._id != '') {
             usuario_encontrado = true;
@@ -85,7 +86,7 @@ const actualizar_contrasena = async(correo, contrasena) => {
                 'title': 'Su contraseña ha sido modificada',
                 'text': response.msj
             }).then(() => {
-                window.location.replace("./proyectopipashtml/inicio-sesion.html");
+                window.location.replace('../proyectopipashtml/inicio-sesion.html');
             });
         }).catch((response) => {
             Swal.fire({
