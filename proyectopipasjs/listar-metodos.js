@@ -25,7 +25,7 @@ const mostrar_modal_editar = async(metodo) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar el metodo de pago',
+            text: '¿Está seguro que desea modificar el método de pago?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });
@@ -39,7 +39,7 @@ const mostrar_modal_eliminar = async(metodo) => {
         if (metodo) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar el método de pago',
+                text: '¿Está seguro que desea modificar el método de pago?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
