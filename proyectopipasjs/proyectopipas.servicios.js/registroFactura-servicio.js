@@ -29,7 +29,7 @@ const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio
         });
     });
 };
-const cambiar_estado1 = async(_id, estado_actual) => {
+const cambiar_estado2 = async(_id, estado_actual) => {
     let url_dinamico;
     if (estado_actual.toUpperCase() == "NO COMPLETADO") {
         url_dinamico = 'http://localhost:3000/api/activar-servicio';

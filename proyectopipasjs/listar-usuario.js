@@ -20,7 +20,7 @@ const mostrar_usuario = async() => {
                 showCancelButton: true
             });
             if (accept) {
-                cambiar_estado(usuario._id, usuario.activo);
+                cambiar_estado1(usuario._id, usuario.activo);
             }
         }
     }
