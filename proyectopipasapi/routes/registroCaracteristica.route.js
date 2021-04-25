@@ -16,12 +16,12 @@ router.post('/registrar-caracteristica', (req, res) => {
     nueva_caracteristica.save((err, caracteristicas_db) => {
         if (err) {
             res.json({
-                msj: "No se pudo registrar el dato",
+                msj: "No se pudo registrar la característica.",
                 err
             });
         } else {
             res.json({
-                msj: "El dato se registró exitosamente.",
+                msj: "El característica se registró exitosamente.",
                 caracteristicas_db
             })
         }
@@ -34,7 +34,7 @@ router.get('/listar-caracteristicas', (req, res) => {
     Caracteristica.find((err, lista_caracteristica) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar las caracteristicas",
+                msj: "No se pudieron mostrar las caracteristicas.",
                 err
             });
         } else {
@@ -52,12 +52,12 @@ router.put('/modificar-caracteristicas', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar la caracteristica",
+                msj: "No se pudo modificar la característica.",
                 err
             });
         } else {
             res.json({
-                msj: "La caracteristica fue modificada exitosamente",
+                msj: "La característica fue modificada exitosamente.",
                 info
             })
         }
@@ -68,12 +68,12 @@ router.delete('/eliminar-caracteristica', (req, res) => {
     Caracteristica.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la caracteristica',
+                msj: 'No se pudo eliminar la característica.',
                 err
             });
         } else {
             res.json({
-                msj: 'La caracteristica se eliminó correctamente'
+                msj: 'La característica se eliminó correctamente.'
             });
         }
     });
