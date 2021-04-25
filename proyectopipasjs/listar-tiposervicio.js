@@ -25,7 +25,7 @@ const mostrar_modal_editar = async(servicio) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar el servicio',
+            text: '¿Está seguro que desea modificar el servicio?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });
@@ -39,7 +39,7 @@ const mostrar_modal_eliminar = async(servicio) => {
         if (servicio) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar el tipo de servicio',
+                text: '¿Está seguro que desea eliminar el tipo de servicio?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });

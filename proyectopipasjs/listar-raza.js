@@ -25,7 +25,7 @@ const mostrar_modal_editar = async(raza) => {
     if (formValues) {
         const { value: accept } = await Swal.fire({
             icon: 'warning',
-            text: 'Está seguro que desea modificar la raza',
+            text: '¿Está seguro que desea modificar la raza de la mascota?',
             confirmButtonText: `Si`,
             showCancelButton: true
         });
@@ -39,7 +39,7 @@ const mostrar_modal_eliminar = async(raza) => {
         if (raza) {
             const { value: accept } = await Swal.fire({
                 icon: 'warning',
-                text: 'Está seguro que desea eliminar la raza',
+                text: '¿Está seguro que desea eliminar la raza?',
                 confirmButtonText: `Si`,
                 showCancelButton: true
             });
