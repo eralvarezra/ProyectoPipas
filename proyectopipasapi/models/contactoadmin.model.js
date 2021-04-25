@@ -1,7 +1,7 @@
 'use strict'
 
-const moongose = require('mongoose');
-const schema_contactoadmin = new moongose.Mongoose.schema({
+const mongoose = require('mongoose');
+const schema_contactoadmin = new mongoose.Schema({
     nombreUsuario: { type: String, required: true, unique: true },
     telefonoUsuario: { type: String, required: true, unique: true },
     correoUsuario: { type: String, required: true, unique: true },
@@ -9,4 +9,4 @@ const schema_contactoadmin = new moongose.Mongoose.schema({
 
 });
 
-module.exports = moongose.model('contactoadmin', schema_contactoadmin, 'contactoadmin');
+module.exports = mongoose.model('contactoadmin', schema_contactoadmin, 'contactoadmin');
