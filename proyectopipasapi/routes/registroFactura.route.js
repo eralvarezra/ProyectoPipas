@@ -14,7 +14,9 @@ router.post('/registrar-factura', (req, res) => {
         descripcion: req.body.descripcion,
         precio: req.body.precio,
         correoUsuario: req.body.correoUsuario,
-        correoProveedor: req.body.correoProveedor
+        correoProveedor: req.body.correoProveedor,
+        estado: req.body.estado,
+        aprobar: req.body.aprobar
     });
 
     nueva_factura.save((err, factura_db) => {
@@ -31,6 +33,7 @@ router.post('/registrar-factura', (req, res) => {
         }
     });
 });
+
 router.get('/listar-factura', (req, res) => {
     //Funcionalidad, obtener lista
     //find: sacar datos de una coleccion
@@ -45,5 +48,94 @@ router.get('/listar-factura', (req, res) => {
         }
     })
 });
+router.put('/activar-servicio', (req, res) => {
+    Factura.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            estado: 'Completado'
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del servicio",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El servicio ha sido completado",
+                info
+            })
+        }
+    });
 
+});
+
+router.put('/desactivar-servicio', (req, res) => {
+    Factura.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            estado: 'No Completado'
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del servicio",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El servicio no ha sido completado",
+                info
+            })
+        }
+    });
+
+});
+router.put('/aceptar-servicio', (req, res) => {
+    Factura.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            aprobar: "Aceptada"
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del servicio",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El servicio ha sido aceptado",
+                info
+            })
+        }
+    });
+
+});
+
+//Funcion para aceptar una reserva
+router.put('/rechazar-servicio', (req, res) => {
+    Factura.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            aprobar: "Rechazada"
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del servicio",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El servicio ha sido rechazado",
+                info
+            })
+        }
+    });
+});
 module.exports = router;

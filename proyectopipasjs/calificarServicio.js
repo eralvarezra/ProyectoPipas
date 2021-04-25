@@ -1,5 +1,8 @@
 'use strict';
+let cookies2 = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, empresa]) => ({...accumulator, [key.trim()]: decodeURIComponent(empresa) }));
 
+let empresaEnCookie = cookies2.empresa;
+console.log(empresaEnCookie);
 const comentario = document.getElementById("comentario");
 const valor1 = document.getElementById("rate1");
 const valor2 = document.getElementById("rate2");
@@ -24,15 +27,15 @@ function readCookie(pCookie) {
 }
 
 const mostrar_proveedor = async() => {
-    let correo = readCookie("correo");
-    correo = correo.replace("=", "");
-    console.log(correo)
+    let empresa = readCookie("empresa");
+    empresa = empresa.replace("=", "");
+    console.log(empresa)
     let proveedores = await listar_proveedor();
     console.log(proveedores)
     proveedores.forEach((proveedor) => {
-        if (proveedor.correo === correo) {
-            document.getElementById('nombreProveedor').innerHTML = proveedor.empresa;
+        if (proveedor.empresa == empresa) {
             document.getElementById('nombreProveedor').value = proveedor.empresa;
+            document.getElementById('nombreProveedor').innerHTML = proveedor.empresa;
             document.getElementById('nombreProveedor').text = proveedor.empresa;
             console.log(proveedor.empresa)
         }
@@ -42,7 +45,7 @@ const mostrar_proveedor = async() => {
 const obtenerDatos = () => {
     let comentarioFinal = comentario.value;
     let valor;
-    let correo = readCookie("correo");
+    let correo = readCookie("correoempresa");
     correo = correo.replace("=", "");
 
     if (document.getElementById("rate1").checked) {

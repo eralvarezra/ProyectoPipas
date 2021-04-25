@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 // se crea primero el model
-const nueva_Calificacion = require('../models/calificarServicios.model')
+const calificarServicio = require('../models/calificarServicios.model')
     // metodos para extraer
 
 // req = request res= response 
@@ -32,7 +32,7 @@ router.post('/calificar-servicio', (req, res) => {
 });
 router.delete('/eliminar-comentario', (req, res) => {
     let _id = req.body._id;
-    nueva_Calificacion.findOneAndRemove({ _id: _id }, (err) => {
+    calificarServicio.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
                 msj: 'No se pudo eliminar el comentario',
@@ -46,7 +46,7 @@ router.delete('/eliminar-comentario', (req, res) => {
     });
 });
 router.get('/listar-calificacion', (req, res) => {
-    nueva_Calificacion.find((err, lista_calificacion) => {
+    calificarServicio.find((err, lista_calificacion) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los comentarios",

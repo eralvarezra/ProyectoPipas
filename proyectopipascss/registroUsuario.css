@@ -148,13 +148,12 @@ main {
 #img-foto {
     max-width: 150px;
     max-height: 150px;
-    padding-left: 400px
+    margin-top: 60px;
 }
 
 #btn-foto {
     float: right;
     margin-top: 20px;
-    margin-right: 50px;
 }
 
 #div-localizacion {

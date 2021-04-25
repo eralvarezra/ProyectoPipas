@@ -133,12 +133,12 @@ router.put('/aceptar-proveedor', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado de la reservación",
+                msj: "No se pudo modificar el estado del proveedor",
                 err
             });
         } else {
             res.json({
-                msj: "La reserva ha sido aceptada",
+                msj: "El proveedor ha sido aceptado",
                 info
             })
         }
@@ -157,12 +157,12 @@ router.put('/rechazar-proveedor', (req, res) => {
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo modificar el estado de la reservación",
+                msj: "No se pudo modificar el estado del proveedor",
                 err
             });
         } else {
             res.json({
-                msj: "La reserva ha sido rechazada",
+                msj: "El proveedor ha sido rechazado",
                 info
             })
         }
