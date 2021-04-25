@@ -47,8 +47,8 @@ const guardar_info = () => {
     let parametros = location.search.slice(1).split("&");
     if (parametros != undefined) {
         if (parametros.length > 0) {
-            let name = location.search.slice(1).split("&")[0].split("=")[1];
-            actualizar_contrasena(name, input_contrasena.value);
+            let correo = location.search.slice(1).split("&")[0].split("=")[1];
+            actualizar_contrasena(correo, input_contrasena.value);
         }
     }
 }
