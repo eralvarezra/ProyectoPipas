@@ -65,3 +65,29 @@ const eliminar_mascotaCaracteristica = async(_id) => {
         })
     });
 };
+
+const modificar_mascotaCaracteristica = async(_id, nombreMascota) => {
+    await axios({
+        method: 'put',
+        url: 'http://localhost:3000/api/modificar-mascotaCaracteristica',
+        responseType: 'json',
+        data: {
+            _id: _id,
+            nombreMascota: nombreMascota,
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'La información ha sido actualizada.',
+            'text': response.msj
+        }).then(() => {
+            mostrar_mascotas();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado.',
+        }).then(() => {});
+    });
+};

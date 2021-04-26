@@ -17,45 +17,21 @@ const btnVolver = document.getElementById("btn-volver");
 const btnAgregarDetalles = document.getElementById('btn-agregarDetalles');
 const btnSearch = document.getElementById("btn-search")
 
-/*
-const mostrar_modal_editar = async(mascota) => {
+
+const mostrar_modal_editarmascota = async(mascota) => {
     const { value: formValues } = await Swal.fire({
         title: 'Editar mascota',
         html: `
             <div>
-                <label for="txt-servicio">Tipo Servicio:</label>
-                <select id="txt-servicio" required class="swal2-input" value="${proveedor.tipoServicio}">
-                <option value="Transporte">Transporte</option>
-                <option value="Hotel">Hotel</option>
-                <option value="Corte de Pelo">Corte de Pelo	</option>
-                <option value="Corte de Uñas">Corte de Uñas</option>
-                <option value="Grooming">Grooming</option>
-                </select>
-                
+                <label for="txt-servicio">Nombre Mascota:</label>
+                <input type="text" id="txt-servicio" required class="swal2-input" value="${mascota.nombreMascota}">               
             </div>
-            <div>
-                <label for="txt-persona">Persona Acargo:</label>
-                <input type="text" id="txt-persona" required class="swal2-input" value="${proveedor.pAcargo}">
-                
-            </div>
-            <div>
-                <label for="txt-nombre">Empresa:</label>
-                <input type="text" id="txt-empresa" required class="swal2-input" value="${proveedor.empresa}">
-                
-            </div>
-            <div>
-                <label for="txt-nombre">Teléfono:</label>
-                <input type="text" id="txt-telefono" required class="swal2-input" value="${proveedor.telefono}">
-            
-            </div>`,
+            `,
         focusConfirm: false,
         preConfirm: () => {
             return [
-                proveedor._id,
+                mascota._id,
                 document.querySelector('#txt-servicio').value,
-                document.querySelector('#txt-persona').value,
-                document.querySelector('#txt-empresa').value,
-                document.querySelector('#txt-telefono').value,
             ]
         }
     });
@@ -67,10 +43,12 @@ const mostrar_modal_editar = async(mascota) => {
             showCancelButton: true
         });
         if (accept) {
-            modificar_proveedor(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4]);
+            modificar_mascota(formValues[0], formValues[1]);
         }
     }
-}*/
+}
+
+
 
 function readCookie(pCookie) {
     const nameString = pCookie + "="
@@ -129,7 +107,7 @@ const mostrar_mascotas = async() => {
             boton_editar.type = 'button';
 
             boton_editar.addEventListener('click', async() => {
-                mostrar_modal_editar(proveedor);
+                mostrar_modal_editarmascota(mascota);
             })
             celda_editar.appendChild(boton_editar);
 
@@ -187,19 +165,6 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
         } else {
             fila.insertCell().innerHTML = "No posee";
         }
-        //editar
-        let celda_editar = fila.insertCell();
-        let boton_editar = document.createElement('button');
-        boton_editar.classList.add("far")
-        boton_editar.classList.add("fa-edit")
-        boton_editar.classList.add("btn2")
-        boton_editar.type = 'button';
-
-
-        boton_editar.addEventListener('click', async() => {
-            mostrar_modal_editar(mascotacaracteristica);
-        })
-        celda_editar.appendChild(boton_editar);
 
         let celda_eliminar = fila.insertCell();
         let boton_eliminar = document.createElement('button');
@@ -233,18 +198,6 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
         } else {
             fila.insertCell().innerHTML = "No posee";
         }
-        //editar
-        let celda_editar = fila.insertCell();
-        let boton_editar = document.createElement('button');
-        boton_editar.classList.add("far")
-        boton_editar.classList.add("fa-edit")
-        boton_editar.classList.add("btn2")
-        boton_editar.type = 'button';
-
-        boton_editar.addEventListener('click', async() => {
-            mostrar_modal_editar(padecimiento);
-        })
-        celda_editar.appendChild(boton_editar);
 
         let celda_eliminar = fila.insertCell();
         let boton_eliminar = document.createElement('button');
@@ -278,19 +231,6 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
             fila.insertCell().innerHTML = "No posee";
         }
 
-        //editar
-        let celda_editar = fila.insertCell();
-        let boton_editar = document.createElement('button');
-        boton_editar.classList.add("far")
-        boton_editar.classList.add("fa-edit")
-        boton_editar.classList.add("btn2")
-        boton_editar.type = 'button';
-
-        boton_editar.addEventListener('click', async() => {
-            mostrar_modal_editar(mascotavacuna);
-        })
-
-        celda_editar.appendChild(boton_editar);
         let celda_eliminar = fila.insertCell();
         let boton_eliminar = document.createElement('button');
         boton_eliminar.type = 'button';
@@ -316,9 +256,6 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
     });
 }
 
-
-
-
 btnAgregar.addEventListener('click', () => {
     location.href = "registroMascota.html"
 
@@ -335,6 +272,7 @@ btnAgregarDetalles.addEventListener('click', () => {
 
 btnSearch.addEventListener('click', () => {
     mostrar_mascotas();
+
 })
 
 mostrar_mascotas();
