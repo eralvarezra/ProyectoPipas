@@ -4,7 +4,7 @@
 const tabla = document.querySelector("#tbl-resultados tbody");
 //Filtro
 const input_filtro = document.querySelector("#txt-filtro");
-const btn_descargar = document.querySelector('#descargar');
+
 const btn_imprimir = document.querySelector('#imprimir');
 //Tabla dinamica
 const mostrar_comentario = async() => {
