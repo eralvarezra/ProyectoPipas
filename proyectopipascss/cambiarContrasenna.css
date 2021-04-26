@@ -1,11 +1,12 @@
 .div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 532px;
     margin-top: 200px;
     height: 300px;
     width: 429px;
     background-color: aliceblue;
+    /* border-radius: 20px; */
 }
 
 .div-NombreEmpresa>div {
@@ -14,13 +15,13 @@
 }
 
 #logoEmpresa {
-    width: 400px;
+    width: 370px;
     text-align: center;
-    padding-top: 2px;
+    padding-top: 100px;
 }
 
 .div-Form {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     text-align: center;
     margin-right: 490px;
@@ -28,6 +29,7 @@
     width: 400px;
     height: 300px;
     background-color: aliceblue;
+    /* border-radius: 20px; */
 }
 
 .div-Form>div {
@@ -52,6 +54,15 @@ h1 {
     display: inline-block;
     margin-left: 15px;
     margin-bottom: 15px;
+}
+
+#btn-modificar {
+    margin-left: 60px;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    background-color: #e69138;
+    color: white;
 }
 
 .error-input {
