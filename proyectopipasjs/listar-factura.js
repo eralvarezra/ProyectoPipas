@@ -42,4 +42,4 @@ const documentar_empresa = async(pFactura) => {
 
 mostrar_factura();
 
-//input_filtro.addEventListener('keyup', mostrar_factura);
+input_filtro.addEventListener(mostrar_factura);

@@ -6,10 +6,8 @@ console.log(cookies2.correo);
 const tabla = document.querySelector("#tbl-resultados tbody");
 //Filtro
 document.getElementById('txt-filtro').value = cookies2.correo;
-const input_filtro = document.querySelector("#txt-filtro").value;
 //obteniendo los elementos de HTML
 //Filtro
-
 
 //Tabla dinamica
 const mostrar_factura = async() => {
@@ -17,9 +15,11 @@ const mostrar_factura = async() => {
     console.log(lista_factura);
     tabla.innerHTML = '';
     let filtro = cookies2.correo;
+    console.log(filtro)
+
     lista_factura.forEach((factura) => {
-        console.log(factura.correoProveedor)
         if (factura.correoProveedor == filtro) {
+            console.log(factura.correoProveedor)
             console.log(factura);
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = factura.nombreEmpresa;
@@ -30,5 +30,4 @@ const mostrar_factura = async() => {
         }
     });
 };
-
 mostrar_factura();
