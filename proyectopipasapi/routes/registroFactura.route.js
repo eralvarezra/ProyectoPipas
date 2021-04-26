@@ -27,13 +27,12 @@ router.post('/registrar-factura', (req, res) => {
                 err
             });
         } else {
-            mailer.enviar_mail(factura_db.correoProveedor, factura_db.correoUsuario);
             res.json({
                 msj: "La factura se registró exitosamente.",
                 factura_db
 
             });
-
+            mailer.enviar_mail(`${factura_db.correoProveedor}`, factura_db.correoUsuario);
         }
     });
 });

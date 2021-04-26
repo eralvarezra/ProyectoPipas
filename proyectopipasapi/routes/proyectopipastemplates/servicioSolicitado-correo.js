@@ -37,4 +37,4 @@ this.enviar_mail = (correoProveedor, correoUsuario) => {
     });
 };
 
-module.export = this;
+module.exports = this;
