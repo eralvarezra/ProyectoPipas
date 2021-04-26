@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 // Uselo para el modelo comentarios, NO lleva el js
 const Factura = require('../models/registroFactura.model');
-
+const mailer = require('../routes/proyectopipastemplates/servicioSolicitado-correo');
 //Endpoint para registrar comentarios
 router.post('/registrar-factura', (req, res) => {
     let nueva_factura = new Factura({
@@ -27,10 +27,13 @@ router.post('/registrar-factura', (req, res) => {
                 err
             });
         } else {
+            mailer.enviar_mail(factura_db.correoProveedor, factura_db.correoUsuario);
             res.json({
                 msj: "La factura se registró exitosamente.",
                 factura_db
-            })
+
+            });
+
         }
     });
 });
