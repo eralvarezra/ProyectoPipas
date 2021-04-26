@@ -29,23 +29,8 @@ const obtenerDatos = async(nombreUsuario, telefonoUsuario, correoUsuario, coment
     });
 };
 
-/*const buscar_usuario_correo = async(correo) => {
-    let usuario;
-    await axios({
-        method: 'get',
-        url: 'http://localhost:3000/api/buscar-por-correo-usuario',
-        responseType: 'json',
-        params: {
-            correo: correo
-        }
-    }).then((response) => {
-        usuario = response.data.usuario_db;
-    }).catch((response) => {
-        console.log(response.data.msj + " " + response.data.err);
-    });
-    return usuario;
-}
 
+/*
 const actualizar_contrasena = async(correo, contrasena) => {
     //busca el usuario: ven este caso no tenemos el ID, vamos a buscarlo. como el username es unico podemos buscarlo usando este parametro
     let usuario_encontrado = false;

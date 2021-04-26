@@ -9,16 +9,17 @@ const btn = document.querySelector('.btn');
 
 const obtenerDatos = () => {
 
+    let nombre = nombreUsuario.value;
     let telefono = telefonoUsuario.value;
     let correo = correoUsuario.value;
     let comentario = comentarioUsuario.value;
-    let nombre = nombreUsuario.value;
 
 
+    console.log('El nombre de la persona es: ' + nombre);
     console.log('El telefono de la empresa es: ' + telefono);
     console.log('El correo es: ' + correo);
     console.log('El comentario es: ' + comentario);
-    console.log('El nombre de la persona es: ' + nombre);
+
 
 
     Swal.fire({
@@ -34,9 +35,9 @@ const obtenerDatos = () => {
 const limpiar = () => {
     //.value permite tanto obtener el valor como asignarlo
 
-    correoUsuario.value = "";
-    telefonoUsuario.value = "";
     nombreUsuario.value = "";
+    telefonoUsuario.value = "";
+    correoUsuario.value = "";
     comentarioUsuario.value = "";
 }
 

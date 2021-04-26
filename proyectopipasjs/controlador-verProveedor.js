@@ -24,6 +24,7 @@ let descripciondelservicio = cookiesDescripcion.descripcion;
 let preciodelservicio = '';
 let estado = "No Completado";
 let aprobar = "Pendiente";
+let calificar = "No calificado"
 const obtenerDatos = () => {
     let numerodelatarjetaUsuario = numerodelatarjeta.value;
     let fechavencimientotarjetaUsuario = fechavencimientotarjeta.value;
@@ -40,7 +41,7 @@ const obtenerDatos = () => {
     console.log('precio: ', preciodelservicio);
     console.log('correo usuario: ', correodelUsuario);
     console.log('correo proveedor: ', correoProveedorServicio);
-    registrar_factura(nombredelaEmpresa, nombreServicioProveedor, descripciondelservicio, preciodelservicio, correodelUsuario, correoProveedorServicio, estado, aprobar);
+    registrar_factura(nombredelaEmpresa, nombreServicioProveedor, descripciondelservicio, preciodelservicio, correodelUsuario, correoProveedorServicio, estado, aprobar, calificar);
 
     Swal.fire({
         'icon': 'success',

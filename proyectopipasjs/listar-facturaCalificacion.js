@@ -21,7 +21,7 @@ const mostrar_factura = async() => {
     lista_factura.forEach((factura) => {
         console.log(factura.correoUsuario)
 
-        if ((factura.correoUsuario == filtro)) {
+        if ((factura.correoUsuario == filtro) && (factura.estado == "Completado") && (factura.calificado == "No calificado") && (factura.aprobar == "Aceptada")) {
             console.log(factura);
             let boton_editar = document.createElement('button');
 
@@ -31,6 +31,17 @@ const mostrar_factura = async() => {
             fila.insertCell().innerHTML = factura.descripcion;
             fila.insertCell().innerHTML = factura.precio;
             fila.insertCell().innerHTML = factura.aprobar;
+            let celda_editar2 = fila.insertCell();
+
+            boton_editar.classList.add("fas");
+            boton_editar.classList.add("fa-dog");
+            boton_editar.style.backgroundColor = "#e69138"
+            boton_editar.type = 'button';
+            celda_editar2.appendChild(boton_editar);
+            boton_editar.addEventListener("click", async() => {
+                calificar_servicio(factura._id, factura.calificado);
+                documentar_empresa(factura);
+            });
 
         }
     });
@@ -39,6 +50,7 @@ const documentar_empresa = async(pFactura) => {
     document.cookie = "empresa=" + pFactura.nombreEmpresa;
     location.href = "calificarServicios.html"
 }
+
 
 mostrar_factura();
 

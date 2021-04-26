@@ -1,4 +1,4 @@
-const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio, correoUsuario, correoProveedor, estado, aprobar) => {
+const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio, correoUsuario, correoProveedor, estado, aprobar, calificado) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-factura',
@@ -11,7 +11,8 @@ const registrar_factura = async(nombreEmpresa, tipoServicio, descripcion, precio
             correoUsuario: correoUsuario,
             correoProveedor: correoProveedor,
             estado: estado,
-            aprobar: aprobar
+            aprobar: aprobar,
+            calificado: calificado
         }
     }).then((response) => {
         Swal.fire({
@@ -37,6 +38,35 @@ const cambiar_estado2 = async(_id, estado_actual) => {
         url_dinamico = 'http://localhost:3000/api/desactivar-servicio';
     }
 
+    await axios({
+        method: 'put',
+        url: url_dinamico,
+        responseType: 'json',
+        data: {
+            _id: _id
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'El estado del servicio se modificó correctamente.',
+            'text': response.msj
+        }).then(() => {
+            mostrar_factura();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado.',
+        }).then(() => {});
+    });
+}
+
+const calificar_servicio = async(_id, estado_actual) => {
+    let url_dinamico;
+    if (estado_actual.toUpperCase() == "NO CALIFICADO") {
+        url_dinamico = 'http://localhost:3000/api/calificar-servicio';
+    }
     await axios({
         method: 'put',
         url: url_dinamico,

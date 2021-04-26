@@ -16,7 +16,8 @@ router.post('/registrar-factura', (req, res) => {
         correoUsuario: req.body.correoUsuario,
         correoProveedor: req.body.correoProveedor,
         estado: req.body.estado,
-        aprobar: req.body.aprobar
+        aprobar: req.body.aprobar,
+        calificado: req.body.calificado
     });
 
     nueva_factura.save((err, factura_db) => {
@@ -109,6 +110,29 @@ router.put('/aceptar-servicio', (req, res) => {
         } else {
             res.json({
                 msj: "El servicio ha sido aceptado.",
+                info
+            })
+        }
+    });
+
+});
+
+router.put('/calificar-servicio', (req, res) => {
+    Factura.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            calificado: "Calificado"
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar el estado del servicio.",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El servicio ha sido calificado.",
                 info
             })
         }
