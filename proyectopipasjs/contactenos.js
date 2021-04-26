@@ -77,3 +77,9 @@ const validar = () => {
 
 }
 btn.addEventListener('click', validar);
+
+const pre_procesamiento = () => {
+    //llamar al servicio obtener el estados del usuario
+    //valiudar ese estado, si es 1 continue, sino que tire un alerta y no deje ahcer nada.
+}
+pre_procesamiento();

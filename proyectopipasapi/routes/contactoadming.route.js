@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 const contactoadmin = require('../models/contactoadmin.model');
+const mailer = require('../routes/proyectopipastemplates/contactoadmin-correo');
 
 router.post('/registrar-contactoadmin', (req, res) => {
     let nuevo_contactoadmin = new contactoadmin({
@@ -29,10 +30,11 @@ router.post('/registrar-contactoadmin', (req, res) => {
                 msj: "Su comentario se guardo exitosamente.",
                 contactoadmin_db
             });
+            mailer.enviar_email(`${usuario_db.nombre} ${usuario_db.apellidos}`, usuario_db.correo)
         }
     });
 
-})
+});
 
 router.get('/listar-contactoadmin', (req, res) => {
     contactoadmin.find((err, lista_contactoadmin) => {
