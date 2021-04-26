@@ -25,7 +25,6 @@ const mostrar_comentario = async() => {
 
 function imprimir() {
     var ventana = window.open('', 'PRINT', 'height=400,width=600');
-    ventana.document.write();
     for (var i = 0, row; row = tabla.rows[i]; i++) {
         //alert(cell[i].innerText);
         for (var j = 0, col; col = row.cells[j]; j++) {
