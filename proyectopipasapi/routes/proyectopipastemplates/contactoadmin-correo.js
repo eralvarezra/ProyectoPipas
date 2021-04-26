@@ -2,7 +2,7 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-this.enviar_email = (pnombre_completo, pcorreo) => {
+this.enviar_email = (nombreUsuario, correoUsuario, comentarioUsuario) => {
     //transporter es el encargado de configurar el servicio y establecer la comunicación con el servidor de correos usando el protocolo SMTP
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -15,15 +15,18 @@ this.enviar_email = (pnombre_completo, pcorreo) => {
 
     let email_options = {
         from: 'pet22.lover22@gmail.com',
-        to: pcorreo,
-        subject: `Bienvenido a PetLover ${pnombre_completo}`,
+        to: 'pet22.lover22@gmail.com',
+        subject: `Has recibido un mensaje de ${nombreUsuario}`,
         html: `
         <table cellpadding="0" cellspacing="0" width="600px" background-color="rgb(255,255,255)" ; bgcolor="#cc494f" ;>
             <tr height=" 70px ">
                 <td width="600px ">
-                    <h1 style="color:#fff; text-align:center ">Gracias por su mensaje.</h1>
+                    <h1 style="color:#fff; text-align:center ">Tiene un nuevo mensaje.</h1>
                     <p style="color: #fff; text-align:center ">
-                    <span style="color:#fff;font-weight: bold; ">${pnombre_completo}</span> Pronto nos estaremos comunicando con usted.
+                    <span style="color:#fff;font-weight: bold; ">${correoUsuario}</span> Porfavor responder al usuario.
+                </p>
+                <p style="color: #fff; text-align:center ">
+                    <span style="color:#fff;font-weight: bold; ">${comentarioUsuario}</span> Este es el mensaje del usuario.
                 </p>
             </td>
         </tr>
@@ -35,7 +38,7 @@ this.enviar_email = (pnombre_completo, pcorreo) => {
         if (error) {
             console.log(error);
         } else {
-            console.log('El correo se envío correctamente. ' + info.response);
+            console.log('El correo se envío correctamente.' + info.response);
         }
     });
 }
