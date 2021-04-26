@@ -23,6 +23,7 @@
 
 h3 {
     text-align: center;
+    font-weight: bold;
 }
 
 #precioServicio {
@@ -49,8 +50,13 @@ h3 {
     float: left;
 }
 
+#numTarjeta {
+    background-color: #e69138;
+    width: 210px;
+}
+
 #sct-infoServicio {
-    width: 37%;
+    width: 50%;
     border-right: 5px solid #e69138;
     float: left;
 }
@@ -61,7 +67,7 @@ h3 {
 }
 
 .imagenLogo {
-    width: 370px;
+    width: 350px;
     padding-left: 190px;
 }
 
