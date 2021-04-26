@@ -31,6 +31,7 @@ const registrar_usuario = async(nombre, apellido, tipoIdentificacion, identifica
             'text': response.msj
         }).then(() => {
             limpiar();
+            location.href = "../proyectopipashtml/index.html";
         });
     }).catch((response) => {
         Swal.fire({
