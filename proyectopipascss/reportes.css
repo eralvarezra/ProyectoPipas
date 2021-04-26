@@ -1,0 +1,24 @@
+#links {
+    background-color: aliceblue;
+    border-color: #e69138;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#links a,
+#links input {
+    margin-left: 50px;
+}
+
+#logoEmpresa {
+    margin-left: 40px;
+}
+
+#links {
+    height: 250px;
+    padding-top: 20px;
+}
+
+#filtro {
+    display: none;
+}
