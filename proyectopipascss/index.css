@@ -77,6 +77,7 @@ h1 {
     background-color: transparent;
     background-position: center;
     font-weight: bold;
+    font-style: oblique
 }
 
 .dot {
@@ -121,14 +122,25 @@ h1 {
     border-radius: 50px;
 }
 
-.sct-comentariosR {
+#btn-Registrase {
+    padding: 25px;
+    background-color: rgb(249, 253, 249);
+    text-align: center;
     padding-top: 10px;
+    margin-left: 573px;
+    color: rgb(31, 105, 145);
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.sct-comentariosR {
+    padding-top: 1px;
     background-color: rgb(31, 105, 145);
 }
 
 p {
     text-align: center;
-    color: gray;
+    color: rgb(133, 127, 127);
     font-size: 12px;
     font-weight: bold;
 }
@@ -138,10 +150,12 @@ h2 {
     color: #f2f2f2;
     font-weight: bold;
     padding: auto;
+    padding-top: 20px;
+    font-style: oblique
 }
 
 .sct-calificaciones {
-    padding-top: 50px;
+    padding-top: 5px;
 }
 
 .comentario {
@@ -149,15 +163,13 @@ h2 {
     padding: 1em;
     display: inline-block;
     width: 20%;
-    height: 200px;
+    height: 120px;
     margin: 0.5%;
-    margin-top: 5px;
-    padding: 1em;
     vertical-align: top;
     text-align: center;
     text-decoration: none;
     background-position: center;
-    margin: 0px 0px 50px 130px;
+    margin: 1px 80px 50px 80px;
 }
 
 .starContainerCalificacion input {
@@ -177,5 +189,18 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     width: 1500px;
-    height: 100px;
+    height: 90px;
+}
+
+#div.contact-us {
+    height: 90px;
+}
+
+#lbl-footer {
+    color: blanchedalmond;
+    padding-right: 250px;
+}
+
+.div-logo {
+    padding-left: 10px;
 }

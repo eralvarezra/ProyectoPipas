@@ -92,7 +92,7 @@ const validar = () => {
 botonEnviar.addEventListener('click', validar);
 
 btnVolver.addEventListener('click', () => {
-    location.href = "perfil.html"
+    location.href = "verPerfilMascota.html"
 
 });
 mostrar_selects();

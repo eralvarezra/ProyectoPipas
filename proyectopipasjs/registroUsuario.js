@@ -113,6 +113,17 @@ const limpiar = () => {
     fechaVencimientoUsuario.value = '';
 };
 
-
+const ocultar_botones = () => {
+    botonEnviar.style.display = 'none';
+}
 
 botonEnviar.addEventListener('click', validar);
+condicionesUsuario.addEventListener('click', () => {
+    if (condicionesUsuario.checked) {
+        botonEnviar.style.display = "block";
+    } else if (!condicionesUsuario.checked) {
+        botonEnviar.style.display = 'none';
+    }
+});
+
+ocultar_botones();

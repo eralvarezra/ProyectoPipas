@@ -54,15 +54,18 @@ const mostrar_activar = async(filtro, pass) => {
             if ((proveedor.activo == "Activo") && (proveedor.estado == "Aceptada")) {
                 valido = true;
                 validar_perfil(filtro, pass);
+            } else if (proveedor.correo === filtro) {
+                if ((proveedor.activo !== "Activo") || (proveedor.estado !== "Aceptada")) {
+                    Swal.fire({
+                        'icon': 'warning',
+                        'title': 'Su perfil no se encuentra activo o aprobado en este momento.',
+                        'text': 'Por favor comuníquese con el administrador.'
+                    });
+                }
             }
-        } else {
-            Swal.fire({
-                'icon': 'warning',
-                'title': 'Su perfil no se encuentra activo o aprobado en este momento.',
-                'text': 'Por favor comuníquese con el administrador.'
-            });
         }
     });
+
     lista_usuario.forEach((usuario) => {
         if (usuario.correo == filtro) {
             if (usuario.activo == "Activo") {
@@ -70,12 +73,13 @@ const mostrar_activar = async(filtro, pass) => {
                 validar_perfil(filtro, pass);
             }
         }
-    })
+    });
+
     lista_admin.forEach((admin) => {
         if (admin.correo == filtro) {
             validar_perfil(filtro, pass);
         }
-    })
+    });
 };
 
 const validar_perfil = async(pEmail, pPass) => {

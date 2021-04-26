@@ -47,10 +47,10 @@ router.get('/listar-mascota', (req, res) => {
 
 router.put('/modificar-Mascota', (req, res) => {
     Mascota.updateOne({
-        nombreMascota: req.body.nombreMascota
+        _id: req.body._id
     }, {
         $set: {
-            tipoRaza: req.body.tipoRaza,
+            nombreMascota: req.body.nombreMascota,
         }
     }, (err, info) => {
         if (err) {
