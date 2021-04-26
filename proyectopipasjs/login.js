@@ -78,6 +78,12 @@ const mostrar_activar = async(filtro, pass) => {
     lista_admin.forEach((admin) => {
         if (admin.correo == filtro) {
             validar_perfil(filtro, pass);
+        } else if (valido == false) {
+            Swal.fire({
+                'icon': 'warning',
+                'title': 'Su perfil no existe.',
+                'text': 'Por favor regístrese para continuar.'
+            });
         }
     });
 };

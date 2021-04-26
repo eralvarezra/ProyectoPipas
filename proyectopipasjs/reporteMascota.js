@@ -19,9 +19,6 @@ const mostrar_mascota = async() => {
             fila.insertCell().innerHTML = mascota.nombreMascota;
             fila.insertCell().innerHTML = mascota.tipoMascota;
             fila.insertCell().innerHTML = mascota.tipoRaza;
-            fila.insertCell().innerHTML = mascota.caracteristicaEspecial;
-            fila.insertCell().innerHTML = mascota.tipoPadecimiento;
-            fila.insertCell().innerHTML = mascota.tipoVacuna;
         }
     });
 };
