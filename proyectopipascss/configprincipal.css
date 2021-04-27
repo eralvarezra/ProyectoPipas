@@ -3,6 +3,10 @@
     margin-left: 200px;
 }
 
+#btn-logout1 {
+    float: inline-end;
+}
+
 .caja {
     border: 5px solid #e69138;
     box-sizing: border-box;
@@ -15,6 +19,7 @@
     vertical-align: top;
     text-align: center;
     text-decoration: none;
+    margin-left: 200px;
 }
 
 .img {
