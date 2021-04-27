@@ -16,7 +16,7 @@ let cookiesNombreEmpresa = document.cookie.split(";").map(cookie => cookie.split
 let cookiesDescripcion = document.cookie.split(";").map(cookie => cookie.split('=')).reduce((accumulator, [key, descripcion]) => ({...accumulator, [key.trim()]: decodeURIComponent(descripcion) }));
 
 
-let correoProveedorServicio = cookiesCorreoEmpresa.correoempresa;
+let correoProveedorServicio = cookiesCorreoEmpresa.correoProveedor;
 let nombreServicioProveedor = cookiesNombreServicio.nombreServicio;
 let correodelUsuario = cookiesCorreoUsuario.correo;
 let nombredelaEmpresa = cookiesNombreEmpresa.empresa;
