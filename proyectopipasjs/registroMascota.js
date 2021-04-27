@@ -49,7 +49,7 @@ const obtenerDatos = () => {
 
     let fotoMascota = "mimascota.com";
     let correo = readCookie("correo");
-    correo.replace("=", "");
+    correo = correo.replace("=", "");
     registrar_mascota(nombreMascota, tipoMascota, raza, fotoMascota, correo);
 }
 
