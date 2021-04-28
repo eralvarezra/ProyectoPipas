@@ -244,14 +244,49 @@ btnFormRegistro.addEventListener('click', () => {
     }
 });
 
+const validar_existe_correo = async() => {
+    let correoElectronico = correoPassReset.value;
+    let datos_login_usuario = await obtener_login_usuario();
+    let datos_login_proveedor = await obtener_login_proveedor();
+    let contrasena = "";
+    let nombre;
+
+    datos_login_proveedor.forEach((proveedor) => {
+
+        if (proveedor.correo == correoElectronico) {
+            contrasena = proveedor.contrasena;
+            nombre = proveedor.pAcargo;
+        }
+    });
+
+    datos_login_usuario.forEach((usuario) => {
+        if (usuario.correo == correoElectronico) {
+            contrasena = usuario.contrasena;
+            nombre = usuario.nombre;
+        }
+    });
+
+    if (contrasena == '') {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Su correo no existe, debe de registrase',
+            'text': 'Debe de registrase'
+        })
+    } else {
+        obtenerRecuperar(nombre, correoElectronico, contrasena);
+    }
+
+}
+
 btnPassReset.addEventListener('click', () => {
     popupPassReset.style.display = "block";
 });
 
 btnPassResetEnviar.addEventListener('click', () => {
-    var correo = correoPassReset;
-    sendEmail();
+    validar_existe_correo();
 });
+//Consultar el correo, linea 250 
+
 
 btnVolverPassReset.addEventListener('click', () => {
     popupPassReset.style.display = "none";

@@ -1,206 +1,338 @@
-.sct-contenedor-principal {
-    padding-top: 100px;
-}
-
-body {
-    background-color: #111010;
-}
-
-h1 {
-    color: rgb(47, 154, 255);
-    font-weight: bold;
-    text-align: center;
-    font-size: 100%;
-    padding-top: 20px;
-}
-
-.slideshow-container {
-    position: relative;
-    padding-top: 8px;
-    height: 320px;
-    width: 100%;
-    background-position: center;
-}
-
-.mySlides {
-    height: 500px;
-    width: 1900px;
-    background-position: center;
-}
-
-#mySlides-face {
-    height: 450px;
-    width: 1350px;
-    background-position: center;
-}
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: #222428;
-    font-weight: bold;
-    font-size: 30px;
-    transition: .6s ease;
-    border-radius: 0 3px 3px 0
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 3px 3px 3px
-}
-
-.prev {
-    left: 0;
-    border-radius: 3px 3px 3px 3px
-}
-
-.prev:hover,
-.next:hover {
-    color: #f2f2f2;
-    background-color: #56e7c8e7;
-}
-
-.text {
-    color: gray;
-    font-size: 25px;
-    padding-bottom: 15px;
-    position: absolute;
-    padding-left: 5px;
-    bottom: 0px;
-    width: 20%;
-    text-align: center;
-    background-color: transparent;
-    background-position: center;
-    font-weight: bold;
-    font-style: oblique
-}
-
-.dot {
-    cursor: pointer;
-    height: 5px;
-    width: 5px;
-    margin: 0 2px;
-    background-color: #56e7c8e7;
-    border-radius: 50%;
-    transition: background-color .7s ease
-}
-
-#sct-comentarios {
-    position: relative;
-    padding-top: 130px;
-}
-
-#sct-comentarios>h1 {
-    color: rgb(47, 154, 255);
-    font-size: 15px;
-}
-
-.caja {
-    border: 1px solid #56e7c8e7;
-    box-sizing: border-box;
-    display: inline-block;
-    width: 255px;
-    margin: 2px;
-    height: 280px;
-    margin-top: 30px;
-    vertical-align: top;
-    text-align: center;
-    background-color: black;
-    margin-left: 5px;
-    border-radius: 50px;
-}
-
-.imagen {
-    padding-top: 15px;
-    width: 220px;
-    height: 220px;
-    border-radius: 50px;
-}
-
-#btn-Registrase {
-    padding: 25px;
-    background-color: rgb(249, 253, 249);
-    text-align: center;
-    padding-top: 10px;
-    margin-left: 573px;
-    color: rgb(31, 105, 145);
-    border-radius: 50px;
-    font-weight: bold;
-}
-
-.sct-comentariosR {
-    padding-top: 1px;
-    background-color: rgb(31, 105, 145);
-}
-
-p {
-    text-align: center;
-    color: rgb(133, 127, 127);
-    font-size: 12px;
-    font-weight: bold;
-}
-
-h2 {
-    text-align: center;
-    color: #f2f2f2;
-    font-weight: bold;
-    padding: auto;
-    padding-top: 20px;
-    font-style: oblique
-}
-
-.sct-calificaciones {
-    padding-top: 5px;
-}
-
-.comentario {
-    box-sizing: border-box;
-    padding: 1em;
-    display: inline-block;
-    width: 20%;
-    height: 120px;
-    margin: 0.5%;
-    vertical-align: top;
-    text-align: center;
-    text-decoration: none;
-    background-position: center;
-    margin: 1px 80px 50px 80px;
-}
-
-.starContainerCalificacion input {
-    height: 600px;
-}
-
-.fa-paw:before {
-    content: "\f1b0";
-    color: rgb(47, 154, 255);
-}
-
-footer {
-    background-color: rgb(31, 105, 145);
-    background-blend-mode: screen, overlay;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 1500px;
-    height: 90px;
-}
-
-#div.contact-us {
-    height: 90px;
-}
-
-#lbl-footer {
-    color: blanchedalmond;
-    padding-right: 250px;
-}
-
-.div-logo {
-    padding-left: 10px;
-}
+    * {
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+    
+    .sct-contenedor-principal {
+        padding-top: 100px;
+    }
+    
+    body {
+        background-color: #111010;
+    }
+    
+    .main-principal {
+        display: block;
+    }
+    
+    h1 {
+        color: rgb(47, 154, 255);
+        font-weight: bold;
+        text-align: center;
+        font-size: 100%;
+        padding-top: 20px;
+    }
+    
+    .slideshow-container {
+        position: relative;
+        padding-top: 8px;
+        height: 320px;
+        width: 100%;
+        background-position: center;
+    }
+    
+    .mySlides {
+        height: 500px;
+        width: 100%;
+        background-position: center;
+    }
+    
+    #mySlides-face {
+        height: 450px;
+        width: 100%;
+        background-position: center;
+    }
+    
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: #222428;
+        font-weight: bold;
+        font-size: 30px;
+        transition: .6s ease;
+        border-radius: 0 3px 3px 0
+    }
+    
+    .next {
+        right: 0;
+        border-radius: 3px 3px 3px 3px
+    }
+    
+    .prev {
+        left: 0;
+        border-radius: 3px 3px 3px 3px
+    }
+    
+    .prev:hover,
+    .next:hover {
+        color: #f2f2f2;
+        background-color: #56e7c8e7;
+    }
+    
+    .text {
+        color: gray;
+        font-size: 25px;
+        padding-bottom: 15px;
+        position: absolute;
+        padding-left: 5px;
+        bottom: 0px;
+        width: 20%;
+        text-align: center;
+        background-color: transparent;
+        background-position: center;
+        font-weight: bold;
+        font-style: oblique
+    }
+    
+    .dot {
+        cursor: pointer;
+        height: 5px;
+        width: 5px;
+        margin: 0 2px;
+        background-color: #56e7c8e7;
+        border-radius: 50%;
+        transition: background-color .7s ease
+    }
+    
+    #sct-comentarios {
+        position: relative;
+        padding-top: 130px;
+        padding-left: 50px;
+    }
+    
+    #sct-comentarios>h1 {
+        color: rgb(47, 154, 255);
+        font-size: 15px;
+    }
+    
+    .caja {
+        border: 1px solid #56e7c8e7;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 230px;
+        margin: 2px;
+        height: 280px;
+        margin-top: 30px;
+        vertical-align: top;
+        text-align: center;
+        background-color: black;
+        margin-left: 10px;
+        border-radius: 50px;
+    }
+    
+    .imagen {
+        padding-top: 15px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50px;
+    }
+    
+    #btn-Registrase {
+        padding: 25px;
+        background-color: rgb(249, 253, 249);
+        text-align: center;
+        padding-top: 10px;
+        margin-left: 580px;
+        color: rgb(31, 105, 145);
+        border-radius: 50px;
+        font-weight: bold;
+    }
+    
+    .sct-comentariosR {
+        padding-top: 1px;
+        background-color: rgb(31, 105, 145);
+    }
+    
+    p {
+        text-align: center;
+        color: rgb(133, 127, 127);
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    h2 {
+        text-align: center;
+        color: #f2f2f2;
+        font-weight: bold;
+        padding: auto;
+        padding-top: 20px;
+        font-style: oblique
+    }
+    
+    .sct-calificaciones {
+        padding-top: 5px;
+        padding-left: 60px;
+    }
+    
+    .comentario {
+        box-sizing: border-box;
+        padding: 1em;
+        display: inline-block;
+        width: 20%;
+        height: 120px;
+        margin: 0.5%;
+        vertical-align: top;
+        text-align: center;
+        text-decoration: none;
+        background-position: center;
+        margin: 1px 80px 50px 80px;
+    }
+    
+    .starContainerCalificacion input {
+        height: 600px;
+    }
+    
+    .fa-paw:before {
+        content: "\f1b0";
+        color: rgb(47, 154, 255);
+    }
+    
+    footer {
+        background-color: rgb(31, 105, 145);
+        background-blend-mode: screen, overlay;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 1500px;
+        height: 90px;
+    }
+    
+    #div.contact-us {
+        height: 90px;
+    }
+    
+    #lbl-footer {
+        color: blanchedalmond;
+        padding-left: 800px;
+    }
+    
+    .div-logo {
+        padding-left: 10px;
+    }
+    
+    @media screen and (max-width:800px) {
+        .slideshow-container {
+            float: none;
+            width: 70%;
+        }
+        #mySlides-face {
+            float: none;
+            width: 101%;
+        }
+        h2 {
+            font-size: 10px;
+            text-align: center;
+        }
+        .text {
+            font-size: 10px;
+            text-align: center;
+        }
+        .sct-comentarios {
+            width: 80%;
+            margin-bottom: 10px;
+            padding-left: 30px;
+        }
+        .caja {
+            width: 65%;
+        }
+        .imagen {
+            width: 80%;
+        }
+        .sct-comentariosR {
+            width: 71%;
+            text-align: center;
+        }
+        #btn-Registrase {
+            padding: 5px;
+            background-color: rgb(249, 253, 249);
+            text-align: center;
+            padding-top: 9px;
+            margin-left: 2px;
+            color: rgb(31, 105, 145);
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        .sct-calificaciones {
+            width: 100%;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        .comentario {
+            width: 45%;
+        }
+        .contacto {
+            width: 60%;
+        }
+        #lbl-footer {
+            padding-left: 150px;
+            font-size: 10px;
+        }
+        #body-principal {
+            width: 100%;
+        }
+        #main-principal {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width:500px) {
+        .slideshow-container {
+            float: none;
+            width: 100%;
+        }
+        #mySlides-face {
+            float: none;
+            width: 100%;
+        }
+        h2 {
+            font-size: 10px;
+            text-align: center;
+            width: 350px;
+            padding-left: 90px;
+        }
+        .text {
+            font-size: 10px;
+            text-align: center;
+        }
+        .sct-comentarios {
+            width: 100%;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        .caja {
+            width: 40%;
+        }
+        .imagen {
+            width: 70%;
+        }
+        .sct-comentariosR {
+            width: 100%;
+        }
+        .sct-calificaciones {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .comentario {
+            width: 70%;
+        }
+        .contacto {
+            text-align: center;
+            width: 40%;
+        }
+        .contenedor.footer-content {
+            width: 40%;
+        }
+        #body-principal {
+            width: 100%;
+        }
+        #main-principal {
+            width: 100%;
+        }
+    }

@@ -42,3 +42,31 @@ const obtener_login_usuario = async() => { // esta es la funcion que se usa en e
     });
     return datos_login;
 };
+
+
+const obtenerRecuperar = async(nombre, correo, contrasena, ) => {
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-recuperar',
+        responseType: 'json',
+        data: {
+            nombre: nombre,
+            correo: correo,
+            contrasena: contrasena
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Su mensaje ha sido enviado.',
+            'text': response.msj
+        }).then(() => {
+            limpiar();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado.',
+        }).then(() => {});
+    });
+};

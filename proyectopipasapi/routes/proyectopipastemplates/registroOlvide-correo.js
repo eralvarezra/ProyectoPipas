@@ -2,7 +2,7 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-this.enviar_email = (pnombre_completo, pcorreo) => {
+this.enviar_email = (pnombre, pcorreo, pcontrasena) => {
     //transporter es el encargado de configurar el servicio y establecer la comunicación con el servidor de correos usando el protocolo SMTP
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -16,20 +16,17 @@ this.enviar_email = (pnombre_completo, pcorreo) => {
     let email_options = {
         from: 'pet22.lover22@gmail.com',
         to: pcorreo,
-        subject: `Bienvenido a PetLover ${pnombre_completo}`,
+        subject: `Bienvenido a PetLover ${pnombre}`,
         html: `
         <table cellpadding="0" cellspacing="0" width="600px" background-color="rgb(255,255,255)" ; bgcolor="#cc494f" ;>
             <tr height=" 70px ">
                 <td width="600px ">
                     <h1 style="color:#fff; text-align:center ">Olvido su contraseña?</h1>
                     <p style="color: #fff; text-align:center ">
-                    <span style="color:#fff;font-weight: bold; ">${pnombre_completo}</span> esperamos le pueda sacar provecho a la aplicación.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center">
-                <p style="color:#fff;">Ingrese <a href="http://127.0.0.1:5502/ProyectoPipas/proyectopipashtml/cambiarContrasenna.html?correo=${pcorreo}">aquí</a> para cambiar su contraseña</p>
+                    <span style="color:#fff;font-weight: bold; ">${pnombre}</span> esperamos le pueda sacar provecho a la aplicación.
+                    <span style="color:#fff;font-weight: bold; ">Su contraseña es: ${pcontrasena}
+               //Pasar por parametro la contraseña, propiedad de la contraseña 
+                    </p>
             </td>
         </tr>
     </table>`

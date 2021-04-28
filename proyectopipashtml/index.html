@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="../proyectoPipasCss/index.css">
     <script src="https://kit.fontawesome.com/195d2b987b.js" crossorigin="anonymous"></script>
 
-    <body>
-        <main>
-            <!-- <section class="sct-contenedor-principal">
-        </section> -->
+    <body id="body-principal">
+        <main id="main-principal">
             <section class="slideshow-container">
-                <!-- <div class="slideshow-container"> -->
                 <div class="mySlides fade" id="mySlides-face">
                     <img src='../proyectoPipasImgs/reporte3.jpg' id="mySlides-face" alt="hospedaje" />
                     <div class="text">Bienvenido a Pet Lover</div>
@@ -77,9 +74,9 @@
                 <h2>Puedes registrarte y conocer más acerca de nuestros servicios</h2>
                 <h2>Su mascota se lo agradecerá</h2>
                 <br> <br>
-                <div>
+                <div id="botonRegistrarse">
                     <a href="../proyectopipashtml/inicio-sesion.html">
-                        <button type="button" id="btn-Registrase" class="btn">Registrese aquí</button>
+                        <button type="button" id="btn-Registrase" class="btn">Iniciar sesión</button>
                     </a>
                 </div>
                 <br> <br>
@@ -131,17 +128,18 @@
             </section>
 
         </main>
-        <footer id="contacto">
-
-            <div class="div-logo">
-                <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
-            </div>
-            <div>
-                <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
-            </div>
-
-        </footer>
     </body>
+    <footer id="contacto">
+        <div class="div-logo">
+            <img id="logoFooter" src="../proyectopipasimgs/PEPPY DOGGO.png">
+            <label id="lbl-footer">ABBA DERECHOS RESERVADOS 2020</label>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10 "></script>
     <script src="../proyectoPipasJs/index.js "></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/login-servicio.js"></script>
 
     </html>
