@@ -48,4 +48,62 @@ router.get('/datos-login-usuario', (req, res) => {
     });
 });
 
+/// buscar por proveedor 
+router.get('/buscar-por-correo-usuario', (req, res) => {
+    let correo = req.query.correo;
+    Usuario.findOne({ correo: correo }, (err, usuario_db) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar los usuarios.",
+                err
+            });
+        } else {
+            res.json({ usuario_db })
+                /// buscar usuario
+        }
+    })
+});
+
+router.get('/buscar-por-correo-proveedor', (req, res) => {
+    let correo = req.query.correo;
+    Proveedor.findOne({ correo: correo }, (err, proveedor_db) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar los proveedor.",
+                err
+            });
+        } else {
+            res.json({ proveedor_db })
+                /// buscar proveedor 
+        }
+    })
+});
+
+
+
+
+// router.put('/modificar-contrasena', (req, res) => {
+//     Usuario.updateOne({
+//         _id: req.body._id
+//     }, {
+//         $set: {
+//             contrasena: req.body.contrasena,
+//             categoria: '2'
+//         }
+//     }, (err, info) => {
+//         if (err) {
+//             res.json({
+//                 msj: "No se pudo modificar la contraseña del usuario.",
+//                 err
+//             });
+//         } else {
+//             res.json({
+//                 msj: "La contraseña fue modificada exitosamente.",
+//                 info
+//             })
+//         }
+//     });
+// });
+
+
 module.exports = router;

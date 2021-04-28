@@ -238,14 +238,20 @@ btnFormRegistro.addEventListener('click', () => {
     }
 });
 
+const validar_existe_correo = () => {
+    console.log(`El nombre es ${correoElectronicoUsuario.value}`);
+}
+
 btnPassReset.addEventListener('click', () => {
     popupPassReset.style.display = "block";
 });
 
 btnPassResetEnviar.addEventListener('click', () => {
-    var correo = correoPassReset;
+    var correoElectronico = correoPassReset;
     sendEmail();
 });
+//Consultar el correo, linea 250 
+
 
 btnVolverPassReset.addEventListener('click', () => {
     popupPassReset.style.display = "none";
