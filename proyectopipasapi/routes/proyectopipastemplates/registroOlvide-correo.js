@@ -24,7 +24,7 @@ this.enviar_email = (pnombre, pcorreo, pcontrasena) => {
                     <h1 style="color:#fff; text-align:center ">Olvido su contraseña?</h1>
                     <p style="color: #fff; text-align:center ">
                     <span style="color:#fff;font-weight: bold; ">${pnombre}</span> esperamos le pueda sacar provecho a la aplicación.
-                    <span style="color:#fff;font-weight: bold; ">Su contraseña es ${pcontrasena}
+                    <span style="color:#fff;font-weight: bold; ">Su contraseña es: ${pcontrasena}
                //Pasar por parametro la contraseña, propiedad de la contraseña 
                     </p>
             </td>

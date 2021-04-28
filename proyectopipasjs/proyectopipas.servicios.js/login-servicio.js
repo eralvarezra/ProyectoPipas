@@ -44,67 +44,29 @@ const obtener_login_usuario = async() => { // esta es la funcion que se usa en e
 };
 
 
-const buscar_usuario_correo = async(correo) => {
-    let usuario;
+const obtenerRecuperar = async(nombre, correo, contrasena, ) => {
     await axios({
-        method: 'get',
-        url: 'http://localhost:3000/api/buscar-por-correo-usuario',
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-recuperar',
         responseType: 'json',
-        params: {
-            correo: correo
+        data: {
+            nombre: nombre,
+            correo: correo,
+            contrasena: contrasena
         }
     }).then((response) => {
-        usuario = response.data.usuario_db;
-    }).catch((response) => {
-        console.log(response.data.msj + " " + response.data.err);
-    });
-    return usuario;
-}
-
-
-
-
-const actualizar_contrasena = async(correo, contrasena) => {
-    //busca el usuario: ven este caso no tenemos el ID, vamos a buscarlo. como el username es unico podemos buscarlo usando este parametro
-    let usuario_encontrado = false;
-    console.log(`correo: ${correo}, contrasena: ${contrasena}.`);
-    let usuario = await buscar_usuario_correo(correo);
-    console.log('usuario', usuario);
-    console.log('correo', correo)
-    if (usuario != undefined) {
-        if (usuario._id != undefined && usuario._id != '') {
-            usuario_encontrado = true;
-        }
-    }
-    if (usuario_encontrado) {
-        await axios({
-            method: 'put',
-            url: 'http://localhost:3000/api/modificar-contrasena',
-            responseType: 'json',
-            data: {
-                _id: usuario._id,
-                contrasena: contrasena
-            }
-        }).then((response) => {
-            Swal.fire({
-                'icon': 'success',
-                'title': 'Su contraseña ha sido modificada.',
-                'text': response.msj
-            }).then(() => {
-                window.location.replace('../proyectopipashtml/inicio-sesion.html');
-            });
-        }).catch((response) => {
-            Swal.fire({
-                'icon': 'error',
-                'text': response.msj,
-                'title': 'Ocurrió un error inesperado.',
-            }).then(() => {});
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Su mensaje ha sido enviado.',
+            'text': response.msj
+        }).then(() => {
+            limpiar();
         });
-    } else {
+    }).catch((response) => {
         Swal.fire({
             'icon': 'error',
-            'text': "No encontrado",
-            'title': 'No se encontró el usuario.',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado.',
         }).then(() => {});
-    }
-}
+    });
+};

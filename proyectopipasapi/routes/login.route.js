@@ -7,6 +7,8 @@ const Login = require('../models/login.model')
 const RegistroProveedor = require('../models/registroProveedor.model')
 const Usuario = require('../models/registroUsuario.model')
     // metodos para extraer
+const recuperar = require('../models/recuperar.model')
+const mailer = require('../routes/proyectopipastemplates/registroOlvide-correo');
 
 // req = request res= response 
 router.get('/datos-login', (req, res) => {
@@ -49,61 +51,32 @@ router.get('/datos-login-usuario', (req, res) => {
 });
 
 /// buscar por proveedor 
-router.get('/buscar-por-correo-usuario', (req, res) => {
-    let correo = req.query.correo;
-    Usuario.findOne({ correo: correo }, (err, usuario_db) => {
+
+
+router.post('/registrar-recuperar', (req, res) => {
+    let nuevo_recuperar = new recuperar({
+        nombre: req.body.nombre,
+        correo: req.body.correo,
+        contrasena: req.body.contrasena,
+        //por aca se puede mandar mas data por cookie, o por let
+    });
+
+    nuevo_recuperar.save((err, recuperar_db) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los usuarios.",
+                msj: "No se pudo registrar correctamente.",
                 err
             });
-        } else {
-            res.json({ usuario_db })
-                /// buscar usuario
-        }
-    })
-});
 
-router.get('/buscar-por-correo-proveedor', (req, res) => {
-    let correo = req.query.correo;
-    Proveedor.findOne({ correo: correo }, (err, proveedor_db) => {
-        if (err) {
+        } else {
             res.json({
-                msj: "No se pudieron mostrar los proveedor.",
-                err
+                msj: "Su comentario se guardo exitosamente.",
+                recuperar_db
             });
-        } else {
-            res.json({ proveedor_db })
-                /// buscar proveedor 
+            mailer.enviar_email(recuperar_db.nombre, recuperar_db.correo, recuperar_db.contrasena)
         }
-    })
+    });
+
 });
-
-
-
-
-// router.put('/modificar-contrasena', (req, res) => {
-//     Usuario.updateOne({
-//         _id: req.body._id
-//     }, {
-//         $set: {
-//             contrasena: req.body.contrasena,
-//             categoria: '2'
-//         }
-//     }, (err, info) => {
-//         if (err) {
-//             res.json({
-//                 msj: "No se pudo modificar la contraseña del usuario.",
-//                 err
-//             });
-//         } else {
-//             res.json({
-//                 msj: "La contraseña fue modificada exitosamente.",
-//                 info
-//             })
-//         }
-//     });
-// });
-
 
 module.exports = router;
