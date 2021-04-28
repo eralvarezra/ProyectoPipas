@@ -43,12 +43,6 @@ const obtenerDatos = () => {
     console.log('correo proveedor: ', correoProveedorServicio);
     registrar_factura(nombredelaEmpresa, nombreServicioProveedor, descripciondelservicio, preciodelservicio, correodelUsuario, correoProveedorServicio, estado, aprobar, calificar);
 
-    Swal.fire({
-        'icon': 'success',
-        'title': 'Su servicio fue solicitado con éxito.',
-        'text': 'El proveedor se comunicará contigo pronto.'
-    });
-
 }
 
 function readCookie1(pCookie) {
