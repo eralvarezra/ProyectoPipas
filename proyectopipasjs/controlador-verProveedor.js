@@ -25,25 +25,7 @@ let preciodelservicio = '';
 let estado = "No Completado";
 let aprobar = "Pendiente";
 let calificar = "No calificado"
-const obtenerDatos = () => {
-    let numerodelatarjetaUsuario = numerodelatarjeta.value;
-    let fechavencimientotarjetaUsuario = fechavencimientotarjeta.value;
-    let codigoUsuario = codigodeSeguridad.value;
 
-    console.log('el numero de la tarjeta es: ', numerodelatarjetaUsuario);
-    console.log('la fecha de vencimiento es: ', fechavencimientotarjetaUsuario);
-    console.log('El codigo de seguridad es: ', codigoUsuario);
-
-
-    console.log('El nombre de la empresa: ', nombredelaEmpresa);
-    console.log('El nombre del servicio: ', nombreServicioProveedor);
-    console.log('descripcion:', descripciondelservicio);
-    console.log('precio: ', preciodelservicio);
-    console.log('correo usuario: ', correodelUsuario);
-    console.log('correo proveedor: ', correoProveedorServicio);
-    registrar_factura(nombredelaEmpresa, nombreServicioProveedor, descripciondelservicio, preciodelservicio, correodelUsuario, correoProveedorServicio, estado, aprobar, calificar);
-
-}
 
 function readCookie1(pCookie) {
     const nameString = pCookie + "="
@@ -84,7 +66,28 @@ const mostrar_pagoUsuario = async() => {
         }
     });
 };
+const obtenerCorreoProveedor = async(pucorreo) => {
+    let lista_proveedor = await listar_proveedor();
+    let correoProveedorEncontrar = "";
+    lista_proveedor.forEach((proveedor) => {
 
+        if (proveedor.correo == pucorreo) {
+            correoProveedorEncontrar = proveedor.correo;
+        }
+    });
+    return correoProveedorEncontrar;
+}
+const obtenerCorreoUsuario = async(pucorreo) => {
+    let lista_usuario = await obtener_login_usuario();
+    let correoUsuarioEncontrar = "";
+    lista_usuario.forEach((usuario) => {
+
+        if (usuario.correo == pucorreo) {
+            correoUsuarioEncontrar = usuario.correo;
+        }
+    });
+    return correoUsuarioEncontrar;
+}
 const nombredelServicio = () => {
     let nombreService = readCookie1('nombreServicio');
     nombreService = nombreService.replace("=", "");
@@ -141,6 +144,28 @@ const validar = () => {
             'text': 'Por favor revise los campos resaltados.'
         });
     }
+}
+
+const obtenerDatos = async() => {
+
+    let correodelproveedorcookie = readCookie('correoProveedor');
+    correodelproveedorcookie = correodelproveedorcookie.replace("=", "");
+
+    let correodelProveedorLista = await obtenerCorreoProveedor(correodelproveedorcookie)
+
+    let correodelusuariocookie = readCookie('correo');
+    correodelusuariocookie = correodelusuariocookie.replace("=", "");
+    let correodelUsuarioLista = await obtenerCorreoUsuario(correodelusuariocookie)
+
+    console.log('correo proveedor: ', correoProveedorServicio);
+    registrar_factura(nombredelaEmpresa, nombreServicioProveedor, descripciondelservicio, preciodelservicio, correodelUsuarioLista, correodelProveedorLista, estado, aprobar, calificar);
+
+    Swal.fire({
+        'icon': 'success',
+        'title': 'Su servicio fue solicitado con éxito.',
+        'text': 'El proveedor se comunicará contigo pronto.'
+    });
+
 }
 botonEnviar.addEventListener('click', validar);
 mostrar_pagoUsuario();

@@ -90,7 +90,7 @@ const calificar_servicio = async(_id, estado_actual) => {
         }).then(() => {});
     });
 }
-const aprobar_estado = async(_id, es_activar) => {
+const aprobar_estado1 = async(_id, es_activar) => {
     let url_dinamico;
     if (es_activar) {
         url_dinamico = 'http://localhost:3000/api/aceptar-servicio';

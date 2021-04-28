@@ -32,7 +32,7 @@ router.post('/registrar-factura', (req, res) => {
                 factura_db
 
             });
-            mailer.enviar_mail(`${factura_db.correoProveedor}`, factura_db.correoUsuario);
+            mailer.enviar_mail(factura_db.correoProveedor, factura_db.correoUsuario);
         }
     });
 });

@@ -20,7 +20,7 @@ const mostrar_modal_aprobar_estado = async(factura) => {
             showCancelButton: true
         });
         if (accept) {
-            aprobar_estado(factura._id, true);
+            aprobar_estado1(factura._id, true);
         }
     }
 }
