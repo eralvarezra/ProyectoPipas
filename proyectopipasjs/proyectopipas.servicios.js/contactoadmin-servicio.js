@@ -1,6 +1,6 @@
 'use strict';
 
-const obtenerDatos = async(nombreUsuario, telefonoUsuario, correoUsuario, comentarioUsuario) => {
+const obtenerFormulario = async(nombreUsuario, telefonoUsuario, correoUsuario, comentarioUsuario) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-contactoadmin',

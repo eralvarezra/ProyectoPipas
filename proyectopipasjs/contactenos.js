@@ -7,20 +7,62 @@ const comentarioUsuario = document.querySelector('#comentarioUsuario');
 const btn = document.querySelector('.btn');
 //const botonlimpiar = document.querySelector('#botonlimpiar');//
 
+// agregar cookie
+
+function readCookie(pCookie) {
+    const nameString = pCookie + "="
+
+    const value = document.cookie.split(";").filter(item => {
+        return item.includes(nameString)
+    })
+
+    if (value.length) {
+        return value[0].substring(nameString.length, value[0].length)
+    } else {
+        return ""
+    }
+}
+
+const obtenerNombre = async(pcorreo) => {
+    let lista_proveedor = await listar_proveedor();
+    let nombreProveedor = "";
+    let lista_usuario = await obtener_login_usuario();
+
+    lista_proveedor.forEach((proveedor) => {
+
+        if (proveedor.correo == pcorreo) {
+            nombreProveedor = proveedor.pAcargo;
+
+        }
+    });
+
+    lista_usuario.forEach((usuario) => {
+
+        if (usuario.correo == pcorreo) {
+            nombreProveedor = usuario.nombre;
+
+        }
+    });
+    return nombreProveedor;
+}
+
 const obtenerDatos = () => {
+    let correo = readCookie('correo');
+    correo = correo.replace("=", "");
+    console.log(correo);
 
     let nombre = nombreUsuario.value;
     let telefono = telefonoUsuario.value;
-    let correo = correoUsuario.value;
     let comentario = comentarioUsuario.value;
 
+    let nombreCliente = obtenerNombre(correo);
 
     console.log('El nombre de la persona es: ' + nombre);
     console.log('El telefono de la empresa es: ' + telefono);
     console.log('El correo es: ' + correo);
     console.log('El comentario es: ' + comentario);
 
-
+    obtenerFormulario(nombreCliente, telefono, correo, comentario);
 
     Swal.fire({
         'icon': 'success',
