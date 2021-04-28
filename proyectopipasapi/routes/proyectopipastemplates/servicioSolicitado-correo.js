@@ -117,7 +117,7 @@ this.enviar_mail = (correoProveedor, correoUsuario) => {
                                                         <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
 
                                                             <div style="color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%;">Porfavor comuniquese con el usuario con el correo: </p>
+                                                                <p style="font-size: 14px; line-height: 140%;">Porfavor comuniquese con el usuario con el correo: </p>${correoUsuario}
                                                             </div>
 
                                                         </td>
