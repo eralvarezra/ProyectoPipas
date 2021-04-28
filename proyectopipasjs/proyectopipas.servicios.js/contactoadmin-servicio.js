@@ -15,7 +15,7 @@ const obtenerFormulario = async(nombreUsuario, telefonoUsuario, correoUsuario, c
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su usuario ha sido registrado.',
+            'title': 'Su mensaje ha sido enviado.',
             'text': response.msj
         }).then(() => {
             limpiar();
