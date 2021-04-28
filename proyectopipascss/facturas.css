@@ -1,50 +1,23 @@
-.div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
-    display: inline-block;
-    margin-left: 532px;
-    height: 700px;
-    width: 300px;
-    background-color: aliceblue;
-}
-
 main {
     background-position: center;
     height: 812px;
     object-fit: cover;
 }
 
-.form-desc,
-.Slct-Form {
-    width: 178px;
-    height: 24px;
-    display: inline-block;
-    margin-bottom: 15px;
+#tbl-resultados {
+    margin-left: 40px;
+    margin-top: 200px;
 }
 
-table {
-    border: rgb(102, 102, 102) 4px solid;
-}
-
-#logoEmpresa {
-    width: 300px;
+#tbl-resultados>thead>tr>th {
+    padding-right: 100px;
     text-align: center;
-    padding-top: 300px;
 }
 
-.div-Form {
-    border: 3px solid rgb(102, 102, 102);
-    justify-content: center;
-    margin-right: 386px;
-    width: 690px;
-    height: 700px;
-    background-color: aliceblue;
-}
-
-#sct-form {
+#tbl-resultados>thead>tr {
+    width: 10%;
+    text-align: center;
     padding-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 77px;
 }
 
 .div-Form>div>label {
@@ -55,7 +28,7 @@ table {
 }
 
 .btn-form {
-    margin-top: 40px;
+    margin-top: 400px;
     height: 30px;
     margin-left: 420px;
 }
@@ -75,6 +48,7 @@ table {
     text-align: left;
     border-collapse: collapse;
     width: 100%;
+    padding-top: 150px;
 }
 
 th,

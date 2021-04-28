@@ -2,8 +2,8 @@
 const boton_foto = document.querySelector("#btn-foto");
 const imagen = document.querySelector("#img-foto");
 var widget_cloud = cloudinary.createUploadWidget({
-    cloudName: 'nennys',
-    uploadPreset: 'preset_nenys'
+    cloudName: 'dexfskukp',
+    uploadPreset: '918557178912129'
 }, (error, result) => {
     if (!error && result && result.event === "success") {
         console.log('Imagen subida exitosamente', result.info);
