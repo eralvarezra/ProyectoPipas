@@ -11,8 +11,13 @@
 
 <body>
     <header id="header-principal">
-        <nav>
-
+        <nav id="nav-principal">
+            <a href="../proyectopipashtml/sobreNosotros.html">Sobre Nosotros</a>
+            <a href="../proyectopipashtml/perfil.html">Perfil</a>
+            <a href="../proyectopipashtml/busqueda.html">Búsqueda</a>
+            <a href="../proyectopipashtml/contacto.html">Contacto</a>
+            <a href="../proyectopipashtml/configuracion.html">Configuración</a>
+            <a href="../proyectopipashtml/reportes.html">Reportes</a>
             <a href="inicio-sesion.html" id="inicioSesion">Inicio de sesión</a>
             <img class="inicioSesionLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
         </nav>
@@ -51,8 +56,11 @@
 
                     </div>
                     <div>
-                        <label>Foto</label>
-                        <input type="file" name="foto" id="btnFoto" placeholder="imagen" />
+                        <button type="button" id="btn-foto" class="btn">Subir foto</button>
+
+                    </div>
+                    <div id="contenedor-imagen">
+                        <img src="" id="img-foto">
                     </div>
                     <div>
                         <input type="button" id="btnEnviar" class="btn" value="Agregar"></button>
@@ -76,6 +84,7 @@
     <!--acordarse si van a usar una librería  externa, como el sweet alert. importar el script.-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="../proyectopipasjs/proyectopipas.servicios.js/mascotacaracteristica-servicio.js"></script>
     <script src="../proyectopipasjs/proyectopipas.servicios.js/mascotapadecimient-servicio.js"></script>
     <script src="../proyectopipasjs/proyectopipas.servicios.js/mascotavacuna-servicio.js"></script>
@@ -84,6 +93,7 @@
     <script src="../proyectopipasjs/proyectopipas.servicios.js/perfilMascotas-servicio.js"></script>
     <script src="../proyectopipasjs/registroMascota.js"></script>
     <script src="../proyectopipasjs/contolador_nav.js"></script>
+    <script src="../proyectopipasjs/proyectopipas.servicios.js/servicio-imagen.js"></script>
 </body>
 
 </html>

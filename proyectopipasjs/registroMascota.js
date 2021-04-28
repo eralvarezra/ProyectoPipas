@@ -2,6 +2,7 @@
 const nombreMascotaU = document.querySelector('#nombreMascota');
 const tipoMascotaU = document.querySelector('#tipoMascota');
 const tipoRazaM = document.querySelector('#tipoRaza');
+const fotoMascota = document.querySelector("#img-foto");
 const botonEnviar = document.querySelector("#btnEnviar");
 const btnVolver = document.getElementById("btnVolver");
 
@@ -42,21 +43,25 @@ const obtenerDatos = () => {
     let nombreMascota;
     let tipoMascota;
     let raza;
+    let foto;
 
     nombreMascota = nombreMascotaU.value;
     tipoMascota = tipoMascotaU.value;
     raza = tipoRazaM.value;
+    foto = fotoMascota.src;
 
-    let fotoMascota = "mimascota.com";
+
     let correo = readCookie("correo");
     correo = correo.replace("=", "");
-    registrar_mascota(nombreMascota, tipoMascota, raza, fotoMascota, correo);
+
+    registrar_mascota(nombreMascota, tipoMascota, raza, foto, correo);
 }
 
 const limpiar = () => {
     nombreMascotaU.value = "";
     tipoMascotaU.value = "";
     tipoRazaM.value = "";
+
 }
 
 

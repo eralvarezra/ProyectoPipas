@@ -1,9 +1,10 @@
 //Botón para subir la foto
 const boton_foto = document.querySelector("#btn-foto");
 const imagen = document.querySelector("#img-foto");
-var widget_cloud = cloudinary.createUploadWidget({
+let widget_cloud = cloudinary.createUploadWidget({
     cloudName: 'dexfskukp',
-    uploadPreset: '918557178912129'
+    uploadPreset: 'preset_steph'
+
 }, (error, result) => {
     if (!error && result && result.event === "success") {
         console.log('Imagen subida exitosamente', result.info);
