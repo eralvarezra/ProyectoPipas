@@ -33,7 +33,7 @@ const obtenerDatos = () => {
     let correo = correoElectronicoUsuario.value;
     let numTarjeta = numeroTarjetaUsuario.value;
     let vencimiento = fechaVencimientoUsuario.value;
-    let foto = "www.foto.com";
+    let foto = fotoUsuario.src;
     let activo = "Activo";
 
     registrar_usuario(nombre, apellidos, tipoIdentificacion, identificacion, fechaNacimiento, provincia, canton, distrito, genero, cantidadMascota, telefono, correo, numTarjeta, vencimiento, foto, activo);
