@@ -43,7 +43,8 @@ const obtenerDatos = () => {
     let nombreMascota;
     let tipoMascota;
     let raza;
-    let fotoMascota = fotoMascota.src;
+    let fotoMascota;
+    fotoMascota = fotoMascota.src;
 
     nombreMascota = nombreMascotaU.value;
     tipoMascota = tipoMascotaU.value;
