@@ -176,15 +176,15 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
 
         celda_eliminar.appendChild(boton_eliminar);
         celda_eliminar.addEventListener('click', async() => {
-            if (mascota) {
+            if (mascotacaracteristica) {
                 const { value: accept } = await Swal.fire({
                     icon: 'warning',
-                    text: 'Está seguro que desea eliminar la mascota',
+                    text: 'Está seguro que desea eliminar la característica de la mascota',
                     confirmButtonText: `Si`,
                     showCancelButton: true
                 });
                 if (accept) {
-                    eliminar_mascota(mascota._id);
+                    eliminar_mascotaCaracteristica(mascotacaracteristica._id);
                 }
             }
         });
@@ -209,15 +209,15 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
 
         celda_eliminar.appendChild(boton_eliminar);
         celda_eliminar.addEventListener('click', async() => {
-            if (mascota) {
+            if (padecimiento) {
                 const { value: accept } = await Swal.fire({
                     icon: 'warning',
-                    text: 'Está seguro que desea eliminar la mascota',
+                    text: 'Está seguro que desea eliminar el padecimiento',
                     confirmButtonText: `Si`,
                     showCancelButton: true
                 });
                 if (accept) {
-                    eliminar_mascota(mascota._id);
+                    eliminar_mascotapadecimiento(padecimiento._id);
                 }
             }
         });
@@ -241,15 +241,15 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
 
         celda_eliminar.appendChild(boton_eliminar);
         celda_eliminar.addEventListener('click', async() => {
-            if (mascota) {
+            if (mascotavacuna) {
                 const { value: accept } = await Swal.fire({
                     icon: 'warning',
-                    text: 'Está seguro que desea eliminar la mascota',
+                    text: 'Está seguro que desea eliminar la vacuna',
                     confirmButtonText: `Si`,
                     showCancelButton: true
                 });
                 if (accept) {
-                    eliminar_mascota(mascota._id);
+                    eliminar_Mascotavacuna(mascotavacuna._id);
                 }
             }
         });

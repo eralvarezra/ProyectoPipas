@@ -7,20 +7,62 @@ const comentarioUsuario = document.querySelector('#comentarioUsuario');
 const btn = document.querySelector('.btn');
 //const botonlimpiar = document.querySelector('#botonlimpiar');//
 
-const obtenerDatos = () => {
+// agregar cookie
 
-    let nombre = nombreUsuario.value;
+function readCookie(pCookie) {
+    const nameString = pCookie + "="
+
+    const value = document.cookie.split(";").filter(item => {
+        return item.includes(nameString)
+    })
+
+    if (value.length) {
+        return value[0].substring(nameString.length, value[0].length)
+    } else {
+        return ""
+    }
+}
+
+const obtenerNombre = async(pcorreo) => {
+    let lista_proveedor = await listar_proveedor();
+    let nombreProveedor = "";
+    let lista_usuario = await obtener_login_usuario();
+
+    lista_proveedor.forEach((proveedor) => {
+
+        if (proveedor.correo == pcorreo) {
+            nombreProveedor = proveedor.pAcargo;
+
+        }
+    });
+
+    lista_usuario.forEach((usuario) => {
+
+        if (usuario.correo == pcorreo) {
+            nombreProveedor = usuario.nombre;
+
+        }
+    });
+    return nombreProveedor;
+}
+
+const obtenerDatos = async() => {
+    let correo = readCookie('correo');
+    correo = correo.replace("=", "");
+    console.log(correo);
+
     let telefono = telefonoUsuario.value;
-    let correo = correoUsuario.value;
     let comentario = comentarioUsuario.value;
 
+    let nombreCliente = await obtenerNombre(correo);
 
-    console.log('El nombre de la persona es: ' + nombre);
+
     console.log('El telefono de la empresa es: ' + telefono);
     console.log('El correo es: ' + correo);
     console.log('El comentario es: ' + comentario);
+    console.log(nombreCliente);
 
-
+    obtenerFormulario(nombreCliente, telefono, correo, comentario);
 
     Swal.fire({
         'icon': 'success',
@@ -35,9 +77,7 @@ const obtenerDatos = () => {
 const limpiar = () => {
     //.value permite tanto obtener el valor como asignarlo
 
-    nombreUsuario.value = "";
     telefonoUsuario.value = "";
-    correoUsuario.value = "";
     comentarioUsuario.value = "";
 }
 
@@ -59,13 +99,7 @@ const validar = () => {
     } else {
         telefonoUsuario.classList.remove('error-input');
     }
-    let regExp_formatoEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-    if (!regExp_formatoEmail.test(correoUsuario.value)) {
-        error = true;
-        correoUsuario.classList.add('error-input');
-    } else {
-        correoUsuario.classList.remove('error-input');
-    }
+
     if (error == false) {
         obtenerDatos();
     } else {

@@ -88,5 +88,3 @@ const mostrar_factura = async() => {
 };
 
 mostrar_factura();
-
-input_filtro.addEventListener('keyup', mostrar_factura);

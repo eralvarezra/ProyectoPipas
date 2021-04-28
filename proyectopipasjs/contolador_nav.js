@@ -23,16 +23,20 @@ switch (tipoUsuario) {
     case 'P':
         enlaces[2].classList.add('ocultar');
         enlaces[4].classList.add('ocultar');
+        enlaces[6].classList.add('ocultar');
         break;
     case 'U':
         enlaces[4].classList.add('ocultar');
         enlaces[5].classList.add('ocultar');
+        enlaces[6].classList.add('ocultar');
         break;
     case 'A':
         enlaces[0].classList.add('ocultar');
         enlaces[1].classList.add('ocultar');
         enlaces[2].classList.add('ocultar');
         enlaces[3].classList.add('ocultar');
+        enlaces[6].classList.add('ocultar');
+
         break;
 }
 

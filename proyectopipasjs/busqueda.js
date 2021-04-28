@@ -446,7 +446,7 @@ const documentar_valores = async(pServicio, pProveedor) => {
             document.cookie = "empresa=" + proveedor.empresa;
         }
     })
-    let campos = ["nombreServicio=", "correoempresa=", "descripcion=", "precio="];
+    let campos = ["nombreServicio=", "correoProveedor=", "descripcion=", "precio="];
     let servicio = [pServicio.nombreServicio, pServicio.correo, pServicio.detalleServicio, pServicio.precio];
     for (let i = 0; i < campos.length; i++) {
         document.cookie = campos[i] + servicio[i];

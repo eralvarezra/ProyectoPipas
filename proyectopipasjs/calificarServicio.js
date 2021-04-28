@@ -14,7 +14,7 @@ const nombreProveedor = document.getElementById('nombreProveedor');
 
 let nombredeempresa = '';
 
-function readCookie(pCookie) {
+function readcookie(pCookie) {
     const nameString = pCookie + "="
 
     const value = document.cookie.split(";").filter(item => {
@@ -29,7 +29,7 @@ function readCookie(pCookie) {
 }
 
 const mostrar_proveedor = async() => {
-    let empresa = readCookie("empresa");
+    let empresa = readcookie("empresa");
     empresa = empresa.replace("=", "");
     nombredeempresa = empresa;
     console.log(empresa)
@@ -50,8 +50,9 @@ const obtenerDatos = () => {
     let comentarioFinal = comentario.value;
 
     let valor;
-    let empresa = readCookie("empresa");
+    let empresa = readcookie("empresa");
     empresa = empresa.replace("=", "");
+    console.log(empresa)
 
     if (document.getElementById("rate1").checked) {
         valor = document.getElementById("rate1").value;

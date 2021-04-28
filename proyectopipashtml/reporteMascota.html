@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Usuario</title>
+    <title>Reporte de usuario</title>
     <link rel="stylesheet" href="../proyectopipascss/reset.css">
     <link rel="stylesheet" href="../proyectopipascss/general.css">
     <link rel="stylesheet" href="../proyectopipascss/reporteUsuario.css">
+    <link rel="stylesheet" href="../proyectopipascss/reportes.css">
 </head>
 
 <body>
@@ -33,23 +34,21 @@
                     <label for="txt-filtro">Filtro:</label>
                     <input type="text" id="txt-filtro">
                 </div>
-                <nav>
+                <nav id="links">
                     <a class="menu" href="../proyectopipashtml/reportes.html">Usuario</a>
-                    <br><br>
+                    <br></br>
                     <a class="menu" href="../proyectopipashtml/reporteProveedor.html">Registro proveedor</a>
-                    <br><br>
+                    <br></br>
                     <a class="menu" href="../proyectopipashtml/reporteMascota.html">Registro mascota</a>
-                    <br><br>
+                    <br></br>
                     <a class="menu" href="../proyectopipashtml/reporteCalificacion.html">Registro calificación</a>
-                    <br><br>
-                    <a class="menu" href="../proyectopipashtml/reporteUsuario.html" download="reporteUsuario">Descargar</a>
-                    <br><br>
-                    <input type="button" id="button" name="imprimir" style="color:#E69138; background-color: #ffffff" value="Imprimir" onclick="window.print();">
+                    <br></br>
+                    <input type="button" id="imprimir" name="imprimir" class="btn" value="Imprimir">
                 </nav>
             </div>
             <form>
                 <div class="div-Form">
-                    <h1>REPORTE DE MASCOTA</h1>
+                    <h1>Reporte de mascota</h1>
                     <br>
                     <table id="tbl-resultados">
                         <thead>
@@ -57,9 +56,6 @@
                                 <th>Nombre</th>
                                 <th>Tipo</th>
                                 <th>Raza</th>
-                                <th>Característica especial</th>
-                                <th>Padecimiento</th>
-                                <th>Vacuna</th>
                             </tr>
                         </thead>
                         <tbody id="tabladinamica"></tbody>
@@ -86,5 +82,6 @@
 <script src="../proyectopipasjs/proyectopipas.servicios.js/perfilMascotas-servicio.js"></script>
 <script src="../proyectopipasjs/reporteMascota.js"></script>
 <script src="../proyectopipasjs/contolador_nav.js"></script>
+<script src="../proyectopipasjs/reportefuncionalidad.js"></script>
 
 </html>

@@ -13,6 +13,7 @@ router.post('/registrar-contactoadmin', (req, res) => {
         telefonoUsuario: req.body.telefonoUsuario,
         correoUsuario: req.body.correoUsuario,
         comentarioUsuario: req.body.comentarioUsuario,
+        //por aca se puede mandar mas data por cookie, o por let
     });
 
     nuevo_contactoadmin.save((err, contactoadmin_db) => {
@@ -27,7 +28,7 @@ router.post('/registrar-contactoadmin', (req, res) => {
                 msj: "Su comentario se guardo exitosamente.",
                 contactoadmin_db
             });
-            mailer.enviar_email(`${contactoadmin_db.nombreUsuario}`, contactoadmin_db.correoUsuario, contactoadmin_db.comentarioUsuario)
+            mailer.enviar_email(contactoadmin_db.nombreUsuario, contactoadmin_db.correoUsuario, contactoadmin_db.comentarioUsuario)
         }
     });
 

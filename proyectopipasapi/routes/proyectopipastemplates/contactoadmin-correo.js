@@ -1,7 +1,8 @@
 'use strict';
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-
+//no poner nombre, y esos datos en el formulario / ya se loggeo el usuario
+//cookie se llamda controlador, y pasarla por parametro
 this.enviar_email = (nombreUsuario, correoUsuario, comentarioUsuario) => {
     //transporter es el encargado de configurar el servicio y establecer la comunicación con el servidor de correos usando el protocolo SMTP
     let transporter = nodemailer.createTransport({
@@ -14,9 +15,9 @@ this.enviar_email = (nombreUsuario, correoUsuario, comentarioUsuario) => {
     });
 
     let email_options = {
-        from: 'pet22.lover22@gmail.com',
-        to: 'pet22.lover22@gmail.com',
-        subject: `Has recibido un mensaje de ${nombreUsuario}`,
+        from: 'pet22.lover22@gmail.com', // otro correo de la app
+        to: 'pet22.lover22@gmail.com', // admin
+        subject: `Has recibido un mensaje de ${nombreUsuario}`, //quien lo esta enviando
         html: `
         <table cellpadding="0" cellspacing="0" width="600px" background-color="rgb(255,255,255)" ; bgcolor="#cc494f" ;>
             <tr height=" 70px ">

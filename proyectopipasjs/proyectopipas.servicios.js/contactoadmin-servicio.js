@@ -1,6 +1,6 @@
 'use strict';
 
-const obtenerDatos = async(nombreUsuario, telefonoUsuario, correoUsuario, comentarioUsuario) => {
+const obtenerFormulario = async(nombreUsuario, telefonoUsuario, correoUsuario, comentarioUsuario) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-contactoadmin',
@@ -15,7 +15,7 @@ const obtenerDatos = async(nombreUsuario, telefonoUsuario, correoUsuario, coment
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'Su usuario ha sido registrado.',
+            'title': 'Su mensaje ha sido enviado.',
             'text': response.msj
         }).then(() => {
             limpiar();
