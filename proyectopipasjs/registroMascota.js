@@ -43,17 +43,18 @@ const obtenerDatos = () => {
     let nombreMascota;
     let tipoMascota;
     let raza;
-    let fotoMascota = fotoMascota.src;
+    let foto;
 
     nombreMascota = nombreMascotaU.value;
     tipoMascota = tipoMascotaU.value;
     raza = tipoRazaM.value;
+    foto = fotoMascota.src;
 
 
     let correo = readCookie("correo");
     correo = correo.replace("=", "");
 
-    registrar_mascota(nombreMascota, tipoMascota, raza, fotoMascota, correo);
+    registrar_mascota(nombreMascota, tipoMascota, raza, foto, correo);
 }
 
 const limpiar = () => {
