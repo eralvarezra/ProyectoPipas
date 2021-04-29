@@ -1,9 +1,10 @@
 .div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 150px;
     width: 429px;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 h1 {
@@ -11,7 +12,7 @@ h1 {
 }
 
 .div-Form {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     text-align: center;
     margin-right: 390px;
@@ -19,6 +20,7 @@ h1 {
     height: 575px;
     color: rgb(102, 102, 102);
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 #logoEmpresa {

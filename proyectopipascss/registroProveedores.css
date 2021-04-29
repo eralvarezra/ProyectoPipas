@@ -1,17 +1,19 @@
 .div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 50px;
     width: 429px;
     padding-top: 150px;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 .cuadro-segundo {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     height: 640px;
     background-color: aliceblue;
     width: 1100px;
+    border-radius: 10px;
 }
 
 .div-Form {
@@ -134,6 +136,8 @@ h1 {
     margin-left: 230px;
     height: 30px;
     width: 70px;
+    background-color: #e69138;
+    color: white;
 }
 
 .error-input {

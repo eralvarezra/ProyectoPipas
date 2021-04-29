@@ -1,11 +1,12 @@
 .div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
     display: inline-block;
     margin-left: 532px;
     margin-top: 200px;
     height: 400px;
     width: 429px;
     background-color: aliceblue;
+    border: 3px solid #e69138;
+    border-radius: 10px;
 }
 
 .div-NombreEmpresa>div {
@@ -20,7 +21,7 @@
 }
 
 .div-Form {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     text-align: center;
     margin-right: 490px;
@@ -28,6 +29,7 @@
     width: 400px;
     height: 400px;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 .div-Form>div {
