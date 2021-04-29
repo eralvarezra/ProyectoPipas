@@ -27,36 +27,41 @@
     </header>
     <main>
         <section id="sct-principal">
+            <img class="imagenLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
             <div>
                 <h1 id="nombreEmpresa"></h1>
             </div>
-            <h3>¡Gracias por tu compra!</h3>
-            <br><br>
-            <div id="sct-infoServicio">
-                <div class="info2">
-                    <h2>Nombre del servicio:</h2>
-                    <h2 id="nombreServicio"></h2>
-                    <br></br>
-                    <h2>Descripción:</h2>
-                    <h2 id="descripcionServicio"></h2>
+            <div>
+                <h3>¡Gracias por tu compra!</h3>
+                <br><br>
+                <div id="sct-infoServicio">
+                    <div class="info2">
+                        <h2>Nombre del servicio:</h2>
+                        <label id="nombreServicio"></label>
+                        <br></br>
+                        <h2>Precio:</h2>
+                        <h2 id="precioServicio"></h2>
+                        <h2>Impuesto:</h2>
+                        <h2 id="impuesto"></h2>
+                        <h2>Factura Total:</h2>
+                        <h2 id="facturaTotal"></h2>
+
+                    </div>
+                </div>
+                <div id="sct-formularioPago">
+                    <div class="info2">
+                        <h2>Número de tarjeta:</h2>
+                        <input type="text" id="numTarjeta" required disabled>
+                        <h2 id="nombreServicio"></h2>
+                        <br></br>
+                        <h2>Descripción:</h2>
+                        <label id="descripcionServicio"></label>
+                    </div>
                 </div>
             </div>
-            <div id="sct-formularioPago">
-                <div class="info2">
-                    <h2>Número de tarjeta:</h2>
-                    <input type="text" id="numTarjeta" required disabled>
-                    <h2 id="nombreServicio"></h2>
-                    <h2 id="precioServicio"></h2>
-                    <h2>Precio:</h2>
-                    <h2 id="precioServicio"></h2>
-                    <h2>Impuesto:</h2>
-                    <h2 id="impuesto"></h2>
-                    <h2>Factura Total:</h2>
-                    <h2 id="facturaTotal"></h2>
-                    <img class="imagenLogo" src="../proyectopipasimgs/PEPPY DOGGO (3).png">
         </section>
         <div id="botones">
-            <a href="../proyectopipashtml/verProvedor.html">
+            <a href="../proyectopipashtml/facturas.html">
                 <button type="button" id="btnVolver" class="btn">Volver</button>
             </a>
         </div>

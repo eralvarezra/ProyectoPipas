@@ -98,7 +98,7 @@ const mostrar_mascotas = async() => {
         if (mascota.correo === correo && mascota.nombreMascota === filtro) {
             tablaMascotas.style.display = "block";
             let fila = tabla.insertRow();
-            fila.insertCell().innerHTML = (mascota.fotoMascota);
+
             fila.insertCell().innerHTML = (mascota.nombreMascota);
             fila.insertCell().innerHTML = (mascota.tipoMascota);
             fila.insertCell().innerHTML = (mascota.tipoRaza);
