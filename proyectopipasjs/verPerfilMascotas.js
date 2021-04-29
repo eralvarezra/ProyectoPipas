@@ -164,10 +164,10 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
         tabla4.deleteRow(i);
     }
 
-    lista_mascotacaracteristica.forEach((mascotacaracteristica) => {
+    lista_mascotacaracteristica.forEach((caracteristica) => {
         let fila = tabla2.insertRow();
-        if (mascotacaracteristica.correo === pCorreo && mascotacaracteristica.nombreMascota === pFiltro) {
-            fila.insertCell().innerHTML = (mascotacaracteristica.nombreCaracteristica);
+        if (caracteristica.correo === pCorreo && caracteristica.nombreMascota === pFiltro) {
+            fila.insertCell().innerHTML = (caracteristica.caracteristicaEspecial);
             let celda_eliminar = fila.insertCell();
             let boton_eliminar = document.createElement('button');
             boton_eliminar.type = 'button';
@@ -178,7 +178,7 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
 
             celda_eliminar.appendChild(boton_eliminar);
             celda_eliminar.addEventListener('click', async() => {
-                if (mascotacaracteristica) {
+                if (caracteristica) {
                     const { value: accept } = await Swal.fire({
                         icon: 'warning',
                         text: 'Está seguro que desea eliminar la característica de la mascota',
@@ -186,7 +186,7 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
                         showCancelButton: true
                     });
                     if (accept) {
-                        eliminar_mascotaCaracteristica(mascotacaracteristica._id);
+                        eliminar_mascotaCaracteristica(caracteristica._id);
                     }
                 }
             });

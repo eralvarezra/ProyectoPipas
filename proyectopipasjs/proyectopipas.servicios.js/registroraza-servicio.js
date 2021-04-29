@@ -77,7 +77,7 @@ const eliminar_raza = async(_id) => {
             'icon': 'success',
             'text': response.msj
         }).then(() => {
-            mostrar_razas();
+            mostrar_raza();
         });
     }).catch((response) => {
         Swal.fire({
