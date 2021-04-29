@@ -8,7 +8,7 @@ main {
 }
 
 #cuadro1 {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 500px;
     padding-left: 50px;
@@ -17,10 +17,11 @@ main {
     width: 300px;
     text-align: center;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 #cuadro2 {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 160px;
     padding-left: 50px;
@@ -29,10 +30,11 @@ main {
     width: 300px;
     text-align: center;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 #cuadro3 {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 500px;
     padding-left: 50px;
@@ -41,10 +43,11 @@ main {
     width: 300px;
     text-align: center;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 #cuadro4 {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 160px;
     padding-left: 50px;
@@ -53,6 +56,7 @@ main {
     width: 300px;
     text-align: center;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 .cuadros2 {

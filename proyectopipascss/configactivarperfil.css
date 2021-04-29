@@ -1,10 +1,11 @@
 .div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 250px;
     height: 800px;
     width: 690px;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 body {
@@ -35,12 +36,13 @@ table {
 }
 
 .div-Form {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     justify-content: center;
     margin-right: 555px;
     width: 690px;
     height: 800px;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 #sct-form {

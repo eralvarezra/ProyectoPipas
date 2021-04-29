@@ -34,7 +34,7 @@ main {
 }
 
 #cuadro1 {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 800px;
     margin-bottom: 100px;
@@ -44,6 +44,7 @@ main {
     width: 300px;
     text-align: center;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 h1 {
@@ -61,7 +62,7 @@ h1 {
 }
 
 #cuadro3 {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 800px;
     padding-left: 50px;
@@ -70,4 +71,5 @@ h1 {
     width: 300px;
     text-align: center;
     background-color: aliceblue;
+    border-radius: 10px;
 }

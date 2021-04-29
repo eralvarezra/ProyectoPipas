@@ -39,7 +39,7 @@ const mostrar_facturaServicio = async() => {
             boton_ver.type = 'button';
 
             boton_ver.addEventListener('click', async() => {
-                document.cookie = "id_servicio" + factura._id;
+                document.cookie = "id_servicio=" + factura._id;
                 location.href = "../proyectopipashtml/facturarServicio.html";
             })
             celda_ver.appendChild(boton_ver);

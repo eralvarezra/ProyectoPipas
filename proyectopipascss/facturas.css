@@ -1,12 +1,6 @@
-main {
-    background-position: center;
-    height: 812px;
-    object-fit: cover;
-}
-
 #tbl-resultados {
     margin-left: 40px;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 #tbl-resultados>thead>tr>th {
@@ -20,40 +14,38 @@ main {
     padding-top: 20px;
 }
 
-.div-Form>div>label {
-    width: 150px;
-    display: inline-block;
-    margin-left: 15px;
-    margin-bottom: 15px;
+h2 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px;
+    color: black;
 }
 
-.btn-form {
-    margin-top: 400px;
-    height: 30px;
-    margin-left: 420px;
-}
-
-.btn-form>button {
-    margin-left: 20px;
-    height: 30px;
-}
-
-#main-container {
-    margin: 50px auto;
-    width: 600px;
+@media only screen and (max-width: 1400px) {
+    .div-NombreEmpresa>#inicioSesion {
+        margin-right: 20px;
+    }
 }
 
 table {
+    border: rgb(102, 102, 102) 4px solid;
     background-color: white;
-    text-align: left;
+    text-align: center;
     border-collapse: collapse;
-    width: 100%;
-    padding-top: 150px;
+    width: 70px;
+    margin-top: 40px;
 }
 
-th,
 td {
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+}
+
+th {
+    padding-top: 20px;
+    padding-left: 130px;
+    padding-bottom: 20px;
 }
 
 thead {
@@ -69,14 +61,4 @@ tr:nth-child(even) {
 tr:hover td {
     background-color: #0CC49F;
     color: white;
-}
-
-.error-input {
-    border: 2px solid rgb(228, 20, 20);
-}
-
-@media only screen and (max-width: 1400px) {
-    .div-NombreEmpresa>#inicioSesion {
-        margin-right: 20px;
-    }
 }
