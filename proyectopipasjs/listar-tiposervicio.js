@@ -44,7 +44,7 @@ const mostrar_modal_eliminar = async(servicio) => {
                 showCancelButton: true
             });
             if (accept) {
-                eliminar_servicio(servicio._id);
+                eliminar_tipoServicio(servicio._id);
             }
         }
     }

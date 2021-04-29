@@ -23,6 +23,7 @@ function readCookie(pCookie) {
     }
 }
 
+
 const cargar_servicios = async() => {
     let lista_tipoServicio = await listar_tipoServicio();
     console.log(lista_tipoServicio)
@@ -53,7 +54,15 @@ const cookieCorreo = () => {
     correoCookie = correoCookie.replace("=", "");
     input_correo.value = correoCookie;
 }
-
+const limpiar = () => {
+    //.value permite tanto obtener el valor como asignarlo
+    nombreServicio.value = "";
+    nombreTipo.value = "";
+    input_numprecio.value = "";
+    nombreTipo.value = "";
+    input_detalleServicio.value = "";
+    input_costoServicioXhora.value = "";
+}
 const enviar_informacion = async() => {
     let pNombreServicio = nombreServicio.value;
     let pCorreo = input_correo.value;
@@ -65,6 +74,11 @@ const enviar_informacion = async() => {
     pFechaCreacion = new Date();
     console.log(pNombreServicio, pCorreo, ptipoMascota, pPrecio, pDetalleServicio, pCostoServicioXhora, pFechaCreacion);
     await registrar_servicio(pNombreServicio, pCorreo, ptipoMascota, pPrecio, pDetalleServicio, pCostoServicioXhora, pFechaCreacion);
+
+    then(() => {
+        limpiar();
+        location.href = "../proyectopipashtml/listarServicio.html";
+    });
 }
 
 const validar = () => {
