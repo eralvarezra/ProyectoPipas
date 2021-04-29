@@ -3,7 +3,7 @@
 const btnAbrir = document.querySelector('#btn-Abrir');
 
 const abrir = () => {
-    window.open("../proyectopipasimgs/factura1.pdf")
+    window.open("../facturasServicio.html")
 }
 
 btnAbrir.addEventListener('click', abrir);

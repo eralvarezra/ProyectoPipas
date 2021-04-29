@@ -58,7 +58,7 @@ router.post('/registrar-recuperar', (req, res) => {
         nombre: req.body.nombre,
         correo: req.body.correo,
         contrasena: req.body.contrasena,
-        //por aca se puede mandar mas data por cookie, o por let
+
     });
 
     nuevo_recuperar.save((err, recuperar_db) => {

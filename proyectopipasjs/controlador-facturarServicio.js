@@ -109,6 +109,7 @@ const descricionServicio = () => {
     console.log(descripcionServicio);
     descripcion.innerHTML = descripcionServicio;
 };
+
 const validar = () => {
     let error = false;
     let campos_requeridos = document.querySelectorAll(':required');
@@ -146,6 +147,8 @@ const validar = () => {
         });
     }
 }
+
+
 mostrar_pagoUsuario();
 nombredelServicio();
 mostrar_servicio();

@@ -44,7 +44,7 @@ const obtener_login_usuario = async() => { // esta es la funcion que se usa en e
 };
 
 
-const obtenerRecuperar = async(nombre, correo, contrasena, ) => {
+const obtenerRecuperar = async(nombre, correo, contrasena) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-recuperar',
