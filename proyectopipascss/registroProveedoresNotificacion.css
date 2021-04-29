@@ -19,7 +19,7 @@ html {
 }
 
 .div-Principal {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin: 15px;
     margin-top: 400px;
@@ -27,6 +27,7 @@ html {
     background-color: aliceblue;
     width: 100%;
     margin-bottom: 500px;
+    border-radius: 10px;
 }
 
 h1 {
