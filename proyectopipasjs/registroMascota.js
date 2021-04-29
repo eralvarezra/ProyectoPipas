@@ -39,10 +39,10 @@ const mostrar_selects = async() => {
     });
 
     let div_imagen = document.createElement('div');
-    div_imagen.classList.add('img-container');
+    div_imagen.classList.add('contenedor-imagen"');
 
-    let imagen = document.createElement('img');
-    imagen.src = ejercicio.imagen;
+    let imagen = document.createElement('img-foto');
+    imagen.src = mascota.imagen;
 
 }
 
