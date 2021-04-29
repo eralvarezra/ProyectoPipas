@@ -98,7 +98,16 @@ const mostrar_mascotas = async() => {
         if (mascota.correo === correo && mascota.nombreMascota === filtro) {
             tablaMascotas.style.display = "block";
             let fila = tabla.insertRow();
-            fila.insertCell().innerHTML = (mascota.fotoMascota);
+            //eliminar si no sirve
+            console.log(mascota.foto_mascota);
+            if (mascota.fotoMascota == '' ||
+                mascota.fotoMascota == undefined) {
+                fila.insertCell().innerHTML = "Sin foto";
+            } else {
+                fila.insertCell().innerHTML =
+                    "<img src=\"" + mascota.fotoMascota + "\" id=\"img-foto" + "\" class = \"imagen-tabla\">";
+            }
+            // fila.insertCell().innerHTML = (mascota.fotoMascota);
             fila.insertCell().innerHTML = (mascota.nombreMascota);
             fila.insertCell().innerHTML = (mascota.tipoMascota);
             fila.insertCell().innerHTML = (mascota.tipoRaza);
