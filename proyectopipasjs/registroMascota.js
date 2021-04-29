@@ -37,6 +37,13 @@ const mostrar_selects = async() => {
         temporal.value = raza.nombreRaza;
         tipoRazaM.appendChild(temporal);
     });
+
+    let div_imagen = document.createElement('div');
+    div_imagen.classList.add('img-container');
+
+    let imagen = document.createElement('img');
+    imagen.src = ejercicio.imagen;
+
 }
 
 const obtenerDatos = () => {

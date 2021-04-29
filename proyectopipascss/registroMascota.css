@@ -92,6 +92,17 @@ h1 {
     margin-left: 110px;
 }
 
+#contenedor-imagen {
+    width: 100px;
+    height: 100px;
+}
+
+#img-foto {
+    width: 100px;
+    height: 100px;
+    margin-left: 300px;
+}
+
 #btnFoto {
     margin-top: 5px;
     height: 35px;
