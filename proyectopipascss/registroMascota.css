@@ -7,12 +7,13 @@ main {
 }
 
 .div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 532px;
-    height: 1000px;
+    height: 400px;
     width: 700px;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 .div-NombreEmpresa>div {
@@ -32,17 +33,19 @@ main {
 #logoEmpresa {
     width: 400px;
     text-align: center;
+    padding-top: 110px;
 }
 
 .div-Form {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     text-align: center;
     margin-right: 490px;
     width: 700px;
-    height: 1000px;
+    height: 400px;
     color: rgb(102, 102, 102);
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 .div-Form>div {

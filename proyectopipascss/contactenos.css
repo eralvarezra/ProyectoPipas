@@ -10,7 +10,7 @@ body {
 }
 
 .div-NombreEmpresa {
-    border: 3px solid rgb(102, 102, 102);
+    border: 3px solid #e69138;
     display: inline-block;
     margin-left: 220px;
     margin-top: 100px;
@@ -18,6 +18,7 @@ body {
     height: 780px;
     font-size: 18px;
     background-color: aliceblue;
+    border-radius: 10px;
 }
 
 #logoEmpresa {
@@ -44,6 +45,8 @@ body {
     margin-right: 200px;
     width: 40%;
     height: 786px;
+    border: 3px solid #e69138;
+    border-radius: 10px;
 }
 
 .form {

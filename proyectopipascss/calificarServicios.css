@@ -1,10 +1,11 @@
  .div-NombreEmpresa {
-     border: 3px solid rgb(102, 102, 102);
+     border: 3px solid #e69138;
      display: inline-block;
      margin-left: 320px;
      margin-top: 200px;
      height: 500px;
      width: 429px;
+     border-radius: 10px;
  }
  
  .div-NombreEmpresa>div {
@@ -19,13 +20,14 @@
  }
  
  .div-Form {
-     border: 3px solid rgb(102, 102, 102);
+     border: 3px solid #e69138;
      display: inline-block;
      text-align: center;
      margin-right: 450px;
      margin-top: 200px;
      width: 720px;
      height: 500px;
+     border-radius: 10px;
  }
  
  .calificarServicios {
