@@ -35,18 +35,22 @@ const mostrar_detallesfactura = async() => {
     let detalleServicio;
     let costoServicio;
     let nombreProveedor;
+    let tipodelServicio;
 
     lista_facturas.forEach((factura) => {
         if (idFactura === factura._id) {
             nombreProveedor = factura.nombreEmpresa;
             costoServicio = factura.precio;
             detalleServicio = factura.descripcion;
+            tipodelServicio = factura.tipoServicio;
         }
     });
 
     lista_usuarios.forEach((usuario) => {
         if (cliente === usuario.nombre)
             cliente = usuario.nombre + " " + usuario.apellido;
+        numerodelatarjeta.value = usuario.numeroTarjeta;
+        numerodelatarjeta.innerHTML = usuario.numeroTarjeta;
 
     });
 
@@ -57,8 +61,10 @@ const mostrar_detallesfactura = async() => {
     descripcion.value = detalleServicio;
     descripcion.innerHTML = detalleServicio;
     servicioPrecio.innerHTML = costoServicio;
-    nombreDelServicio.value = nombreProveedor;
-    nombreDelServicio.innerHTML = nombreProveedor;
+    empresaProveedor.value = nombreProveedor;
+    empresaProveedor.innerHTML = nombreProveedor;
+    nombreDelServicio.value = tipodelServicio;
+    nombreDelServicio.innerHTML = tipodelServicio;
 }
 
 mostrar_detallesfactura();
