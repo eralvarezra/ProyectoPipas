@@ -90,6 +90,11 @@ const validar = () => {
 
 };
 
+function comprobarMayoria(fechaNacimiento) {
+    var fecha = moment(fechaNacimiento, 'DD-MM-YYYY');
+    var years = moment().diff(fecha, 'years');
+    return years >= 18 ? true : false
+};
 
 const validar_existe_correo = () => {
     console.log(`El nombre es ${correoElectronicoUsuario.value}`);
