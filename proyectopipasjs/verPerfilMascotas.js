@@ -17,6 +17,11 @@ const btnVolver = document.getElementById("btn-volver");
 const btnAgregarDetalles = document.getElementById('btn-agregarDetalles');
 const btnSearch = document.getElementById("btn-search")
 
+const sectionDetalles = document.getElementById("sct-detalleMascotas");
+sectionDetalles.style.display = "none";
+const tablaMascotas = document.getElementById("sct-mascotas");
+tablaMascotas.style.display = "none";
+
 
 const mostrar_modal_editarmascota = async(mascota) => {
     const { value: formValues } = await Swal.fire({
@@ -91,7 +96,7 @@ const mostrar_mascotas = async() => {
     lista_mascota.forEach((mascota) => {
         console.log(mascota);
         if (mascota.correo === correo && mascota.nombreMascota === filtro) {
-
+            tablaMascotas.style.display = "block";
             let fila = tabla.insertRow();
             fila.insertCell().innerHTML = (mascota.fotoMascota);
             fila.insertCell().innerHTML = (mascota.nombreMascota);
@@ -147,6 +152,7 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
     tabla2.innerHTML = '';
     tabla3.innerHTML = '';
     tabla4.innerHTML = '';
+    sectionDetalles.style.display = "block";
 
     for (var i = tabla2.rows.length - 1; i > 0; i--) {
         tabla2.deleteRow(i);
@@ -162,32 +168,31 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
         let fila = tabla2.insertRow();
         if (mascotacaracteristica.correo === pCorreo && mascotacaracteristica.nombreMascota === pFiltro) {
             fila.insertCell().innerHTML = (mascotacaracteristica.nombreCaracteristica);
-        } else {
-            fila.insertCell().innerHTML = "No posee";
+            let celda_eliminar = fila.insertCell();
+            let boton_eliminar = document.createElement('button');
+            boton_eliminar.type = 'button';
+
+            boton_eliminar.classList.add("far")
+            boton_eliminar.classList.add("fa-trash-alt")
+            boton_eliminar.classList.add("btn-eliminar")
+
+            celda_eliminar.appendChild(boton_eliminar);
+            celda_eliminar.addEventListener('click', async() => {
+                if (mascotacaracteristica) {
+                    const { value: accept } = await Swal.fire({
+                        icon: 'warning',
+                        text: 'Está seguro que desea eliminar la característica de la mascota',
+                        confirmButtonText: `Si`,
+                        showCancelButton: true
+                    });
+                    if (accept) {
+                        eliminar_mascotaCaracteristica(mascotacaracteristica._id);
+                    }
+                }
+            });
         }
 
-        let celda_eliminar = fila.insertCell();
-        let boton_eliminar = document.createElement('button');
-        boton_eliminar.type = 'button';
 
-        boton_eliminar.classList.add("far")
-        boton_eliminar.classList.add("fa-trash-alt")
-        boton_eliminar.classList.add("btn-eliminar")
-
-        celda_eliminar.appendChild(boton_eliminar);
-        celda_eliminar.addEventListener('click', async() => {
-            if (mascotacaracteristica) {
-                const { value: accept } = await Swal.fire({
-                    icon: 'warning',
-                    text: 'Está seguro que desea eliminar la característica de la mascota',
-                    confirmButtonText: `Si`,
-                    showCancelButton: true
-                });
-                if (accept) {
-                    eliminar_mascotaCaracteristica(mascotacaracteristica._id);
-                }
-            }
-        });
     });
 
     lista_mascotapad.forEach((padecimiento) => {
@@ -195,64 +200,60 @@ const llenar_caracteristicas = async(pFiltro, pCorreo) => {
         let fila = tabla3.insertRow();
         if (padecimiento.correo === pCorreo && padecimiento.nombreMascota === pFiltro) {
             fila.insertCell().innerHTML = (padecimiento.nombrePadecimiento);
-        } else {
-            fila.insertCell().innerHTML = "No posee";
+            let celda_eliminar = fila.insertCell();
+            let boton_eliminar = document.createElement('button');
+            boton_eliminar.type = 'button';
+
+            boton_eliminar.classList.add("far")
+            boton_eliminar.classList.add("fa-trash-alt")
+            boton_eliminar.classList.add("btn-eliminar")
+
+            celda_eliminar.appendChild(boton_eliminar);
+            celda_eliminar.addEventListener('click', async() => {
+                if (padecimiento) {
+                    const { value: accept } = await Swal.fire({
+                        icon: 'warning',
+                        text: 'Está seguro que desea eliminar el padecimiento',
+                        confirmButtonText: `Si`,
+                        showCancelButton: true
+                    });
+                    if (accept) {
+                        eliminar_mascotapadecimiento(padecimiento._id);
+                    }
+                }
+            });
         }
 
-        let celda_eliminar = fila.insertCell();
-        let boton_eliminar = document.createElement('button');
-        boton_eliminar.type = 'button';
 
-        boton_eliminar.classList.add("far")
-        boton_eliminar.classList.add("fa-trash-alt")
-        boton_eliminar.classList.add("btn-eliminar")
-
-        celda_eliminar.appendChild(boton_eliminar);
-        celda_eliminar.addEventListener('click', async() => {
-            if (padecimiento) {
-                const { value: accept } = await Swal.fire({
-                    icon: 'warning',
-                    text: 'Está seguro que desea eliminar el padecimiento',
-                    confirmButtonText: `Si`,
-                    showCancelButton: true
-                });
-                if (accept) {
-                    eliminar_mascotapadecimiento(padecimiento._id);
-                }
-            }
-        });
     });
 
     lista_mascotavacuna.forEach((mascotavacuna) => {
         let fila = tabla4.insertRow();
         if (mascotavacuna.correo === pCorreo && mascotavacuna.nombreMascota === pFiltro) {
             fila.insertCell().innerHTML = (mascotavacuna.nombreVacuna);
-        } else {
-            fila.insertCell().innerHTML = "No posee";
-        }
+            let celda_eliminar = fila.insertCell();
+            let boton_eliminar = document.createElement('button');
+            boton_eliminar.type = 'button';
 
-        let celda_eliminar = fila.insertCell();
-        let boton_eliminar = document.createElement('button');
-        boton_eliminar.type = 'button';
+            boton_eliminar.classList.add("far")
+            boton_eliminar.classList.add("fa-trash-alt")
+            boton_eliminar.classList.add("btn-eliminar")
 
-        boton_eliminar.classList.add("far")
-        boton_eliminar.classList.add("fa-trash-alt")
-        boton_eliminar.classList.add("btn-eliminar")
-
-        celda_eliminar.appendChild(boton_eliminar);
-        celda_eliminar.addEventListener('click', async() => {
-            if (mascotavacuna) {
-                const { value: accept } = await Swal.fire({
-                    icon: 'warning',
-                    text: 'Está seguro que desea eliminar la vacuna',
-                    confirmButtonText: `Si`,
-                    showCancelButton: true
-                });
-                if (accept) {
-                    eliminar_Mascotavacuna(mascotavacuna._id);
+            celda_eliminar.appendChild(boton_eliminar);
+            celda_eliminar.addEventListener('click', async() => {
+                if (mascotavacuna) {
+                    const { value: accept } = await Swal.fire({
+                        icon: 'warning',
+                        text: 'Está seguro que desea eliminar la vacuna',
+                        confirmButtonText: `Si`,
+                        showCancelButton: true
+                    });
+                    if (accept) {
+                        eliminar_Mascotavacuna(mascotavacuna._id);
+                    }
                 }
-            }
-        });
+            });
+        }
     });
 }
 
