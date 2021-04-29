@@ -44,7 +44,7 @@ const listar_mascotaCaracteristica = async() => { // esta es la funcion que se u
 const eliminar_mascotaCaracteristica = async(_id) => {
     await axios({
         method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-mascotaCaracteris',
+        url: 'http://localhost:3000/api/eliminar-mascotacaracteristica',
         responseType: 'json',
         data: {
             _id: _id
