@@ -15,7 +15,7 @@ main {
     padding-right: 50px;
     height: 150px;
     width: 300px;
-    text-align: center;
+    text-align: Left;
     background-color: aliceblue;
     border-radius: 10px;
 }
@@ -28,7 +28,7 @@ main {
     padding-right: 50px;
     height: 150px;
     width: 300px;
-    text-align: center;
+    text-align: left;
     background-color: aliceblue;
     border-radius: 10px;
 }
@@ -41,7 +41,7 @@ main {
     padding-right: 50px;
     height: 150px;
     width: 300px;
-    text-align: center;
+    text-align: left;
     background-color: aliceblue;
     border-radius: 10px;
 }
@@ -54,7 +54,7 @@ main {
     padding-right: 50px;
     height: 150px;
     width: 300px;
-    text-align: center;
+    text-align: left;
     background-color: aliceblue;
     border-radius: 10px;
 }
