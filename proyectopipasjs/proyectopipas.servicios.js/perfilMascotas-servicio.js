@@ -71,7 +71,7 @@ const eliminar_mascota = async(_id) => {
 const modificar_mascota = async(_id, nombreMascota) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-proveedor',
+        url: 'http://localhost:3000/api/modificar-Mascota',
         responseType: 'json',
         data: {
             _id: _id,

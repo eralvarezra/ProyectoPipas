@@ -55,8 +55,8 @@ const mostrar_detallesfactura = async() => {
     });
 
     impuesto = impuesto[0].nombreImpuesto;
-    impuestoHtml.innerHTML = impuesto * 100;
-    facturaTotal.innerHTML = parseFloat(costoServicio) + (parseFloat(impuesto) * 100);
+    impuestoHtml.innerHTML = impuesto + "%";
+    facturaTotal.innerHTML = parseFloat(costoServicio) + (parseFloat(costoServicio) * (parseFloat(impuesto) / 100));
 
     descripcion.value = detalleServicio;
     descripcion.innerHTML = detalleServicio;
