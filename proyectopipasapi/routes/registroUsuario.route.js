@@ -42,7 +42,7 @@ router.post('/registrar-usuario', (req, res) => {
                 msj: "El usuario se registró exitosamente.",
                 usuario_db
             });
-            mailer.enviar_email(`${usuario_db.nombre} ${usuario_db.apellidos}`, usuario_db.correo)
+            mailer.enviar_email(`${usuario_db.nombre} ${usuario_db.apellido}`, usuario_db.correo)
         }
     });
 });
