@@ -79,7 +79,8 @@ const validar = () => {
     }
 
     if (error == false) {
-        obtenerDatos();
+        // obtenerDatos();
+        CalcuteAge();
     } else {
         Swal.fire({
             'icon': 'warning',
@@ -90,11 +91,36 @@ const validar = () => {
 
 };
 
-function comprobarMayoria(fechaNacimiento) {
-    var fecha = moment(fechaNacimiento, 'DD-MM-YYYY');
-    var years = moment().diff(fecha, 'years');
-    return years >= 18 ? true : false
-};
+
+function CalcuteAge() {
+    let actualDate = new Date();
+    let fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+    let age = actualDate.getFullYear() - fechaNacimiento.getFullYear();
+    let month = actualDate.getMonth() - fechaNacimiento.getMonth();
+    let day = actualDate.getDay() - fechaNacimiento.getDay();
+    if (month < 0 || (month === 0 && actualDate.getDate() < fechaNacimiento.getDate())) {
+        age--;
+        // console.log(edad)
+        if (age >= 18) {
+            obtenerDatos();
+        } else {
+            Swal.fire({
+                'icon': 'warning',
+                'title': 'Usted es menor de edad.',
+                'text': 'Lamentable no puede ingresar a la aplicación.'
+            });
+        }
+    }
+    if (age >= 18) {
+        obtenerDatos();
+    } else {
+        Swal.fire({
+            'icon': 'warning',
+            'title': 'Usted es menor de edad.',
+            'text': 'Lamentable no puede ingresar a la aplicación.'
+        });
+    }
+}
 
 const validar_existe_correo = () => {
     console.log(`El nombre es ${correoElectronicoUsuario.value}`);
